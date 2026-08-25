@@ -1,0 +1,202 @@
+[
+ {
+  "slug": "argyle-tx",
+  "label": "Argyle",
+  "url": "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA",
+  "lat": 33.1995882,
+  "lng": -97.1251793,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@33.1995882,-97.125"
+ },
+ {
+  "slug": "arlington-tx",
+  "label": "Arlington",
+  "url": "https://share.google/9NTHmU57t9Yt7JkX8",
+  "lat": null,
+  "lng": null,
+  "eff": "https://www.google.com/search?sca_esv=b1c946967c1f5b53&rlz=1C5CHFA_enUS1147US1147&kgmid=/g/11tc3xds0"
+ },
+ {
+  "slug": "austin-tx",
+  "label": "Austin",
+  "url": "https://maps.app.goo.gl/NRiuAwViE5z3iBU68",
+  "lat": 30.4632662,
+  "lng": -97.7956138,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@30.4632662,-97.795"
+ },
+ {
+  "slug": "bedford-tx",
+  "label": "Bedford",
+  "url": "https://maps.app.goo.gl/GUv6jsXX9zWRWeeL8",
+  "lat": 33.0534087,
+  "lng": -97.358382,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Hurst/@33.0534087,-97.358382,10z/data=!4m7!3m6!1s0x"
+ },
+ {
+  "slug": "boyd-tx",
+  "label": "Boyd",
+  "url": "https://maps.app.goo.gl/qKuvDr9vZwoTaziD6",
+  "lat": 32.7994447,
+  "lng": -97.5969998,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@32.7994447,-97.596"
+ },
+ {
+  "slug": "celina-tx",
+  "label": "Celina",
+  "url": "https://maps.app.goo.gl/VJu2PJe1R96YnjtV7",
+  "lat": 33.0184459,
+  "lng": -96.7966095,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@33.0184459,-96.796"
+ },
+ {
+  "slug": "colleyville-tx",
+  "label": "Colleyville",
+  "url": "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8",
+  "lat": 32.9271889,
+  "lng": -97.268098,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@32.9271889,-97.268"
+ },
+ {
+  "slug": "coppell-tx",
+  "label": "Coppell",
+  "url": "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6",
+  "lat": 32.9271889,
+  "lng": -97.268098,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@32.9271889,-97.268"
+ },
+ {
+  "slug": "corsicana-tx",
+  "label": "Corsicana",
+  "url": "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA",
+  "lat": 32.0834287,
+  "lng": -96.5336767,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Kerens/@32.0834287,-96.5336767,11z/data=!3m1!4b1!4m"
+ },
+ {
+  "slug": "dallas-tx",
+  "label": "Dallas",
+  "url": "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA",
+  "lat": 32.0834287,
+  "lng": -96.5336767,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Kerens/@32.0834287,-96.5336767,11z/data=!3m1!4b1!4m"
+ },
+ {
+  "slug": "denton-tx",
+  "label": "Denton",
+  "url": "https://maps.app.goo.gl/bFVM1ooF1JWAcLv28",
+  "lat": 32.979648,
+  "lng": -97.195643,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds/@32.979648,-97.195643,11z/data=!3m1!4b1!4m6!3m5!1s0"
+ },
+ {
+  "slug": "euless-tx",
+  "label": "Euless",
+  "url": "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8",
+  "lat": 32.9271889,
+  "lng": -97.268098,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@32.9271889,-97.268"
+ },
+ {
+  "slug": "flower-mound-tx",
+  "label": "Flower Mound",
+  "url": "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6",
+  "lat": 32.9271889,
+  "lng": -97.268098,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@32.9271889,-97.268"
+ },
+ {
+  "slug": "frisco-tx",
+  "label": "Frisco",
+  "url": "https://maps.app.goo.gl/CmzHdYAhyw1TvRrbA",
+  "lat": 33.0184414,
+  "lng": -96.7940346,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@33.0184414,-96.794"
+ },
+ {
+  "slug": "gainesville-tx",
+  "label": "Gainesville",
+  "url": "https://maps.app.goo.gl/RBX7qXKRxaNnFAtz7",
+  "lat": 33.6462321,
+  "lng": -97.2280347,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Gainesville/@33.6462321,-97.2280347,12z/data=!3m1!4"
+ },
+ {
+  "slug": "granbury-tx",
+  "label": "Granbury",
+  "url": "https://maps.app.goo.gl/GuzJhqCg2Muxt5cZ9",
+  "lat": 32.4340464,
+  "lng": -97.7886021,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@32.4340464,-97.788"
+ },
+ {
+  "slug": "grapevine-tx",
+  "label": "Grapevine",
+  "url": "https://share.google/eBFZbQb1i9jLHq5Da",
+  "lat": null,
+  "lng": null,
+  "eff": "https://www.google.com/search?rlz=1C5CHFA_enUS1147US1147&sca_esv=b1c946967c1f5b53&cs=0&output=search"
+ },
+ {
+  "slug": "hurst-tx",
+  "label": "Hurst",
+  "url": "https://maps.app.goo.gl/CGF2QrjndWHDU2yS6",
+  "lat": 32.979648,
+  "lng": -97.195643,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds/@32.979648,-97.195643,11z/data=!4m6!3m5!1s0x688ab20"
+ },
+ {
+  "slug": "keller-tx",
+  "label": "Keller",
+  "url": "https://share.google/BArTi9ylN3WuOqArl",
+  "lat": null,
+  "lng": null,
+  "eff": "https://www.google.com/search?rlz=1C5CHFA_enUS1147US1147&sca_esv=b1c946967c1f5b53&cs=0&output=search"
+ },
+ {
+  "slug": "mckinney-tx",
+  "label": "McKinney",
+  "url": "https://maps.app.goo.gl/3XYfyAsPh12hmyxVA",
+  "lat": 33.248184,
+  "lng": -96.6394285,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@33.248184,-96.6394"
+ },
+ {
+  "slug": "northlake-tx",
+  "label": "Northlake",
+  "url": "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9",
+  "lat": 32.979648,
+  "lng": -97.195643,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds/@32.979648,-97.195643,11z/data=!3m1!4b1!4m6!3m5!1s0"
+ },
+ {
+  "slug": "plano-tx",
+  "label": "Plano",
+  "url": "https://maps.app.goo.gl/74ggCgog8Zhd5CQDA",
+  "lat": 33.0184414,
+  "lng": -96.7940346,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@33.0184414,-96.794"
+ },
+ {
+  "slug": "sherman-tx",
+  "label": "Sherman",
+  "url": "https://maps.app.goo.gl/t4fA7xZQAhnr7E396",
+  "lat": null,
+  "lng": null,
+  "eff": "https://www.google.com/maps/search/33.656817,+-96.600222?entry=tts&g_ep=EgoyMDI2MDUwNi4wIPu8ASoASAFQ"
+ },
+ {
+  "slug": "southlake-tx",
+  "label": "Southlake",
+  "url": "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9",
+  "lat": 32.979648,
+  "lng": -97.195643,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds/@32.979648,-97.195643,11z/data=!3m1!4b1!4m6!3m5!1s0"
+ },
+ {
+  "slug": "weatherford-tx",
+  "label": "Weatherford",
+  "url": "https://maps.app.goo.gl/VohNBHJa1xjutCTW7",
+  "lat": 32.7314932,
+  "lng": -97.7909849,
+  "eff": "https://www.google.com/maps/place/Love+is+Blinds-Custom+Blinds,+Shades,+Shutters/@32.7314932,-97.790"
+ }
+]
