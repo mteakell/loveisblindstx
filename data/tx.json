@@ -1,0 +1,700 @@
+{
+ "business": {
+  "name": "Love Is Blinds Texas",
+  "legal": "Love Is Blinds",
+  "site": "https://www.loveisblindstx.com",
+  "phone": "(866) 518-2999",
+  "tel": "+18665182999",
+  "email": "access@loveisblindstx.com",
+  "hq": {
+   "street": "9500 Ray White Rd Suite 276",
+   "locality": "Fort Worth",
+   "region": "TX",
+   "postal": "76244",
+   "lat": 32.9127,
+   "lng": -97.2789
+  },
+  "region": "DFW, North Texas, East Texas, Waco and the Austin metro"
+ },
+ "cities": [
+  {
+   "slug": "argyle-tx",
+   "label": "Argyle",
+   "url": "/argyle-tx",
+   "phone": "9402918144",
+   "street": "",
+   "locality": "Argyle",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA",
+    "https://maps.app.goo.gl/pPEGbj3ssWUQswC19"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "arlington-tx",
+   "label": "Arlington",
+   "url": "/arlington-tx",
+   "phone": "8176970553",
+   "street": "",
+   "locality": "Arlington",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://share.google/9NTHmU57t9Yt7JkX8"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "austin-tx",
+   "label": "Austin",
+   "url": "/austin-tx",
+   "phone": "5128868604",
+   "street": "",
+   "locality": "Austin",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/NRiuAwViE5z3iBU68"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "bedford-tx",
+   "label": "Bedford",
+   "url": "/bedford-tx",
+   "phone": "8178596699",
+   "street": "",
+   "locality": "Bedford",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/GUv6jsXX9zWRWeeL8",
+    "https://maps.app.goo.gl/vE3hH9yV2bfQqmTg7"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "boyd-tx",
+   "label": "Boyd",
+   "url": "/boyd-tx",
+   "phone": "8178596699",
+   "street": "",
+   "locality": "Boyd",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/qKuvDr9vZwoTaziD6"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "celina-tx",
+   "label": "Celina",
+   "url": "/celina-tx",
+   "phone": "4696533656",
+   "street": "",
+   "locality": "Celina",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/VJu2PJe1R96YnjtV7",
+    "https://maps.app.goo.gl/znAPLi5nqnmFfdH17"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "colleyville-tx",
+   "label": "Colleyville",
+   "url": "/colleyville-tx",
+   "phone": "8178597116",
+   "street": "",
+   "locality": "Colleyville",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "coppell-tx",
+   "label": "Coppell",
+   "url": "/coppell-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Coppell",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "corsicana-tx",
+   "label": "Corsicana",
+   "url": "/corsicana-tx",
+   "phone": "9034209161",
+   "street": "",
+   "locality": "Corsicana",
+   "postal": "",
+   "lat": 32.0954,
+   "lng": -96.4689,
+   "gbp": [
+    "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
+   ],
+   "twin": "w-7th-avenue-corsicana-tx"
+  },
+  {
+   "slug": "w-7th-avenue-corsicana-tx",
+   "label": "Corsicana",
+   "url": "/w-7th-avenue-corsicana-tx",
+   "phone": "9035056553",
+   "street": "",
+   "locality": "Corsicana",
+   "postal": "",
+   "lat": 32.0954,
+   "lng": -96.4689,
+   "gbp": [],
+   "twin": "corsicana-tx",
+   "variant": "W 7th Ave"
+  },
+  {
+   "slug": "dallas-tx",
+   "label": "Dallas",
+   "url": "/dallas-tx",
+   "phone": "2143025442",
+   "street": "",
+   "locality": "Dallas",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "denton-tx",
+   "label": "Denton",
+   "url": "/denton-tx",
+   "phone": "9402040142",
+   "street": "",
+   "locality": "Denton",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/bFVM1ooF1JWAcLv28",
+    "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "euless-tx",
+   "label": "Euless",
+   "url": "/euless-tx",
+   "phone": "9403295166",
+   "street": "",
+   "locality": "Euless",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "flower-mound-tx",
+   "label": "Flower Mound",
+   "url": "/flower-mound-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Flower Mound",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "fort-worth-tx",
+   "label": "Fort Worth",
+   "url": "/fort-worth-tx",
+   "phone": "8178541551",
+   "street": "9500 Ray White Rd Suite 276",
+   "locality": "Fort Worth",
+   "postal": "76244",
+   "lat": 32.7555,
+   "lng": -97.3308,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "frisco-tx",
+   "label": "Frisco",
+   "url": "/frisco-tx",
+   "phone": "4697079424",
+   "street": "",
+   "locality": "Frisco",
+   "postal": "",
+   "lat": null,
+   "lng": null,
+   "gbp": [
+    "https://maps.app.goo.gl/CmzHdYAhyw1TvRrbA"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "gainesville-tx",
+   "label": "Gainesville",
+   "url": "/gainesville-tx",
+   "phone": "9402362599",
+   "street": "",
+   "locality": "Gainesville",
+   "postal": "",
+   "lat": 33.626,
+   "lng": -97.1336,
+   "gbp": [
+    "https://maps.app.goo.gl/RBX7qXKRxaNnFAtz7"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "georgetown-tx",
+   "label": "Georgetown",
+   "url": "/georgetown-tx",
+   "phone": "7372576722",
+   "street": "601 Quail Valley Dr, STE 331",
+   "locality": "Georgetown",
+   "postal": "78626",
+   "lat": 30.6333,
+   "lng": -97.6781,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "granbury-tx",
+   "label": "Granbury",
+   "url": "/granbury-tx",
+   "phone": "8177753212",
+   "street": "301 W Hwy 377, Suite 112, #1006",
+   "locality": "Granbury",
+   "postal": "76048",
+   "lat": 32.4419,
+   "lng": -97.7942,
+   "gbp": [
+    "https://maps.app.goo.gl/GuzJhqCg2Muxt5cZ9"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "grand-prairie-tx",
+   "label": "Grand Prairie",
+   "url": "/grand-prairie-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Grand Prairie",
+   "postal": "",
+   "lat": 32.746,
+   "lng": -96.9978,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "grapevine-tx",
+   "label": "Grapevine",
+   "url": "/grapevine-tx",
+   "phone": "8175629262",
+   "street": "1701 W Northwest Highway, Suite 132",
+   "locality": "Grapevine",
+   "postal": "76051",
+   "lat": 32.9343,
+   "lng": -97.0781,
+   "gbp": [
+    "https://share.google/eBFZbQb1i9jLHq5Da"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "gun-barrel-city-tx",
+   "label": "Gun Barrel City",
+   "url": "/gun-barrel-city-tx",
+   "phone": "4304445359",
+   "street": "1805 West Main St., Suite 16",
+   "locality": "Gun Barrel City",
+   "postal": "75156",
+   "lat": 32.3346,
+   "lng": -96.1186,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "haltom-city-tx",
+   "label": "Haltom City",
+   "url": "/haltom-city-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Haltom City",
+   "postal": "",
+   "lat": 32.7996,
+   "lng": -97.2692,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "highland-park-tx",
+   "label": "Highland Park",
+   "url": "/highland-park-tx",
+   "phone": "4697153316",
+   "street": "",
+   "locality": "Highland Park",
+   "postal": "",
+   "lat": 32.8334,
+   "lng": -96.792,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "hurst-tx",
+   "label": "Hurst",
+   "url": "/hurst-tx",
+   "phone": "8178138846",
+   "street": "",
+   "locality": "Hurst",
+   "postal": "",
+   "lat": 32.8235,
+   "lng": -97.1706,
+   "gbp": [
+    "https://maps.app.goo.gl/CGF2QrjndWHDU2yS6"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "irving-tx",
+   "label": "Irving",
+   "url": "/irving-tx",
+   "phone": "9729475677",
+   "street": "511 East John Carpenter Freeway, Suite 509H",
+   "locality": "Irving",
+   "postal": "75062",
+   "lat": 32.814,
+   "lng": -96.9489,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "justin-tx",
+   "label": "Justin",
+   "url": "/justin-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Justin",
+   "postal": "",
+   "lat": 33.0849,
+   "lng": -97.2961,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "keller-tx",
+   "label": "Keller",
+   "url": "/keller-tx",
+   "phone": "8179693372",
+   "street": "",
+   "locality": "Keller",
+   "postal": "",
+   "lat": 32.9347,
+   "lng": -97.2517,
+   "gbp": [
+    "https://share.google/BArTi9ylN3WuOqArl"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "kerens-tx",
+   "label": "Kerens",
+   "url": "/kerens-tx",
+   "phone": "9032075569",
+   "street": "",
+   "locality": "Kerens",
+   "postal": "",
+   "lat": 32.1307,
+   "lng": -96.2275,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "las-colinas-tx",
+   "label": "Las Colinas",
+   "url": "/las-colinas-tx",
+   "phone": "9729475677",
+   "street": "",
+   "locality": "Las Colinas",
+   "postal": "",
+   "lat": 32.8577,
+   "lng": -96.9427,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "lewisville-tx",
+   "label": "Lewisville",
+   "url": "/lewisville-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Lewisville",
+   "postal": "",
+   "lat": 33.0462,
+   "lng": -96.9942,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "mckinney-tx",
+   "label": "McKinney",
+   "url": "/mckinney-tx",
+   "phone": "9402918144",
+   "street": "",
+   "locality": "McKinney",
+   "postal": "",
+   "lat": 33.1972,
+   "lng": -96.6397,
+   "gbp": [
+    "https://maps.app.goo.gl/3XYfyAsPh12hmyxVA"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "north-richland-hills-tx",
+   "label": "North Richland Hills",
+   "url": "/north-richland-hills-tx",
+   "phone": "8175876007",
+   "street": "",
+   "locality": "North Richland Hills",
+   "postal": "",
+   "lat": 32.8343,
+   "lng": -97.2289,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "northlake-tx",
+   "label": "Northlake",
+   "url": "/northlake-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Northlake",
+   "postal": "",
+   "lat": 33.1243,
+   "lng": -97.1656,
+   "gbp": [
+    "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "paradise-tx",
+   "label": "Paradise",
+   "url": "/paradise-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Paradise",
+   "postal": "",
+   "lat": 33.1537,
+   "lng": -97.6839,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "plano-tx",
+   "label": "Plano",
+   "url": "/plano-tx",
+   "phone": "9402918144",
+   "street": "1400 Preston RD Suite 477",
+   "locality": "Plano",
+   "postal": "75093",
+   "lat": 33.0198,
+   "lng": -96.6989,
+   "gbp": [
+    "https://maps.app.goo.gl/74ggCgog8Zhd5CQDA"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "richland-hills-tx",
+   "label": "Richland Hills",
+   "url": "/richland-hills-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Richland Hills",
+   "postal": "",
+   "lat": 32.816,
+   "lng": -97.2281,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "roanoke-tx",
+   "label": "Roanoke",
+   "url": "/roanoke-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Roanoke",
+   "postal": "",
+   "lat": 33.004,
+   "lng": -97.2256,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "round-rock-tx",
+   "label": "Round Rock",
+   "url": "/round-rock-tx",
+   "phone": "5126413922",
+   "street": "1 Chisholm Trail Rd, Suite 450, #4587",
+   "locality": "Round Rock",
+   "postal": "78681",
+   "lat": 30.5083,
+   "lng": -97.6789,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "sherman-tx",
+   "label": "Sherman",
+   "url": "/sherman-tx",
+   "phone": "9032268817",
+   "street": "",
+   "locality": "Sherman",
+   "postal": "",
+   "lat": 33.6357,
+   "lng": -96.6089,
+   "gbp": [
+    "https://maps.app.goo.gl/t4fA7xZQAhnr7E396"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "southlake-tx",
+   "label": "Southlake",
+   "url": "/southlake-tx",
+   "phone": "8179619004",
+   "street": "",
+   "locality": "Southlake",
+   "postal": "",
+   "lat": 32.9412,
+   "lng": -97.1342,
+   "gbp": [
+    "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "taylor-tx",
+   "label": "Taylor",
+   "url": "/taylor-tx",
+   "phone": "7372606887",
+   "street": "305 N Main St Ste #1029",
+   "locality": "Taylor",
+   "postal": "76574",
+   "lat": 30.5705,
+   "lng": -97.4092,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "trophy-club-tx",
+   "label": "Trophy Club",
+   "url": "/trophy-club-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Trophy Club",
+   "postal": "",
+   "lat": 33.0001,
+   "lng": -97.1836,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "tyler-tx",
+   "label": "Tyler",
+   "url": "/tyler-tx",
+   "phone": "9035013899",
+   "street": "4295 Kinsey Dr",
+   "locality": "Tyler",
+   "postal": "75703",
+   "lat": 32.3513,
+   "lng": -95.3011,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "waco-tx",
+   "label": "Waco",
+   "url": "/waco-tx",
+   "phone": "2542325744",
+   "street": "7215 Bosque Blvd Suite 237",
+   "locality": "Waco",
+   "postal": "76710",
+   "lat": 31.5493,
+   "lng": -97.1467,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "waxahachie-tx",
+   "label": "Waxahachie",
+   "url": "/waxahachie-tx",
+   "phone": "4699728287",
+   "street": "300 S Interstate 35 East Service Rd, Suite #102",
+   "locality": "Waxahachie",
+   "postal": "75165",
+   "lat": 32.3866,
+   "lng": -96.8483,
+   "gbp": [],
+   "twin": null
+  },
+  {
+   "slug": "weatherford-tx",
+   "label": "Weatherford",
+   "url": "/weatherford-tx",
+   "phone": "8177749493",
+   "street": "220 Adams Dr, STE 280 - 1052",
+   "locality": "Weatherford",
+   "postal": "76086",
+   "lat": 32.7593,
+   "lng": -97.7973,
+   "gbp": [
+    "https://maps.app.goo.gl/VohNBHJa1xjutCTW7"
+   ],
+   "twin": null
+  },
+  {
+   "slug": "westlake-tx",
+   "label": "Westlake",
+   "url": "/westlake-tx",
+   "phone": "",
+   "street": "",
+   "locality": "Westlake",
+   "postal": "",
+   "lat": 32.9912,
+   "lng": -97.1953,
+   "gbp": [],
+   "twin": null
+  }
+ ]
+}

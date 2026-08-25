@@ -1,0 +1,544 @@
+{
+ "redirects": [
+  {
+   "from": "/contact",
+   "to": "/schedule-now",
+   "type": "consolidation"
+  },
+  {
+   "from": "/fort-worth-tx-2",
+   "to": "/fort-worth-tx",
+   "type": "duplicate-consolidation"
+  },
+  {
+   "from": "/grapevine-tx-2",
+   "to": "/grapevine-tx",
+   "type": "duplicate-consolidation"
+  },
+  {
+   "from": "/landing-page-ads",
+   "to": "/products",
+   "type": "duplicate-consolidation"
+  },
+  {
+   "from": "/local-attractions/amon-carter-museum-of-american-art",
+   "to": "/fort-worth-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/annual-texas-rose-festival",
+   "to": "/tyler-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/att-stadium",
+   "to": "/arlington-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/bayless-selby-house-museum",
+   "to": "/denton-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/baylor-university",
+   "to": "/waco-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/birds-fort-trail-park",
+   "to": "/irving-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/caldwell-zoo",
+   "to": "/tyler-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/cameron-park-zoo",
+   "to": "/waco-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/campion-trails",
+   "to": "/irving-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/cedar-creek-lake",
+   "to": "/gun-barrel-city-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/clear-creek-natural-heritage-center",
+   "to": "/denton-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/colleyville-heritage-high-school",
+   "to": "/colleyville-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/colleyville-nature-center",
+   "to": "/colleyville-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/courthouse-on-the-square-museum",
+   "to": "/denton-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/covenant-christian-academy",
+   "to": "/colleyville-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/dans-silverleaf",
+   "to": "/denton-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/denton-square",
+   "to": "/denton-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/downtown-tyler-tx",
+   "to": "/tyler-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/el-fenix",
+   "to": "/irving-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/foodies-farmers-market",
+   "to": "/arlington-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/fort-worth-botanic-garden",
+   "to": "/fort-worth-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/fort-worth-stockyards-national-historic-district",
+   "to": "/fort-worth-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/goodman-legrand-house-museum",
+   "to": "/tyler-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/grapevine-botanical-garden",
+   "to": "/grapevine-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/grapevine-mills",
+   "to": "/grapevine-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/grapevine-vintage-railroad",
+   "to": "/grapevine-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/gun-barrel-city-park",
+   "to": "/gun-barrel-city-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/gun-barrel-city-park-pavilion-and-amphitheater",
+   "to": "/gun-barrel-city-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/heritage-farmstead-museum",
+   "to": "/plano-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/historic-downtown-plano",
+   "to": "/plano-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/historic-waco-foundation",
+   "to": "/waco-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/interurban-railway-museum",
+   "to": "/plano-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/irving-arts-center",
+   "to": "/irving-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/lake-grapevine",
+   "to": "/grapevine-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/lake-waco",
+   "to": "/waco-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/magnolia-market-at-the-silos",
+   "to": "/waco-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/main-street",
+   "to": "/grapevine-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/modern-art-museum-of-fort-worth",
+   "to": "/fort-worth-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/mustangs-of-las-colinas",
+   "to": "/las-colinas-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/oak-point-park-and-nature-preserve",
+   "to": "/plano-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/six-flags-over-texas",
+   "to": "/arlington-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/texas-live",
+   "to": "/arlington-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/texas-ranger-hall-of-fame-and-museum",
+   "to": "/waco-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/the-shops-at-willow-bend",
+   "to": "/plano-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/timarron-country-club",
+   "to": "/southlake-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/trinity-river-trail",
+   "to": "/fort-worth-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/tyler-municipal-rose-garden",
+   "to": "/tyler-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/university-of-texas-at-arlington",
+   "to": "/arlington-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/waypoint-montessori-school",
+   "to": "/colleyville-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/local-attractions/whatz-up-family-fun-park",
+   "to": "/gun-barrel-city-tx",
+   "type": "attraction"
+  },
+  {
+   "from": "/our-community/colleyville-tx-premier-destination",
+   "to": "/colleyville-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/denton-tx-hidden-gem",
+   "to": "/denton-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/discovering-grapevine-tx",
+   "to": "/grapevine-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/experience-arlington-tx",
+   "to": "/arlington-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/experience-irving-tx",
+   "to": "/irving-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/exploring-fort-worth-tx",
+   "to": "/fort-worth-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/exploring-tyler-tx",
+   "to": "/tyler-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/unveiling-plano-tx",
+   "to": "/plano-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/unveiling-waco-tx",
+   "to": "/waco-tx",
+   "type": "community"
+  },
+  {
+   "from": "/our-community/visit-gun-barrel-city-tx",
+   "to": "/gun-barrel-city-tx",
+   "type": "community"
+  },
+  {
+   "from": "/window-treatments",
+   "to": "/areas-we-serve",
+   "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/colleyville-tx",
+   "to": "/colleyville-tx",
+   "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/denton-tx",
+   "to": "/denton-tx",
+   "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/grapevine-tx-3",
+   "to": "/grapevine-tx",
+   "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/hurst-tx",
+   "to": "/hurst-tx",
+   "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/las-colinas-tx",
+   "to": "/las-colinas-tx",
+   "type": "orphan"
+  }
+ ],
+ "keep": [
+  "/",
+  "/3-reasons-you-should-never-pair-blinds-and-curtains-together",
+  "/5-signs-its-time-to-replace-your-blinds",
+  "/5-smart-apps-for-motorized-window-treatments",
+  "/5-truths-about-window-treatments-every-designer-knows",
+  "/6-best-window-blinds-for-living-room-in-2025",
+  "/about",
+  "/affordable-alternatives-to-blinds",
+  "/are-honeycomb-shades-and-cellular-shades-the-same",
+  "/are-zebra-blinds-good-for-the-bedroom",
+  "/areas-we-serve",
+  "/argyle-tx",
+  "/arlington-tx",
+  "/austin-tx",
+  "/bedford-tx",
+  "/best-curtain-for-apartments-blinds",
+  "/best-window-treatments-for-airbnbs-and-short-term-rentals",
+  "/best-window-treatments-for-texas-rentals-affordable-shades",
+  "/blog",
+  "/boyd-tx",
+  "/can-you-see-through-zebra-blinds-at-night",
+  "/can-you-use-roller-shades-on-a-sliding-glass-door",
+  "/celina-tx",
+  "/cellular-shades-denton-tx-before-after-energy-efficiency-case-study",
+  "/choosing-the-right-window-treatments-for-office-spaces",
+  "/colleyville-tx",
+  "/coppell-tx",
+  "/corsicana-tx",
+  "/create-a-tropical-paradise-with-summer-window-treatments",
+  "/creating-a-backyard-movie-theater-with-outdoor-patio-shades",
+  "/custom-window-treatment-solutions-for-every-texan-home",
+  "/dallas-tx",
+  "/denton-tx",
+  "/design-checklist",
+  "/do-all-window-treatments-provide-the-same-level-of-insulation",
+  "/do-exterior-window-treatments-help-with-storms",
+  "/do-window-treatments-affect-home-appraisals-and-property-value",
+  "/embrace-sustainability-with-eco-friendly-window-treatments",
+  "/energy-efficient-window-shades-for-texas-homes",
+  "/euless-tx",
+  "/flower-mound-tx",
+  "/fort-worth-tx",
+  "/frisco-tx",
+  "/gainesville-tx",
+  "/georgetown-tx",
+  "/granbury-tx",
+  "/grand-prairie-tx",
+  "/grapevine-tx",
+  "/gun-barrel-city-tx",
+  "/haltom-city-tx",
+  "/highland-park-tx",
+  "/honeycomb-shades-a-stylish-and-energy-efficient-window-treatment",
+  "/honeycomb-vs-panel-track-shades-which-is-best-for-your-home",
+  "/how-color-and-interior-design-have-shaped-window-coverings",
+  "/how-do-cordless-window-blinds-work",
+  "/how-do-i-choose-energy-efficient-window-treatments-for-older-homes",
+  "/how-do-i-maintain-and-clean-my-window-treatments",
+  "/how-often-should-you-clean-your-blinds",
+  "/how-sun-exposure-should-guide-your-window-treatment-choices",
+  "/how-to-choose-the-best-window-treatments-for-homes-with-minimalist-interiors",
+  "/how-to-choose-window-treatments-for-homes-with-large-glass-doors",
+  "/how-to-choose-window-treatments-that-boost-your-homes-curb-appeal",
+  "/how-to-fix-window-shades-that-won-t-roll-up-or-down-properly",
+  "/how-to-match-your-window-treatments-to-different-home-decor-styles",
+  "/how-to-pick-window-treatments-that-work-for-both-formal-and-casual-spaces",
+  "/how-to-take-blinds-off-the-window",
+  "/how-window-treatments-can-help-you-sleep-better-at-night",
+  "/hurst-tx",
+  "/in-home-window-treatment-consultations-in-texas",
+  "/irving-tx",
+  "/is-it-love-is-blind-or-love-is-blinds",
+  "/journey",
+  "/justin-tx",
+  "/keller-tx",
+  "/kerens-tx",
+  "/las-colinas-tx",
+  "/layering-trends-in-texas-window-treatments",
+  "/lewisville-tx",
+  "/mangatrack-shades-in-texas-for-summer-homes",
+  "/mckinney-tx",
+  "/meet-the-team",
+  "/motorized-blinds-vs-smart-curtains-which-offers-better-roi-in-2025",
+  "/motorized-roller-shades-smart-home-integration-solutions",
+  "/north-richland-hills-tx",
+  "/northlake-tx",
+  "/outdoor-comfort-with-exterior-patio-shades-for-texas-summers",
+  "/outdoor-patio-shades-in-waco-for-comfort-privacy",
+  "/paradise-tx",
+  "/plano-tx",
+  "/plantation-shutters-vs-blinds-which-is-the-better-investment-for-your-dfw-home",
+  "/products",
+  "/products/blinds",
+  "/products/dual-shades",
+  "/products/energy-efficient-custom-window-shades",
+  "/products/exterior-patio-shades",
+  "/products/faux-wood-blinds",
+  "/products/honeycomb-shades",
+  "/products/motorized-window-treatment-automations",
+  "/products/panel-track-shades",
+  "/products/plantation-shutters",
+  "/products/real-wood-blinds",
+  "/products/remote-window-treatments",
+  "/products/roller-shades",
+  "/products/shades",
+  "/products/shutters",
+  "/products/window-treatment-automations",
+  "/products/woven-wood-shades",
+  "/pros-and-cons-of-buying-zebra-blinds-is-it-worth-it",
+  "/residential-window-treatments-elevate-your-home-s-style",
+  "/richland-hills-tx",
+  "/roanoke-tx",
+  "/round-rock-tx",
+  "/schedule-now",
+  "/services",
+  "/services/blinds-installation",
+  "/services/blinds-solutions",
+  "/services/drapery-installation",
+  "/services/shades-installation",
+  "/services/shades-solutions",
+  "/services/shutter-solutions",
+  "/services/shutters-installation",
+  "/services/window-treatment-installation",
+  "/services/window-treatment-solutions",
+  "/sherman-tx",
+  "/smart-home-integration-with-window-treatments",
+  "/southlake-tx",
+  "/taylor-tx",
+  "/team/danny",
+  "/team/durrell",
+  "/team/dustin",
+  "/team/jake-wade",
+  "/team/jonathan-arosemena",
+  "/texas-window-treatment-energy-savings-playbook-2026",
+  "/the-beauty-and-benefits-of-real-wood-blinds",
+  "/the-best-curtains-for-angled-windows",
+  "/the-best-way-to-clean-wooden-blinds-fast-easy",
+  "/the-best-window-treatments-for-homes-with-open-floor-plans",
+  "/the-pros-and-cons-of-installing-vertical-blinds",
+  "/the-pros-and-cons-of-minimalist-window-treatments",
+  "/the-shift-to-cordless-window-treatments",
+  "/top-10-dog-proof-window-blinds-durable-and-pet-friendly",
+  "/top-window-coverings-recommended-by-interior-designers-in-2025",
+  "/top-window-treatment-trends-for-2026-homes-in-weatherford",
+  "/transform-your-home-with-stylish-plantation-shutters-the-ultimate-guide",
+  "/trophy-club-tx",
+  "/tyler-tx",
+  "/ultimate-guide-to-smart-window-treatment-automation-in-2026",
+  "/vinyl-vs-aluminum-blinds-which-window-covering-is-better",
+  "/vinyl-vs-tpc-blinds-which-window-covering-is-better",
+  "/vodyssey",
+  "/vodyssey/limited-lifetime-warranty",
+  "/vodyssey/order",
+  "/w-7th-avenue-corsicana-tx",
+  "/waco-tx",
+  "/waxahachie-tx",
+  "/weatherford-tx",
+  "/westlake-tx",
+  "/what-are-the-best-window-treatments-for-arched-windows-and-how-do-you-install-them",
+  "/what-are-the-best-window-treatments-for-bay-windows",
+  "/what-are-the-best-window-treatments-for-homes-in-sherman-tx",
+  "/what-are-the-most-low-maintenance-window-treatments-for-busy-homeowners",
+  "/what-are-the-quietest-window-treatments-for-peaceful-rooms",
+  "/what-are-venetian-blinds-is-it-worth-buying-them",
+  "/what-is-the-best-fabric-blinds-for-windows",
+  "/what-is-the-best-way-to-choose-window-treatments-for-small-windows",
+  "/what-is-the-best-window-treatment-for-a-dining-room",
+  "/what-is-the-best-window-treatment-for-awning-windows",
+  "/what-is-the-best-window-treatment-for-insulation",
+  "/what-is-the-difference-between-blackout-and-blackout-blinds",
+  "/what-to-know-before-buying-custom-window-treatments-online",
+  "/what-type-of-blinds-last-longer-with-low-maintenance",
+  "/what-type-of-blinds-should-you-use-in-a-bathroom",
+  "/what-types-of-roller-shades-are-best-in-sliding-doors",
+  "/whats-the-best-window-covering-for-texas-homes-with-lots-of-sunlight",
+  "/whats-the-best-window-treatment-for-noise-reduction",
+  "/when-were-window-blinds-invented",
+  "/why-motorized-window-treatments-are-perfect-for-dallas-luxury-homes",
+  "/why-plantation-shutters-are-the-top-choice-for-southlake-homes",
+  "/why-pvc-blinds-are-a-top-choice-for-outdoor-patios-windows",
+  "/why-you-need-professionally-installed-roller-shades-for-your-home",
+  "/window-blinds-vs-shades-which-one-is-better",
+  "/window-covering-you-shouldn-t-buy-if-you-have-kids-around",
+  "/window-shutters-vs-blinds-which-one-is-better-for-your-home",
+  "/window-treatments-balancing-natural-light-and-privacy",
+  "/window-treatments-for-protection-against-uv-rays",
+  "/window-treatments-that-fit-the-way-modern-homes-are-lived-in",
+  "/window-treatments-that-increase-resale-value-before-selling-your-home",
+  "/window-treatments-that-make-small-rooms-look-bigger"
+ ]
+}

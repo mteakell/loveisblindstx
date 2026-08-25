@@ -1,0 +1,431 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/contact"
+  to = "/schedule-now"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fort-worth-tx-2"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grapevine-tx-2"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/landing-page-ads"
+  to = "/products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/amon-carter-museum-of-american-art"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/annual-texas-rose-festival"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/att-stadium"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/bayless-selby-house-museum"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/baylor-university"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/birds-fort-trail-park"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/caldwell-zoo"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/cameron-park-zoo"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/campion-trails"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/cedar-creek-lake"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/clear-creek-natural-heritage-center"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/colleyville-heritage-high-school"
+  to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/colleyville-nature-center"
+  to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/courthouse-on-the-square-museum"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/covenant-christian-academy"
+  to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/dans-silverleaf"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/denton-square"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/downtown-tyler-tx"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/el-fenix"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/foodies-farmers-market"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/fort-worth-botanic-garden"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/fort-worth-stockyards-national-historic-district"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/goodman-legrand-house-museum"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/grapevine-botanical-garden"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/grapevine-mills"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/grapevine-vintage-railroad"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/gun-barrel-city-park"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/gun-barrel-city-park-pavilion-and-amphitheater"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/heritage-farmstead-museum"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/historic-downtown-plano"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/historic-waco-foundation"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/interurban-railway-museum"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/irving-arts-center"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/lake-grapevine"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/lake-waco"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/magnolia-market-at-the-silos"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/main-street"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/modern-art-museum-of-fort-worth"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/mustangs-of-las-colinas"
+  to = "/las-colinas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/oak-point-park-and-nature-preserve"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/six-flags-over-texas"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/texas-live"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/texas-ranger-hall-of-fame-and-museum"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/the-shops-at-willow-bend"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/timarron-country-club"
+  to = "/southlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/trinity-river-trail"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/tyler-municipal-rose-garden"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/university-of-texas-at-arlington"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/waypoint-montessori-school"
+  to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-attractions/whatz-up-family-fun-park"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/colleyville-tx-premier-destination"
+  to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/denton-tx-hidden-gem"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/discovering-grapevine-tx"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/experience-arlington-tx"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/experience-irving-tx"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/exploring-fort-worth-tx"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/exploring-tyler-tx"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/unveiling-plano-tx"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/unveiling-waco-tx"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-community/visit-gun-barrel-city-tx"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments"
+  to = "/areas-we-serve"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/colleyville-tx"
+  to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/denton-tx"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/grapevine-tx-3"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/hurst-tx"
+  to = "/hurst-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/las-colinas-tx"
+  to = "/las-colinas-tx"
+  status = 301
+  force = true

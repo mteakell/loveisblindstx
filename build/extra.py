@@ -1,0 +1,251 @@
+"""Pages with no Georgia equivalent: the service-area index, the design checklist
+and the team profiles."""
+import json, os, sys, html, collections
+sys.path.insert(0, os.path.dirname(__file__))
+import schema as S, territory as T
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(ROOT)
+D = json.load(open("data/tx.json")); BIZ, CITIES = D["business"], D["cities"]
+HEAD = open("build/partials/header.html").read()
+FOOT = open("build/partials/footer.html").read()
+HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
+e = lambda s: html.escape(s or "", quote=True)
+
+def shell(url, title, desc, nodes, body, img="/images/hero-shutters-desktop.jpg"):
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(title)}</title>
+<meta name="description" content="{e(desc)}">
+<link rel="canonical" href="{S.SITE}{url}">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#3A4D5C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{e(BIZ['name'])}">
+<meta property="og:title" content="{e(title)}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:url" content="{S.SITE}{url}">
+<meta property="og:image" content="{S.SITE}{img}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(title)}">
+<meta name="twitter:description" content="{e(desc)}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+{S.render(nodes)}
+</head>
+<body>
+{HEAD_INNER}
+<main>{body}</main>
+{FOOT}'''
+
+BASE = lambda: [S.organization(BIZ), S.website(BIZ), S.business(BIZ)]
+
+# ------------------------------------------------------------ /areas-we-serve
+def areas():
+    url = "/areas-we-serve"
+    title = "Texas Service Areas | Love Is Blinds"
+    desc = ("Every Texas city we serve for custom blinds, shades and shutters, across DFW, "
+            "North Texas, East Texas, Waco and the Austin metro.")
+    groups = collections.OrderedDict()
+    for c in sorted(CITIES, key=lambda x: x["label"]):
+        groups.setdefault(T.of(c["slug"])["name"], []).append(c)
+    secs, items = "", []
+    for name, cs in groups.items():
+        links = "".join(
+            f'<li><a href="{c["url"]}">{e(c["label"])}, TX</a>'
+            + (f' <span class="sml">{e(S.pretty(c["phone"]))}</span>' if c["phone"] else "")
+            + "</li>" for c in cs)
+        secs += (f'<section class="section"><div class="container">'
+                 f'<h2 class="title">{e(name)}</h2>'
+                 f'<p class="lead">{e(T.TERRITORIES[[k for k,v in T.TERRITORIES.items() if v["name"]==name][0]]["blurb"])}.</p>'
+                 f'<ul class="nap-list city-index">{links}</ul></div></section>')
+        items += [c for c in cs]
+    lst = {"@type": "ItemList", "@id": S.SITE + url + "#list",
+           "name": "Texas service areas", "numberOfItems": len(items),
+           "itemListElement": [{"@type": "ListItem", "position": i,
+                                "name": f'{c["label"]}, TX', "item": S.SITE + c["url"]}
+                               for i, c in enumerate(items, 1)]}
+    nodes = BASE() + [S.webpage(url, title, desc),
+                      S.breadcrumbs([("Home", "/"), ("Service Areas", url)]), lst]
+    body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+            f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
+            f'<span aria-current="page">Service Areas</span></nav>'
+            f'<h1 class="title">Where Love Is Blinds Works in Texas</h1>'
+            f'<p class="lead">Three local teams cover the state. Find your city below for the '
+            f'number that reaches the crew who will measure and install your windows.</p>'
+            f'</div></div></section>{secs}')
+    open("areas-we-serve.html", "w").write(shell(url, title, desc, nodes, body))
+    return len(items)
+
+# ------------------------------------------------------------------- /team/*
+def team():
+    made = []
+    for m in T.TEAM:
+        terr = T.TERRITORIES[m["territory"]] if m["territory"] else None
+        url = f"/team/{m['slug']}"
+        brand = terr["brand"] if terr else BIZ["name"]
+        title = f"{m['name']} | {brand}"
+        if len(title) > 62: title = f"{m['name']} | Love Is Blinds"
+        if terr:
+            cs = [c for c in CITIES if T.of(c["slug"])["key"] == terr["key"]]
+            desc = (f"{m['name']} runs {brand}, covering {terr['blurb']}. "
+                    f"Free in-home window treatment consultations.")
+            if len(desc) > 155:
+                desc = f"{m['name']} runs {brand}, covering {len(cs)} Texas cities. Free in-home consultations."
+            links = "".join(f'<li><a href="{c["url"]}">{e(c["label"])}, TX</a></li>'
+                            for c in sorted(cs, key=lambda x: x["label"]))
+            area = (f'<section class="section bg-cream-tint"><div class="container">'
+                    f'<h2 class="title">Cities {e(m["name"].split()[0])} covers</h2>'
+                    f'<ul class="nap-list city-index">{links}</ul></div></section>')
+            intro = (f'{e(m["name"])} runs {e(brand)}, one of the three Love Is Blinds '
+                     f'franchises working across the state. That territory covers '
+                     f'{e(terr["blurb"])}.')
+        else:
+            desc = f"{m['name']} of Love Is Blinds Texas. Free in-home window treatment consultations across Texas."
+            area, intro = "", (f'{e(m["name"])} works with Love Is Blinds across Texas.')
+        node = S.person(m["name"], "Owner" if terr else "Love Is Blinds Texas", url)
+        if terr:
+            node["worksFor"] = {"@type": "Organization", "name": brand,
+                                "parentOrganization": {"@id": S.ORGID}}
+        nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID), node,
+            S.breadcrumbs([("Home", "/"), ("Meet the Team", "/meet-the-team"), (m["name"], url)])]
+        body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+                f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
+                f'<a href="/meet-the-team">Meet the Team</a> <span>&rsaquo;</span>'
+                f'<span aria-current="page">{e(m["name"])}</span></nav>'
+                f'<h1 class="title">{e(m["name"])}</h1><p class="lead">{intro}</p>'
+                f'<div class="btnrow"><a class="btn" href="/contact">Book a consultation</a>'
+                f'<a class="btn ghost" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
+                f'</div></div></section>{area}')
+        os.makedirs("team", exist_ok=True)
+        open(f"team/{m['slug']}.html", "w").write(shell(url, title, desc, nodes, body))
+        made.append(m["slug"])
+    return made
+
+# ------------------------------------------------------------ /design-checklist
+CHECK = [
+ ("Room and window count", "List each room and how many openings it has. Bay and corner windows count as separate openings, and that is usually where a quote surprises people."),
+ ("Which way the windows face", "West and south facing glass takes the worst of the Texas afternoon. Those rooms often want a solar screen or a cellular shade rather than a plain blind."),
+ ("What the room is for", "Bedrooms and media rooms need blackout. Kitchens and baths need something that tolerates moisture. Living areas usually want filtered light rather than full block."),
+ ("Privacy after dark", "A shade that gives daytime privacy can go transparent once the lights come on inside. Decide which windows need to work at night."),
+ ("Existing trim and depth", "Shutters and inside-mount blinds need enough depth in the window frame. Measure the depth before you fall in love with a mount type."),
+ ("Cord safety", "If children or pets use the room, plan for cordless or motorized. It is a safety requirement in most new installs, not an upgrade."),
+ ("Motorization and power", "Decide per window whether you want battery, hardwired or solar charging, and whether you want app, remote or voice control."),
+ ("Budget range per room", "Bring a range rather than a single number. It lets us show you where spending more actually changes the result and where it does not."),
+]
+def checklist():
+    url, title = "/design-checklist", "Window Treatment Design Checklist | Love Is Blinds"
+    desc = ("Work through this checklist before your in-home consultation: rooms, window "
+            "orientation, privacy, trim depth, cord safety, motorization and budget.")
+    items = "".join(
+        f'<div class="a"><h3>{i}. {e(h)}</h3><p>{e(b)}</p></div>'
+        for i, (h, b) in enumerate(CHECK, 1))
+    lst = {"@type": "ItemList", "@id": S.SITE + url + "#list",
+           "name": "Window treatment design checklist", "numberOfItems": len(CHECK),
+           "itemListElement": [{"@type": "ListItem", "position": i, "name": h,
+                                "description": b} for i, (h, b) in enumerate(CHECK, 1)]}
+    nodes = BASE() + [S.webpage(url, title, desc),
+                      S.breadcrumbs([("Home", "/"), ("Design Checklist", url)]), lst,
+                      S.faq(url, [(h, b) for h, b in CHECK[:4]])]
+    body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+            f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
+            f'<span aria-current="page">Design Checklist</span></nav>'
+            f'<h1 class="title">Window Treatment Design Checklist</h1>'
+            f'<p class="lead">Eight things worth deciding before anyone measures your windows. '
+            f'Work through them and your consultation turns into a quote in one visit instead '
+            f'of two.</p></div></div></section>'
+            f'<section class="section"><div class="container"><div class="faq">{items}</div>'
+            f'<div class="btnrow"><a class="btn" href="/contact">Book your free consultation</a>'
+            f'<a class="btn ghost" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
+            f'</div></section>')
+    open("design-checklist.html", "w").write(shell(url, title, desc, nodes, body))
+
+if __name__ == "__main__":
+    print("areas-we-serve:", areas(), "cities")
+    print("team pages    :", ", ".join(team()))
+    checklist(); print("design-checklist: written")
+
+# ------------------------------------------------------------------- /blog
+def blog_index():
+    idx = json.load(open("data/blog-index.json"))
+    idx.sort(key=lambda p: (p.get("date") or ""), reverse=True)
+    url, title = "/blog", "Window Treatment Blog | Love Is Blinds Texas"
+    desc = ("Guides on choosing, measuring, cleaning and motorizing blinds, shades and "
+            "shutters for Texas homes.")
+    cards = "".join(
+        f'<a class="prod-card reveal" href="{p["url"]}">'
+        + (f'<div class="pic"><img src="{p["img"]}" alt="{e(p["title"])}" loading="lazy" '
+           f'decoding="async" width="600" height="400"></div>' if p.get("img") else "")
+        + f'<div class="pbody"><h3>{e(p["title"])}</h3>'
+          f'<p>{e((p.get("desc") or "")[:150])}</p>'
+          f'<span class="btn-link">Read <span class="arw">&rarr;</span></span></div></a>'
+        for p in idx)
+    blog = {"@type": "Blog", "@id": S.SITE + url + "#blog", "name": title,
+            "description": desc, "publisher": {"@id": S.ORGID}, "inLanguage": "en-US",
+            "blogPost": [{"@type": "BlogPosting", "@id": S.SITE + p["url"] + "#post",
+                          "headline": p["title"][:110], "url": S.SITE + p["url"],
+                          "datePublished": p.get("date") or "2024-01-01"} for p in idx]}
+    nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID),
+                      S.breadcrumbs([("Home", "/"), ("Blog", url)]), blog]
+    body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+            f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
+            f'<span aria-current="page">Blog</span></nav>'
+            f'<h1 class="title">Window Treatment Guides</h1>'
+            f'<p class="lead">{len(idx)} guides on choosing, measuring, cleaning and '
+            f'automating window treatments for Texas homes.</p></div></div></section>'
+            f'<section class="section"><div class="container">'
+            f'<div class="prod-grid">{cards}</div></div></section>')
+    open("blog/index.html", "w").write(shell(url, title, desc, nodes, body))
+    return len(idx)
+
+# ---------------------------------------------------------------- /vodyssey
+VOD = [
+ ("/vodyssey", "vodyssey.html", "Vodyssey Exclusive Access | Love Is Blinds",
+  "Vodyssey member access to custom blinds, shades and shutters. Choose your type, choose your colour, measure your windows and order.",
+  "Vodyssey Exclusive Access",
+  "Vodyssey members order custom window treatments through this four step process. Pick the treatment type, pick the colour, measure your openings and place the order."),
+ ("/journey", "journey.html", "Step 1: Choose Your Type | Vodyssey | Love Is Blinds",
+  "Step one of the Vodyssey ordering journey. Compare blinds, shades and shutters and choose the treatment type for each room.",
+  "Step 1: Choose Your Type",
+  "Compare blinds, shades and shutters, then choose a treatment type for each room before moving on to colour."),
+ ("/vodyssey/order", "vodyssey/order.html", "Step 4: Placing Your Order | Vodyssey",
+  "Step four of the Vodyssey ordering journey. Confirm your measurements, review your selections and place your order.",
+  "Step 4: Placing Your Order",
+  "Confirm your measurements, review each selection and place the order. We build to the measurements you approve."),
+ ("/vodyssey/limited-lifetime-warranty", "vodyssey/limited-lifetime-warranty.html",
+  "Limited Lifetime Warranty | Vodyssey | Love Is Blinds",
+  "The limited lifetime warranty covering Vodyssey window treatment orders through Love Is Blinds.",
+  "Limited Lifetime Warranty",
+  "What the limited lifetime warranty covers on Vodyssey orders, and how to make a claim."),
+]
+def vodyssey():
+    os.makedirs("vodyssey", exist_ok=True)
+    steps = [(u, t) for u, _, _, _, t, _ in VOD]
+    for url, path, title, desc, h1, lead in VOD:
+        nav = "".join(f'<li><a href="{u}">{e(t)}</a></li>' for u, t in steps if u != url)
+        nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID),
+                          S.breadcrumbs([("Home", "/"), ("Vodyssey", "/vodyssey")]
+                                        + ([(h1, url)] if url != "/vodyssey" else []))]
+        body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+                f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
+                f'<a href="/vodyssey">Vodyssey</a></nav>'
+                f'<h1 class="title">{e(h1)}</h1><p class="lead">{e(lead)}</p>'
+                f'<div class="btnrow"><a class="btn" href="/schedule-now">Book a consultation</a>'
+                f'<a class="btn ghost" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
+                f'</div></div></section>'
+                f'<section class="section"><div class="container"><h2 class="title">'
+                f'Other steps</h2><ul class="nap-list">{nav}</ul></div></section>')
+        s = shell(url, title, desc, nodes, body)
+        # partner funnel: keep it out of search so it never competes with /products
+        s = s.replace('<meta name="theme-color"',
+                      '<meta name="robots" content="noindex,follow">\n<meta name="theme-color"')
+        open(path, "w").write(s)
+    return len(VOD)

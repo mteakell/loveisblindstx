@@ -1,0 +1,393 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/contact",
+      "destination": "/schedule-now",
+      "permanent": true
+    },
+    {
+      "source": "/fort-worth-tx-2",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/grapevine-tx-2",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/landing-page-ads",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/amon-carter-museum-of-american-art",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/annual-texas-rose-festival",
+      "destination": "/tyler-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/att-stadium",
+      "destination": "/arlington-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/bayless-selby-house-museum",
+      "destination": "/denton-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/baylor-university",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/birds-fort-trail-park",
+      "destination": "/irving-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/caldwell-zoo",
+      "destination": "/tyler-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/cameron-park-zoo",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/campion-trails",
+      "destination": "/irving-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/cedar-creek-lake",
+      "destination": "/gun-barrel-city-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/clear-creek-natural-heritage-center",
+      "destination": "/denton-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/colleyville-heritage-high-school",
+      "destination": "/colleyville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/colleyville-nature-center",
+      "destination": "/colleyville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/courthouse-on-the-square-museum",
+      "destination": "/denton-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/covenant-christian-academy",
+      "destination": "/colleyville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/dans-silverleaf",
+      "destination": "/denton-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/denton-square",
+      "destination": "/denton-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/downtown-tyler-tx",
+      "destination": "/tyler-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/el-fenix",
+      "destination": "/irving-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/foodies-farmers-market",
+      "destination": "/arlington-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/fort-worth-botanic-garden",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/fort-worth-stockyards-national-historic-district",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/goodman-legrand-house-museum",
+      "destination": "/tyler-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/grapevine-botanical-garden",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/grapevine-mills",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/grapevine-vintage-railroad",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/gun-barrel-city-park",
+      "destination": "/gun-barrel-city-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/gun-barrel-city-park-pavilion-and-amphitheater",
+      "destination": "/gun-barrel-city-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/heritage-farmstead-museum",
+      "destination": "/plano-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/historic-downtown-plano",
+      "destination": "/plano-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/historic-waco-foundation",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/interurban-railway-museum",
+      "destination": "/plano-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/irving-arts-center",
+      "destination": "/irving-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/lake-grapevine",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/lake-waco",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/magnolia-market-at-the-silos",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/main-street",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/modern-art-museum-of-fort-worth",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/mustangs-of-las-colinas",
+      "destination": "/las-colinas-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/oak-point-park-and-nature-preserve",
+      "destination": "/plano-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/six-flags-over-texas",
+      "destination": "/arlington-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/texas-live",
+      "destination": "/arlington-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/texas-ranger-hall-of-fame-and-museum",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/the-shops-at-willow-bend",
+      "destination": "/plano-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/timarron-country-club",
+      "destination": "/southlake-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/trinity-river-trail",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/tyler-municipal-rose-garden",
+      "destination": "/tyler-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/university-of-texas-at-arlington",
+      "destination": "/arlington-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/waypoint-montessori-school",
+      "destination": "/colleyville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/local-attractions/whatz-up-family-fun-park",
+      "destination": "/gun-barrel-city-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/colleyville-tx-premier-destination",
+      "destination": "/colleyville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/denton-tx-hidden-gem",
+      "destination": "/denton-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/discovering-grapevine-tx",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/experience-arlington-tx",
+      "destination": "/arlington-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/experience-irving-tx",
+      "destination": "/irving-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/exploring-fort-worth-tx",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/exploring-tyler-tx",
+      "destination": "/tyler-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/unveiling-plano-tx",
+      "destination": "/plano-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/unveiling-waco-tx",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/our-community/visit-gun-barrel-city-tx",
+      "destination": "/gun-barrel-city-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments",
+      "destination": "/areas-we-serve",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/colleyville-tx",
+      "destination": "/colleyville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/denton-tx",
+      "destination": "/denton-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/grapevine-tx-3",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/hurst-tx",
+      "destination": "/hurst-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/las-colinas-tx",
+      "destination": "/las-colinas-tx",
+      "permanent": true
+    }
+  ]
+}
