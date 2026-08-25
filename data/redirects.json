@@ -326,9 +326,54 @@
    "type": "orphan"
   },
   {
+   "from": "/window-treatments/argyle-tx",
+   "to": "/argyle-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/arlington-tx",
+   "to": "/arlington-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/austin-tx",
+   "to": "/austin-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/bedford-tx",
+   "to": "/bedford-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/boyd-tx",
+   "to": "/boyd-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/celina-tx",
+   "to": "/celina-tx",
+   "type": "gbp-landing"
+  },
+  {
    "from": "/window-treatments/colleyville-tx",
    "to": "/colleyville-tx",
    "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/coppell-tx",
+   "to": "/coppell-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/corsicana-tx",
+   "to": "/corsicana-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/dallas-tx",
+   "to": "/dallas-tx",
+   "type": "gbp-landing"
   },
   {
    "from": "/window-treatments/denton-tx",
@@ -336,9 +381,79 @@
    "type": "orphan"
   },
   {
+   "from": "/window-treatments/euless-tx",
+   "to": "/euless-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/flower-mound-tx",
+   "to": "/flower-mound-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/fort-worth-tx",
+   "to": "/fort-worth-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/fort-worth-tx-2",
+   "to": "/fort-worth-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/frisco-tx",
+   "to": "/frisco-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/gainesville-tx",
+   "to": "/gainesville-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/georgetown-tx",
+   "to": "/georgetown-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/granbury-tx",
+   "to": "/granbury-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/grand-prairie-tx",
+   "to": "/grand-prairie-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/grapevine-tx",
+   "to": "/grapevine-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/grapevine-tx-2",
+   "to": "/grapevine-tx",
+   "type": "gbp-landing"
+  },
+  {
    "from": "/window-treatments/grapevine-tx-3",
    "to": "/grapevine-tx",
    "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/gun-barrel-city-tx",
+   "to": "/gun-barrel-city-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/haltom-city-tx",
+   "to": "/haltom-city-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/highland-park-tx",
+   "to": "/highland-park-tx",
+   "type": "gbp-landing"
   },
   {
    "from": "/window-treatments/hurst-tx",
@@ -346,9 +461,124 @@
    "type": "orphan"
   },
   {
+   "from": "/window-treatments/irving-tx",
+   "to": "/irving-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/justin-tx",
+   "to": "/justin-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/keller-tx",
+   "to": "/keller-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/kerens-tx",
+   "to": "/kerens-tx",
+   "type": "gbp-landing"
+  },
+  {
    "from": "/window-treatments/las-colinas-tx",
    "to": "/las-colinas-tx",
    "type": "orphan"
+  },
+  {
+   "from": "/window-treatments/lewisville-tx",
+   "to": "/lewisville-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/mckinney-tx",
+   "to": "/mckinney-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/north-richland-hills-tx",
+   "to": "/north-richland-hills-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/northlake-tx",
+   "to": "/northlake-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/paradise-tx",
+   "to": "/paradise-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/plano-tx",
+   "to": "/plano-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/richland-hills-tx",
+   "to": "/richland-hills-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/roanoke-tx",
+   "to": "/roanoke-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/round-rock-tx",
+   "to": "/round-rock-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/sherman-tx",
+   "to": "/sherman-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/southlake-tx",
+   "to": "/southlake-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/taylor-tx",
+   "to": "/taylor-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/trophy-club-tx",
+   "to": "/trophy-club-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/tyler-tx",
+   "to": "/tyler-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/w-7th-avenue-corsicana-tx",
+   "to": "/w-7th-avenue-corsicana-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/waco-tx",
+   "to": "/waco-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/waxahachie-tx",
+   "to": "/waxahachie-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/weatherford-tx",
+   "to": "/weatherford-tx",
+   "type": "gbp-landing"
+  },
+  {
+   "from": "/window-treatments/westlake-tx",
+   "to": "/westlake-tx",
+   "type": "gbp-landing"
   }
  ],
  "keep": [

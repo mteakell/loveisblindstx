@@ -24,12 +24,12 @@ TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
         '<path d="m20 6-11 11-5-5"/></svg></span>')
 
 PRODUCTS = [
+ ("Exterior Patio Shades","/products/exterior-patio-shades","Outdoor shades that stop the sun before it reaches the glass."),
  ("Plantation Shutters","/products/plantation-shutters","Louvered shutters built to the window opening."),
  ("Custom Blinds","/products/blinds","Real wood, faux wood and composite blinds."),
  ("Roller Shades","/products/roller-shades","Solar screen and blackout roller shades."),
  ("Honeycomb Shades","/products/honeycomb-shades","Cellular shades that cut heat transfer at the glass."),
  ("Motorization","/products/motorized-window-treatment-automations","App, remote and voice control."),
- ("Exterior Patio Shades","/products/exterior-patio-shades","Shade for porches, patios and outdoor rooms."),
 ]
 def e(s): return html.escape(s or "", quote=True)
 
@@ -56,36 +56,67 @@ def nearby(city, n=6):
              if T.of(o["slug"])["key"] == T.of(city["slug"])["key"] and o["slug"] != city["slug"]]
     return peers[:n]
 
+# ---- demand-driven titles -------------------------------------------------
+# Head term per city comes from Semrush volume, not a guess. Dallas wants
+# "blinds" (260/mo, $14.76 CPC), McKinney wants "window treatments" (110/mo at
+# $22.32), Grapevine and Keller want "plantation shutters". One template for
+# 48 cities leaves most of that on the table.
+KW = json.load(open(os.path.join(ROOT, "data/keywords.json")))
+CITY_KW = KW["city_head"]
+PATIO = KW["city_patio"]
+
+TERM_TITLE = {"blinds": "Custom Blinds", "window treatments": "Window Treatments",
+              "plantation shutters": "Plantation Shutters", "shutters": "Shutters",
+              "custom blinds": "Custom Blinds"}
+
+def head_of(c):
+    return CITY_KW.get(c["slug"], {}).get("term")
+
 def title_for(c):
+    """Lead with the term the city actually searches; keep brand; stay under 60."""
+    city = c["label"]
+    h = head_of(c)
+    cands = []
+    if h:
+        lead = TERM_TITLE.get(h, h.title())
+        cands += [f"{lead} in {city}, TX | Shutters & Shades | Love Is Blinds",
+                  f"{lead} in {city}, TX | Love Is Blinds",
+                  f"{lead} {city} TX | Love Is Blinds"]
+    cands += [f"Custom Blinds, Shades & Shutters in {city}, TX | Love Is Blinds",
+              f"Blinds, Shades & Shutters in {city}, TX | Love Is Blinds",
+              f"Blinds & Shutters in {city}, TX | Love Is Blinds",
+              f"Window Treatments in {city}, TX | Love Is Blinds",
+              f"Blinds & Shutters in {city}, TX"]
     if c.get("variant"):
-        return f"Custom Blinds & Shutters in {c['label']}, TX | {c['variant']}"
-    t = f"Custom Blinds, Shades & Shutters in {c['label']}, TX | Love Is Blinds"
-    if len(t) > 62:
-        t = f"Blinds, Shades & Shutters in {c['label']}, TX | Love Is Blinds"
-    if len(t) > 62:
-        t = f"Window Treatments in {c['label']}, TX | Love Is Blinds"
-    if len(t) > 62:
-        t = f"Blinds & Shutters in {c['label']}, TX | Love Is Blinds"
-    return t
+        cands = [f"Custom Blinds & Shutters in {city}, TX | {c['variant']}"] + cands
+    for t in cands:
+        if len(t) <= 60:
+            return t
+    return cands[-1][:60]
 
 def meta_for(c):
-    """Unique, under 155 chars, and it leads with the number that actually rings."""
+    """Under 155, leads with the head term, names patio shades where there is
+    real local demand for them, and ends on the number that actually rings."""
     ph = S.pretty(c["phone"]) or BIZ["phone"]
-    loc = c["label"]
+    city, h = c["label"], head_of(c)
+    lead = {"window treatments": "Custom window treatments",
+            "plantation shutters": "Plantation shutters, blinds and shades",
+            "shutters": "Shutters, blinds and shades"}.get(h, "Custom blinds, shades and shutters")
     if c.get("variant"):
-        return (f"Custom blinds, shades and shutters from our {c['variant']} location in {loc}, "
-                f"TX. Free in-home measure and installation. Call {ph}.")
-    if c.get("street"):
-        base = (f"Custom blinds, shades and plantation shutters in {loc}, TX. "
-                f"Free in-home consultation and professional installation. Call {ph}.")
-    else:
-        terr = T.of(c["slug"])["name"]
-        base = (f"Custom blinds, shades and plantation shutters for {loc}, TX homes. "
-                f"Free in-home measure across {terr}. Call {ph}.")
-    if len(base) > 155:
-        base = (f"Custom blinds, shades and shutters in {loc}, TX. "
-                f"Free in-home consultation and installation. Call {ph}.")
-    return base
+        return (f"{lead} from our {c['variant']} location in {city}, TX. "
+                f"Free in-home measure and installation. Call {ph}.")[:155]
+    tail = ("Patio shades too. " if c["slug"] in PATIO else "")
+    for body in [
+        f"{lead} for {city}, TX homes. {tail}Free in-home consultation and professional installation. Call {ph}.",
+        f"{lead} for {city}, TX homes. {tail}Free in-home consultation and install. Call {ph}.",
+        f"{lead} in {city}, TX. {tail}Free in-home consultation and installation. Call {ph}.",
+        f"{lead} in {city}, TX. Free in-home consultation and installation. Call {ph}.",
+        f"{lead} in {city}, TX. Free in-home measure and install. Call {ph}.",
+    ]:
+        if len(body) <= 155:
+            return body
+    return f"{lead} in {city}, TX. Free consultation. Call {ph}."[:155]
+
 
 def faqs_for(c):
     ph = S.pretty(c["phone"]) or BIZ["phone"]
@@ -101,6 +132,10 @@ def faqs_for(c):
       (f"Who measures and installs in {c['label']}?",
        f"{_leads(terr)} run {terr['brand']}, which covers {c['label']} along with "
        f"{terr['blurb']}. The person who measures your windows is the person who fits them."),
+      (f"Do you install exterior patio shades in {c['label']}?",
+       f"Yes. Exterior patio shades, outdoor roller shades and motorized patio screens are a large "
+       f"part of what we do in {c['label']}, because shading the outside of the glass is far more "
+       f"effective against Texas afternoon sun than an interior blind on the same opening."),
       ("What if a treatment does not fit correctly?",
        "We measured it, so we correct it. If an opening is wrong against the approved measurements, "
        "we remake it and reinstall at no cost to you."),
@@ -126,7 +161,8 @@ def head_block(c):
                   f"shutters for homes in {c['label']}, Texas.",
                   f"{S.SITE}{url}#business",
                   area={"@type":"City","name":c["locality"]},
-                  catalog=[p[0] for p in PRODUCTS]),
+                  catalog=[p[0] for p in PRODUCTS] + ["Outdoor Roller Shades",
+                           "Motorized Patio Shades", "Solar Screen Shades"]),
     ]
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -244,6 +280,32 @@ def body_block(c):
       <ul class="nap-list">{nearlinks}</ul>
       <p><a class="btn-link" href="/areas-we-serve">All Texas service areas
         <span class="arw">&rarr;</span></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split media-right">
+    <div class="body reveal">
+      <h2 class="title">Patio shades for {e(c['label'])} outdoor spaces</h2>
+      <p>A west-facing patio in {e(c['label'])} takes the worst of the afternoon. Exterior shades
+         stop that sun on the outside of the glass instead of after it has already come through,
+         which is what keeps the space usable and takes heat load off the rooms behind it.</p>
+      <ul class="feature-list">
+        <li>{TICK}Solar screen, motorized and retractable outdoor shades</li>
+        <li>{TICK}Openness factor chosen for the way your patio faces</li>
+        <li>{TICK}Porches, patios, pergolas and outdoor rooms</li>
+      </ul>
+      <div class="btnrow">
+        <a class="btn btn-primary btn-lg" href="/products/exterior-patio-shades">
+          See patio shades</a>
+        <a class="btn btn-secondary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
+      </div>
+    </div>
+    <div class="media reveal">
+      <img src="/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp"
+           width="900" height="600" loading="lazy"
+           alt="Exterior patio shades installed by Love Is Blinds in {e(c['label'])}, TX">
     </div>
   </div>
 </section>

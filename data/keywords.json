@@ -1,0 +1,52 @@
+{
+ "_source": "Semrush US database, pulled 2026-08-25. volume = monthly US searches, kd = keyword difficulty.",
+ "city_head": {
+  "dallas-tx":        {"term":"blinds",              "volume":260, "cpc":14.76, "kd":14, "alt":[["window treatments",260,12.73],["motorized shades",210,13.53],["roller shades",140,12.65],["plantation shutters",110,13.10]]},
+  "austin-tx":        {"term":"blinds",              "volume":260, "cpc":15.40, "kd":26, "alt":[["window treatments",260,15.62],["shutters",140,11.90],["plantation shutters",110,11.20]]},
+  "fort-worth-tx":    {"term":"blinds",              "volume":90,  "cpc":9.23,  "kd":19, "alt":[["custom blinds",110,9.74],["window treatments",70,10.97],["plantation shutters",70,10.21]]},
+  "mckinney-tx":      {"term":"window treatments",   "volume":110, "cpc":22.32, "kd":6,  "alt":[["blinds",90,11.84]]},
+  "plano-tx":         {"term":"blinds",              "volume":90,  "cpc":13.11, "kd":24, "alt":[["window treatments",40,38.95],["plantation shutters",40,11.39]]},
+  "frisco-tx":        {"term":"blinds",              "volume":70,  "cpc":18.75, "kd":7,  "alt":[["plantation shutters",20,12.59]]},
+  "denton-tx":        {"term":"window treatments",   "volume":70,  "cpc":0,     "kd":9,  "alt":[["blinds",30,8.94]]},
+  "arlington-tx":     {"term":"blinds",              "volume":50,  "cpc":11.69, "kd":12, "alt":[["plantation shutters",30,0]]},
+  "grapevine-tx":     {"term":"plantation shutters", "volume":50,  "cpc":0,     "kd":10, "alt":[]},
+  "keller-tx":        {"term":"plantation shutters", "volume":40,  "cpc":0,     "kd":0,  "alt":[]},
+  "southlake-tx":     {"term":"plantation shutters", "volume":40,  "cpc":0,     "kd":0,  "alt":[["blinds",20,0]]},
+  "bedford-tx":       {"term":"blinds",              "volume":40,  "cpc":0,     "kd":15, "alt":[]},
+  "waco-tx":          {"term":"blinds",              "volume":40,  "cpc":7.83,  "kd":11, "alt":[["window treatments",10,0]]},
+  "georgetown-tx":    {"term":"blinds",              "volume":40,  "cpc":14.55, "kd":24, "alt":[]},
+  "tyler-tx":         {"term":"blinds",              "volume":50,  "cpc":5.64,  "kd":3,  "alt":[["window treatments",30,0],["plantation shutters",10,0]]},
+  "highland-park-tx": {"term":"blinds",              "volume":20,  "cpc":0,     "kd":0,  "alt":[["window treatments",20,0]]},
+  "round-rock-tx":    {"term":"blinds",              "volume":20,  "cpc":9.30,  "kd":0,  "alt":[]},
+  "weatherford-tx":   {"term":"blinds",              "volume":20,  "cpc":0,     "kd":0,  "alt":[]},
+  "celina-tx":        {"term":"blinds",              "volume":10,  "cpc":0,     "kd":0,  "alt":[["window treatments",10,0]]},
+  "lewisville-tx":    {"term":"blinds",              "volume":10,  "cpc":0,     "kd":0,  "alt":[["window treatments",10,0]]},
+  "flower-mound-tx":  {"term":"blinds",              "volume":10,  "cpc":0,     "kd":0,  "alt":[]}
+ },
+ "city_patio": {
+  "dallas-tx":     {"volume":70, "cpc":7.84, "kd":7},
+  "austin-tx":     {"volume":70, "cpc":5.12, "kd":6},
+  "fort-worth-tx": {"volume":30, "cpc":0,    "kd":0}
+ },
+ "patio_cluster": [
+  ["patio shades",6600,23],["sun shades",9900,24],["outdoor shades",6600,29],
+  ["outdoor blinds",5400,29],["outdoor roller shades",5400,24],["patio sun shades",5400,22],
+  ["sun shade for patio",5400,29],["patio blinds",4400,37],["patio shade",4400,21],
+  ["exterior window shades",3600,20],["outdoor window shades",2900,17],["porch shades",2900,33],
+  ["outdoor patio shades",2900,42],["solar shades for patio",2400,26],["porch blinds",2400,34],
+  ["outdoor roller shades for patio",1900,18],["outdoor shades for patio",1900,35],
+  ["motorized patio shades",1600,20],["motorized patio screens",1300,18],
+  ["exterior patio shades",1000,31],["exterior solar shades",880,25],
+  ["retractable patio shades",390,13],["patio shades near me",320,38]
+ ],
+ "product_head": {
+  "exterior-patio-shades": {"term":"patio shades", "volume":6600, "kd":23},
+  "roller-shades":         {"term":"roller shades","volume":140,  "kd":4, "note":"roller shades dallas"},
+  "motorized-window-treatment-automations": {"term":"motorized shades","volume":210,"kd":4,"note":"motorized shades dallas 210, motorized blinds dallas 110 at $21.91 CPC"},
+  "plantation-shutters":   {"term":"plantation shutters","volume":110,"kd":31},
+  "shutters":              {"term":"shutters","volume":140,"kd":4,"note":"shutters austin"}
+ },
+ "near_me": [["blinds near me",22200,52],["window treatments near me",18100,34],
+             ["window blinds near me",9900,50],["shutters near me",3600,41],
+             ["patio shades near me",320,38]]
+}

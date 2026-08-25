@@ -401,8 +401,62 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/argyle-tx"
+  to = "/argyle-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/arlington-tx"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/austin-tx"
+  to = "/austin-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/bedford-tx"
+  to = "/bedford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/boyd-tx"
+  to = "/boyd-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/celina-tx"
+  to = "/celina-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/colleyville-tx"
   to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/coppell-tx"
+  to = "/coppell-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/corsicana-tx"
+  to = "/corsicana-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/dallas-tx"
+  to = "/dallas-tx"
   status = 301
   force = true
 
@@ -413,8 +467,92 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/euless-tx"
+  to = "/euless-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/flower-mound-tx"
+  to = "/flower-mound-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/fort-worth-tx"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/fort-worth-tx-2"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/frisco-tx"
+  to = "/frisco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/gainesville-tx"
+  to = "/gainesville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/georgetown-tx"
+  to = "/georgetown-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/granbury-tx"
+  to = "/granbury-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/grand-prairie-tx"
+  to = "/grand-prairie-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/grapevine-tx"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/grapevine-tx-2"
+  to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/grapevine-tx-3"
   to = "/grapevine-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/gun-barrel-city-tx"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/haltom-city-tx"
+  to = "/haltom-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/highland-park-tx"
+  to = "/highland-park-tx"
   status = 301
   force = true
 
@@ -425,7 +563,151 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/irving-tx"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/justin-tx"
+  to = "/justin-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/keller-tx"
+  to = "/keller-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/kerens-tx"
+  to = "/kerens-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/las-colinas-tx"
   to = "/las-colinas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/lewisville-tx"
+  to = "/lewisville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/mckinney-tx"
+  to = "/mckinney-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/north-richland-hills-tx"
+  to = "/north-richland-hills-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/northlake-tx"
+  to = "/northlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/paradise-tx"
+  to = "/paradise-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/plano-tx"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/richland-hills-tx"
+  to = "/richland-hills-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/roanoke-tx"
+  to = "/roanoke-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/round-rock-tx"
+  to = "/round-rock-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/sherman-tx"
+  to = "/sherman-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/southlake-tx"
+  to = "/southlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/taylor-tx"
+  to = "/taylor-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/trophy-club-tx"
+  to = "/trophy-club-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/tyler-tx"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/w-7th-avenue-corsicana-tx"
+  to = "/w-7th-avenue-corsicana-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/waco-tx"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/waxahachie-tx"
+  to = "/waxahachie-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/weatherford-tx"
+  to = "/weatherford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/westlake-tx"
+  to = "/westlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/*"
+  to = "/areas-we-serve"
   status = 301
   force = true

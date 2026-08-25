@@ -96,7 +96,7 @@ def extract(path):
     d = re.search(r'<meta name="description" content="(.*?)"', h, re.S)
     desc = _nodash(" ".join(html.unescape(d.group(1)).split())) if d else ""
     h1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
-    head = _nodash(" ".join(re.sub(r"<[^>]*>", "", h1.group(1)).split())) if h1 else title
+    head = _nodash(" ".join(html.unescape(re.sub(r"<[^>]*>", "", h1.group(1))).split())) if h1 else title
     pub = re.search(r'"datePublished"\s*:\s*"([^"]+)"', h)
     # slice on tag boundaries: h.find lands inside a class attribute, and slicing
     # there leaks the rest of the opening tag onto the page as visible text.
@@ -112,10 +112,45 @@ def extract(path):
                 published=(pub.group(1) if pub else None),
                 hero=hero.group(1) if hero else None)
 
+BRAND = " | Love Is Blinds"
+
+def _fit_title(raw, h1):
+    """Under 60, never cut mid-word, and prefer a complete phrase over a stub.
+
+    Duda's own titles sometimes drop the leading number the H1 carries
+    ("Reasons to Avoid..." vs "3 Reasons You Should Never..."), and several run
+    long. So try the whole candidates first and only trim as a last resort.
+    """
+    def clean(t):
+        return " ".join((t or "").replace("\u00a0", " ").split())
+
+    def trim(t, n):
+        if len(t) <= n:
+            return t
+        cut = t[:n].rsplit(" ", 1)[0].rstrip(" ,:;-|&")
+        return cut or t[:n]
+
+    def debrand(t):
+        for sep in ["|", "\u2013", "\u2014"]:
+            if sep in t:
+                head, tail = t.split(sep, 1)
+                if len(head.strip()) >= 20 and "love is blinds" in tail.lower():
+                    return head.strip()
+        return t
+
+    title, head = debrand(clean(raw)), debrand(clean(h1))
+    # whole candidates, shortest complete one that still carries the brand wins
+    for c in (title, head):
+        if c and len(c) + len(BRAND) <= 60:
+            return c + BRAND
+    fits = [x for x in (title, head) if x and len(x) <= 60]
+    if fits:
+        return max(fits, key=len)
+    longest_complete = max([title, head], key=len) if (title or head) else ""
+    return trim(longest_complete, 60)
+
 def build(url, p):
-    title = p["title"] if len(p["title"]) <= 62 else p["h1"][:62]
-    if "Love Is Blinds" not in title and len(title) <= 45:
-        title = f"{title} | Love Is Blinds"
+    title = _fit_title(p["title"], p["h1"])
     desc = p["desc"][:155]
     nodes = [S.organization(BIZ), S.website(BIZ), S.business(BIZ),
              S.webpage(url, title, desc, kind="WebPage", about=S.ORGID, primary=p["hero"]),

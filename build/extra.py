@@ -47,6 +47,8 @@ def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-004-
 {FOOT}'''
 
 HERO = "/images/lib/shutters-shutters-004-jpg.webp"
+TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
+        '<path d="m20 6-11 11-5-5"/></svg></span>')
 
 BASE = lambda: [S.organization(BIZ), S.website(BIZ), S.business(BIZ)]
 
@@ -251,3 +253,129 @@ def vodyssey():
                       '<meta name="robots" content="noindex,follow">\n<meta name="theme-color"')
         open(path, "w").write(s)
     return len(VOD)
+
+# ------------------------------------------------- /products/exterior-patio-shades
+# Biggest single content opportunity on the site: the patio cluster is roughly
+# 40k US searches/month at KD 13-42, against ~1.5k for every city term combined.
+# Terms targeted here come from data/keywords.json (Semrush, 2026-08-25).
+PATIO_FAQ = [
+ ("What are exterior patio shades?",
+  "Exterior patio shades are fabric or screen shades that mount outside the house, over a porch, "
+  "patio or outdoor room. They stop heat and glare before it reaches the glass or the seating area, "
+  "which is why they cool a space far more effectively than an interior blind on the same opening."),
+ ("What openness factor should I choose?",
+  "Openness is how much of the weave is open, and it decides the trade between view and shade. "
+  "A more open weave keeps the view and cuts glare. A tighter weave blocks more sun and gives more "
+  "daytime privacy but softens the view. West-facing patios that take the afternoon sun usually "
+  "want a tighter weave than a north-facing porch."),
+ ("Do patio shades work in Texas heat?",
+  "That is the case they are built for. Blocking sun on the outside of the glass stops the heat "
+  "before it enters, so the patio stays usable in the afternoon and the rooms behind it take less "
+  "heat load. It is the same reason exterior shading outperforms interior shading on a west wall."),
+ ("Can patio shades be motorized?",
+  "Yes. Motorized patio shades run on a remote, a wall switch, an app or a schedule, and can be "
+  "battery, hardwired or solar charged. On wide spans motorization is often the practical choice, "
+  "because a large exterior shade is heavy to crank by hand every day."),
+ ("Are retractable patio shades an option?",
+  "Yes. Retractable shades roll up out of the weather when you are not using the space, which "
+  "keeps the fabric out of wind and hail and extends its life. Fixed shades suit spots where you "
+  "want shade permanently in place."),
+ ("Will they hold up to wind and storms?",
+  "Exterior shades should be retracted in high wind, and that is the main reason we recommend "
+  "motorization on larger openings: it is quick to raise them when weather turns. We size the "
+  "hardware to the opening and go over the wind guidance at the consultation."),
+ ("How much do patio shades cost?",
+  "It depends on the width of the opening, the fabric, and whether you motorize. We measure the "
+  "opening and quote from those measurements at the free in-home consultation, so the number you "
+  "get is the number, not a range that moves later."),
+ ("Do you install patio shades across Texas?",
+  "Yes, across all three of our territories: DFW and the Mid-Cities, North Texas, and East and "
+  "Central Texas including Waco and the Austin metro. Find your city on our service areas page."),
+]
+PATIO_TYPES = [
+ ("Solar screen patio shades",
+  "Open-weave screen that cuts glare and heat while keeping the view out to the yard. The most "
+  "common choice for a covered patio that gets hard afternoon sun."),
+ ("Motorized patio shades",
+  "Remote, wall switch, app or scheduled control. The practical option on wide openings, and the "
+  "quickest way to get shades up when the wind turns."),
+ ("Retractable patio shades",
+  "Roll up out of the weather when the space is not in use, which keeps fabric out of wind and "
+  "hail and extends its working life."),
+ ("Outdoor roller shades",
+  "Straightforward roll-down shade for porches and outdoor rooms, in a range of openness factors "
+  "and fabric colours."),
+ ("Porch and outdoor room shades",
+  "Enclose a porch or screened room so it stays usable through the hottest part of the day without "
+  "losing the airflow."),
+ ("Exterior solar shades for windows",
+  "Mounted outside the glass rather than inside it, so heat is stopped before it enters and the "
+  "cooling load on that wall drops."),
+]
+def patio():
+    url = "/products/exterior-patio-shades"
+    title = "Patio Shades in Texas | Outdoor & Exterior Shades"
+    desc = ("Custom exterior patio shades, outdoor roller shades and motorized patio screens for "
+            "Texas porches and patios. Free in-home measure and installation.")
+    KW = json.load(open("data/keywords.json"))
+    types = "".join(
+        f'<div class="a"><h3>{e(n)}</h3><p>{e(b)}</p></div>' for n, b in PATIO_TYPES)
+    faqhtml = "".join(
+        f'<div class="a"><h3>{e(q)}</h3><p>{e(a)}</p></div>' for q, a in PATIO_FAQ)
+    patio_cities = ["dallas-tx", "austin-tx", "fort-worth-tx", "plano-tx", "frisco-tx",
+                    "southlake-tx", "waco-tx", "tyler-tx", "round-rock-tx", "georgetown-tx",
+                    "mckinney-tx", "grapevine-tx"]
+    BY = {c["slug"]: c for c in CITIES}
+    citylinks = "".join(f'<a class="chip" href="{BY[s]["url"]}">Patio shades in {e(BY[s]["label"])}</a>'
+                        for s in patio_cities if s in BY)
+    svc = S.service(url, "Exterior Patio Shade Installation",
+                    "Measurement, custom order and installation of exterior patio shades, outdoor "
+                    "roller shades and motorized patio screens across Texas.", S.BIZID,
+                    catalog=[n for n, _ in PATIO_TYPES])
+    nodes = BASE() + [S.webpage(url, title, desc, primary=HERO),
+                      S.breadcrumbs([("Home", "/"), ("Products", "/products"),
+                                     ("Exterior Patio Shades", url)]),
+                      svc, S.faq(url, PATIO_FAQ)]
+    body = (f'<section class="phero"><picture><img src="/images/lib/exterior-patio-shades-exterior-patio-shades-001-jpg.webp" '
+            f'alt="Exterior patio shades installed by Love Is Blinds Texas" fetchpriority="high"></picture>'
+            f'<div class="container"><div class="phero-copy">'
+            f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span>'
+            f'<a href="/products">Products</a><span class="sep">&rsaquo;</span>Exterior Patio Shades</nav>'
+            f'<h1 class="title">Exterior Patio Shades in Texas</h1>'
+            f'<p class="lead">Outdoor shades that stop the sun before it reaches the glass, so a '
+            f'west-facing patio is still usable at five in the afternoon. Measured, built to the '
+            f'opening and installed by our own team.</p>'
+            f'<div class="hero-actions btnrow">'
+            f'<a class="btn btn-primary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>'
+            f'<a class="btn btn-secondary btn-lg" href="/schedule-now">Book a free measure</a>'
+            f'</div></div></div></section>'
+            f'<section class="section"><div class="container split media-right">'
+            f'<div class="body reveal"><h2 class="title">Shade the outside of the glass, not the inside</h2>'
+            f'<p>An interior blind stops light after the sun has already come through the window and '
+            f'heated the room. An exterior shade stops it before it gets there. On a west wall in a '
+            f'Texas summer that difference is the whole point, and it is why a covered patio with '
+            f'exterior shades stays usable in the afternoon while an unshaded one does not.</p>'
+            f'<ul class="feature-list">'
+            f'<li>{TICK}Openness factor chosen for the direction the patio faces</li>'
+            f'<li>{TICK}Manual, motorized, or scheduled on an app</li>'
+            f'<li>{TICK}Retractable options that roll up out of wind and hail</li>'
+            f'<li>{TICK}Measured and installed by the team that quotes it</li></ul>'
+            f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">'
+            f'Book your free consultation</a></div></div>'
+            f'<div class="media reveal"><img src="/images/lib/exterior-patio-shades-exterior-patio-shades-003-jpg.webp" '
+            f'width="900" height="600" loading="lazy" alt="Motorized exterior patio shades on a covered patio"></div>'
+            f'</div></section>'
+            f'<section class="section bg-cream-tint"><div class="container center">'
+            f'<h2 class="title">Types of outdoor and patio shades we install</h2></div>'
+            f'<div class="container"><div class="faq">{types}</div></div></section>'
+            f'<section class="section"><div class="container center">'
+            f'<h2 class="title">Patio shade questions, answered</h2></div>'
+            f'<div class="container"><div class="faq">{faqhtml}</div></div></section>'
+            f'<section class="section bg-cream-tint"><div class="container">'
+            f'<h2 class="title">Patio shades across Texas</h2>'
+            f'<p class="lead">We install exterior patio shades in every city we serve. A few of the '
+            f'busiest:</p><div class="chips">{citylinks}</div>'
+            f'<p><a class="btn-link" href="/areas-we-serve">All Texas service areas '
+            f'<span class="arw">&rarr;</span></a></p></div></section>')
+    open("products/exterior-patio-shades.html", "w").write(shell(url, title, desc, nodes, body))
+    return len(PATIO_FAQ), len(PATIO_TYPES)

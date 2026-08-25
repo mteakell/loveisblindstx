@@ -87,22 +87,21 @@ def rewrite_head(s, url, title, desc, nodes):
 
 # ------------------------------------------------------------------ manifest
 PRODUCT_COPY = {
- "blinds": ("Custom Blinds in Texas", "Real wood, faux wood and composite blinds, measured to your openings and installed by our team.", ["Real Wood Blinds","Faux Wood Blinds","Composite Blinds","Vertical Blinds"]),
- "shades": ("Custom Shades in Texas", "Roller, solar, cellular, Roman and woven wood shades for Texas light and heat.", ["Roller Shades","Solar Shades","Cellular Shades","Roman Shades","Woven Wood Shades"]),
- "shutters": ("Custom Shutters in Texas", "Interior shutters built to the window opening, not trimmed to fit.", ["Plantation Shutters","Composite Shutters","Wood Shutters"]),
- "plantation-shutters": ("Plantation Shutters in Texas", "Louvered plantation shutters custom built to each opening and professionally installed.", ["Wood Plantation Shutters","Composite Plantation Shutters"]),
- "real-wood-blinds": ("Real Wood Blinds in Texas", "Hardwood blinds in stains and paints matched to your trim.", None),
- "faux-wood-blinds": ("Faux Wood Blinds in Texas", "Moisture-resistant faux wood blinds for baths, kitchens and sun-heavy rooms.", None),
- "roller-shades": ("Roller Shades in Texas", "Solar screen and blackout roller shades in a range of openness factors.", None),
- "honeycomb-shades": ("Honeycomb Shades in Texas", "Cellular shades that slow heat transfer at the glass.", None),
- "dual-shades": ("Dual Shades in Texas", "Day and night shades that switch between filtered light and privacy.", None),
- "panel-track-shades": ("Panel Track Shades in Texas", "Sliding panels for wide openings and patio doors.", None),
- "woven-wood-shades": ("Woven Wood Shades in Texas", "Bamboo, reed and grass weaves with optional liners.", None),
- "energy-efficient-custom-window-shades": ("Energy Efficient Window Shades in Texas", "Shades chosen for heat gain, glare and west-facing exposure.", None),
- "motorized-window-treatment-automations": ("Motorized Window Treatments in Texas", "Battery, hardwired and solar-charged motorization with app and voice control.", ["App Control","Voice Control","Scheduled Scenes","Hardwired Motors"]),
- "window-treatment-automations": ("Window Treatment Automation in Texas", "Scheduling, scenes and smart home integration for your window treatments.", None),
- "remote-window-treatments": ("Remote Control Window Treatments in Texas", "Handheld and wall-mounted remote control for shades and blinds.", None),
- "exterior-patio-shades": ("Exterior Patio Shades in Texas", "Exterior shades that cut heat and glare on porches, patios and outdoor rooms.", None),
+ "blinds": ("Custom Blinds in Texas | Wood & Faux Wood Blinds", "Real wood, faux wood and composite blinds, custom measured to your openings and installed by our own team across Texas.", ["Real Wood Blinds","Faux Wood Blinds","Composite Blinds","Vertical Blinds"]),
+ "shades": ("Custom Window Shades in Texas | Roller & Cellular", "Roller, solar, cellular, Roman and woven wood shades chosen for Texas light and heat. Free in-home measure and installation.", ["Roller Shades","Solar Shades","Cellular Shades","Roman Shades","Woven Wood Shades"]),
+ "shutters": ("Custom Shutters in Texas | Interior Window Shutters", "Interior shutters built to the window opening rather than trimmed to fit. Free in-home consultation and professional installation.", ["Plantation Shutters","Composite Shutters","Wood Shutters"]),
+ "plantation-shutters": ("Plantation Shutters in Texas | Custom Built & Installed", "Louvered plantation shutters custom built to each opening and professionally installed across DFW, North, East and Central Texas.", ["Wood Plantation Shutters","Composite Plantation Shutters"]),
+ "real-wood-blinds": ("Real Wood Blinds in Texas | Custom Hardwood Blinds", "Hardwood blinds in stains and paints matched to your trim, custom measured and installed. Free in-home consultation.", None),
+ "faux-wood-blinds": ("Faux Wood Blinds in Texas | Moisture Resistant", "Moisture-resistant faux wood blinds for baths, kitchens and sun-heavy rooms. Custom measured and professionally installed.", None),
+ "roller-shades": ("Roller Shades in Texas | Solar & Blackout Roller Shades", "Solar screen and blackout roller shades in a range of openness factors, measured to your openings and installed by our team.", None),
+ "honeycomb-shades": ("Honeycomb Shades in Texas | Cellular Shades", "Cellular honeycomb shades that slow heat transfer at the glass, which matters most on west-facing Texas windows.", None),
+ "dual-shades": ("Dual Shades in Texas | Day and Night Zebra Shades", "Day and night dual shades that switch between filtered light and privacy in one treatment. Free in-home measure.", None),
+ "panel-track-shades": ("Panel Track Shades in Texas | Sliding Door Shades", "Sliding panel track shades for wide openings and patio doors, custom measured and professionally installed.", None),
+ "woven-wood-shades": ("Woven Wood Shades in Texas | Bamboo & Natural Shades", "Bamboo, reed and grass weave shades with optional privacy liners, custom measured and installed across Texas.", None),
+ "energy-efficient-custom-window-shades": ("Energy Efficient Window Shades in Texas", "Shades chosen for heat gain, glare and west-facing exposure, so the rooms that cook in August stop cooking. Free measure.", None),
+ "motorized-window-treatment-automations": ("Motorized Shades & Blinds in Texas | Smart Control", "Motorized shades and blinds with app, remote and voice control. Battery, hardwired and solar charged options, professionally installed.", ["App Control","Voice Control","Scheduled Scenes","Hardwired Motors"]),
+ "window-treatment-automations": ("Window Treatment Automation in Texas | Smart Shades", "Scheduling, scenes and smart home integration for your blinds and shades, set up by the team that installs them.", None),
+ "remote-window-treatments": ("Remote Control Blinds & Shades in Texas", "Handheld and wall-mounted remote control for shades and blinds, fitted and programmed at installation.", None),
 }
 SERVICE_COPY = {
  "blinds-installation": ("Blinds Installation in Texas", "Professional blinds installation across Texas, measured and fitted by our own team."),
@@ -188,8 +187,8 @@ def run():
         open(f, "w").write(s); done.append((f, url))
 
     for f, url, title, desc in [
-        ("products/index.html", "/products", "Window Treatment Products | Love Is Blinds Texas",
-         "Blinds, shades, shutters, motorization and exterior patio shades, all custom measured for Texas homes."),
+        ("products/index.html", "/products", "Window Treatment Products in Texas | Love Is Blinds",
+         "Blinds, shades, plantation shutters, motorization and exterior patio shades, all custom measured and installed for Texas homes."),
         ("services/index.html", "/services", "Window Treatment Services | Love Is Blinds Texas",
          "Consultation, measuring, custom ordering and professional installation across Texas.")]:
         if not os.path.exists(f): continue

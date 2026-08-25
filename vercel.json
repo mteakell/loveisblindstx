@@ -365,8 +365,53 @@
       "permanent": true
     },
     {
+      "source": "/window-treatments/argyle-tx",
+      "destination": "/argyle-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/arlington-tx",
+      "destination": "/arlington-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/austin-tx",
+      "destination": "/austin-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/bedford-tx",
+      "destination": "/bedford-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/boyd-tx",
+      "destination": "/boyd-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/celina-tx",
+      "destination": "/celina-tx",
+      "permanent": true
+    },
+    {
       "source": "/window-treatments/colleyville-tx",
       "destination": "/colleyville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/coppell-tx",
+      "destination": "/coppell-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/corsicana-tx",
+      "destination": "/corsicana-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/dallas-tx",
+      "destination": "/dallas-tx",
       "permanent": true
     },
     {
@@ -375,8 +420,78 @@
       "permanent": true
     },
     {
+      "source": "/window-treatments/euless-tx",
+      "destination": "/euless-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/flower-mound-tx",
+      "destination": "/flower-mound-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/fort-worth-tx",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/fort-worth-tx-2",
+      "destination": "/fort-worth-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/frisco-tx",
+      "destination": "/frisco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/gainesville-tx",
+      "destination": "/gainesville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/georgetown-tx",
+      "destination": "/georgetown-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/granbury-tx",
+      "destination": "/granbury-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/grand-prairie-tx",
+      "destination": "/grand-prairie-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/grapevine-tx",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/grapevine-tx-2",
+      "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
       "source": "/window-treatments/grapevine-tx-3",
       "destination": "/grapevine-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/gun-barrel-city-tx",
+      "destination": "/gun-barrel-city-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/haltom-city-tx",
+      "destination": "/haltom-city-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/highland-park-tx",
+      "destination": "/highland-park-tx",
       "permanent": true
     },
     {
@@ -385,8 +500,128 @@
       "permanent": true
     },
     {
+      "source": "/window-treatments/irving-tx",
+      "destination": "/irving-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/justin-tx",
+      "destination": "/justin-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/keller-tx",
+      "destination": "/keller-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/kerens-tx",
+      "destination": "/kerens-tx",
+      "permanent": true
+    },
+    {
       "source": "/window-treatments/las-colinas-tx",
       "destination": "/las-colinas-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/lewisville-tx",
+      "destination": "/lewisville-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/mckinney-tx",
+      "destination": "/mckinney-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/north-richland-hills-tx",
+      "destination": "/north-richland-hills-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/northlake-tx",
+      "destination": "/northlake-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/paradise-tx",
+      "destination": "/paradise-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/plano-tx",
+      "destination": "/plano-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/richland-hills-tx",
+      "destination": "/richland-hills-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/roanoke-tx",
+      "destination": "/roanoke-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/round-rock-tx",
+      "destination": "/round-rock-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/sherman-tx",
+      "destination": "/sherman-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/southlake-tx",
+      "destination": "/southlake-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/taylor-tx",
+      "destination": "/taylor-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/trophy-club-tx",
+      "destination": "/trophy-club-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/tyler-tx",
+      "destination": "/tyler-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/w-7th-avenue-corsicana-tx",
+      "destination": "/w-7th-avenue-corsicana-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/waco-tx",
+      "destination": "/waco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/waxahachie-tx",
+      "destination": "/waxahachie-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/weatherford-tx",
+      "destination": "/weatherford-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/westlake-tx",
+      "destination": "/westlake-tx",
+      "permanent": true
+    },
+    {
+      "source": "/window-treatments/:rest*",
+      "destination": "/areas-we-serve",
       "permanent": true
     }
   ]
