@@ -1,0 +1,115 @@
+[
+ {
+  "url": "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA",
+  "primary": "argyle-tx",
+  "also": []
+ },
+ {
+  "url": "https://share.google/9NTHmU57t9Yt7JkX8",
+  "primary": "arlington-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/NRiuAwViE5z3iBU68",
+  "primary": "austin-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/GUv6jsXX9zWRWeeL8",
+  "primary": "bedford-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/qKuvDr9vZwoTaziD6",
+  "primary": "boyd-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/VJu2PJe1R96YnjtV7",
+  "primary": "celina-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8",
+  "primary": "colleyville-tx",
+  "also": [
+   "euless-tx"
+  ]
+ },
+ {
+  "url": "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6",
+  "primary": "coppell-tx",
+  "also": [
+   "flower-mound-tx"
+  ]
+ },
+ {
+  "url": "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA",
+  "primary": "corsicana-tx",
+  "also": [
+   "dallas-tx"
+  ]
+ },
+ {
+  "url": "https://maps.app.goo.gl/bFVM1ooF1JWAcLv28",
+  "primary": "denton-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/CmzHdYAhyw1TvRrbA",
+  "primary": "frisco-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/RBX7qXKRxaNnFAtz7",
+  "primary": "gainesville-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/GuzJhqCg2Muxt5cZ9",
+  "primary": "granbury-tx",
+  "also": []
+ },
+ {
+  "url": "https://share.google/eBFZbQb1i9jLHq5Da",
+  "primary": "grapevine-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/CGF2QrjndWHDU2yS6",
+  "primary": "hurst-tx",
+  "also": []
+ },
+ {
+  "url": "https://share.google/BArTi9ylN3WuOqArl",
+  "primary": "keller-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/3XYfyAsPh12hmyxVA",
+  "primary": "mckinney-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9",
+  "primary": "northlake-tx",
+  "also": [
+   "southlake-tx"
+  ]
+ },
+ {
+  "url": "https://maps.app.goo.gl/74ggCgog8Zhd5CQDA",
+  "primary": "plano-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/t4fA7xZQAhnr7E396",
+  "primary": "sherman-tx",
+  "also": []
+ },
+ {
+  "url": "https://maps.app.goo.gl/VohNBHJa1xjutCTW7",
+  "primary": "weatherford-tx",
+  "also": []
+ }
+]
