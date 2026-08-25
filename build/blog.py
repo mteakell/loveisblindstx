@@ -19,6 +19,8 @@ FOOT = open("build/partials/footer.html").read()
 HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
 IMG = json.load(open(f"{SCRATCH}/img-map.json"))
 REN = json.load(open(f"{SCRATCH}/renames.json"))
+CITY_SLUGS = {c["slug"] for c in json.load(open("data/tx.json"))["cities"]}
+POST_SLUGS = {u.strip().lstrip("/") for u in open("data/blog-urls.txt") if u.strip()}
 IMG = {k: ("/images/blog/" + REN.get(v.split("/")[-1], v.split("/")[-1])) for k, v in IMG.items()}
 e = lambda s: html.escape(s or "", quote=True)
 
@@ -26,8 +28,28 @@ def _nodash(s):
     """Standing rule across every client site: no em dashes in generated copy."""
     return s.replace("\u2014", ",").replace("&mdash;", ",").replace(" , ", ", ")
 
-DROP_ATTR = re.compile(r'\s+(?:class|id|style|data-[\w-]+|onclick|srcset|sizes)="[^"]*"')
+DROP_ATTR = re.compile(r'\s+(?:class|id|style|data-[\w-]+|on[a-z]+|srcset|sizes)="[^"]*"')
 KEEP = re.compile(r"^(p|h2|h3|h4|ul|ol|li|strong|em|b|i|br|a|img|blockquote|table|thead|tbody|tr|td|th)$")
+
+LEGACY = {"/products/roman-shades": "/products/shades",
+          "/services/custom-blinds-installation": "/services/blinds-installation",
+          "/contact": "/schedule-now", "/team": "/meet-the-team",
+          "/service-areas": "/areas-we-serve"}
+
+def relink(href):
+    """Old Duda internal links: legacy city pattern, legacy blog path, dead pages."""
+    b = href.rstrip("/") or "/"
+    if b in LEGACY: return LEGACY[b]
+    m = re.match(r"^/window-treatments/(.+)$", b)
+    if m:
+        slug = m.group(1)
+        if slug in CITY_SLUGS: return "/" + slug
+        trimmed = re.sub(r"-\d+$", "", slug)
+        return "/" + trimmed if trimmed in CITY_SLUGS else "/areas-we-serve"
+    if b == "/window-treatments": return "/areas-we-serve"
+    m = re.match(r"^/blog/(.+)$", b)
+    if m: return "/" + m.group(1) if m.group(1) in POST_SLUGS else "/blog"
+    return href
 
 def clean(seg):
     seg = re.sub(r"<(script|style|noscript|iframe|form|svg)[^>]*>.*?</\1>", "", seg, flags=re.S)
@@ -42,13 +64,28 @@ def clean(seg):
         attrs = DROP_ATTR.sub("", attrs)
         if tag == "a":
             attrs = re.sub(r'href="https?://(?:www\.)?loveisblindstx\.com', 'href="', attrs)
+            attrs = re.sub(r'href="(/[^"#?]*)"',
+                           lambda h: f'href="{relink(h.group(1))}"', attrs)
         if tag == "img":
+            attrs = attrs.rstrip().rstrip("/")
             attrs += ' loading="lazy" decoding="async"'
+            if "alt=" not in attrs:
+                src = re.search(r'src="([^"]*)"', attrs)
+                base = os.path.basename(src.group(1)) if src else ""
+                base = re.sub(r"^[0-9a-f]{8}-", "", os.path.splitext(base)[0])
+                base = re.sub(r"-\d+w$", "", base).replace("-", " ").replace("+", " ").strip()
+                attrs += f' alt="{base[:110] or "Window treatment by Love Is Blinds"}"'
         return f"<{tag}{attrs}>"
     seg = re.sub(r"<(/?)([A-Za-z0-9]+)((?:\s[^>]*)?)/?>", keeptag, seg)
     seg = seg.replace("—", ",").replace("&mdash;", ",")
     seg = re.sub(r'<img[^>]*src=""[^>]*>', "", seg)
-    seg = re.sub(r"<p>\s*(?:&nbsp;|\s)*</p>", "", seg)
+    # Duda leaves paragraphs holding only invisible characters (BOM, zero-width,
+    # non-breaking space). They render as large blank gaps between real paragraphs.
+    seg = re.sub(r"(?:&nbsp;|&#160;|&#65279;|[\u00a0\u200b\u200c\ufeff])", " ",
+                 seg) if False else seg
+    seg = re.sub(r"<p>(?:\s|&nbsp;|&#160;|&#65279;|<br\s*/?>|[\u00a0\u200b\ufeff])*</p>",
+                 "", seg)
+    seg = re.sub(r"(?:<br\s*/?>\s*){3,}", "<br><br>", seg)
     seg = re.sub(r"\n{3,}", "\n\n", seg)
     return re.sub(r"[ \t]{2,}", " ", seg).strip()
 
@@ -61,7 +98,14 @@ def extract(path):
     h1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
     head = _nodash(" ".join(re.sub(r"<[^>]*>", "", h1.group(1)).split())) if h1 else title
     pub = re.search(r'"datePublished"\s*:\s*"([^"]+)"', h)
-    i = h.find("blog-post-row"); j = h.find("postArticle", i if i > 0 else 0)
+    # slice on tag boundaries: h.find lands inside a class attribute, and slicing
+    # there leaks the rest of the opening tag onto the page as visible text.
+    i = h.find("blog-post-row")
+    if i > 0:
+        i = h.find(">", i) + 1                       # past the end of that opening tag
+    j = h.find("postArticle", i if i > 0 else 0)
+    if j > 0:
+        j = h.rfind("<", 0, j)                       # back to the start of its opening tag
     body = clean(h[i:j]) if i > 0 and j > i else ""
     hero = re.search(r'<img[^>]+src="(/images/blog/[^"]+)"', body)
     return dict(title=title, desc=desc, h1=head, body=body,
@@ -119,8 +163,8 @@ def build(url, p):
 {p["body"]}
     </div>
     <div class="btnrow">
-      <a class="btn" href="/schedule-now">Book a free consultation</a>
-      <a class="btn ghost" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>
+      <a class="btn btn-primary btn-lg" href="/schedule-now">Book a free consultation</a>
+      <a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>
     </div>
   </div>
 </article>

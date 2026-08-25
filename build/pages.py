@@ -10,6 +10,19 @@ BY = {c["slug"]: c for c in CITIES}
 HEAD = open(os.path.join(ROOT, "build/partials/header.html")).read()
 FOOT = open(os.path.join(ROOT, "build/partials/footer.html")).read()
 
+HEROES = [
+ "blinds-blinds-001-jpg.webp","shutters-shutters-004-jpg.webp","roller-shades-roller-shades-001-jpg.webp",
+ "honeycomb-shades-honeycomb-shades-001-jpg.webp","roman-shades-roman-shades-001-jpg.webp",
+ "blinds-blinds-005-jpg.webp","shutters-shutters-006-jpg.webp","roller-shades-roller-shades-004-jpg.webp",
+ "smart-drapes-smart-drapes-002-jpg.webp","shutters-shutters-008-jpg.webp",
+ "honeycomb-shades-honeycomb-shades-008-jpg.webp","roman-shades-roman-shades-005-jpg.webp",
+]
+def hero_for(c):
+    return "/images/lib/" + HEROES[sum(ord(x) for x in c["slug"]) % len(HEROES)]
+
+TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
+        '<path d="m20 6-11 11-5-5"/></svg></span>')
+
 PRODUCTS = [
  ("Plantation Shutters","/products/plantation-shutters","Louvered shutters built to the window opening."),
  ("Custom Blinds","/products/blinds","Real wood, faux wood and composite blinds."),
@@ -102,7 +115,7 @@ def faqs_for(c):
 # ---------------------------------------------------------------- rendering
 def head_block(c):
     url, t, m = c["url"], title_for(c), meta_for(c)
-    img = "/images/hero-shutters-desktop.jpg"
+    img = hero_for(c)
     nodes = [
         S.organization(BIZ), S.website(BIZ), S.business(BIZ), S.business(BIZ, c),
         S.webpage(url, t, m, about=f"{S.SITE}{url}#business", primary=img),
@@ -148,6 +161,8 @@ def head_block(c):
 </head>'''
 
 def body_block(c):
+    hero = hero_for(c)
+    hero2 = "/images/lib/" + HEROES[(sum(ord(x) for x in c["slug"]) + 5) % len(HEROES)]
     ph   = S.pretty(c["phone"]) or BIZ["phone"]
     tel  = S.tel(c["phone"] or BIZ["tel"])
     terr = T.of(c["slug"])
@@ -168,19 +183,18 @@ def body_block(c):
     return f'''<body>
 {HEAD.split('<body',1)[1].split('>',1)[1]}
 <main>
-<section class="phero has-form">
+<section class="phero">
+  <picture><img src="{hero}" alt="Custom window treatments in {e(c['label'])}, TX by Love Is Blinds" fetchpriority="high"></picture>
   <div class="container">
     <div class="phero-copy">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>
-        <a href="/areas-we-serve">Service Areas</a> <span>&rsaquo;</span>
-        <span aria-current="page">{e(c['label'])}, TX</span></nav>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/areas-we-serve">Service Areas</a><span class="sep">&rsaquo;</span>{e(c['label'])}, TX</nav>
       <h1 class="title">Custom Blinds, Shades and Shutters in {e(c['label'])}, Texas{' (' + e(c['variant']) + ')' if c.get('variant') else ''}</h1>
       <p class="lead">We measure your windows, build the treatments to those measurements and
         install them ourselves. Free in-home consultation in {e(c['label'])}, no charge for the
         visit and no obligation to order.</p>
       <div class="hero-actions btnrow">
-        <a class="btn" href="tel:{tel}">Call {e(ph)}</a>
-        <a class="btn ghost" href="/contact">Book a consultation</a>
+        <a class="btn btn-primary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
+        <a class="btn btn-secondary btn-lg" href="/schedule-now">Book a consultation</a>
       </div>
     </div>
   </div>
@@ -194,16 +208,16 @@ def body_block(c):
          to fit, which is what causes the light gaps and the crooked bottom rails you see on
          stock blinds.</p>
       <ul class="feature-list">
-        <li class="tick">Free in-home consultation with samples you can hold against your own light</li>
-        <li class="tick">Measured, ordered and installed by the same local team</li>
-        <li class="tick">{e(c['label'])} is covered by {e(terr['brand'])}, run by {e(_leads(terr))}</li>
-        <li class="tick">Remade at no cost if a treatment does not match the approved measurements</li>
+        <li>{TICK}Free in-home consultation with samples you can hold against your own light</li>
+        <li>{TICK}Measured, ordered and installed by the same local team</li>
+        <li>{TICK}{e(c['label'])} is covered by {e(terr['brand'])}, run by {e(_leads(terr))}</li>
+        <li>{TICK}Remade at no cost if a treatment does not match the approved measurements</li>
       </ul>
-      <div class="btnrow"><a class="btn" href="/contact">Book your free consultation</a></div>
+      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book your free consultation</a></div>
     </div>
     <div class="media reveal">
-      <img src="/images/hero-shutters-desktop.jpg" width="900" height="600" loading="lazy"
-           alt="Plantation shutters installed by Love Is Blinds">
+      <img src="{hero2}" width="900" height="600" loading="lazy"
+           alt="Custom window treatments installed by Love Is Blinds">
     </div>
   </div>
 </section>
@@ -223,7 +237,7 @@ def body_block(c):
         <li class="contact-line"><a href="mailto:{BIZ['email']}">{BIZ['email']}</a></li>
         {gbp}
       </ul>
-      <div class="btnrow"><a class="btn" href="/contact">Request a quote</a></div>
+      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Request a quote</a></div>
     </div>
     <div class="body reveal">
       <h2 class="title">Nearby areas we serve</h2>

@@ -12,7 +12,7 @@ FOOT = open("build/partials/footer.html").read()
 HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
 e = lambda s: html.escape(s or "", quote=True)
 
-def shell(url, title, desc, nodes, body, img="/images/hero-shutters-desktop.jpg"):
+def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-004-jpg.webp"):
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +46,8 @@ def shell(url, title, desc, nodes, body, img="/images/hero-shutters-desktop.jpg"
 <main>{body}</main>
 {FOOT}'''
 
+HERO = "/images/lib/shutters-shutters-004-jpg.webp"
+
 BASE = lambda: [S.organization(BIZ), S.website(BIZ), S.business(BIZ)]
 
 # ------------------------------------------------------------ /areas-we-serve
@@ -75,7 +77,7 @@ def areas():
                                for i, c in enumerate(items, 1)]}
     nodes = BASE() + [S.webpage(url, title, desc),
                       S.breadcrumbs([("Home", "/"), ("Service Areas", url)]), lst]
-    body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+    body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Service Areas</span></nav>'
             f'<h1 class="title">Where Love Is Blinds Works in Texas</h1>'
@@ -117,13 +119,13 @@ def team():
                                 "parentOrganization": {"@id": S.ORGID}}
         nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID), node,
             S.breadcrumbs([("Home", "/"), ("Meet the Team", "/meet-the-team"), (m["name"], url)])]
-        body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+        body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
                 f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
                 f'<a href="/meet-the-team">Meet the Team</a> <span>&rsaquo;</span>'
                 f'<span aria-current="page">{e(m["name"])}</span></nav>'
                 f'<h1 class="title">{e(m["name"])}</h1><p class="lead">{intro}</p>'
-                f'<div class="btnrow"><a class="btn" href="/contact">Book a consultation</a>'
-                f'<a class="btn ghost" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
+                f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book a consultation</a>'
+                f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
                 f'</div></div></section>{area}')
         os.makedirs("team", exist_ok=True)
         open(f"team/{m['slug']}.html", "w").write(shell(url, title, desc, nodes, body))
@@ -155,7 +157,7 @@ def checklist():
     nodes = BASE() + [S.webpage(url, title, desc),
                       S.breadcrumbs([("Home", "/"), ("Design Checklist", url)]), lst,
                       S.faq(url, [(h, b) for h, b in CHECK[:4]])]
-    body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+    body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Design Checklist</span></nav>'
             f'<h1 class="title">Window Treatment Design Checklist</h1>'
@@ -163,8 +165,8 @@ def checklist():
             f'Work through them and your consultation turns into a quote in one visit instead '
             f'of two.</p></div></div></section>'
             f'<section class="section"><div class="container"><div class="faq">{items}</div>'
-            f'<div class="btnrow"><a class="btn" href="/contact">Book your free consultation</a>'
-            f'<a class="btn ghost" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
+            f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book your free consultation</a>'
+            f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
             f'</div></section>')
     open("design-checklist.html", "w").write(shell(url, title, desc, nodes, body))
 
@@ -195,7 +197,7 @@ def blog_index():
                           "datePublished": p.get("date") or "2024-01-01"} for p in idx]}
     nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID),
                       S.breadcrumbs([("Home", "/"), ("Blog", url)]), blog]
-    body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+    body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Blog</span></nav>'
             f'<h1 class="title">Window Treatment Guides</h1>'
@@ -234,12 +236,12 @@ def vodyssey():
         nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID),
                           S.breadcrumbs([("Home", "/"), ("Vodyssey", "/vodyssey")]
                                         + ([(h1, url)] if url != "/vodyssey" else []))]
-        body = (f'<section class="phero"><div class="container"><div class="phero-copy">'
+        body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
                 f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
                 f'<a href="/vodyssey">Vodyssey</a></nav>'
                 f'<h1 class="title">{e(h1)}</h1><p class="lead">{e(lead)}</p>'
-                f'<div class="btnrow"><a class="btn" href="/schedule-now">Book a consultation</a>'
-                f'<a class="btn ghost" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
+                f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book a consultation</a>'
+                f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
                 f'</div></div></section>'
                 f'<section class="section"><div class="container"><h2 class="title">'
                 f'Other steps</h2><ul class="nap-list">{nav}</ul></div></section>')
