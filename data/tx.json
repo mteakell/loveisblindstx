@@ -41,12 +41,13 @@
    "street": "",
    "locality": "Arlington",
    "postal": "",
-   "lat": null,
-   "lng": null,
+   "lat": 32.7020051,
+   "lng": -97.1355256,
    "gbp": [
     "https://share.google/9NTHmU57t9Yt7JkX8"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "austin-tx",
@@ -102,13 +103,14 @@
    "street": "",
    "locality": "Celina",
    "postal": "",
-   "lat": null,
-   "lng": null,
+   "lat": 33.3183189,
+   "lng": -96.787906,
    "gbp": [
     "https://maps.app.goo.gl/VJu2PJe1R96YnjtV7",
     "https://maps.app.goo.gl/znAPLi5nqnmFfdH17"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "colleyville-tx",
@@ -153,7 +155,8 @@
    "gbp": [
     "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
    ],
-   "twin": "w-7th-avenue-corsicana-tx"
+   "twin": "w-7th-avenue-corsicana-tx",
+   "geo_source": "legacy-site"
   },
   {
    "slug": "w-7th-avenue-corsicana-tx",
@@ -167,7 +170,8 @@
    "lng": -96.4689,
    "gbp": [],
    "twin": "corsicana-tx",
-   "variant": "W 7th Ave"
+   "variant": "W 7th Ave",
+   "geo_source": "legacy-site"
   },
   {
    "slug": "dallas-tx",
@@ -192,13 +196,14 @@
    "street": "",
    "locality": "Denton",
    "postal": "",
-   "lat": null,
-   "lng": null,
+   "lat": 33.1995837,
+   "lng": -97.1226044,
    "gbp": [
     "https://maps.app.goo.gl/bFVM1ooF1JWAcLv28",
     "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "euless-tx",
@@ -241,7 +246,8 @@
    "lat": 32.7555,
    "lng": -97.3308,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "frisco-tx",
@@ -271,7 +277,8 @@
    "gbp": [
     "https://maps.app.goo.gl/RBX7qXKRxaNnFAtz7"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "georgetown-tx",
@@ -281,10 +288,11 @@
    "street": "601 Quail Valley Dr, STE 331",
    "locality": "Georgetown",
    "postal": "78626",
-   "lat": 30.6333,
-   "lng": -97.6781,
+   "lat": 30.6218711,
+   "lng": -97.670933,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "granbury-tx",
@@ -294,12 +302,13 @@
    "street": "301 W Hwy 377, Suite 112, #1006",
    "locality": "Granbury",
    "postal": "76048",
-   "lat": 32.4419,
-   "lng": -97.7942,
+   "lat": 32.4340464,
+   "lng": -97.7886021,
    "gbp": [
     "https://maps.app.goo.gl/GuzJhqCg2Muxt5cZ9"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "grand-prairie-tx",
@@ -312,7 +321,8 @@
    "lat": 32.746,
    "lng": -96.9978,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "grapevine-tx",
@@ -322,12 +332,13 @@
    "street": "1701 W Northwest Highway, Suite 132",
    "locality": "Grapevine",
    "postal": "76051",
-   "lat": 32.9343,
-   "lng": -97.0781,
+   "lat": 32.9359814,
+   "lng": -97.0733194,
    "gbp": [
     "https://share.google/eBFZbQb1i9jLHq5Da"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "gun-barrel-city-tx",
@@ -337,10 +348,11 @@
    "street": "1805 West Main St., Suite 16",
    "locality": "Gun Barrel City",
    "postal": "75156",
-   "lat": 32.3346,
-   "lng": -96.1186,
+   "lat": 32.3305675,
+   "lng": -96.1455318,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "haltom-city-tx",
@@ -353,7 +365,8 @@
    "lat": 32.7996,
    "lng": -97.2692,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "highland-park-tx",
@@ -366,7 +379,8 @@
    "lat": 32.8334,
    "lng": -96.792,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "hurst-tx",
@@ -381,7 +395,8 @@
    "gbp": [
     "https://maps.app.goo.gl/CGF2QrjndWHDU2yS6"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "irving-tx",
@@ -394,7 +409,8 @@
    "lat": 32.814,
    "lng": -96.9489,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "justin-tx",
@@ -407,7 +423,8 @@
    "lat": 33.0849,
    "lng": -97.2961,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "keller-tx",
@@ -417,12 +434,13 @@
    "street": "",
    "locality": "Keller",
    "postal": "",
-   "lat": 32.9347,
-   "lng": -97.2517,
+   "lat": 32.9354354,
+   "lng": -97.221221,
    "gbp": [
     "https://share.google/BArTi9ylN3WuOqArl"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "kerens-tx",
@@ -432,10 +450,11 @@
    "street": "",
    "locality": "Kerens",
    "postal": "",
-   "lat": 32.1307,
-   "lng": -96.2275,
+   "lat": 32.0832445,
+   "lng": -96.36887,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "las-colinas-tx",
@@ -448,7 +467,8 @@
    "lat": 32.8577,
    "lng": -96.9427,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "lewisville-tx",
@@ -461,7 +481,8 @@
    "lat": 33.0462,
    "lng": -96.9942,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "mckinney-tx",
@@ -476,7 +497,8 @@
    "gbp": [
     "https://maps.app.goo.gl/3XYfyAsPh12hmyxVA"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "north-richland-hills-tx",
@@ -486,10 +508,11 @@
    "street": "",
    "locality": "North Richland Hills",
    "postal": "",
-   "lat": 32.8343,
-   "lng": -97.2289,
+   "lat": 32.979648,
+   "lng": -97.195643,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "northlake-tx",
@@ -504,7 +527,8 @@
    "gbp": [
     "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "paradise-tx",
@@ -517,7 +541,8 @@
    "lat": 33.1537,
    "lng": -97.6839,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "plano-tx",
@@ -527,12 +552,13 @@
    "street": "1400 Preston RD Suite 477",
    "locality": "Plano",
    "postal": "75093",
-   "lat": 33.0198,
-   "lng": -96.6989,
+   "lat": 33.0184414,
+   "lng": -96.7940346,
    "gbp": [
     "https://maps.app.goo.gl/74ggCgog8Zhd5CQDA"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "richland-hills-tx",
@@ -545,7 +571,8 @@
    "lat": 32.816,
    "lng": -97.2281,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "roanoke-tx",
@@ -558,7 +585,8 @@
    "lat": 33.004,
    "lng": -97.2256,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "round-rock-tx",
@@ -568,10 +596,11 @@
    "street": "1 Chisholm Trail Rd, Suite 450, #4587",
    "locality": "Round Rock",
    "postal": "78681",
-   "lat": 30.5083,
-   "lng": -97.6789,
+   "lat": 30.5141105,
+   "lng": -97.6890244,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "sherman-tx",
@@ -581,12 +610,13 @@
    "street": "",
    "locality": "Sherman",
    "postal": "",
-   "lat": 33.6357,
-   "lng": -96.6089,
+   "lat": 33.6567406,
+   "lng": -96.6002968,
    "gbp": [
     "https://maps.app.goo.gl/t4fA7xZQAhnr7E396"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "southlake-tx",
@@ -601,7 +631,8 @@
    "gbp": [
     "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "taylor-tx",
@@ -614,7 +645,8 @@
    "lat": 30.5705,
    "lng": -97.4092,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "trophy-club-tx",
@@ -627,7 +659,8 @@
    "lat": 33.0001,
    "lng": -97.1836,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "tyler-tx",
@@ -640,7 +673,8 @@
    "lat": 32.3513,
    "lng": -95.3011,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   },
   {
    "slug": "waco-tx",
@@ -650,10 +684,11 @@
    "street": "7215 Bosque Blvd Suite 237",
    "locality": "Waco",
    "postal": "76710",
-   "lat": 31.5493,
-   "lng": -97.1467,
+   "lat": 31.5242461,
+   "lng": -97.2112885,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "waxahachie-tx",
@@ -663,10 +698,11 @@
    "street": "300 S Interstate 35 East Service Rd, Suite #102",
    "locality": "Waxahachie",
    "postal": "75165",
-   "lat": 32.3866,
-   "lng": -96.8483,
+   "lat": 32.4108578,
+   "lng": -96.8711631,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "weatherford-tx",
@@ -676,12 +712,13 @@
    "street": "220 Adams Dr, STE 280 - 1052",
    "locality": "Weatherford",
    "postal": "76086",
-   "lat": 32.7593,
-   "lng": -97.7973,
+   "lat": 32.7314932,
+   "lng": -97.78841,
    "gbp": [
     "https://maps.app.goo.gl/VohNBHJa1xjutCTW7"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "westlake-tx",
@@ -694,7 +731,8 @@
    "lat": 32.9912,
    "lng": -97.1953,
    "gbp": [],
-   "twin": null
+   "twin": null,
+   "geo_source": "legacy-site"
   }
  ]
 }
