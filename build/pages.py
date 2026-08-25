@@ -10,6 +10,12 @@ BY = {c["slug"]: c for c in CITIES}
 HEAD = open(os.path.join(ROOT, "build/partials/header.html")).read()
 FOOT = open(os.path.join(ROOT, "build/partials/footer.html")).read()
 
+REVIEWS = json.load(open(os.path.join(ROOT, "data/reviews.json")))
+BY_CITY = {}
+for _r in REVIEWS:
+    if _r.get("slug"):
+        BY_CITY.setdefault(_r["slug"], []).append(_r)
+
 HEROES = [
  "blinds-blinds-001-jpg.webp","shutters-shutters-004-jpg.webp","roller-shades-roller-shades-001-jpg.webp",
  "honeycomb-shades-honeycomb-shades-001-jpg.webp","roman-shades-roman-shades-001-jpg.webp",
@@ -203,6 +209,24 @@ def body_block(c):
     tel  = S.tel(c["phone"] or BIZ["tel"])
     terr = T.of(c["slug"])
     near = nearby(c)
+    revs = BY_CITY.get(c["slug"], [])
+    if revs:
+        cards = "".join(
+          '<div class="review reveal"><div class="stars">'
+          + "&#9733;" * int(r.get("rating", 5)) + "</div>"
+          + f'<p>"{e(r["quote"])}"</p><div class="who">{e(r["name"])}</div>'
+          + f'<div class="where">{e(c["label"])}, TX</div></div>' for r in revs)
+        gbp_cta = (f'<p><a class="btn-link" href="{e(c["gbp"][0])}" rel="noopener">'
+                   f'Read every {e(c["label"])} review on Google '
+                   f'<span class="arw">&rarr;</span></a></p>' if c.get("gbp") else "")
+        reviews_block = (
+          f'<section class="section"><div class="container center">'
+          f'<h2 class="title">What {e(c["label"])} homeowners say</h2>'
+          f'<p class="lead">Reviews left on our Google profile by customers in and around '
+          f'{e(c["label"])}.</p></div><div class="container">'
+          f'<div class="reviews">{cards}</div>{gbp_cta}</div></section>')
+    else:
+        reviews_block = ""
     prods = "".join(
       f'<a class="prod-card reveal" href="{u}"><div class="pbody"><h3>{e(n)}</h3>'
       f'<p>{e(d)}</p><span class="btn-link">See {e(n.lower())} <span class="arw">&rarr;</span></span>'
@@ -310,6 +334,7 @@ def body_block(c):
   </div>
 </section>
 
+{reviews_block}
 <section class="section bg-cream-tint">
   <div class="container center"><h2 class="title">{e(c['label'])} questions, answered</h2></div>
   <div class="container"><div class="faq">{faqhtml}</div></div>
