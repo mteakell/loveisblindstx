@@ -737,3 +737,10 @@ body.search-open{overflow:hidden}
 .post-body img{max-width:100%;height:auto;border-radius:10px;margin:1.5rem 0;display:block}
 .post-body table{width:100%;border-collapse:collapse;margin:1.5rem 0;display:block;overflow-x:auto}
 .post-body th,.post-body td{border:1px solid var(--line,#e4e6e9);padding:.6rem .75rem;text-align:left}
+
+/* ---- team cards: portrait headshots, faces kept in frame ---- */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.team-grid .prod-card .pic img{height:300px;object-fit:cover;object-position:50% 18%}
+.team-grid .prod-card .pbody{padding-top:18px}
+.team-grid .kicker{margin:.35rem 0 .6rem}
+@media (max-width:640px){.team-grid .prod-card .pic img{height:260px}}

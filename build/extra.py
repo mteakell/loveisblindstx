@@ -1,6 +1,6 @@
 """Pages with no Georgia equivalent: the service-area index, the design checklist
 and the team profiles."""
-import json, os, sys, html, collections
+import json, os, re, sys, html, collections
 sys.path.insert(0, os.path.dirname(__file__))
 import schema as S, territory as T
 
@@ -90,6 +90,8 @@ def areas():
     return len(items)
 
 # ------------------------------------------------------------------- /team/*
+BIOS = json.load(open("data/team-bios.json"))
+
 def team():
     made = []
     for m in T.TEAM:
@@ -115,6 +117,7 @@ def team():
         else:
             desc = f"{m['name']} of Love Is Blinds Texas. Free in-home window treatment consultations across Texas."
             area, intro = "", (f'{e(m["name"])} works with Love Is Blinds across Texas.')
+        bio = "".join(f'<p>{e(p)}</p>' for p in BIOS.get(m["slug"], []))
         node = S.person(m["name"], "Owner" if terr else "Love Is Blinds Texas", url,
                         image=m.get("photo"))
         if terr:
@@ -131,7 +134,7 @@ def team():
                 f'<a href="/meet-the-team">Meet the Team</a><span class="sep">&rsaquo;</span>'
                 f'{e(m["name"])}</nav>'
                 f'<h1 class="title">{e(m["name"])}</h1>'
-                f'<p class="kicker">{e(brand)}</p><p class="lead">{intro}</p>'
+                f'<p class="kicker">{e(brand)}</p><p class="lead">{intro}</p>{bio}'
                 f'<div class="btnrow">'
                 f'<a class="btn btn-primary btn-lg" href="/schedule-now">Book a consultation</a>'
                 f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>'
@@ -157,7 +160,8 @@ def checklist():
     desc = ("Work through this checklist before your in-home consultation: rooms, window "
             "orientation, privacy, trim depth, cord safety, motorization and budget.")
     items = "".join(
-        f'<div class="a"><h3>{i}. {e(h)}</h3><p>{e(b)}</p></div>'
+        f'<div class="prod-card reveal"><div class="pbody">'
+        f'<p class="kicker">Step {i}</p><h3>{e(h)}</h3><p>{e(b)}</p></div></div>'
         for i, (h, b) in enumerate(CHECK, 1))
     lst = {"@type": "ItemList", "@id": S.SITE + url + "#list",
            "name": "Window treatment design checklist", "numberOfItems": len(CHECK),
@@ -173,15 +177,46 @@ def checklist():
             f'<p class="lead">Eight things worth deciding before anyone measures your windows. '
             f'Work through them and your consultation turns into a quote in one visit instead '
             f'of two.</p></div></div></section>'
-            f'<section class="section"><div class="container"><div class="faq">{items}</div>'
+            f'<section class="section"><div class="container"><div class="prod-grid">{items}</div>'
             f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book your free consultation</a>'
             f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
             f'</div></section>')
     open("design-checklist.html", "w").write(shell(url, title, desc, nodes, body))
 
+
+# ------------------------------------------------- meet-the-team owner cards
+def team_cards():
+    """Owner cards on /meet-the-team. Portrait headshots need their own grid:
+    the stock .prod-card image box is 212px landscape, which crops heads off."""
+    cards = ""
+    for m in T.TEAM:
+        terr = T.TERRITORIES[m["territory"]] if m["territory"] else None
+        sub = terr["brand"] if terr else "Love Is Blinds Texas"
+        blurb = (f"Covers {terr['blurb']}." if terr
+                 else "Works with Love Is Blinds across Texas.")
+        pic = (f'<div class="pic"><img src="{m["photo"]}" alt="{e(m["name"])}, {e(sub)}" '
+               f'loading="lazy" width="600" height="667"></div>' if m.get("photo") else "")
+        cards += (f'<a class="prod-card reveal" href="/team/{m["slug"]}">{pic}<div class="pbody">'
+                  f'<h3>{e(m["name"])}</h3><p class="kicker">{e(sub)}</p><p>{e(blurb)}</p>'
+                  f'<span class="btn-link">Read more <span class="arw">&rarr;</span></span>'
+                  f'</div></a>')
+    block = (f'<section class="section bg-cream-tint"><div class="container center">'
+             f'<h2 class="title">Meet Your Local Owner Operators</h2>'
+             f'<p class="lead">Three franchises cover Texas. The person who quotes your windows '
+             f'is the person who installs them.</p></div><div class="container">'
+             f'<div class="team-grid">{cards}</div></div></section>\n')
+    s = open("meet-the-team.html").read()
+    s = re.sub(r'<section class="section bg-cream-tint"><div class="container center">'
+               r'<h2 class="title">(?:The three Texas teams|Meet Your Local Owner Operators)'
+               r'.*?</section>\s*', lambda m: "", s, flags=re.S)
+    i = s.find("<footer")
+    open("meet-the-team.html", "w").write(s[:i] + block + s[i:])
+    return len(T.TEAM)
+
 if __name__ == "__main__":
     print("areas-we-serve:", areas(), "cities")
     print("team pages    :", ", ".join(team()))
+    print("owner cards   :", team_cards())
     checklist(); print("design-checklist: written")
 
 # ------------------------------------------------------------------- /blog
@@ -326,9 +361,11 @@ def patio():
             "Texas porches and patios. Free in-home measure and installation.")
     KW = json.load(open("data/keywords.json"))
     types = "".join(
-        f'<div class="a"><h3>{e(n)}</h3><p>{e(b)}</p></div>' for n, b in PATIO_TYPES)
+        f'<div class="prod-card reveal"><div class="pbody">'
+        f'<h3>{e(n)}</h3><p>{e(b)}</p></div></div>' for n, b in PATIO_TYPES)
     faqhtml = "".join(
-        f'<div class="a"><h3>{e(q)}</h3><p>{e(a)}</p></div>' for q, a in PATIO_FAQ)
+        f'<details><summary>{e(q)}</summary><div class="a">{e(a)}</div></details>'
+        for q, a in PATIO_FAQ)
     patio_cities = ["dallas-tx", "austin-tx", "fort-worth-tx", "plano-tx", "frisco-tx",
                     "southlake-tx", "waco-tx", "tyler-tx", "round-rock-tx", "georgetown-tx",
                     "mckinney-tx", "grapevine-tx"]
@@ -374,7 +411,7 @@ def patio():
             f'</div></section>'
             f'<section class="section bg-cream-tint"><div class="container center">'
             f'<h2 class="title">Types of outdoor and patio shades we install</h2></div>'
-            f'<div class="container"><div class="faq">{types}</div></div></section>'
+            f'<div class="container"><div class="prod-grid">{types}</div></div></section>'
             f'<section class="section"><div class="container center">'
             f'<h2 class="title">Patio shade questions, answered</h2></div>'
             f'<div class="container"><div class="faq">{faqhtml}</div></div></section>'

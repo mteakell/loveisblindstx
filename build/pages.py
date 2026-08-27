@@ -234,7 +234,8 @@ def body_block(c):
     nearlinks = " ".join(
       f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
     faqhtml = "".join(
-      f'<div class="a"><h3>{e(q)}</h3><p>{e(a)}</p></div>' for q,a in faqs_for(c))
+      f'<details><summary>{e(q)}</summary><div class="a">{e(a)}</div></details>'
+      for q, a in faqs_for(c))
     addr = (f'<li class="contact-line">{e(c["street"])}, {e(c["locality"])}, TX {e(c.get("postal",""))}</li>'
             if c.get("street") else
             f'<li class="contact-line">Serving {e(c["label"])} and the surrounding area</li>')
