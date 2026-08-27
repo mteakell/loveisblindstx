@@ -122,11 +122,11 @@ def team():
                                 "parentOrganization": {"@id": S.ORGID}}
         nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID), node,
             S.breadcrumbs([("Home", "/"), ("Meet the Team", "/meet-the-team"), (m["name"], url)])]
-        shot = (f'<div class="media reveal"><img src="{m["photo"]}" width="900" height="1000" '
+        shot = (f'<div class="media"><img src="{m["photo"]}" width="900" height="1000" '
                 f'alt="{e(m["name"])}, {e(brand)}" fetchpriority="high"></div>'
                 if m.get("photo") else "")
         body = (f'<section class="section"><div class="container split media-right">'
-                f'<div class="body reveal">'
+                f'<div class="body">'
                 f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span>'
                 f'<a href="/meet-the-team">Meet the Team</a><span class="sep">&rsaquo;</span>'
                 f'{e(m["name"])}</nav>'
