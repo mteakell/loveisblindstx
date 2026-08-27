@@ -26,11 +26,11 @@ TERRITORIES = {
 }
 
 TEAM = [
- {"slug":"jake-wade","name":"Jake Wade","territory":"north"},
- {"slug":"jonathan-arosemena","name":"Jonathan Arosemena","territory":"north"},
- {"slug":"durrell","name":"Durrell Glick","territory":"dfw"},
- {"slug":"danny","name":"Danny Rohweder","territory":"eastwaco"},
- {"slug":"dustin","name":"Dustin Herron","territory":None},
+ {"slug":"jake-wade","photo":"/images/team/jake-wade.jpg","name":"Jake Wade","territory":"north"},
+ {"slug":"jonathan-arosemena","photo":"/images/team/jonathan-arosemena.jpg","name":"Jonathan Arosemena","territory":"north"},
+ {"slug":"durrell","photo":"/images/team/durrell.jpg","name":"Durrell Glick","territory":"dfw"},
+ {"slug":"danny","photo":"/images/team/danny.jpg","name":"Danny Rohweder","territory":"eastwaco"},
+ {"slug":"dustin","photo":"/images/team/dustin.jpg","name":"Dustin Herron","territory":None},
 ]
 
 def of(slug):

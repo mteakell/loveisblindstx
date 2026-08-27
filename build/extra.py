@@ -115,20 +115,27 @@ def team():
         else:
             desc = f"{m['name']} of Love Is Blinds Texas. Free in-home window treatment consultations across Texas."
             area, intro = "", (f'{e(m["name"])} works with Love Is Blinds across Texas.')
-        node = S.person(m["name"], "Owner" if terr else "Love Is Blinds Texas", url)
+        node = S.person(m["name"], "Owner" if terr else "Love Is Blinds Texas", url,
+                        image=m.get("photo"))
         if terr:
             node["worksFor"] = {"@type": "Organization", "name": brand,
                                 "parentOrganization": {"@id": S.ORGID}}
         nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID), node,
             S.breadcrumbs([("Home", "/"), ("Meet the Team", "/meet-the-team"), (m["name"], url)])]
-        body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
-                f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
-                f'<a href="/meet-the-team">Meet the Team</a> <span>&rsaquo;</span>'
-                f'<span aria-current="page">{e(m["name"])}</span></nav>'
-                f'<h1 class="title">{e(m["name"])}</h1><p class="lead">{intro}</p>'
-                f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book a consultation</a>'
-                f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
-                f'</div></div></section>{area}')
+        shot = (f'<div class="media reveal"><img src="{m["photo"]}" width="900" height="1000" '
+                f'alt="{e(m["name"])}, {e(brand)}" fetchpriority="high"></div>'
+                if m.get("photo") else "")
+        body = (f'<section class="section"><div class="container split media-right">'
+                f'<div class="body reveal">'
+                f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span>'
+                f'<a href="/meet-the-team">Meet the Team</a><span class="sep">&rsaquo;</span>'
+                f'{e(m["name"])}</nav>'
+                f'<h1 class="title">{e(m["name"])}</h1>'
+                f'<p class="kicker">{e(brand)}</p><p class="lead">{intro}</p>'
+                f'<div class="btnrow">'
+                f'<a class="btn btn-primary btn-lg" href="/schedule-now">Book a consultation</a>'
+                f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>'
+                f'</div></div>{shot}</div></section>{area}')
         os.makedirs("team", exist_ok=True)
         open(f"team/{m['slug']}.html", "w").write(shell(url, title, desc, nodes, body))
         made.append(m["slug"])

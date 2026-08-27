@@ -1,47 +1,50 @@
-"""Generate sitemap.xml and robots.txt from what is actually on disk."""
-import glob, json, os, re, sys, datetime
+"""Generate sitemap.xml and robots.txt.
+
+The XML is written to match the live Duda sitemap byte-for-byte in structure:
+same declaration with standalone="yes", the xhtml namespace on <urlset>,
+four-space indentation, and children in loc / priority / changefreq / lastmod
+order. Priority follows the live rule: 0.8 for blog posts, 1.0 for everything
+else, changefreq monthly throughout.
+"""
+import datetime, glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 import schema as S
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-PRIORITY = [(r"^/$", "1.0", "weekly"), (r"^/[a-z0-9\-]+-tx$", "0.9", "monthly"),
-            (r"^/products", "0.8", "monthly"), (r"^/services", "0.8", "monthly"),
-            (r"^/areas-we-serve$", "0.8", "monthly"), (r"^/blog$", "0.7", "weekly"),
-            (r"^/(schedule-now|design-checklist|meet-the-team)$", "0.7", "monthly"),
-            (r"^/team/", "0.5", "yearly")]
-
-def meta(f):
-    s = open(f).read()
-    noindex = bool(re.search(r'<meta name="robots"[^>]*noindex', s))
-    return noindex
-
 def run():
+    posts = {p["url"] for p in json.load(open("data/blog-index.json"))}
+    today = datetime.date.today().isoformat()
     urls, skipped = [], []
     for f in sorted(glob.glob("*.html") + glob.glob("*/*.html")):
         u = "/" if f == "index.html" else "/" + f[:-5]
         u = u.replace("/index", "") or "/"
-        if u in ("/404",) or meta(f):
+        s = open(f).read()
+        if u == "/404" or re.search(r'<meta name="robots"[^>]*noindex', s):
             skipped.append(u); continue
-        pri, cf = "0.6", "monthly"
-        for pat, p, c in PRIORITY:
-            if re.match(pat, u): pri, cf = p, c; break
-        urls.append((u, pri, cf))
-    today = datetime.date.today().isoformat()
+        urls.append((u, "0.8" if u in posts else "1.0"))
+
     body = "".join(
-        f"  <url>\n    <loc>{S.SITE}{u}</loc>\n    <lastmod>{today}</lastmod>\n"
-        f"    <changefreq>{c}</changefreq>\n    <priority>{p}</priority>\n  </url>\n"
-        for u, p, c in sorted(urls))
+        "    <url>\n"
+        f"        <loc>{S.SITE}{u}</loc>\n"
+        f"        <priority>{p}</priority>\n"
+        "        <changefreq>monthly</changefreq>\n"
+        f"        <lastmod>{today}</lastmod>\n"
+        "    </url>\n"
+        for u, p in sorted(urls))
     open("sitemap.xml", "w").write(
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n")
+        '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+        'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + body + "</urlset>\n")
+
     open("robots.txt", "w").write(
         "User-agent: *\nAllow: /\n\n"
-        "# Partner ordering funnel, kept out of search\nDisallow: /vodyssey\nDisallow: /journey\n\n"
+        "# Partner ordering funnel, kept out of search\n"
+        "Disallow: /vodyssey\nDisallow: /journey\n\n"
         f"Sitemap: {S.SITE}/sitemap.xml\n")
-    return len(urls), skipped
+    return len(urls), skipped, sum(1 for _, p in urls if p == "0.8")
 
 if __name__ == "__main__":
-    n, sk = run()
-    print(f"sitemap: {n} URLs")
+    n, sk, blog = run()
+    print(f"sitemap: {n} URLs ({blog} at 0.8, {n-blog} at 1.0)")
     print(f"excluded ({len(sk)}): {sorted(sk)}")
