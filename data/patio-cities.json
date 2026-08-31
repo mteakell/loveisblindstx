@@ -1,0 +1,13 @@
+{
+ "_source": "Semrush US, 2026-08-27. Local patio terms are close to uncontested: KD 0-8 in most cities.",
+ "cities": {
+  "dallas-tx":     {"terms":[["patio shades dallas",70,7],["motorized patio shades dallas",140,15],["solar screens dallas",110,21],["patio screens dallas",70,17],["exterior shades dallas",50,18]]},
+  "austin-tx":     {"terms":[["patio shades austin",70,6],["outdoor shades austin",90,2],["solar screens austin",50,13]]},
+  "fort-worth-tx": {"terms":[["patio shades fort worth",40,0],["solar screens fort worth",70,17]]},
+  "plano-tx":      {"terms":[["patio shades plano",40,0],["solar screens plano",40,9]]},
+  "mckinney-tx":   {"terms":[["patio shades mckinney",50,0]]},
+  "frisco-tx":     {"terms":[["patio shades frisco",40,0]]},
+  "arlington-tx":  {"terms":[["patio shades arlington",40,8]]},
+  "southlake-tx":  {"terms":[["patio shades southlake",20,0]]}
+ }
+}

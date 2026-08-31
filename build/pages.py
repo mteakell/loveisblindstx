@@ -10,6 +10,7 @@ BY = {c["slug"]: c for c in CITIES}
 HEAD = open(os.path.join(ROOT, "build/partials/header.html")).read()
 FOOT = open(os.path.join(ROOT, "build/partials/footer.html")).read()
 
+PATIO_PAGES = set(json.load(open(os.path.join(ROOT, "data/patio-cities.json")))["cities"])
 REVIEWS = json.load(open(os.path.join(ROOT, "data/reviews.json")))
 BY_CITY = {}
 for _r in REVIEWS:
@@ -209,6 +210,8 @@ def body_block(c):
     tel  = S.tel(c["phone"] or BIZ["tel"])
     terr = T.of(c["slug"])
     near = nearby(c)
+    patio_url = ("/patio-shades-" + c["slug"]) if c["slug"] in PATIO_PAGES \
+                else "/products/exterior-patio-shades"
     revs = BY_CITY.get(c["slug"], [])
     if revs:
         cards = "".join(
@@ -322,8 +325,8 @@ def body_block(c):
         <li>{TICK}Porches, patios, pergolas and outdoor rooms</li>
       </ul>
       <div class="btnrow">
-        <a class="btn btn-primary btn-lg" href="/products/exterior-patio-shades">
-          See patio shades</a>
+        <a class="btn btn-primary btn-lg" href="{patio_url}">
+          See patio shades in {e(c['label'])}</a>
         <a class="btn btn-secondary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
       </div>
     </div>

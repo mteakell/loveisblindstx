@@ -370,8 +370,10 @@ def patio():
                     "southlake-tx", "waco-tx", "tyler-tx", "round-rock-tx", "georgetown-tx",
                     "mckinney-tx", "grapevine-tx"]
     BY = {c["slug"]: c for c in CITIES}
-    citylinks = "".join(f'<a class="chip" href="{BY[s]["url"]}">Patio shades in {e(BY[s]["label"])}</a>'
-                        for s in patio_cities if s in BY)
+    HAS_PAGE = set(json.load(open("data/patio-cities.json"))["cities"])
+    citylinks = "".join(
+        f'<a class="chip" href="{("/patio-shades-" + s) if s in HAS_PAGE else BY[s]["url"]}">'
+        f'Patio shades in {e(BY[s]["label"])}</a>' for s in patio_cities if s in BY)
     svc = S.service(url, "Exterior Patio Shade Installation",
                     "Measurement, custom order and installation of exterior patio shades, outdoor "
                     "roller shades and motorized patio screens across Texas.", S.BIZID,
