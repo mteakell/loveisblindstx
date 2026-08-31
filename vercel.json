@@ -57,587 +57,587 @@
     {
       "source": "/contact",
       "destination": "/schedule-now",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/fort-worth-tx-2",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/grapevine-tx-2",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/landing-page-ads",
       "destination": "/products",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/amon-carter-museum-of-american-art",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/annual-texas-rose-festival",
       "destination": "/tyler-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/att-stadium",
       "destination": "/arlington-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/bayless-selby-house-museum",
       "destination": "/denton-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/baylor-university",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/birds-fort-trail-park",
       "destination": "/irving-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/caldwell-zoo",
       "destination": "/tyler-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/cameron-park-zoo",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/campion-trails",
       "destination": "/irving-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/cedar-creek-lake",
       "destination": "/gun-barrel-city-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/clear-creek-natural-heritage-center",
       "destination": "/denton-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/colleyville-heritage-high-school",
       "destination": "/colleyville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/colleyville-nature-center",
       "destination": "/colleyville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/courthouse-on-the-square-museum",
       "destination": "/denton-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/covenant-christian-academy",
       "destination": "/colleyville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/dans-silverleaf",
       "destination": "/denton-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/denton-square",
       "destination": "/denton-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/downtown-tyler-tx",
       "destination": "/tyler-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/el-fenix",
       "destination": "/irving-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/foodies-farmers-market",
       "destination": "/arlington-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/fort-worth-botanic-garden",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/fort-worth-stockyards-national-historic-district",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/goodman-legrand-house-museum",
       "destination": "/tyler-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/grapevine-botanical-garden",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/grapevine-mills",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/grapevine-vintage-railroad",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/gun-barrel-city-park",
       "destination": "/gun-barrel-city-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/gun-barrel-city-park-pavilion-and-amphitheater",
       "destination": "/gun-barrel-city-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/heritage-farmstead-museum",
       "destination": "/plano-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/historic-downtown-plano",
       "destination": "/plano-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/historic-waco-foundation",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/interurban-railway-museum",
       "destination": "/plano-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/irving-arts-center",
       "destination": "/irving-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/lake-grapevine",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/lake-waco",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/magnolia-market-at-the-silos",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/main-street",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/modern-art-museum-of-fort-worth",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/mustangs-of-las-colinas",
       "destination": "/las-colinas-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/oak-point-park-and-nature-preserve",
       "destination": "/plano-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/six-flags-over-texas",
       "destination": "/arlington-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/texas-live",
       "destination": "/arlington-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/texas-ranger-hall-of-fame-and-museum",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/the-shops-at-willow-bend",
       "destination": "/plano-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/timarron-country-club",
       "destination": "/southlake-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/trinity-river-trail",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/tyler-municipal-rose-garden",
       "destination": "/tyler-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/university-of-texas-at-arlington",
       "destination": "/arlington-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/waypoint-montessori-school",
       "destination": "/colleyville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/local-attractions/whatz-up-family-fun-park",
       "destination": "/gun-barrel-city-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/colleyville-tx-premier-destination",
       "destination": "/colleyville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/denton-tx-hidden-gem",
       "destination": "/denton-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/discovering-grapevine-tx",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/experience-arlington-tx",
       "destination": "/arlington-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/experience-irving-tx",
       "destination": "/irving-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/exploring-fort-worth-tx",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/exploring-tyler-tx",
       "destination": "/tyler-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/unveiling-plano-tx",
       "destination": "/plano-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/unveiling-waco-tx",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/our-community/visit-gun-barrel-city-tx",
       "destination": "/gun-barrel-city-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments",
       "destination": "/areas-we-serve",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/argyle-tx",
       "destination": "/argyle-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/arlington-tx",
       "destination": "/arlington-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/austin-tx",
       "destination": "/austin-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/bedford-tx",
       "destination": "/bedford-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/boyd-tx",
       "destination": "/boyd-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/celina-tx",
       "destination": "/celina-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/colleyville-tx",
       "destination": "/colleyville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/coppell-tx",
       "destination": "/coppell-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/corsicana-tx",
       "destination": "/corsicana-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/dallas-tx",
       "destination": "/dallas-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/denton-tx",
       "destination": "/denton-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/euless-tx",
       "destination": "/euless-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/flower-mound-tx",
       "destination": "/flower-mound-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/fort-worth-tx",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/fort-worth-tx-2",
       "destination": "/fort-worth-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/frisco-tx",
       "destination": "/frisco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/gainesville-tx",
       "destination": "/gainesville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/georgetown-tx",
       "destination": "/georgetown-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/granbury-tx",
       "destination": "/granbury-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/grand-prairie-tx",
       "destination": "/grand-prairie-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/grapevine-tx",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/grapevine-tx-2",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/grapevine-tx-3",
       "destination": "/grapevine-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/gun-barrel-city-tx",
       "destination": "/gun-barrel-city-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/haltom-city-tx",
       "destination": "/haltom-city-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/highland-park-tx",
       "destination": "/highland-park-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/hurst-tx",
       "destination": "/hurst-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/irving-tx",
       "destination": "/irving-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/justin-tx",
       "destination": "/justin-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/keller-tx",
       "destination": "/keller-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/kerens-tx",
       "destination": "/kerens-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/las-colinas-tx",
       "destination": "/las-colinas-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/lewisville-tx",
       "destination": "/lewisville-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/mckinney-tx",
       "destination": "/mckinney-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/north-richland-hills-tx",
       "destination": "/north-richland-hills-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/northlake-tx",
       "destination": "/northlake-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/paradise-tx",
       "destination": "/paradise-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/plano-tx",
       "destination": "/plano-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/richland-hills-tx",
       "destination": "/richland-hills-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/roanoke-tx",
       "destination": "/roanoke-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/round-rock-tx",
       "destination": "/round-rock-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/sherman-tx",
       "destination": "/sherman-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/southlake-tx",
       "destination": "/southlake-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/taylor-tx",
       "destination": "/taylor-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/trophy-club-tx",
       "destination": "/trophy-club-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/tyler-tx",
       "destination": "/tyler-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/w-7th-avenue-corsicana-tx",
       "destination": "/w-7th-avenue-corsicana-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/waco-tx",
       "destination": "/waco-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/waxahachie-tx",
       "destination": "/waxahachie-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/weatherford-tx",
       "destination": "/weatherford-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/westlake-tx",
       "destination": "/westlake-tx",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/window-treatments/:rest*",
       "destination": "/areas-we-serve",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }

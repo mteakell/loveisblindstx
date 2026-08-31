@@ -44,6 +44,14 @@ def _leads(terr):
     L = terr["leads"]
     return L[0] if len(L) == 1 else " and ".join([", ".join(L[:-1]), L[-1]])
 
+_SLUG = {m["name"]: m["slug"] for m in T.TEAM}
+
+def _leads_linked(terr):
+    """Same names, each linked to its own team page."""
+    parts = [f'<a href="/team/{_SLUG[n]}">{html.escape(n)}</a>' if n in _SLUG
+             else html.escape(n) for n in terr["leads"]]
+    return parts[0] if len(parts) == 1 else " and ".join([", ".join(parts[:-1]), parts[-1]])
+
 def miles(a, b):
     if not (a.get("lat") and b.get("lat")): return None
     la1, lo1, la2, lo2 = map(math.radians, [a["lat"], a["lng"], b["lat"], b["lng"]])
@@ -274,7 +282,7 @@ def body_block(c):
       <ul class="feature-list">
         <li>{TICK}Free in-home consultation with samples you can hold against your own light</li>
         <li>{TICK}Measured, ordered and installed by the same local team</li>
-        <li>{TICK}{e(c['label'])} is covered by {e(terr['brand'])}, run by {e(_leads(terr))}</li>
+        <li>{TICK}{e(c['label'])} is covered by {e(terr['brand'])}, run by {_leads_linked(terr)}</li>
         <li>{TICK}Remade at no cost if a treatment does not match the approved measurements</li>
       </ul>
       <div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book your free consultation</a></div>
