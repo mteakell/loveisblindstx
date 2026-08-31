@@ -79,6 +79,8 @@ def clean(seg):
     seg = re.sub(r"<(/?)([A-Za-z0-9]+)((?:\s[^>]*)?)/?>", keeptag, seg)
     seg = seg.replace("—", ",").replace("&mdash;", ",")
     seg = re.sub(r'<img[^>]*src=""[^>]*>', "", seg)
+    # dead Duda share buttons: empty anchors wrapping a mailto share href
+    seg = re.sub(r'<a [^>]*href="mailto:\?subject=[^"]*"[^>]*>\s*</a>', "", seg)
     # Duda leaves paragraphs holding only invisible characters (BOM, zero-width,
     # non-breaking space). They render as large blank gaps between real paragraphs.
     seg = re.sub(r"(?:&nbsp;|&#160;|&#65279;|[\u00a0\u200b\u200c\ufeff])", " ",

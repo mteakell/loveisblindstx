@@ -15,6 +15,8 @@ FOOT = open("build/partials/footer.html").read()
 HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
 
 TEXT = [
+ ("info@loveisblindsga.com", "access@loveisblindstx.com"),
+ ("info@loveisblindstx.com", "access@loveisblindstx.com"),
  ("Love Is Blinds Georgia", "Love Is Blinds Texas"),
  ("loveisblindsga.com", "loveisblindstx.com"),
  ("North Georgia", "Texas"),
