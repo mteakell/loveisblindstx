@@ -85,8 +85,21 @@ TERM_TITLE = {"blinds": "Custom Blinds", "window treatments": "Window Treatments
               "plantation shutters": "Plantation Shutters", "shutters": "Shutters",
               "custom blinds": "Custom Blinds"}
 
+# A city page must never lead with a term its own dedicated product page owns.
+# Doing so is exactly what let /grapevine-tx-2 outrank /grapevine-tx on the live
+# site: two pages, one intent, Google picks one at random.
+_OWNED = {}
+for _term, _path in [("plantation shutters", "data/shutter-cities.json"),
+                     ("patio shades", "data/patio-cities.json"),
+                     ("motorized", "data/motorized-cities.json")]:
+    for _slug in json.load(open(os.path.join(ROOT, _path)))["cities"]:
+        _OWNED.setdefault(_slug, set()).add(_term)
+
 def head_of(c):
-    return CITY_KW.get(c["slug"], {}).get("term")
+    term = CITY_KW.get(c["slug"], {}).get("term")
+    if term and term in _OWNED.get(c["slug"], set()):
+        return None          # hand that term to the product page, stay broad here
+    return term
 
 def title_for(c):
     """Lead with the term the city actually searches; keep brand; stay under 60."""
