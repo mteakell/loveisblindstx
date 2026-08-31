@@ -1,0 +1,69 @@
+{
+ "fields": [
+  [
+   "Subdivision or neighbourhood",
+   "Bluffview, Stonebridge Ranch, the older part of Grapevine",
+   "Hyper-local. Nobody else publishes which subdivisions have which window problems."
+  ],
+  [
+   "What the customer first asked for",
+   "They asked for blackout blinds in the living room",
+   "The gap between what people ask for and what they need is an entire blog category."
+  ],
+  [
+   "What you actually recommended, and why",
+   "Solar shades instead. West wall, they wanted the view kept",
+   "This is expertise. It cannot be researched, only observed."
+  ],
+  [
+   "What you had to solve on site",
+   "Frame was 3/8 out of square, went outside mount",
+   "Real problems and real fixes. This is what makes a how-to credible."
+  ],
+  [
+   "Anything that surprised the customer",
+   "They did not know exterior shades cool the room behind them",
+   "Customer surprise marks a genuine information gap in the market."
+  ],
+  [
+   "Window orientation",
+   "West / south / north / east",
+   "Ties every recommendation to a verifiable physical reason."
+  ]
+ ],
+ "prompts": {
+  "Local knowledge (highest value)": [
+   "Which subdivisions or streets in your territory have window problems you see over and over?",
+   "Are there HOA rules in any neighbourhood you serve that limit what people can install?",
+   "Which builders in your area used window sizes or frame depths that cause trouble later?",
+   "What is different about older homes versus new build in your territory?",
+   "Which month of the year do people finally call about afternoon sun, and why then?"
+  ],
+  "The job itself": [
+   "Describe the last install where the customer asked for one thing and you recommended another.",
+   "What is the most common measuring or spec mistake you find on treatments someone else installed?",
+   "What did you have to solve on site last week that was not in the plan?",
+   "What is a job you talked a customer out of, and what did you do instead?",
+   "What is the fastest way you can tell a window is going to be a problem?"
+  ],
+  "What customers get wrong": [
+   "What do people most often misunderstand about blackout?",
+   "What do they misunderstand about privacy after dark?",
+   "What do they think costs a lot that does not, and vice versa?",
+   "What do people buy that they regret within two years?",
+   "What question do you get asked on almost every consultation?"
+  ],
+  "Patio and exterior": [
+   "What do people not realise about exterior shades until you explain it?",
+   "How do you decide openness factor on a specific patio?",
+   "What goes wrong on patios that were done by someone else?",
+   "What is the wind conversation you have with every patio customer?"
+  ],
+  "Product reality": [
+   "Which product do you install most, and which do you personally rate highest?",
+   "What holds up worst in Texas sun, in your actual experience?",
+   "What is a product people ask for that you steer them away from?",
+   "What has changed in the last two years that customers do not know about yet?"
+  ]
+ }
+}
