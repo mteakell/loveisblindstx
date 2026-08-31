@@ -55,8 +55,88 @@
   ],
   "redirects": [
     {
+      "source": "/5-things-to-consider-roller-shades",
+      "destination": "/products/roller-shades",
+      "statusCode": 301
+    },
+    {
+      "source": "/argyle--tx",
+      "destination": "/argyle-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/arlington--tx",
+      "destination": "/arlington-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/austin--tx",
+      "destination": "/austin-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedford--tx",
+      "destination": "/bedford-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/boyd--tx",
+      "destination": "/boyd-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/celina--tx",
+      "destination": "/celina-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/colleyville--tx",
+      "destination": "/colleyville-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/contact",
       "destination": "/schedule-now",
+      "statusCode": 301
+    },
+    {
+      "source": "/coppell--tx",
+      "destination": "/coppell-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/corsicana--tx",
+      "destination": "/corsicana-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/custom-window-blinds-shades-shutters",
+      "destination": "/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/dallas--tx",
+      "destination": "/dallas-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/decor-hanging",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/denton--tx",
+      "destination": "/denton-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/design-and-checklist",
+      "destination": "/design-checklist",
+      "statusCode": 301
+    },
+    {
+      "source": "/euless--tx",
+      "destination": "/euless-tx",
       "statusCode": 301
     },
     {
@@ -65,8 +145,68 @@
       "statusCode": 301
     },
     {
+      "source": "/faux-wood-blinds-stylish-affordable-and-durable",
+      "destination": "/products/faux-wood-blinds",
+      "statusCode": 301
+    },
+    {
+      "source": "/flower-mound--tx",
+      "destination": "/flower-mound-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/flowermound-tx",
+      "destination": "/flower-mound-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/fort-worth--tx",
+      "destination": "/fort-worth-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/fort-worth-tx-2",
       "destination": "/fort-worth-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/fortworth-tx",
+      "destination": "/fort-worth-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/frisco--tx",
+      "destination": "/frisco-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/gainesville--tx",
+      "destination": "/gainesville-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/georgetown--tx",
+      "destination": "/georgetown-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/granbury--tx",
+      "destination": "/granbury-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/grand-prairie--tx",
+      "destination": "/grand-prairie-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/grandprairie-tx",
+      "destination": "/grand-prairie-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/grapevine--tx",
+      "destination": "/grapevine-tx",
       "statusCode": 301
     },
     {
@@ -75,8 +215,88 @@
       "statusCode": 301
     },
     {
+      "source": "/gun-barrel-city--tx",
+      "destination": "/gun-barrel-city-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/gunbarrelcity-tx",
+      "destination": "/gun-barrel-city-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/haltom-city--tx",
+      "destination": "/haltom-city-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/haltomcity-tx",
+      "destination": "/haltom-city-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/halton-city--tx",
+      "destination": "/haltom-city-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/highland-park--tx",
+      "destination": "/highland-park-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/highlandpark-tx",
+      "destination": "/highland-park-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/hurst--tx",
+      "destination": "/hurst-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/irving--tx",
+      "destination": "/irving-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/justin--tx",
+      "destination": "/justin-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/keller--tx",
+      "destination": "/keller-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/kerens--tx",
+      "destination": "/kerens-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/landing-page-ads",
       "destination": "/products",
+      "statusCode": 301
+    },
+    {
+      "source": "/las-colinas--tx",
+      "destination": "/las-colinas-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/lascolinas-tx",
+      "destination": "/las-colinas-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/lewisville--tx",
+      "destination": "/lewisville-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/limited-lifetime-warranty",
+      "destination": "/vodyssey/limited-lifetime-warranty",
       "statusCode": 301
     },
     {
@@ -330,6 +550,41 @@
       "statusCode": 301
     },
     {
+      "source": "/love-is-blinds-vodyssey",
+      "destination": "/vodyssey",
+      "statusCode": 301
+    },
+    {
+      "source": "/mckinney--tx",
+      "destination": "/mckinney-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/motorized-window-treatments",
+      "destination": "/products/motorized-window-treatment-automations",
+      "statusCode": 301
+    },
+    {
+      "source": "/north-richland-hills--tx",
+      "destination": "/north-richland-hills-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/northlake--tx",
+      "destination": "/northlake-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/northrichlandhills-tx",
+      "destination": "/north-richland-hills-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/order",
+      "destination": "/vodyssey/order",
+      "statusCode": 301
+    },
+    {
       "source": "/our-community/colleyville-tx-premier-destination",
       "destination": "/colleyville-tx",
       "statusCode": 301
@@ -380,8 +635,158 @@
       "statusCode": 301
     },
     {
+      "source": "/panel-track-shades-a-stylish-versatile-window-treatment-solution",
+      "destination": "/products/panel-track-shades",
+      "statusCode": 301
+    },
+    {
+      "source": "/paradise--tx",
+      "destination": "/paradise-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/plano--tx",
+      "destination": "/plano-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/about",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/blinds-installation",
+      "destination": "/services/blinds-installation",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/custom-blinds-installation",
+      "destination": "/services/blinds-installation",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/drapery-installation",
+      "destination": "/services/drapery-installation",
+      "statusCode": 301
+    },
+    {
       "source": "/products/motorized-window-treatments",
       "destination": "/products/motorized-window-treatment-automations",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/old-real-wood-blinds",
+      "destination": "/products/real-wood-blinds",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/one-time-exterior-window-washing",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/quarterly-window-washing",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/services",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/shades-installation",
+      "destination": "/services/shades-installation",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/shutter-solutions",
+      "destination": "/services/shutter-solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/shutters-installation",
+      "destination": "/services/shutters-installation",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/window-treatment-automation",
+      "destination": "/products/window-treatment-automations",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/window-treatment-installation",
+      "destination": "/services/window-treatment-installation",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/window-treatment-solutions",
+      "destination": "/services/window-treatment-solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/window-washing",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/woven-woods-shades",
+      "destination": "/products/woven-wood-shades",
+      "statusCode": 301
+    },
+    {
+      "source": "/richland-hills--tx",
+      "destination": "/richland-hills-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/richlandhills-tx",
+      "destination": "/richland-hills-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/roanoke--tx",
+      "destination": "/roanoke-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/round-rock--tx",
+      "destination": "/round-rock-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/roundrock-tx",
+      "destination": "/round-rock-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/schedule-your-next-exterior-window-washing",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/custom-blinds-installation",
+      "destination": "/services/blinds-installation",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/decor-hanging",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/exterior-window-washing",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/holiday-lights",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/quarterly-window-washing",
+      "destination": "/services",
       "statusCode": 301
     },
     {
@@ -390,8 +795,83 @@
       "statusCode": 301
     },
     {
+      "source": "/sherman--tx",
+      "destination": "/sherman-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/southlake--tx",
+      "destination": "/southlake-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/taylor--tx",
+      "destination": "/taylor-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/team/jason-elizabeth",
+      "destination": "/team/danny",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-ultimate-solution-for-remote-window-treatments",
+      "destination": "/products/remote-window-treatments",
+      "statusCode": 301
+    },
+    {
+      "source": "/trophy-club--tx",
+      "destination": "/trophy-club-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/trophyclub-tx",
+      "destination": "/trophy-club-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/tyler--tx",
+      "destination": "/tyler-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/w-7th-avenue-corsicana--tx",
+      "destination": "/w-7th-avenue-corsicana-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/w7thavenuecorsicana-tx",
+      "destination": "/w-7th-avenue-corsicana-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/waco--tx",
+      "destination": "/waco-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/waxahachie--tx",
+      "destination": "/waxahachie-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/weatherford--tx",
+      "destination": "/weatherford-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/westlake--tx",
+      "destination": "/westlake-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments",
       "destination": "/areas-we-serve",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/argyle--tx",
+      "destination": "/argyle-tx",
       "statusCode": 301
     },
     {
@@ -400,8 +880,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/arlington--tx",
+      "destination": "/arlington-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/arlington-tx",
       "destination": "/arlington-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/austin--tx",
+      "destination": "/austin-tx",
       "statusCode": 301
     },
     {
@@ -410,8 +900,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/bedford--tx",
+      "destination": "/bedford-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/bedford-tx",
       "destination": "/bedford-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/boyd--tx",
+      "destination": "/boyd-tx",
       "statusCode": 301
     },
     {
@@ -420,8 +920,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/celina--tx",
+      "destination": "/celina-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/celina-tx",
       "destination": "/celina-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/colleyville--tx",
+      "destination": "/colleyville-tx",
       "statusCode": 301
     },
     {
@@ -430,8 +940,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/coppell--tx",
+      "destination": "/coppell-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/coppell-tx",
       "destination": "/coppell-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/corsicana--tx",
+      "destination": "/corsicana-tx",
       "statusCode": 301
     },
     {
@@ -440,8 +960,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/dallas--tx",
+      "destination": "/dallas-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/dallas-tx",
       "destination": "/dallas-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/denton--tx",
+      "destination": "/denton-tx",
       "statusCode": 301
     },
     {
@@ -450,13 +980,28 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/euless--tx",
+      "destination": "/euless-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/euless-tx",
       "destination": "/euless-tx",
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/flower-mound--tx",
+      "destination": "/flower-mound-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/flower-mound-tx",
       "destination": "/flower-mound-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/fort-worth--tx",
+      "destination": "/fort-worth-tx",
       "statusCode": 301
     },
     {
@@ -470,8 +1015,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/frisco--tx",
+      "destination": "/frisco-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/frisco-tx",
       "destination": "/frisco-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/gainesville--tx",
+      "destination": "/gainesville-tx",
       "statusCode": 301
     },
     {
@@ -480,8 +1035,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/georgetown--tx",
+      "destination": "/georgetown-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/georgetown-tx",
       "destination": "/georgetown-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/granbury--tx",
+      "destination": "/granbury-tx",
       "statusCode": 301
     },
     {
@@ -490,8 +1055,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/grand-prairie--tx",
+      "destination": "/grand-prairie-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/grand-prairie-tx",
       "destination": "/grand-prairie-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/grapevine--tx",
+      "destination": "/grapevine-tx",
       "statusCode": 301
     },
     {
@@ -510,8 +1085,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/gun-barrel-city--tx",
+      "destination": "/gun-barrel-city-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/gun-barrel-city-tx",
       "destination": "/gun-barrel-city-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/haltom-city--tx",
+      "destination": "/haltom-city-tx",
       "statusCode": 301
     },
     {
@@ -520,8 +1105,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/highland-park--tx",
+      "destination": "/highland-park-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/highland-park-tx",
       "destination": "/highland-park-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/hurst--tx",
+      "destination": "/hurst-tx",
       "statusCode": 301
     },
     {
@@ -530,8 +1125,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/irving--tx",
+      "destination": "/irving-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/irving-tx",
       "destination": "/irving-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/justin--tx",
+      "destination": "/justin-tx",
       "statusCode": 301
     },
     {
@@ -540,8 +1145,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/keller--tx",
+      "destination": "/keller-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/keller-tx",
       "destination": "/keller-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/kerens--tx",
+      "destination": "/kerens-tx",
       "statusCode": 301
     },
     {
@@ -550,8 +1165,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/las-colinas--tx",
+      "destination": "/las-colinas-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/las-colinas-tx",
       "destination": "/las-colinas-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/lewisville--tx",
+      "destination": "/lewisville-tx",
       "statusCode": 301
     },
     {
@@ -560,8 +1185,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/mckinney--tx",
+      "destination": "/mckinney-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/mckinney-tx",
       "destination": "/mckinney-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/north-richland-hills--tx",
+      "destination": "/north-richland-hills-tx",
       "statusCode": 301
     },
     {
@@ -570,8 +1205,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/northlake--tx",
+      "destination": "/northlake-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/northlake-tx",
       "destination": "/northlake-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/paradise--tx",
+      "destination": "/paradise-tx",
       "statusCode": 301
     },
     {
@@ -580,8 +1225,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/plano--tx",
+      "destination": "/plano-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/plano-tx",
       "destination": "/plano-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/richland-hills--tx",
+      "destination": "/richland-hills-tx",
       "statusCode": 301
     },
     {
@@ -590,8 +1245,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/roanoke--tx",
+      "destination": "/roanoke-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/roanoke-tx",
       "destination": "/roanoke-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/round-rock--tx",
+      "destination": "/round-rock-tx",
       "statusCode": 301
     },
     {
@@ -600,8 +1265,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/sherman--tx",
+      "destination": "/sherman-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/sherman-tx",
       "destination": "/sherman-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/southlake--tx",
+      "destination": "/southlake-tx",
       "statusCode": 301
     },
     {
@@ -610,8 +1285,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/taylor--tx",
+      "destination": "/taylor-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/taylor-tx",
       "destination": "/taylor-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/trophy-club--tx",
+      "destination": "/trophy-club-tx",
       "statusCode": 301
     },
     {
@@ -620,8 +1305,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/tyler--tx",
+      "destination": "/tyler-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/tyler-tx",
       "destination": "/tyler-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/w-7th-avenue-corsicana--tx",
+      "destination": "/w-7th-avenue-corsicana-tx",
       "statusCode": 301
     },
     {
@@ -630,8 +1325,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/waco--tx",
+      "destination": "/waco-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/waco-tx",
       "destination": "/waco-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/waxahachie--tx",
+      "destination": "/waxahachie-tx",
       "statusCode": 301
     },
     {
@@ -640,8 +1345,18 @@
       "statusCode": 301
     },
     {
+      "source": "/window-treatments/weatherford--tx",
+      "destination": "/weatherford-tx",
+      "statusCode": 301
+    },
+    {
       "source": "/window-treatments/weatherford-tx",
       "destination": "/weatherford-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-treatments/westlake--tx",
+      "destination": "/westlake-tx",
       "statusCode": 301
     },
     {
@@ -651,6 +1366,11 @@
     },
     {
       "source": "/window-treatments/:rest*",
+      "destination": "/areas-we-serve",
+      "statusCode": 301
+    },
+    {
+      "source": "/:city--tx:hash*",
       "destination": "/areas-we-serve",
       "statusCode": 301
     }

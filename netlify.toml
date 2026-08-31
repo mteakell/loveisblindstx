@@ -11,8 +11,104 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
+  from = "/5-things-to-consider-roller-shades"
+  to = "/products/roller-shades"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/argyle--tx"
+  to = "/argyle-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arlington--tx"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/austin--tx"
+  to = "/austin-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bedford--tx"
+  to = "/bedford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/boyd--tx"
+  to = "/boyd-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/celina--tx"
+  to = "/celina-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/colleyville--tx"
+  to = "/colleyville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/contact"
   to = "/schedule-now"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/coppell--tx"
+  to = "/coppell-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/corsicana--tx"
+  to = "/corsicana-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/custom-window-blinds-shades-shutters"
+  to = "/products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dallas--tx"
+  to = "/dallas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/decor-hanging"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/denton--tx"
+  to = "/denton-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/design-and-checklist"
+  to = "/design-checklist"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/euless--tx"
+  to = "/euless-tx"
   status = 301
   force = true
 
@@ -23,8 +119,80 @@
   force = true
 
 [[redirects]]
+  from = "/faux-wood-blinds-stylish-affordable-and-durable"
+  to = "/products/faux-wood-blinds"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/flower-mound--tx"
+  to = "/flower-mound-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/flowermound-tx"
+  to = "/flower-mound-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fort-worth--tx"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/fort-worth-tx-2"
   to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fortworth-tx"
+  to = "/fort-worth-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/frisco--tx"
+  to = "/frisco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gainesville--tx"
+  to = "/gainesville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/georgetown--tx"
+  to = "/georgetown-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/granbury--tx"
+  to = "/granbury-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grand-prairie--tx"
+  to = "/grand-prairie-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grandprairie-tx"
+  to = "/grand-prairie-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grapevine--tx"
+  to = "/grapevine-tx"
   status = 301
   force = true
 
@@ -35,8 +203,104 @@
   force = true
 
 [[redirects]]
+  from = "/gun-barrel-city--tx"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gunbarrelcity-tx"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haltom-city--tx"
+  to = "/haltom-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haltomcity-tx"
+  to = "/haltom-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/halton-city--tx"
+  to = "/haltom-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/highland-park--tx"
+  to = "/highland-park-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/highlandpark-tx"
+  to = "/highland-park-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hurst--tx"
+  to = "/hurst-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/irving--tx"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/justin--tx"
+  to = "/justin-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/keller--tx"
+  to = "/keller-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kerens--tx"
+  to = "/kerens-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/landing-page-ads"
   to = "/products"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/las-colinas--tx"
+  to = "/las-colinas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lascolinas-tx"
+  to = "/las-colinas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lewisville--tx"
+  to = "/lewisville-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/limited-lifetime-warranty"
+  to = "/vodyssey/limited-lifetime-warranty"
   status = 301
   force = true
 
@@ -341,6 +605,48 @@
   force = true
 
 [[redirects]]
+  from = "/love-is-blinds-vodyssey"
+  to = "/vodyssey"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mckinney--tx"
+  to = "/mckinney-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/motorized-window-treatments"
+  to = "/products/motorized-window-treatment-automations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/north-richland-hills--tx"
+  to = "/north-richland-hills-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/northlake--tx"
+  to = "/northlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/northrichlandhills-tx"
+  to = "/north-richland-hills-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/order"
+  to = "/vodyssey/order"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/our-community/colleyville-tx-premier-destination"
   to = "/colleyville-tx"
   status = 301
@@ -401,8 +707,188 @@
   force = true
 
 [[redirects]]
+  from = "/panel-track-shades-a-stylish-versatile-window-treatment-solution"
+  to = "/products/panel-track-shades"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/paradise--tx"
+  to = "/paradise-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/plano--tx"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/about"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/blinds-installation"
+  to = "/services/blinds-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/custom-blinds-installation"
+  to = "/services/blinds-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/drapery-installation"
+  to = "/services/drapery-installation"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/products/motorized-window-treatments"
   to = "/products/motorized-window-treatment-automations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/old-real-wood-blinds"
+  to = "/products/real-wood-blinds"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/one-time-exterior-window-washing"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/quarterly-window-washing"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/services"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/shades-installation"
+  to = "/services/shades-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/shutter-solutions"
+  to = "/services/shutter-solutions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/shutters-installation"
+  to = "/services/shutters-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/window-treatment-automation"
+  to = "/products/window-treatment-automations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/window-treatment-installation"
+  to = "/services/window-treatment-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/window-treatment-solutions"
+  to = "/services/window-treatment-solutions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/window-washing"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/woven-woods-shades"
+  to = "/products/woven-wood-shades"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/richland-hills--tx"
+  to = "/richland-hills-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/richlandhills-tx"
+  to = "/richland-hills-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/roanoke--tx"
+  to = "/roanoke-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/round-rock--tx"
+  to = "/round-rock-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/roundrock-tx"
+  to = "/round-rock-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/schedule-your-next-exterior-window-washing"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/custom-blinds-installation"
+  to = "/services/blinds-installation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/decor-hanging"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/exterior-window-washing"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/holiday-lights"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/quarterly-window-washing"
+  to = "/services"
   status = 301
   force = true
 
@@ -413,8 +899,98 @@
   force = true
 
 [[redirects]]
+  from = "/sherman--tx"
+  to = "/sherman-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/southlake--tx"
+  to = "/southlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/taylor--tx"
+  to = "/taylor-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/team/jason-elizabeth"
+  to = "/team/danny"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-ultimate-solution-for-remote-window-treatments"
+  to = "/products/remote-window-treatments"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trophy-club--tx"
+  to = "/trophy-club-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trophyclub-tx"
+  to = "/trophy-club-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tyler--tx"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/w-7th-avenue-corsicana--tx"
+  to = "/w-7th-avenue-corsicana-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/w7thavenuecorsicana-tx"
+  to = "/w-7th-avenue-corsicana-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/waco--tx"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/waxahachie--tx"
+  to = "/waxahachie-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weatherford--tx"
+  to = "/weatherford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/westlake--tx"
+  to = "/westlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments"
   to = "/areas-we-serve"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/argyle--tx"
+  to = "/argyle-tx"
   status = 301
   force = true
 
@@ -425,8 +1001,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/arlington--tx"
+  to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/arlington-tx"
   to = "/arlington-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/austin--tx"
+  to = "/austin-tx"
   status = 301
   force = true
 
@@ -437,8 +1025,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/bedford--tx"
+  to = "/bedford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/bedford-tx"
   to = "/bedford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/boyd--tx"
+  to = "/boyd-tx"
   status = 301
   force = true
 
@@ -449,8 +1049,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/celina--tx"
+  to = "/celina-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/celina-tx"
   to = "/celina-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/colleyville--tx"
+  to = "/colleyville-tx"
   status = 301
   force = true
 
@@ -461,8 +1073,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/coppell--tx"
+  to = "/coppell-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/coppell-tx"
   to = "/coppell-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/corsicana--tx"
+  to = "/corsicana-tx"
   status = 301
   force = true
 
@@ -473,8 +1097,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/dallas--tx"
+  to = "/dallas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/dallas-tx"
   to = "/dallas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/denton--tx"
+  to = "/denton-tx"
   status = 301
   force = true
 
@@ -485,14 +1121,32 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/euless--tx"
+  to = "/euless-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/euless-tx"
   to = "/euless-tx"
   status = 301
   force = true
 
 [[redirects]]
+  from = "/window-treatments/flower-mound--tx"
+  to = "/flower-mound-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/flower-mound-tx"
   to = "/flower-mound-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/fort-worth--tx"
+  to = "/fort-worth-tx"
   status = 301
   force = true
 
@@ -509,8 +1163,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/frisco--tx"
+  to = "/frisco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/frisco-tx"
   to = "/frisco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/gainesville--tx"
+  to = "/gainesville-tx"
   status = 301
   force = true
 
@@ -521,8 +1187,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/georgetown--tx"
+  to = "/georgetown-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/georgetown-tx"
   to = "/georgetown-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/granbury--tx"
+  to = "/granbury-tx"
   status = 301
   force = true
 
@@ -533,8 +1211,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/grand-prairie--tx"
+  to = "/grand-prairie-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/grand-prairie-tx"
   to = "/grand-prairie-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/grapevine--tx"
+  to = "/grapevine-tx"
   status = 301
   force = true
 
@@ -557,8 +1247,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/gun-barrel-city--tx"
+  to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/gun-barrel-city-tx"
   to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/haltom-city--tx"
+  to = "/haltom-city-tx"
   status = 301
   force = true
 
@@ -569,8 +1271,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/highland-park--tx"
+  to = "/highland-park-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/highland-park-tx"
   to = "/highland-park-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/hurst--tx"
+  to = "/hurst-tx"
   status = 301
   force = true
 
@@ -581,8 +1295,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/irving--tx"
+  to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/irving-tx"
   to = "/irving-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/justin--tx"
+  to = "/justin-tx"
   status = 301
   force = true
 
@@ -593,8 +1319,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/keller--tx"
+  to = "/keller-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/keller-tx"
   to = "/keller-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/kerens--tx"
+  to = "/kerens-tx"
   status = 301
   force = true
 
@@ -605,8 +1343,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/las-colinas--tx"
+  to = "/las-colinas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/las-colinas-tx"
   to = "/las-colinas-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/lewisville--tx"
+  to = "/lewisville-tx"
   status = 301
   force = true
 
@@ -617,8 +1367,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/mckinney--tx"
+  to = "/mckinney-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/mckinney-tx"
   to = "/mckinney-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/north-richland-hills--tx"
+  to = "/north-richland-hills-tx"
   status = 301
   force = true
 
@@ -629,8 +1391,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/northlake--tx"
+  to = "/northlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/northlake-tx"
   to = "/northlake-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/paradise--tx"
+  to = "/paradise-tx"
   status = 301
   force = true
 
@@ -641,8 +1415,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/plano--tx"
+  to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/plano-tx"
   to = "/plano-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/richland-hills--tx"
+  to = "/richland-hills-tx"
   status = 301
   force = true
 
@@ -653,8 +1439,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/roanoke--tx"
+  to = "/roanoke-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/roanoke-tx"
   to = "/roanoke-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/round-rock--tx"
+  to = "/round-rock-tx"
   status = 301
   force = true
 
@@ -665,8 +1463,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/sherman--tx"
+  to = "/sherman-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/sherman-tx"
   to = "/sherman-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/southlake--tx"
+  to = "/southlake-tx"
   status = 301
   force = true
 
@@ -677,8 +1487,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/taylor--tx"
+  to = "/taylor-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/taylor-tx"
   to = "/taylor-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/trophy-club--tx"
+  to = "/trophy-club-tx"
   status = 301
   force = true
 
@@ -689,8 +1511,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/tyler--tx"
+  to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/tyler-tx"
   to = "/tyler-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/w-7th-avenue-corsicana--tx"
+  to = "/w-7th-avenue-corsicana-tx"
   status = 301
   force = true
 
@@ -701,8 +1535,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/waco--tx"
+  to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/waco-tx"
   to = "/waco-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/waxahachie--tx"
+  to = "/waxahachie-tx"
   status = 301
   force = true
 
@@ -713,8 +1559,20 @@
   force = true
 
 [[redirects]]
+  from = "/window-treatments/weatherford--tx"
+  to = "/weatherford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/window-treatments/weatherford-tx"
   to = "/weatherford-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-treatments/westlake--tx"
+  to = "/westlake-tx"
   status = 301
   force = true
 
