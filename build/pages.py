@@ -12,6 +12,7 @@ FOOT = open(os.path.join(ROOT, "build/partials/footer.html")).read()
 
 PATIO_PAGES = set(json.load(open(os.path.join(ROOT, "data/patio-cities.json")))["cities"])
 SHUTTER_PAGES = set(json.load(open(os.path.join(ROOT, "data/shutter-cities.json")))["cities"])
+MOTOR_PAGES = set(json.load(open(os.path.join(ROOT, "data/motorized-cities.json")))["cities"])
 REVIEWS = json.load(open(os.path.join(ROOT, "data/reviews.json")))
 BY_CITY = {}
 for _r in REVIEWS:
@@ -37,7 +38,6 @@ PRODUCTS = [
  ("Custom Blinds","/products/blinds","Real wood, faux wood and composite blinds."),
  ("Roller Shades","/products/roller-shades","Solar screen and blackout roller shades."),
  ("Honeycomb Shades","/products/honeycomb-shades","Cellular shades that cut heat transfer at the glass."),
- ("Motorization","/products/motorized-window-treatment-automations","App, remote and voice control."),
 ]
 def e(s): return html.escape(s or "", quote=True)
 
@@ -223,6 +223,8 @@ def body_block(c):
                 else "/products/exterior-patio-shades"
     shutter_url = ("/plantation-shutters-" + c["slug"]) if c["slug"] in SHUTTER_PAGES \
                   else "/products/plantation-shutters"
+    motor_url = ("/motorized-shades-" + c["slug"]) if c["slug"] in MOTOR_PAGES \
+                else "/products/motorized-window-treatment-automations"
     revs = BY_CITY.get(c["slug"], [])
     if revs:
         cards = "".join(
@@ -244,6 +246,10 @@ def body_block(c):
     prods = (f'<a class="prod-card reveal" href="{shutter_url}"><div class="pbody">'
              f'<h3>Plantation Shutters</h3><p>Louvered shutters built to the window opening.</p>'
              f'<span class="btn-link">See plantation shutters <span class="arw">&rarr;</span></span>'
+             f'</div></a>'
+             f'<a class="prod-card reveal" href="{motor_url}"><div class="pbody">'
+             f'<h3>Motorization</h3><p>App, remote and voice control.</p>'
+             f'<span class="btn-link">See motorization <span class="arw">&rarr;</span></span>'
              f'</div></a>') + "".join(
       f'<a class="prod-card reveal" href="{u}"><div class="pbody"><h3>{e(n)}</h3>'
       f'<p>{e(d)}</p><span class="btn-link">See {e(n.lower())} <span class="arw">&rarr;</span></span>'

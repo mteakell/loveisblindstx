@@ -1,0 +1,11 @@
+{
+ "_source": "Semrush US 2026-08-27. The lowest difficulty cluster on the whole site: KD 0-3 with real volume. motorized shades dallas 260/KD3, austin 170/KD1.",
+ "cities": {
+  "dallas-tx":     {"terms":[["motorized shades dallas",260,3],["motorized blinds dallas",110,3]]},
+  "austin-tx":     {"terms":[["motorized shades austin",170,1],["motorized blinds austin",70,3]]},
+  "plano-tx":      {"terms":[["motorized shades plano",50,0],["motorized blinds plano",20,0]]},
+  "fort-worth-tx": {"terms":[["motorized shades fort worth",50,1],["motorized blinds fort worth",10,0]]},
+  "frisco-tx":     {"terms":[["motorized blinds frisco",50,0]]},
+  "mckinney-tx":   {"terms":[["motorized blinds mckinney",10,0]]}
+ }
+}
