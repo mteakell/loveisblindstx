@@ -6,6 +6,11 @@
    "type": "consolidation"
   },
   {
+   "from": "/everything-you-need-to-know-about-patio-shades-for-your-outdoor-space",
+   "to": "/products/exterior-patio-shades",
+   "type": "backlink-rescue"
+  },
+  {
    "from": "/fort-worth-tx-2",
    "to": "/fort-worth-tx",
    "type": "duplicate-consolidation"
@@ -319,6 +324,16 @@
    "from": "/our-community/visit-gun-barrel-city-tx",
    "to": "/gun-barrel-city-tx",
    "type": "community"
+  },
+  {
+   "from": "/products/motorized-window-treatments",
+   "to": "/products/motorized-window-treatment-automations",
+   "type": "backlink-rescue"
+  },
+  {
+   "from": "/services/window-washing",
+   "to": "/services",
+   "type": "backlink-rescue"
   },
   {
    "from": "/window-treatments",

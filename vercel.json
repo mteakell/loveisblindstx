@@ -60,6 +60,11 @@
       "statusCode": 301
     },
     {
+      "source": "/everything-you-need-to-know-about-patio-shades-for-your-outdoor-space",
+      "destination": "/products/exterior-patio-shades",
+      "statusCode": 301
+    },
+    {
       "source": "/fort-worth-tx-2",
       "destination": "/fort-worth-tx",
       "statusCode": 301
@@ -372,6 +377,16 @@
     {
       "source": "/our-community/visit-gun-barrel-city-tx",
       "destination": "/gun-barrel-city-tx",
+      "statusCode": 301
+    },
+    {
+      "source": "/products/motorized-window-treatments",
+      "destination": "/products/motorized-window-treatment-automations",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/window-washing",
+      "destination": "/services",
       "statusCode": 301
     },
     {

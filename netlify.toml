@@ -17,6 +17,12 @@
   force = true
 
 [[redirects]]
+  from = "/everything-you-need-to-know-about-patio-shades-for-your-outdoor-space"
+  to = "/products/exterior-patio-shades"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/fort-worth-tx-2"
   to = "/fort-worth-tx"
   status = 301
@@ -391,6 +397,18 @@
 [[redirects]]
   from = "/our-community/visit-gun-barrel-city-tx"
   to = "/gun-barrel-city-tx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/motorized-window-treatments"
+  to = "/products/motorized-window-treatment-automations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/window-washing"
+  to = "/services"
   status = 301
   force = true
 
