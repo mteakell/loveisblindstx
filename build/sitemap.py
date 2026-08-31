@@ -37,10 +37,12 @@ def run():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
         'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + body + "</urlset>\n")
 
+    # Deliberately no Disallow rules. The Vodyssey funnel and /job-notes are kept
+    # out of search with a noindex meta tag, and Google has to be able to CRAWL a
+    # page to read that tag. Disallowing them as well would mean the noindex is
+    # never seen, and the URLs could still be indexed bare from inbound links.
     open("robots.txt", "w").write(
         "User-agent: *\nAllow: /\n\n"
-        "# Partner ordering funnel, kept out of search\n"
-        "Disallow: /vodyssey\nDisallow: /journey\n\n"
         f"Sitemap: {S.SITE}/sitemap.xml\n")
     return len(urls), skipped, sum(1 for _, p in urls if p == "0.8")
 

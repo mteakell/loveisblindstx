@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Partner ordering funnel, kept out of search
-Disallow: /vodyssey
-Disallow: /journey
-
 Sitemap: https://www.loveisblindstx.com/sitemap.xml
