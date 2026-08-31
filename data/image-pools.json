@@ -1,0 +1,62 @@
+{
+ "blinds": [
+  "/images/lib/blinds-blinds-001-jpg.webp",
+  "/images/lib/blinds-blinds-004-jpg.webp",
+  "/images/lib/blinds-blinds-005-jpg.webp",
+  "/images/lib/blinds-blinds-006-jpg.webp",
+  "/images/lib/blinds-blinds-007-jpg.webp",
+  "/images/lib/blinds-blinds-008-jpg.webp"
+ ],
+ "shades": [
+  "/images/lib/honeycomb-shades-honeycomb-shades-001-jpg.webp",
+  "/images/lib/honeycomb-shades-honeycomb-shades-008-jpg.webp",
+  "/images/lib/honeycomb-shades-honeycomb-shades-009-jpg.webp",
+  "/images/lib/honeycomb-shades-honeycomb-shades-013-jpg.webp",
+  "/images/lib/honeycomb-shades-honeycomb-shades-014-jpg.webp",
+  "/images/lib/honeycomb-shades-honeycomb-shades-015-jpg.webp",
+  "/images/lib/roller-shades-home-hero-shades-1-jpeg.webp",
+  "/images/lib/roller-shades-roller-shades-001-jpg.webp",
+  "/images/lib/roller-shades-roller-shades-003-jpg.webp",
+  "/images/lib/roller-shades-roller-shades-004-jpg.webp",
+  "/images/lib/roller-shades-roller-shades-005-jpg.webp",
+  "/images/lib/roller-shades-roller-shades-008-jpg.webp",
+  "/images/lib/roman-shades-roman-shades-001-jpg.webp",
+  "/images/lib/roman-shades-roman-shades-004-jpg.webp",
+  "/images/lib/roman-shades-roman-shades-005-jpg.webp",
+  "/images/lib/roman-shades-roman-shades-006-jpg.webp",
+  "/images/lib/roman-shades-roman-shades-007-jpg.webp",
+  "/images/lib/roman-shades-roman-shades-009-jpg.webp"
+ ],
+ "plantation-shutters": [
+  "/images/lib/shutters-shutters-004-jpg.webp",
+  "/images/lib/shutters-shutters-005-jpg.webp",
+  "/images/lib/shutters-shutters-006-jpg.webp",
+  "/images/lib/shutters-shutters-007-jpg.webp",
+  "/images/lib/shutters-shutters-008-jpg.webp",
+  "/images/lib/shutters-shutters-009-jpg.webp"
+ ],
+ "shutters": [
+  "/images/lib/shutters-shutters-004-jpg.webp",
+  "/images/lib/shutters-shutters-005-jpg.webp",
+  "/images/lib/shutters-shutters-006-jpg.webp",
+  "/images/lib/shutters-shutters-007-jpg.webp",
+  "/images/lib/shutters-shutters-008-jpg.webp",
+  "/images/lib/shutters-shutters-009-jpg.webp"
+ ],
+ "patio-shades": [
+  "/images/lib/exterior-patio-shades-exterior-patio-shades-001-jpg.webp",
+  "/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp",
+  "/images/lib/exterior-patio-shades-exterior-patio-shades-003-jpg.webp",
+  "/images/lib/exterior-patio-shades-exterior-patio-shades-004-jpg.webp",
+  "/images/lib/exterior-patio-shades-exterior-patio-shades-005-jpg.webp",
+  "/images/lib/exterior-patio-shades-exterior-patio-shades-006-jpg.webp"
+ ],
+ "motorized-shades": [
+  "/images/lib/smart-drapes-smart-drapes-002-jpg.webp",
+  "/images/lib/smart-drapes-smart-drapes-005-jpg.webp",
+  "/images/lib/smart-drapes-smart-drapes-007-jpg.webp",
+  "/images/lib/smart-drapes-smart-drapes-008-jpg.webp",
+  "/images/lib/smart-drapes-smart-drapes-009-jpg.webp",
+  "/images/lib/smart-drapes-smart-drapes-010-jpg.webp"
+ ]
+}

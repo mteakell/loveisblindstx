@@ -9,7 +9,33 @@ its own price drivers, and city-specific FAQs.
 """
 import html, json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-import schema as S, territory as T, pages as P, products_spec as PS
+import schema as S, territory as T, pages as P, products_spec as PS, variants as V
+import extra_pools as EP
+
+# Assign variants by the city's INDEX rather than a hash of its name. A hash
+# collides: two cities land on the same combination and their pages read
+# identically. An index guarantees the 48 cities spread across the pools.
+CITY_IX = {c["slug"]: i for i, c in enumerate(sorted(P.CITIES, key=lambda x: x["slug"]))}
+
+IMG_POOL = json.load(open(os.path.join(P.ROOT, "data/image-pools.json")))
+
+# Mixed radix decomposition of the city index. Each successive call peels off a
+# different digit, so two cities cannot share every selection: with pools of 5,
+# 5, 5 and 10 the combination space is far larger than 48 cities.
+# Each selector gets its own coprime stride over the city index, so two cities
+# would have to agree on every one of six independent selections to read alike.
+# With strides 1, 3, 7, 9, 11, 13 across pools of 5-18 that cannot happen for 48
+# cities.
+_STRIDE = {0: 1, 5: 3, 7: 7, 11: 9, 13: 11, 17: 13, 21: 17, 3: 19}
+
+def pick(pool, slug, salt=0):
+    i = CITY_IX.get(slug, 0)
+    return pool[(i * _STRIDE.get(salt, 1) + salt) % len(pool)]
+
+def pick_many(pool, slug, n, salt=0):
+    i = CITY_IX.get(slug, 0)
+    start = (i * _STRIDE.get(salt, 1) + salt) % len(pool)
+    return [pool[(start + i2) % len(pool)] for i2 in range(min(n, len(pool)))]
 
 os.chdir(P.ROOT)
 BIZ = P.BIZ
@@ -44,15 +70,25 @@ def page(prod, slug):
     desc = spec["desc"].format(city=label, phone=ph)[:155]
     near = P.nearby(c, 6)
     nearlinks = "".join(f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
+    # rotate which types lead, so no two city pages open with the same card
+    tlist = pick_many(spec["types"] + EP.EXTRA_TYPES[prod], slug, 6, 5)
     types = "".join(f'<div class="prod-card reveal"><div class="pbody"><h3>{e(n)}</h3>'
-                    f'<p>{e(b)}</p></div></div>' for n, b in spec["types"])
-    prices = "".join(f"<li>{e(x)}</li>" for x in spec["price"])
-    why = "".join(f"<p>{e(t.format(city=city))}</p>" for t in spec["why"])
+                    f'<p>{e(b)}</p></div></div>' for n, b in tlist)
+    intro = pick(V.INTRO, slug)
+    why_h, why_body = pick(V.WHY[prod], slug, 7)
+    close = pick(V.CLOSE, slug, 13)
+    shots = pick_many(IMG_POOL[prod], slug, 6, 3)
+    gallery = "".join(
+        f'<img src="{sh}" alt="{e(spec["label"])} installed in {e(label)}, TX by Love Is Blinds" '
+        f'loading="lazy" width="600" height="450">' for sh in shots)
+    band = pick(IMG_POOL[prod], slug, 21)
+    plist = pick_many(spec["price"], slug, len(spec["price"]), 17)
+    prices = "".join(f"<li>{e(x)}</li>" for x in plist)
 
     faqs = [(f"Do you install {spec['label'].lower()} in {city}?",
              f"Yes. {leads} runs {terr['brand']}, which covers {city} along with {terr['blurb']}. "
              f"The person who measures your windows is the person who fits them. Call {ph}.")]
-    faqs += list(spec["faq"])
+    faqs += pick_many(spec["faq"] + EP.EXTRA_FAQ[prod], slug, 5, 11)
     faqs.append((f"How much do {spec['label'].lower()} cost in {city}?",
                  "It depends on the size of the openings, the material and the options you choose. "
                  "We measure every opening on site and quote from those measurements, so the number "
@@ -110,8 +146,9 @@ def page(prod, slug):
 <section class="section">
   <div class="container split media-right">
     <div class="body reveal">
-      <h2 class="title">{e(spec['why_h2'].format(city=city))}</h2>
-      {why}
+      <h2 class="title">{e(why_h)}</h2>
+      <p>{e(intro)}</p>
+      <p>{e(why_body)}</p>
       <ul class="feature-list">
         <li>{P.TICK}Free in-home consultation with samples you can hold against your own light</li>
         <li>{P.TICK}Every opening measured on site, not estimated</li>
@@ -128,8 +165,23 @@ def page(prod, slug):
 </section>
 
 <section class="section bg-cream-tint">
-  <div class="container center"><h2 class="title">{e(spec['label'])} we install in {e(city)}</h2></div>
+  <div class="container center"><h2 class="title">{e(spec['label'])} we install in {e(label)}</h2></div>
   <div class="container"><div class="prod-grid">{types}</div></div>
+</section>
+
+<section class="parallax-band" style="background-image:url('{band}')">
+  <div class="container center">
+    <span class="pb-eyebrow">Love Is Blinds &middot; {e(label)}</span>
+    <h2 class="pb-title">{e(spec['label'])}, measured and installed in {e(label)} by {e(leads)}.</h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container center">
+    <h2 class="title">Work we have installed</h2>
+    <p class="lead">{e(close)}</p>
+  </div>
+  <div class="container"><div class="city-gallery">{gallery}</div></div>
 </section>
 
 <section class="section">
