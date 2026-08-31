@@ -1,0 +1,18 @@
+{
+ "_source": "Semrush US, 2026-08-27. Shutter city terms carry the highest CPCs on the site: Plano $18.49, McKinney $14.48, Dallas window shutters $13.10, Frisco $12.59.",
+ "cities": {
+  "dallas-tx":      {"terms":[["plantation shutters dallas",110,31],["window shutters dallas",70,17],["shutters dallas",50,23],["custom shutters dallas",40,26],["interior shutters dallas",20,0]]},
+  "austin-tx":      {"terms":[["plantation shutters austin",110,11],["shutters austin",110,7]]},
+  "fort-worth-tx":  {"terms":[["plantation shutters fort worth",70,5],["shutters fort worth",50,12],["custom shutters fort worth",20,0]]},
+  "plano-tx":       {"terms":[["shutters plano",40,6],["plantation shutters plano",30,0]]},
+  "grapevine-tx":   {"terms":[["plantation shutters grapevine",50,10]]},
+  "southlake-tx":   {"terms":[["plantation shutters southlake",40,0]]},
+  "keller-tx":      {"terms":[["plantation shutters keller",40,0]]},
+  "arlington-tx":   {"terms":[["plantation shutters arlington",40,0]]},
+  "colleyville-tx": {"terms":[["plantation shutters colleyville",40,3]]},
+  "frisco-tx":      {"terms":[["plantation shutters frisco",20,0]]},
+  "mckinney-tx":    {"terms":[["plantation shutters mckinney",10,0]]},
+  "denton-tx":      {"terms":[["plantation shutters denton",10,0]]},
+  "tyler-tx":       {"terms":[["plantation shutters tyler",10,0]]}
+ }
+}

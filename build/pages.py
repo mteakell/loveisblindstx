@@ -11,6 +11,7 @@ HEAD = open(os.path.join(ROOT, "build/partials/header.html")).read()
 FOOT = open(os.path.join(ROOT, "build/partials/footer.html")).read()
 
 PATIO_PAGES = set(json.load(open(os.path.join(ROOT, "data/patio-cities.json")))["cities"])
+SHUTTER_PAGES = set(json.load(open(os.path.join(ROOT, "data/shutter-cities.json")))["cities"])
 REVIEWS = json.load(open(os.path.join(ROOT, "data/reviews.json")))
 BY_CITY = {}
 for _r in REVIEWS:
@@ -32,7 +33,7 @@ TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
 
 PRODUCTS = [
  ("Exterior Patio Shades","/products/exterior-patio-shades","Outdoor shades that stop the sun before it reaches the glass."),
- ("Plantation Shutters","/products/plantation-shutters","Louvered shutters built to the window opening."),
+
  ("Custom Blinds","/products/blinds","Real wood, faux wood and composite blinds."),
  ("Roller Shades","/products/roller-shades","Solar screen and blackout roller shades."),
  ("Honeycomb Shades","/products/honeycomb-shades","Cellular shades that cut heat transfer at the glass."),
@@ -220,6 +221,8 @@ def body_block(c):
     near = nearby(c)
     patio_url = ("/patio-shades-" + c["slug"]) if c["slug"] in PATIO_PAGES \
                 else "/products/exterior-patio-shades"
+    shutter_url = ("/plantation-shutters-" + c["slug"]) if c["slug"] in SHUTTER_PAGES \
+                  else "/products/plantation-shutters"
     revs = BY_CITY.get(c["slug"], [])
     if revs:
         cards = "".join(
@@ -238,7 +241,10 @@ def body_block(c):
           f'<div class="reviews">{cards}</div>{gbp_cta}</div></section>')
     else:
         reviews_block = ""
-    prods = "".join(
+    prods = (f'<a class="prod-card reveal" href="{shutter_url}"><div class="pbody">'
+             f'<h3>Plantation Shutters</h3><p>Louvered shutters built to the window opening.</p>'
+             f'<span class="btn-link">See plantation shutters <span class="arw">&rarr;</span></span>'
+             f'</div></a>') + "".join(
       f'<a class="prod-card reveal" href="{u}"><div class="pbody"><h3>{e(n)}</h3>'
       f'<p>{e(d)}</p><span class="btn-link">See {e(n.lower())} <span class="arw">&rarr;</span></span>'
       f'</div></a>' for n,u,d in PRODUCTS)

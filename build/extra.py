@@ -47,6 +47,7 @@ def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-004-
 {FOOT}'''
 
 HERO = "/images/lib/shutters-shutters-004-jpg.webp"
+SHUTTER_CITY = json.load(open("data/shutter-cities.json"))["cities"]
 TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
         '<path d="m20 6-11 11-5-5"/></svg></span>')
 
