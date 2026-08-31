@@ -145,6 +145,7 @@ def build():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Job Notes | Love Is Blinds Texas</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.loveisblindstx.com/job-notes">
 <meta name="description" content="Internal job notes form for the Love Is Blinds Texas team.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
