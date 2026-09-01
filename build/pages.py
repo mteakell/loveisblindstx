@@ -328,7 +328,7 @@ def body_block(c):
       <ul class="nap-list">
         <li class="contact-line"><a href="tel:{tel}">{e(ph)}</a></li>
         {addr}
-        <li class="contact-line"><a href="mailto:{BIZ['email']}">{BIZ['email']}</a></li>
+        <li class="contact-line"><a href="/contact">Send us a message</a></li>
         {gbp}
       </ul>
       <div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Request a quote</a></div>

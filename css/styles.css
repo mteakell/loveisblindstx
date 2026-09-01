@@ -744,3 +744,13 @@ body.search-open{overflow:hidden}
 .team-grid .prod-card .pbody{padding-top:18px}
 .team-grid .kicker{margin:.35rem 0 .6rem}
 @media (max-width:640px){.team-grid .prod-card .pic img{height:260px}}
+
+/* city index: stack the phone under the city name. As a flex row it collided
+   with the grid column width, wrapping "Fort Worth, / TX" around the number. */
+.city-index li{display:block;margin-top:14px}
+.city-index .sml{display:block;margin-top:2px;font-size:13.5px;color:var(--ink-muted);font-weight:500}
+
+/* owner bios: the intro was .lead (19px, muted) and the rest inherited a
+   smaller body rule, so the first paragraph never matched the ones under it. */
+.prose p{font-size:clamp(16px,1.35vw,17.5px);line-height:1.75;color:var(--ink-body);margin-top:18px;max-width:64ch}
+.prose p:first-child{margin-top:16px}

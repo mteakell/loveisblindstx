@@ -15,13 +15,18 @@ FOOT = open("build/partials/footer.html").read()
 HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
 
 TEXT = [
- ("info@loveisblindsga.com", "access@loveisblindstx.com"),
- ("info@loveisblindstx.com", "access@loveisblindstx.com"),
+ # No public inbox. Every contact route is the form, so leads land in one
+ # place and the address cannot be scraped. Email rules run before the
+ # domain rule below, which would otherwise rewrite only the domain half.
+ ("info@loveisblindsga.com", ""),
+ ("info@loveisblindstx.com", ""),
+ ("access@loveisblindstx.com", ""),
  ("Love Is Blinds Georgia", "Love Is Blinds Texas"),
  ("loveisblindsga.com", "loveisblindstx.com"),
  ("North Georgia", "Texas"),
  ("Georgia", "Texas"),
  ("owned and operated in Texas", "owned and operated in Texas"),
+ ("Ben and Ashley Honeycutt, Owner-Operators", "Meet the Owner-Operators"),
  ("Ben and Ashley Honeycutt", "our local team"),
  ("Ben &amp; Ashley Honeycutt", "our local team"),
  ("Ben &amp; Ashley", "our local team"),
@@ -39,7 +44,7 @@ TEXT = [
  ("(706) 406-6653", BIZ["phone"]), ("7064066653", "8665182999"),
  ("+17064066653", BIZ["tel"]), ("866-515-1562", "866-518-2999"),
  ("(866) 515-1562", BIZ["phone"]), ("8665151562", "8665182999"),
- ("info@loveisblindsga.com", BIZ["email"]),
+ ("info@loveisblindsga.com", ""),
  ("/service-areas/", "/"), ("/service-areas", "/areas-we-serve"),
  ("&mdash;", ","), ("—", ","),
 ]

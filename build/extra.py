@@ -135,7 +135,8 @@ def team():
                 f'<a href="/meet-the-team">Meet the Team</a><span class="sep">&rsaquo;</span>'
                 f'{e(m["name"])}</nav>'
                 f'<h1 class="title">{e(m["name"])}</h1>'
-                f'<p class="kicker">{e(brand)}</p><p class="lead">{intro}</p>{bio}'
+                f'<p class="kicker">{e(brand)}</p>'
+                f'<div class="prose"><p>{intro}</p>{bio}</div>'
                 f'<div class="btnrow">'
                 f'<a class="btn btn-primary btn-lg" href="/schedule-now">Book a consultation</a>'
                 f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>'
@@ -197,7 +198,10 @@ def team_cards():
                  else "Works with Love Is Blinds across Texas.")
         pic = (f'<div class="pic"><img src="{m["photo"]}" alt="{e(m["name"])}, {e(sub)}" '
                f'loading="lazy" width="600" height="667"></div>' if m.get("photo") else "")
-        cards += (f'<a class="prod-card reveal" href="/team/{m["slug"]}">{pic}<div class="pbody">'
+        # No .reveal here. These cards now sit high on the page, and the reveal
+        # transition can stall at opacity:0 when the observer fires before the
+        # first paint, leaving the whole team section blank.
+        cards += (f'<a class="prod-card" href="/team/{m["slug"]}">{pic}<div class="pbody">'
                   f'<h3>{e(m["name"])}</h3><p class="kicker">{e(sub)}</p><p>{e(blurb)}</p>'
                   f'<span class="btn-link">Read more <span class="arw">&rarr;</span></span>'
                   f'</div></a>')
@@ -210,7 +214,13 @@ def team_cards():
     s = re.sub(r'<section class="section bg-cream-tint"><div class="container center">'
                r'<h2 class="title">(?:The three Texas teams|Meet Your Local Owner Operators)'
                r'.*?</section>\s*', lambda m: "", s, flags=re.S)
-    i = s.find("<footer")
+    # sit the cards directly under the page intro. Falling back to <footer>
+    # is what buried them below the closing CTA.
+    i = -1
+    for m in re.finditer(r'<section\b', s):
+        if "Ready to love the way your home feels" in s[m.start():m.start() + 1200]:
+            i = m.start(); break
+    if i < 0: i = s.find("<footer")
     open("meet-the-team.html", "w").write(s[:i] + block + s[i:])
     return len(T.TEAM)
 
