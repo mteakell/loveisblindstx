@@ -20,7 +20,6 @@ TEXT = [
  # domain rule below, which would otherwise rewrite only the domain half.
  ("info@loveisblindsga.com", ""),
  ("info@loveisblindstx.com", ""),
- ("access@loveisblindstx.com", ""),
  ("Love Is Blinds Georgia", "Love Is Blinds Texas"),
  ("loveisblindsga.com", "loveisblindstx.com"),
  ("North Georgia", "Texas"),

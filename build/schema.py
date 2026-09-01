@@ -38,7 +38,7 @@ def organization(biz):
         "@type": "Organization", "@id": ORGID, "name": biz["name"],
         "url": SITE + "/", "logo": {"@type": "ImageObject",
             "url": SITE + "/images/lib-logo.png", "width": 512, "height": 512},
-        "telephone": tel(biz["tel"]),
+        "email": biz["email"], "telephone": tel(biz["tel"]),
         "areaServed": {"@type": "AdministrativeArea", "name": "Texas"},
     }
 
@@ -58,7 +58,7 @@ def business(biz, city=None):
         hq = biz["hq"]
         return _clean({
             "@type": "HomeAndConstructionBusiness", "@id": BIZID, "name": biz["name"],
-            "url": SITE + "/", "telephone": tel(biz["tel"]),
+            "url": SITE + "/", "telephone": tel(biz["tel"]), "email": biz["email"],
             "priceRange": "$$", "currenciesAccepted": "USD",
             "image": {"@type": "ImageObject", "url": SITE + "/images/shutters.jpg",
                       "width": 1200, "height": 800},
@@ -83,7 +83,7 @@ def business(biz, city=None):
         "@type": "HomeAndConstructionBusiness",
         "@id": f"{SITE}{city['url']}#business",
         "name": f"{biz['name']} - {city['label']}",
-        "url": SITE + city["url"], "telephone": tel(phone),
+        "url": SITE + city["url"], "telephone": tel(phone), "email": biz["email"],
         "priceRange": "$$", "currenciesAccepted": "USD",
         "image": {"@type": "ImageObject", "url": SITE + "/images/shutters.jpg",
                   "width": 1200, "height": 800},
