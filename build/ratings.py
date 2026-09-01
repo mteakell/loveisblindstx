@@ -41,9 +41,10 @@ def main():
     f = "build/partials/footer.html"
     s = open(f).read()
     s = BADGE_RE.sub("", s)
-    anchor = '</p>\n    </div>'                       # end of the .fabout blurb
-    assert anchor in s, "footer brand column not found"
-    s = s.replace(anchor, '</p>\n      ' + block + '</div>', 1)
+    # end of the .fabout blurb; whitespace varies once a badge has been inserted
+    m = re.search(r'(class="fabout">.*?</p>)(\s*)', s, re.S)
+    assert m, "footer brand column not found"
+    s = s[:m.end(1)] + "\n      " + block + s[m.end():]
     open(f, "w").write(s)
 
     # push into every already-built page

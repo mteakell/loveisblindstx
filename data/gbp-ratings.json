@@ -1,20 +1,31 @@
 {
   "_source": "Local Falcon account listing, pulled 2026-09-01",
-  "_note": "Ratings and review counts as reported by Google for each Love Is Blinds Texas profile. Celina carries a live profile with no reviews yet, so it counts as a location but contributes nothing to the average. Update this file when profiles are added or counts change; the footer badge recomputes from it at build time.",
+  "_note": "Ratings and review counts as Google reports them for each Love Is Blinds Texas profile. Profiles with 0 reviews count as a location but contribute nothing to the average. The footer badge recomputes from this file at build time, so updating a number here and rebuilding is all that is needed.",
+  "_coverage": "22 of 27 profiles. East & Central Texas (11) and North Texas (3) are complete. DFW is 8 of 13: five DFW profiles are not in the Local Falcon account, so their counts could not be verified and are excluded rather than guessed.",
   "profiles": [
-    {"city": "Waco",                 "rating": 5.0, "reviews": 70},
-    {"city": "Waxahachie",           "rating": 4.9, "reviews": 30},
-    {"city": "Plano",                "rating": 5.0, "reviews": 28},
-    {"city": "North Richland Hills", "rating": 5.0, "reviews": 19},
-    {"city": "Round Rock",           "rating": 5.0, "reviews": 13},
-    {"city": "Kerens",               "rating": 5.0, "reviews": 11},
-    {"city": "Granbury",             "rating": 5.0, "reviews": 11},
-    {"city": "Denton",               "rating": 5.0, "reviews": 10},
-    {"city": "Grapevine",            "rating": 5.0, "reviews": 8},
-    {"city": "Sherman",              "rating": 5.0, "reviews": 7},
-    {"city": "Keller",               "rating": 5.0, "reviews": 2},
-    {"city": "Weatherford",          "rating": 5.0, "reviews": 2},
-    {"city": "Arlington",            "rating": 5.0, "reviews": 1},
-    {"city": "Celina",               "rating": null, "reviews": 0}
+    {"city": "Waco",                 "region": "ETC", "rating": 5.0, "reviews": 70},
+    {"city": "Gun Barrel City",      "region": "ETC", "rating": 5.0, "reviews": 42},
+    {"city": "Waxahachie",           "region": "ETC", "rating": 4.9, "reviews": 30},
+    {"city": "Las Colinas",          "region": "ETC", "rating": 5.0, "reviews": 25},
+    {"city": "Round Rock",           "region": "ETC", "rating": 5.0, "reviews": 13},
+    {"city": "Tyler",                "region": "ETC", "rating": 5.0, "reviews": 13},
+    {"city": "Kerens",               "region": "ETC", "rating": 5.0, "reviews": 11},
+    {"city": "Georgetown",           "region": "ETC", "rating": 5.0, "reviews": 10},
+    {"city": "Taylor",               "region": "ETC", "rating": 5.0, "reviews": 5},
+    {"city": "Austin",               "region": "ETC", "rating": 5.0, "reviews": 4},
+    {"city": "Highland Park",        "region": "ETC", "rating": 5.0, "reviews": 4},
+
+    {"city": "Plano",                "region": "NTX", "rating": 5.0, "reviews": 28},
+    {"city": "Sherman",              "region": "NTX", "rating": 5.0, "reviews": 7},
+    {"city": "Celina",               "region": "NTX", "rating": null, "reviews": 0},
+
+    {"city": "North Richland Hills", "region": "DFW", "rating": 5.0, "reviews": 19},
+    {"city": "Colleyville",          "region": "DFW", "rating": 5.0, "reviews": 12},
+    {"city": "Granbury",             "region": "DFW", "rating": 5.0, "reviews": 11},
+    {"city": "Denton",               "region": "DFW", "rating": 5.0, "reviews": 10},
+    {"city": "Grapevine",            "region": "DFW", "rating": 5.0, "reviews": 8},
+    {"city": "Keller",               "region": "DFW", "rating": 5.0, "reviews": 2},
+    {"city": "Weatherford",          "region": "DFW", "rating": 5.0, "reviews": 2},
+    {"city": "Arlington",            "region": "DFW", "rating": 5.0, "reviews": 1}
   ]
 }
