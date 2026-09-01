@@ -917,6 +917,12 @@
   force = true
 
 [[redirects]]
+  from = "/team/dustin"
+  to = "/meet-the-team"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/team/jason-elizabeth"
   to = "/team/danny"
   status = 301

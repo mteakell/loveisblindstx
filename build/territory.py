@@ -5,7 +5,7 @@ territory outright, and from Maddie's corrections:
   North Texas          - Jake Wade and Jonathan Arosemena
   DFW                  - Durrell Glick
   East & Central Texas - Danny Rohweder
-Dustin Herron appears without a territory and is treated as company-wide.
+Dustin Herron was removed from the site at Maddie's direction.
 Boyd, Paradise, Lewisville and Flower Mound sit with DFW, not North TX.
 Dallas rides with East & Central for now and Maddie expects that to move.
 One file so a correction never means resweeping 48 generated pages.
@@ -30,7 +30,6 @@ TEAM = [
  {"slug":"jonathan-arosemena","photo":"/images/team/jonathan-arosemena.jpg","name":"Jonathan Arosemena","territory":"north"},
  {"slug":"durrell","photo":"/images/team/durrell.jpg","name":"Durrell Glick","territory":"dfw"},
  {"slug":"danny","photo":"/images/team/danny.jpg","name":"Danny Rohweder","territory":"eastwaco"},
- {"slug":"dustin","photo":"/images/team/dustin.jpg","name":"Dustin Herron","territory":None},
 ]
 
 def of(slug):

@@ -810,6 +810,11 @@
       "statusCode": 301
     },
     {
+      "source": "/team/dustin",
+      "destination": "/meet-the-team",
+      "statusCode": 301
+    },
+    {
       "source": "/team/jason-elizabeth",
       "destination": "/team/danny",
       "statusCode": 301

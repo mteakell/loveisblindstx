@@ -756,6 +756,11 @@
    "type": "legacy-variant"
   },
   {
+   "from": "/team/dustin",
+   "to": "/meet-the-team",
+   "type": "removed-page"
+  },
+  {
    "from": "/team/jason-elizabeth",
    "to": "/team/danny",
    "type": "legacy-duda"
