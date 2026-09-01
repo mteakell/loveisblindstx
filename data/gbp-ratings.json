@@ -1,0 +1,20 @@
+{
+  "_source": "Local Falcon account listing, pulled 2026-09-01",
+  "_note": "Ratings and review counts as reported by Google for each Love Is Blinds Texas profile. Celina carries a live profile with no reviews yet, so it counts as a location but contributes nothing to the average. Update this file when profiles are added or counts change; the footer badge recomputes from it at build time.",
+  "profiles": [
+    {"city": "Waco",                 "rating": 5.0, "reviews": 70},
+    {"city": "Waxahachie",           "rating": 4.9, "reviews": 30},
+    {"city": "Plano",                "rating": 5.0, "reviews": 28},
+    {"city": "North Richland Hills", "rating": 5.0, "reviews": 19},
+    {"city": "Round Rock",           "rating": 5.0, "reviews": 13},
+    {"city": "Kerens",               "rating": 5.0, "reviews": 11},
+    {"city": "Granbury",             "rating": 5.0, "reviews": 11},
+    {"city": "Denton",               "rating": 5.0, "reviews": 10},
+    {"city": "Grapevine",            "rating": 5.0, "reviews": 8},
+    {"city": "Sherman",              "rating": 5.0, "reviews": 7},
+    {"city": "Keller",               "rating": 5.0, "reviews": 2},
+    {"city": "Weatherford",          "rating": 5.0, "reviews": 2},
+    {"city": "Arlington",            "rating": 5.0, "reviews": 1},
+    {"city": "Celina",               "rating": null, "reviews": 0}
+  ]
+}
