@@ -1,0 +1,216 @@
+{
+ "_source": "Google Business Profile Manager, groups screenshotted by Maddie 2026-09-02",
+ "_note": "SAB = service area business, no street address in GBP, so schema must not claim one. Highland Park is a service-area profile and is the profile that covers DALLAS. McKinney has no profile of its own; it falls under the NTX service-area listing.",
+ "groups": {
+  "E TX": [
+   {
+    "city": "Waco",
+    "address": "7215 Bosque Blvd Suite 237, Waco, TX 76710",
+    "sab": false
+   },
+   {
+    "city": "Irving",
+    "address": "511 East John Carpenter Freeway, Suite 509H, Irving, TX 75062",
+    "sab": false,
+    "note": "site calls this Las Colinas"
+   },
+   {
+    "city": "Austin",
+    "address": "13785 Research Blvd, Suite 125, #317, Austin, TX 78750",
+    "sab": false,
+    "store_code": "00379369138850285660"
+   },
+   {
+    "city": "Taylor",
+    "address": "305 N Main St, Ste #1029, Taylor, TX 76574",
+    "sab": false,
+    "store_code": "09167823786693963521"
+   },
+   {
+    "city": "Tyler",
+    "address": "4295 Kinsey Dr, Tyler, TX 75703",
+    "sab": false,
+    "store_code": "15616988523612163065"
+   },
+   {
+    "city": "Kerens",
+    "address": null,
+    "areas": [
+     "Corsicana, TX",
+     "Kerens, TX 75144"
+    ],
+    "sab": true
+   }
+  ],
+  "NTX": [
+   {
+    "city": "Plano",
+    "address": "1400 Preston Rd Suite 477, Plano, TX 75093",
+    "sab": false
+   },
+   {
+    "city": "Sherman",
+    "address": "1800 Teague Dr, Suite 2011, Sherman, TX 75090",
+    "sab": false,
+    "store_code": "08407946190099034181"
+   },
+   {
+    "city": "Allen",
+    "address": null,
+    "areas": [
+     "Allen, TX",
+     "Celina, TX",
+     "+9 other areas"
+    ],
+    "sab": true,
+    "store_code": "11391759497809479328"
+   },
+   {
+    "city": "Celina",
+    "address": "601 S Ohio Dr, Suite 201, Celina, TX 75009",
+    "sab": false,
+    "store_code": "06648994888990133105"
+   }
+  ],
+  "DFW (partial, 4 more pending)": [
+   {
+    "city": "Keller/Northlake",
+    "address": null,
+    "areas": [
+     "Keller, TX",
+     "Northlake, TX",
+     "+4 other areas"
+    ],
+    "sab": true
+   },
+   {
+    "city": "Arlington",
+    "address": null,
+    "areas": [
+     "Arlington, TX"
+    ],
+    "sab": true
+   },
+   {
+    "city": "Fort Worth",
+    "address": "9500 Ray White Rd Suite 276, Fort Worth, TX 76244",
+    "sab": false
+   },
+   {
+    "city": "Grapevine",
+    "address": "1701 W Northwest Highway, Suite 132, Grapevine, TX 76051",
+    "sab": false
+   },
+   {
+    "city": "Colleyville",
+    "address": "5601 Colleyville Blvd Ste. 7, Colleyville, TX 76034",
+    "sab": false
+   },
+   {
+    "city": "Denton",
+    "address": "1332 Teasley Ln, Denton, TX 76205",
+    "sab": false
+   },
+   {
+    "city": "Granbury",
+    "address": "301 W Hwy 377, Suite 112, #1006, Granbury, TX 76048",
+    "sab": false,
+    "store_code": "02755456753640814820"
+   },
+   {
+    "city": "Weatherford",
+    "address": "220 Adams Dr, STE 280 - 1052, Weatherford, TX 76086",
+    "sab": false,
+    "store_code": "12928392560203398820"
+   },
+   {
+    "city": "Fort Worth (SAB)",
+    "address": null,
+    "areas": [
+     "Fort Worth, TX"
+    ],
+    "sab": true
+   },
+   {
+    "city": "Gainesville",
+    "address": null,
+    "areas": [
+     "Gainesville, TX 76240"
+    ],
+    "sab": true
+   },
+   {
+    "city": "Grapevine (SAB)",
+    "address": null,
+    "areas": [
+     "Grapevine, TX"
+    ],
+    "sab": true
+   },
+   {
+    "city": "Highland Park",
+    "address": null,
+    "areas": [
+     "Highland Park, TX"
+    ],
+    "sab": true
+   },
+   {
+    "city": "Hurst",
+    "address": null,
+    "areas": [
+     "Hurst, TX"
+    ],
+    "sab": true
+   },
+   {
+    "city": "Keller",
+    "address": null,
+    "areas": [
+     "Keller, TX"
+    ],
+    "sab": true
+   }
+  ],
+  "E TX (cont.)": [
+   {
+    "city": "Waxahachie",
+    "sab": false,
+    "kgmid": "/g/11vyfh8s2q",
+    "share": "https://share.google/gwvLfAJC6JnWQboqr"
+   },
+   {
+    "city": "Gun Barrel City",
+    "sab": false,
+    "kgmid": "/g/11vjjn8q0w",
+    "share": "https://share.google/w6fKgZYfTfQArITCb"
+   },
+   {
+    "city": "Georgetown",
+    "sab": false,
+    "kgmid": "/g/11y8331mn0",
+    "share": "https://share.google/9r1jyIGoGvHCDggB1"
+   },
+   {
+    "city": "Round Rock",
+    "sab": false,
+    "kgmid": "/g/11w3l5_43s",
+    "share": "https://share.google/tcQAVsvxzDZKxDfrF"
+   }
+  ]
+ },
+ "city_profile_map": {
+  "dallas-tx": {
+   "profile": "Highland Park (service area)",
+   "note": "Dallas has no profile of its own"
+  },
+  "mckinney-tx": {
+   "profile": "NTX service area (Allen / Celina + 9 areas)",
+   "note": "no McKinney profile"
+  },
+  "las-colinas-tx": {
+   "profile": "Irving storefront",
+   "note": "site calls the Irving profile Las Colinas"
+  }
+ }
+}

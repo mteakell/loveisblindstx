@@ -1,0 +1,26 @@
+{
+  "_note": "Google place IDs for review harvesting, resolved via Local Falcon. Open as https://www.google.com/maps/place/?q=place_id:<id>, then the button[role=tab] labelled 'Reviews for ...' (NOT the 'Review' action button, which opens the write-a-review flow).",
+  "queue": [
+    {"slug":"waco-tx","city":"Waco","reviews":70,"place_id":"ChIJdYBPCjeFT4YRVphjD30wVgA","done":4},
+    {"slug":"gun-barrel-city-tx","city":"Gun Barrel City","reviews":42,"place_id":"ChIJmRBD-QIjSYYR8NZQJskiflc","done":0},
+    {"slug":"waxahachie-tx","city":"Waxahachie","reviews":30,"place_id":"ChIJOfYl477vToYRanJdVwaTwWY","done":0},
+    {"slug":"plano-tx","city":"Plano","reviews":28,"place_id":"ChIJK-zw-lEjTIYRspVPcUO8rNs","done":10},
+    {"slug":"las-colinas-tx","city":"Las Colinas","reviews":25,"place_id":"ChIJp9JeRw-DToYRrsk8s3hV2GE","done":0},
+    {"slug":"north-richland-hills-tx","city":"North Richland Hills","reviews":19,"place_id":"ChIJ-2eGmgSyimgRVyoBAV_DjCA","done":0},
+    {"slug":"round-rock-tx","city":"Round Rock","reviews":13,"place_id":"ChIJdeBp4VLRRIYRItoLYGnler8","done":0},
+    {"slug":"tyler-tx","city":"Tyler","reviews":13,"place_id":"ChIJiXHpCHzLSYYRCh_mTUyZluY","done":1},
+    {"slug":"colleyville-tx","city":"Colleyville","reviews":12,"place_id":"ChIJlx-PqfTVTYYRrFeqiTFZLQo","done":3},
+    {"slug":"kerens-tx","city":"Kerens","reviews":11,"place_id":"ChIJdxMyznkraksRWvRmTlISEIo","done":0},
+    {"slug":"granbury-tx","city":"Granbury","reviews":11,"place_id":"ChIJ-7QDbh3fUYYRQyvWmI58Pcs","done":0},
+    {"slug":"denton-tx","city":"Denton","reviews":10,"place_id":"ChIJ2QGC2DrLTYYRRZcHJSEZ51k","done":10},
+    {"slug":"georgetown-tx","city":"Georgetown","reviews":10,"place_id":"ChIJRdr8kfTXRIYR_2fBzzkjGtU","done":1},
+    {"slug":"grapevine-tx","city":"Grapevine","reviews":8,"place_id":"ChIJr44vbdLEJ0wRdStF3FaFBSE","done":1},
+    {"slug":"sherman-tx","city":"Sherman","reviews":7,"place_id":"ChIJgS3Ccj-JTIYRtB-MRPdcaAM","done":1},
+    {"slug":"taylor-tx","city":"Taylor","reviews":5,"place_id":"ChIJQewiDvrnRIYRduOeO9L61Kc","done":0},
+    {"slug":"dallas-tx","city":"Dallas (Highland Park SAB)","reviews":4,"place_id":"ChIJq_pEM1Dcs4YRSfANfXjdWVg","done":0},
+    {"slug":"austin-tx","city":"Austin","reviews":4,"place_id":"ChIJg6EiQDczW4YRyhkrAGGM2n4","done":3},
+    {"slug":"keller-tx","city":"Keller","reviews":2,"place_id":"ChIJmdI9gnPXgyMR6V9l4DEtdW4","done":0},
+    {"slug":"weatherford-tx","city":"Weatherford","reviews":2,"place_id":"ChIJJ6KEwtv9UYYRBCNUSUw84HU","done":0},
+    {"slug":"arlington-tx","city":"Arlington","reviews":1,"place_id":"ChIJqQBzYEPso2gRdJXakaYVua4","done":0}
+  ]
+}
