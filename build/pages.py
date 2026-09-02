@@ -17,10 +17,15 @@ SHUTTER_PAGES = set(json.load(open(os.path.join(ROOT, "data/shutter-cities.json"
 MOTOR_PAGES = set(json.load(open(os.path.join(ROOT, "data/motorized-cities.json")))["cities"])
 REVIEWS = json.load(open(os.path.join(ROOT, "data/reviews.json")))
 GUARANTEES = json.load(open(os.path.join(ROOT, "data/guarantees.json")))["guarantees"]
+# 4+ stars only, newest first, at the source. product_city.py consumes
+# BY_CITY directly, and filtering only in this file's own picker let the
+# single 1-star review onto all six Waxahachie product pages.
 BY_CITY = {}
 for _r in REVIEWS:
-    if _r.get("slug"):
+    if _r.get("slug") and _r.get("rating", 5) >= 4:
         BY_CITY.setdefault(_r["slug"], []).append(_r)
+for _v in BY_CITY.values():
+    _v.sort(key=lambda r: r.get("date", ""), reverse=True)
 
 def GAL_LABEL(path):
     """Name the treatment in a photo from its filename, for caption and alt."""
@@ -539,7 +544,7 @@ def body_block(c, n_reviews=8):
         <li>{TICK}{e(c['label'])} is covered by {e(terr['brand'])}, run by {_leads_linked(terr)}</li>
         <li>{TICK}Remade at no cost if a treatment does not match the approved measurements</li>
       </ul>
-      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book your free consultation</a></div>
+      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a></div>
     </div>
     <div class="media reveal">
       <img src="{hero2}" width="900" height="600" loading="lazy"
@@ -560,10 +565,10 @@ def body_block(c, n_reviews=8):
       <ul class="nap-list">
         <li class="contact-line"><a href="tel:{tel}">{e(ph)}</a></li>
         {addr}
-        <li class="contact-line"><a href="/contact">Send us a message</a></li>
+        <li class="contact-line"><a href="/schedule-now">Send us a message</a></li>
         {gbp}
       </ul>
-      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Request a quote</a></div>
+      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Request a quote</a></div>
     </div>
     <div class="body reveal">
       <h2 class="title">Nearby areas we serve</h2>

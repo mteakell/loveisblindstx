@@ -180,7 +180,7 @@ def checklist():
             f'Work through them and your consultation turns into a quote in one visit instead '
             f'of two.</p></div></div></section>'
             f'<section class="section"><div class="container"><div class="prod-grid">{items}</div>'
-            f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/contact">Book your free consultation</a>'
+            f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>'
             f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
             f'</div></section>')
     open("design-checklist.html", "w").write(shell(url, title, desc, nodes, body))

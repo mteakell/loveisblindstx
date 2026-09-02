@@ -985,3 +985,11 @@ body.search-open{overflow:hidden}
 .rel-card .pbody{padding:16px 16px 18px}
 .rel-card h3{font-size:15px;line-height:1.4;margin:0 0 10px}
 .post-cta{max-width:960px;margin:36px auto 0;padding:0 20px;justify-content:flex-start}
+
+/* aspect-ratio:5/2 plus a min-height gives the hero an intrinsic minimum
+   width of height x 2.5, about 1300px, which forced every page to scroll
+   sideways on phones. Below tablet width the ratio goes and min-height
+   governs alone. */
+@media (max-width:900px){
+  .phero{aspect-ratio:auto;min-height:min(440px,68vh)}
+}

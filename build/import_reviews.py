@@ -23,6 +23,7 @@ def clean(t):
     t = re.sub(r'<br\s*/?>', ' ', str(t or ""))
     t = re.sub(r'<[^>]+>', ' ', t)
     t = t.replace(" ", " ").replace("&amp;", "&")
+    t = t.replace("\u2014", ", ")                    # house rule: no em dashes
     return re.sub(r'\s+', ' ', t).strip()
 
 
