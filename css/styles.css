@@ -953,3 +953,7 @@ body.search-open{overflow:hidden}
   overflow:hidden;flex:1 1 auto;min-height:0}
 .rv-by{flex:0 0 auto}
 @media (max-width:700px){.rv-card{height:300px}}
+
+/* review strip on product and service pages: no arrows, just a scroller */
+.rv-compact .rv-wrap{padding:0 clamp(16px,4vw,40px)}
+.rv-compact .rv-card{height:280px}
