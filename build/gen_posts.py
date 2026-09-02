@@ -68,10 +68,38 @@ def desc_for(post):
         d = d[:152].rsplit(" ", 1)[0] + "..."
     return d
 
+# Real install photography from the brand catalogue, matched to what the post
+# is about. The old pool was images/blog, the Duda import, which is where the
+# stock and AI-looking shots live: a generated post about patio shades was
+# fronted by a staged living room.
+_FAM = [
+ ("patio",     ("patio", "outdoor", "exterior", "pergola")),
+ ("shutters",  ("shutter", "plantation")),
+ ("honeycomb", ("honeycomb", "cellular", "energy")),
+ ("woven",     ("woven", "bamboo")),
+ ("roman",     ("roman",)),
+ ("banded",    ("banded", "zebra", "dual")),
+ ("drapes",    ("drape", "curtain", "panel-track", "panel track")),
+ ("motor",     ("motoriz", "smart", "automat", "remote", "app")),
+ ("roller",    ("roller", "solar", "blackout", "screen", "shade")),
+ ("blinds",    ("blind", "wood", "venetian", "horizontal")),
+]
+_PREFIX = {
+ "patio": "exterior-patio-shades", "shutters": "shutters-shutters",
+ "honeycomb": "honeycomb-shades", "woven": "woven-wood-shades",
+ "roman": "roman-shades", "banded": "banded-shades", "drapes": "smart-drapes",
+ "motor": "roller-shades", "roller": "roller-shades", "blinds": "blinds-blinds",
+}
+
+
 def pick_hero(slug):
-    pool = sorted(os.listdir("images/blog"))
-    idx = sum(ord(c) for c in slug) % len(pool)
-    return "/images/blog/" + pool[idx]
+    t = slug.lower()
+    fam = next((f for f, words in _FAM if any(w in t for w in words)), "roller")
+    pool = sorted(f for f in os.listdir("images/lib")
+                  if f.startswith(_PREFIX[fam]) and not f.startswith("_unused"))
+    if not pool:
+        pool = sorted(f for f in os.listdir("images/lib") if not f.startswith("_unused"))
+    return "/images/lib/" + pool[sum(ord(c) for c in slug) % len(pool)]
 
 def related_for(post, allplan):
     same = [x for x in allplan if x["cluster"] == post["cluster"] and x["slug"] != post["slug"]][:2]
