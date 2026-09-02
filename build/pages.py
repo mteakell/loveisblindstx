@@ -318,7 +318,7 @@ def body_block(c):
     </div>
     <div class="media reveal">
       <img src="{hero2}" width="900" height="600" loading="lazy"
-           alt="Custom window treatments installed by Love Is Blinds">
+           alt="Custom window treatments installed in {e(c['label'])}, TX by Love Is Blinds">
     </div>
   </div>
 </section>

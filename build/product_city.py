@@ -78,9 +78,19 @@ def page(prod, slug):
     why_h, why_body = pick(V.WHY[prod], slug, 7)
     close = pick(V.CLOSE, slug, 13)
     shots = pick_many(IMG_POOL[prod], slug, 6, 3)
+    # each shot gets its own alt; three identical strings on one page is
+    # keyword repetition with no added meaning
+    # six shots per page, so six templates: three cycled twice still left
+    # every page with three duplicated alt strings
+    _SHOT = ["{p} installed in a {c}, TX home by Love Is Blinds",
+             "{p} fitted to the window opening in {c}, TX",
+             "Close-up of {p} installed by Love Is Blinds in {c}, TX",
+             "{p} measured and installed in {c}, TX",
+             "{p} in a {c}, TX living space",
+             "{p} on a wide window in {c}, TX"]
     gallery = "".join(
-        f'<img src="{sh}" alt="{e(spec["label"])} installed in {e(label)}, TX by Love Is Blinds" '
-        f'loading="lazy" width="600" height="450">' for sh in shots)
+        f'<img src="{sh}" alt="{e(_SHOT[i % len(_SHOT)].format(p=spec["label"], c=label))}" '
+        f'loading="lazy" width="600" height="450">' for i, sh in enumerate(shots))
     band = pick(IMG_POOL[prod], slug, 21)
     plist = pick_many(spec["price"], slug, len(spec["price"]), 17)
     prices = "".join(f"<li>{e(x)}</li>" for x in plist)
