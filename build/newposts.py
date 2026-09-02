@@ -48,7 +48,21 @@ def render(post, body_html, faqs, hero, related):
     faqhtml = "".join(
         f"<details><summary>{e(q)}</summary><div class='a'>{e(a)}</div></details>"
         for q, a in faqs)
-    rel = "".join(f'<li><a href="{u}">{e(t)}</a></li>' for t, u in related)
+    # bare <li> links read as an afterthought under a finished article. Cards
+    # with the real photography the index already carries.
+    _idx = {p["url"]: p.get("img") for p in json.load(open("data/blog-index.json"))}
+    _idx.setdefault("/products/exterior-patio-shades",
+                    "/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp")
+    _idx.setdefault("/areas-we-serve",
+                    "/images/lib/shutters-shutters-151-jpg.webp")
+    def _relcard(t, u):
+        img = _idx.get(u)
+        pic = (f'<span class="pic"><img src="{img}" alt="" loading="lazy" '
+               f'width="600" height="400"></span>' if img else "")
+        return (f'<a class="prod-card rel-card" href="{u}">{pic}'
+                f'<div class="pbody"><h3>{e(t)}</h3>'
+                f'<span class="btn-link">Read <span class="arw">&rarr;</span></span></div></a>')
+    rel = "".join(_relcard(t, u) for t, u in related)
     nodes = [S.organization(BIZ), S.website(BIZ), S.business(BIZ),
              S.webpage(url, title_tag, desc, about=S.ORGID, primary=hero),
              S.blogposting(url, post["title"], desc, post["published"], image=hero),
@@ -95,11 +109,11 @@ def render(post, body_html, faqs, hero, related):
       <h2>Common questions</h2>
     </div>
     <div class="faq">{faqhtml}</div>
-    <div class="post-body">
+    <div class="rel-block">
       <h2>Related reading</h2>
-      <ul>{rel}</ul>
+      <div class="prod-grid rel-grid">{rel}</div>
     </div>
-    <div class="btnrow">
+    <div class="btnrow post-cta">
       <a class="btn btn-primary btn-lg" href="/schedule-now">Book a free in-home measure</a>
       <a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>
     </div>

@@ -974,3 +974,14 @@ body.search-open{overflow:hidden}
 /* review strip on product and service pages: no arrows, just a scroller */
 .rv-compact .rv-wrap{padding:0 clamp(16px,4vw,40px)}
 .rv-compact .rv-card{height:280px}
+
+/* related reading on blog posts: cards with photos, not a bulleted list.
+   The CTA row was also hanging half off the left edge because it sat outside
+   the article column. */
+.rel-block{max-width:960px;margin:56px auto 0;padding:0 20px}
+.rel-block h2{font-size:clamp(20px,2.2vw,26px);margin:0 0 22px}
+.rel-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:0}
+.rel-card .pic img{height:150px}
+.rel-card .pbody{padding:16px 16px 18px}
+.rel-card h3{font-size:15px;line-height:1.4;margin:0 0 10px}
+.post-cta{max-width:960px;margin:36px auto 0;padding:0 20px;justify-content:flex-start}
