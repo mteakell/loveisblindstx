@@ -809,3 +809,73 @@ body.search-open{overflow:hidden}
   font-size:clamp(15px,1.25vw,16.5px);line-height:1.65}
 .parallax-band .btnrow{margin-top:26px;display:flex;justify-content:center}
 @media (max-width:700px){.parallax-band{background-attachment:scroll;padding:80px 0}}
+
+/* ---- depth pass -------------------------------------------------------
+   The page was flat: white cards on cream with a hairline border and almost
+   no shadow, so 13 sections read as one long list. */
+
+/* product cards on city pages now have photos, so give them a real image box */
+.prod-card .pic{display:block;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0}
+.prod-card .pic img{width:100%;height:190px;object-fit:cover;display:block;
+  transition:transform .6s var(--ease)}
+.prod-card:hover .pic img{transform:scale(1.06)}
+.prod-card{overflow:hidden;background:#fff;border:1px solid rgba(18,26,32,.08);
+  border-radius:var(--radius);box-shadow:0 1px 2px rgba(18,26,32,.05),0 8px 24px -12px rgba(18,26,32,.18);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.prod-card:hover{transform:translateY(-4px);
+  box-shadow:0 2px 4px rgba(18,26,32,.06),0 22px 44px -16px rgba(18,26,32,.30)}
+.prod-card .pbody{padding:20px 20px 22px}
+
+/* guarantee cards sit in the same grid as the type cards now */
+.gtee-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+/* numbered process steps, with a rule connecting them on wide screens */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;
+  margin-top:44px;position:relative}
+.step{position:relative;padding:34px 22px 24px;background:#fff;
+  border:1px solid rgba(18,26,32,.08);border-radius:var(--radius);
+  box-shadow:0 1px 2px rgba(18,26,32,.05),0 10px 26px -14px rgba(18,26,32,.20)}
+.step-n{position:absolute;top:-19px;left:22px;width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;
+  color:#fff;background:var(--lead);box-shadow:0 6px 16px -6px rgba(18,26,32,.45)}
+.step h3{margin:0 0 8px;font-size:1rem}
+.step p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-muted)}
+
+/* lift the review cards off the page too */
+.reviews .rev, .reviews > div{box-shadow:0 1px 2px rgba(18,26,32,.05),0 10px 26px -14px rgba(18,26,32,.18)}
+
+/* section rhythm: give the tinted sections a soft edge instead of a hard band */
+.bg-cream-tint{position:relative}
+.bg-cream-tint::before,.bg-cream-tint::after{content:"";position:absolute;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(18,26,32,.07),transparent)}
+.bg-cream-tint::before{top:0}
+.bg-cream-tint::after{bottom:0}
+
+/* recent-work strip: six photos in a staggered grid, so it reads as work
+   rather than as another row of equal boxes */
+.shots{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:40px}
+.shot{margin:0;overflow:hidden;border-radius:var(--radius);
+  box-shadow:0 1px 2px rgba(18,26,32,.06),0 14px 32px -18px rgba(18,26,32,.35)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .7s var(--ease)}
+.shot:hover img{transform:scale(1.05)}
+.shot:nth-child(1){grid-column:span 4;aspect-ratio:16/9}
+.shot:nth-child(2){grid-column:span 2;aspect-ratio:4/5}
+.shot:nth-child(3){grid-column:span 2;aspect-ratio:1}
+.shot:nth-child(4){grid-column:span 2;aspect-ratio:1}
+.shot:nth-child(5){grid-column:span 2;aspect-ratio:1}
+.shot:nth-child(6){grid-column:span 6;aspect-ratio:21/6}
+@media (max-width:900px){
+  .shots{grid-template-columns:repeat(2,1fr)}
+  .shot:nth-child(n){grid-column:span 1;aspect-ratio:4/3}
+  .shot:nth-child(1),.shot:nth-child(6){grid-column:span 2;aspect-ratio:16/9}
+}
+
+/* feature-list items are flex so the tick sits beside the text, but that made
+   every inline link inside the text its own flex item: "run by Jake Wade and
+   Jonathan Arosemena" broke into columns. Wrap the text in its own box so the
+   flex row is only tick + text. */
+.feature-list li{align-items:flex-start}
+.feature-list li > .tick{flex:0 0 auto}
+.feature-list li > *:not(.tick){flex:1 1 auto;min-width:0}
+.feature-list li a{display:inline}

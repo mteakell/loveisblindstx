@@ -22,6 +22,42 @@ for _r in REVIEWS:
     if _r.get("slug"):
         BY_CITY.setdefault(_r["slug"], []).append(_r)
 
+GALLERY = ["/images/lib/" + f for f in [
+ "shutters-shutters-113-jpg.webp", "roller-shades-roller-shades-230-jpg.webp",
+ "exterior-patio-shades-exterior-patio-shades-002-jpg.webp", "shutters-shutters-077-jpg.webp",
+ "woven-wood-shades-woven-wood-shades-003-jpg.webp", "roller-shades-roller-shades-137-jpg.webp",
+ "shutters-shutters-151-jpg.webp", "honeycomb-shades-honeycomb-shades-018-jpg.webp",
+ "smart-drapes-smart-drapes-002-jpg.webp", "shutters-shutters-101-jpg.webp",
+ "roller-shades-roller-shades-201-jpg.webp", "blinds-blinds-013-jpg.webp",
+ "exterior-patio-shades-exterior-patio-shades-001-jpg.webp", "shutters-shutters-060-jpg.webp",
+ "roller-shades-roller-shades-118-jpg.webp", "smart-drapes-smart-drapes-010-jpg.webp",
+ "shutters-shutters-028-jpg.webp", "honeycomb-shades-honeycomb-shades-026-jpg.webp",
+]]
+
+PROD_IMG = {k: ["/images/lib/" + f for f in v] for k, v in {
+ "shutters": ["shutters-shutters-113-jpg.webp", "shutters-shutters-077-jpg.webp",
+              "shutters-shutters-101-jpg.webp", "shutters-shutters-091-jpg.webp",
+              "shutters-shutters-151-jpg.webp"],
+ "motor":    ["roller-shades-roller-shades-118-jpg.webp", "smart-drapes-smart-drapes-008-jpg.webp",
+              "roller-shades-roller-shades-137-jpg.webp", "smart-drapes-smart-drapes-010-jpg.webp"],
+ "patio":    ["exterior-patio-shades-exterior-patio-shades-001-jpg.webp",
+              "exterior-patio-shades-exterior-patio-shades-002-jpg.webp",
+              "exterior-patio-shades-exterior-patio-shades-005-jpg.webp"],
+ "blinds":   ["blinds-blinds-013-jpg.webp", "blinds-blinds-009-jpg.webp",
+              "blinds-blinds-007-jpg.webp", "blinds-blinds-011-jpg.webp"],
+ "roller":   ["roller-shades-roller-shades-230-jpg.webp", "roller-shades-roller-shades-201-jpg.webp",
+              "roller-shades-home-hero-shades-1-jpeg.webp", "roller-shades-roller-shades-137-jpg.webp"],
+ "honeycomb":["honeycomb-shades-honeycomb-shades-018-jpg.webp",
+              "honeycomb-shades-honeycomb-shades-008-jpg.webp",
+              "honeycomb-shades-honeycomb-shades-022-jpg.webp"],
+}.items()}
+PROD_IMG_KEY = {
+ "/products/exterior-patio-shades": "patio",
+ "/products/blinds": "blinds",
+ "/products/roller-shades": "roller",
+ "/products/honeycomb-shades": "honeycomb",
+}
+
 IMG_MOTOR = ["/images/lib/" + f for f in [
  "roller-shades-roller-shades-118-jpg.webp",
  "smart-drapes-smart-drapes-008-jpg.webp",
@@ -390,30 +426,56 @@ def body_block(c, n_reviews=8):
       f'See motorized options</a></div>'
       f'</div></section>')
 
+    # a strip of real work, so the run of text sections is broken by something
+    # to look at rather than another card grid
+    _gimgs = bpick_many(GALLERY, c["slug"], 6, 11)
+    gallery_block = (
+      f'<section class="section"><div class="container center">'
+      f'<h2 class="title">Recent work around {e(c["label"])}</h2>'
+      f'<p class="lead">Blinds, shades, shutters and exterior patio shades we have measured and '
+      f'installed for Texas homes.</p></div>'
+      f'<div class="container"><div class="shots">' +
+      "".join(f'<figure class="shot"><img src="{g}" alt="Custom window treatments installed by '
+              f'Love Is Blinds near {e(c["label"])}, TX" loading="lazy" width="2000" height="1500">'
+              f'</figure>' for g in _gimgs) +
+      f'</div><p class="center" style="margin-top:26px">'
+      f'<a class="btn btn-secondary btn-lg" href="/gallery">See the full gallery</a></p>'
+      f'</div></section>')
+
     _prh, _steps = bpick(BK.PROCESS_VARIANTS, c["slug"], 5)
     process_block = (
       f'<section class="section"><div class="container center">'
       f'<h2 class="title">{e(_prh)} in {e(c["label"])}</h2></div>'
-      f'<div class="container"><div class="guarantees">' +
-      "".join(f'<div class="gtee"><h3>{i}. {e(t)}</h3><p>{e(b)}</p></div>'
+      f'<div class="container"><div class="steps">' +
+      "".join(f'<div class="step"><span class="step-n">{i}</span>'
+              f'<h3>{e(t)}</h3><p>{e(b)}</p></div>'
               for i, (t, b) in enumerate(_steps, 1)) + '</div></div></section>')
 
     gtee_cards = "".join(
-        f'<div class="gtee"><h3>{e(g["name"])}</h3><p>{e(g["text"])}</p></div>'
+        f'<div class="type-card">{IC.guarantee_icon(g["id"])}<div class="pbody">'
+        f'<h3>{e(g["name"])}</h3><p>{e(g["text"])}</p></div></div>'
         for g in GUARANTEES)
     label = e(c["label"])
-    prods = (f'<a class="prod-card reveal" href="{shutter_url}"><div class="pbody">'
-             f'<h3>Plantation Shutters</h3><p>Louvered shutters built to the window opening.</p>'
-             f'<span class="btn-link">See plantation shutters <span class="arw">&rarr;</span></span>'
-             f'</div></a>'
-             f'<a class="prod-card reveal" href="{motor_url}"><div class="pbody">'
-             f'<h3>Motorization</h3><p>App, remote and voice control.</p>'
-             f'<span class="btn-link">See motorization <span class="arw">&rarr;</span></span>'
-             f'</div></a>') + "".join(
-      f'<a class="prod-card reveal" href="{u}"><div class="pbody"><h3>{e(n)}</h3>'
-      f'<p>{e(bpick(PRODUCT_BLURBS[u], c["slug"], 6))}</p>'
-      f'<span class="btn-link">See {e(n.lower())} <span class="arw">&rarr;</span></span>'
-      f'</div></a>' for n,u in PRODUCTS)
+    # These were text-only cards on every city page while the home page versions
+    # carried photos. Six product cards with no imagery was the flattest thing
+    # on the page.
+    def _pcard(name, url, blurb, img):
+        return (f'<a class="prod-card reveal" href="{url}">'
+                f'<span class="pic"><img src="{img}" alt="{e(name)} installed in '
+                f'{e(c["label"])}, TX by Love Is Blinds" loading="lazy" '
+                f'width="2000" height="1500"></span>'
+                f'<div class="pbody"><h3>{e(name)}</h3><p>{e(blurb)}</p>'
+                f'<span class="btn-link">See {e(name.lower())} '
+                f'<span class="arw">&rarr;</span></span></div></a>')
+
+    _pi = lambda k, salt: bpick(PROD_IMG[k], c["slug"], salt)
+    prods = (_pcard("Plantation Shutters", shutter_url,
+                    "Louvered shutters built to the window opening.", _pi("shutters", 8))
+           + _pcard("Motorization", motor_url,
+                    "App, remote and voice control.", _pi("motor", 9))
+           + "".join(_pcard(n, u, bpick(PRODUCT_BLURBS[u], c["slug"], 6),
+                            _pi(PROD_IMG_KEY[u], 10 + i))
+                     for i, (n, u) in enumerate(PRODUCTS)))
     nearlinks = " ".join(
       f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
     faqhtml = "".join(
@@ -527,8 +589,10 @@ def body_block(c, n_reviews=8):
   <div class="container center">
     <h2 class="title">Every job in {label} is backed five ways</h2>
   </div>
-  <div class="container"><div class="guarantees">{gtee_cards}</div></div>
+  <div class="container"><div class="prod-grid gtee-grid">{gtee_cards}</div></div>
 </section>
+
+{gallery_block}
 
 {process_block}
 

@@ -68,3 +68,19 @@ def icon_for(name, used=None):
                 used.add(key)
             return '<span class="tico">' + _S + ICONS[key] + '</svg></span>'
     return '<span class="tico">' + _S + ICONS[order[0]] + '</svg></span>'
+
+
+# The five guarantees. Keyed by id because these are fixed, named things
+# rather than the 58 free-text product types the keyword rules handle.
+GUARANTEE_ICONS = {
+ "lifetime":     '<path d="M12 3 4 6v6c0 4.4 3.2 7.9 8 9 4.8-1.1 8-4.6 8-9V6Z"/><path d="m9 12 2 2 4-4"/>',
+ "price-match":  '<path d="M3 6h13l-1.5 8H5Z"/><circle cx="9" cy="19" r="1.4"/><circle cx="15" cy="19" r="1.4"/><path d="M17 3h4v4"/><path d="m21 3-5 5"/>',
+ "guaranten":    '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5V15"/><path d="M13 12a2 2 0 0 1 4 0v3a2 2 0 0 1-4 0Z"/>',
+ "service":      '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ "transferable": '<path d="M4 9h13l-3-3"/><path d="M20 15H7l3 3"/>',
+}
+
+
+def guarantee_icon(gid):
+    p = GUARANTEE_ICONS.get(gid, GUARANTEE_ICONS["lifetime"])
+    return '<span class="tico">' + _S + p + '</svg></span>'

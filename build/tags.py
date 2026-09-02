@@ -43,5 +43,43 @@ def main():
     print(f"tags: {added} inserted into <head>, {moved} relocated from elsewhere")
 
 
+
+def wrap_feature_items():
+    """Give every .feature-list item exactly two flex children.
+
+    .feature-list li is display:flex so the tick sits beside the text. But a
+    bare text node plus inline links means every <a> becomes its own flex item,
+    which broke "run by Jake Wade and Jonathan Arosemena" into columns. Wrapping
+    the text in a span makes the row tick + text and nothing else.
+
+    Done here rather than in one generator because feature lists are emitted by
+    pages.py and by the converted Duda pages alike.
+    """
+    n = 0
+    for f in glob.glob("**/*.html", recursive=True):
+        if f.startswith("build/"):
+            continue
+        s = open(f).read()
+        if 'class="feature-list"' not in s:
+            continue
+
+        def fix(m):
+            nonlocal n
+            inner = m.group(1)
+            if '<span class="ftxt">' in inner:
+                return m.group(0)
+            mm = re.match(r'(\s*<span class="tick">.*?</span>)(.*)$', inner, re.S)
+            if not mm:
+                return m.group(0)
+            n += 1
+            return f'<li>{mm.group(1)}<span class="ftxt">{mm.group(2)}</span></li>'
+
+        out = re.sub(r'<li>((?:(?!</li>).)*)</li>', fix, s, flags=re.S)
+        if out != s:
+            open(f, "w").write(out)
+    print(f"feature lists: wrapped {n} items")
+
+
 if __name__ == "__main__":
     main()
+    wrap_feature_items()
