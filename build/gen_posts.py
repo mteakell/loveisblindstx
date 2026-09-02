@@ -2,11 +2,12 @@
 import json, os, random, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 import newposts as N, content_cost as C, content_all as A, content_rest as R, content_rooms as RM
+import content_new6 as N6
 C.N = N
 os.chdir(N.ROOT)
 
 BODIES = {}
-BODIES.update(A.build(N, C)); BODIES.update(R.build(N)); BODIES.update(RM.build(N))
+BODIES.update(A.build(N, C)); BODIES.update(R.build(N)); BODIES.update(RM.build(N)); BODIES.update(N6.build(N))
 PLAN = json.load(open("data/new-posts.json"))
 EXISTING = json.load(open("data/blog-index.json"))
 

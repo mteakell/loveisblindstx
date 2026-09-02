@@ -238,5 +238,53 @@
   "vol": 110,
   "kd": 12,
   "cluster": "care"
+ },
+ {
+  "slug": "types-of-window-blinds",
+  "title": "Types of Window Blinds: A Plain Guide",
+  "kw": "types of window blinds",
+  "vol": 3600,
+  "kd": 20,
+  "cluster": "compare"
+ },
+ {
+  "slug": "types-of-window-shades",
+  "title": "Types of Window Shades and What Each One Does",
+  "kw": "types of window shades",
+  "vol": 3600,
+  "kd": 26,
+  "cluster": "compare"
+ },
+ {
+  "slug": "horizontal-blinds",
+  "title": "Horizontal Blinds: Sizes, Materials and Mounting",
+  "kw": "horizontal blinds",
+  "vol": 5400,
+  "kd": 28,
+  "cluster": "compare"
+ },
+ {
+  "slug": "plantation-shutters-for-sliding-glass-doors",
+  "title": "Plantation Shutters for Sliding Glass Doors",
+  "kw": "plantation shutters for sliding glass doors",
+  "vol": 2400,
+  "kd": 16,
+  "cluster": "compare"
+ },
+ {
+  "slug": "real-wood-vs-faux-wood-shutters",
+  "title": "Real Wood vs Faux Wood Shutters",
+  "kw": "faux wood shutters",
+  "vol": 1900,
+  "kd": 24,
+  "cluster": "compare"
+ },
+ {
+  "slug": "modern-window-treatment-ideas",
+  "title": "Modern Window Treatment Ideas That Age Well",
+  "kw": "modern window treatment ideas",
+  "vol": 2400,
+  "kd": 25,
+  "cluster": "compare"
  }
 ]
