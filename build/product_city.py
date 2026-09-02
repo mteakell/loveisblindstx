@@ -91,7 +91,7 @@ def page(prod, slug):
              "{p} in a {c}, TX living space",
              "{p} on a wide window in {c}, TX"]
     gallery = "".join(
-        f'<img src="{sh}" alt="{e(_SHOT[i % len(_SHOT)].format(p=spec["label"], c=label))}" '
+        f'<img src="{sh}" data-alt-final alt="{e(_SHOT[i % len(_SHOT)].format(p=spec["label"], c=label))}" '
         f'loading="lazy" width="600" height="450">' for i, sh in enumerate(shots))
     band = pick(IMG_POOL[prod], slug, 21)
     plist = pick_many(spec["price"], slug, len(spec["price"]), 17)

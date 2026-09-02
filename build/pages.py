@@ -22,6 +22,23 @@ for _r in REVIEWS:
     if _r.get("slug"):
         BY_CITY.setdefault(_r["slug"], []).append(_r)
 
+def GAL_LABEL(path):
+    """Name the treatment in a photo from its filename, for caption and alt."""
+    n = path.split("/")[-1]
+    for pre, lab in [("exterior-patio-shades", "Exterior patio shades"),
+                     ("shutters-shutters", "Plantation shutters"),
+                     ("roller-shades", "Roller shades"),
+                     ("honeycomb-shades", "Honeycomb shades"),
+                     ("woven-wood-shades", "Woven wood shades"),
+                     ("roman-shades", "Roman shades"),
+                     ("banded-shades", "Banded shades"),
+                     ("smart-drapes", "Drapery and motorization"),
+                     ("blinds-blinds", "Custom blinds")]:
+        if n.startswith(pre):
+            return lab
+    return "Custom window treatments"
+
+
 GALLERY = ["/images/lib/" + f for f in [
  "shutters-shutters-113-jpg.webp", "roller-shades-roller-shades-230-jpg.webp",
  "exterior-patio-shades-exterior-patio-shades-002-jpg.webp", "shutters-shutters-077-jpg.webp",
@@ -435,8 +452,11 @@ def body_block(c, n_reviews=8):
       f'<p class="lead">Blinds, shades, shutters and exterior patio shades we have measured and '
       f'installed for Texas homes.</p></div>'
       f'<div class="container"><div class="shots">' +
-      "".join(f'<figure class="shot"><img src="{g}" alt="Custom window treatments installed by '
-              f'Love Is Blinds near {e(c["label"])}, TX" loading="lazy" width="2000" height="1500">'
+      "".join(f'<figure class="shot">'
+              f'<img src="{g}" data-alt-final alt="{e(GAL_LABEL(g))} installed by Love Is Blinds '
+              f'in {e(c["label"])}, TX" loading="lazy" width="2000" height="1500">'
+              f'<figcaption><span class="shot-kind">{e(GAL_LABEL(g))}</span>'
+              f'<span class="shot-where">{e(c["label"])}, TX</span></figcaption>'
               f'</figure>' for g in _gimgs) +
       f'</div><p class="center" style="margin-top:26px">'
       f'<a class="btn btn-secondary btn-lg" href="/gallery">See the full gallery</a></p>'

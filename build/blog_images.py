@@ -82,7 +82,7 @@ def main():
             w, h = Image.open(src.lstrip("/")).size
             alt = f"{label(src)} installed by Love Is Blinds in a Texas home"
             fig = (f'<figure class="post-figure">'
-                   f'<img src="{src}" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async">'
+                   f'<img src="{src}" data-alt-final alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async">'
                    f'</figure>\n')
             parts[idx] = fig + parts[idx]
             added += 1

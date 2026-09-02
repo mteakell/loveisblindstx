@@ -38,11 +38,17 @@ def fix(html):
         a = ALT.search(t)
         if a and a.group(1).strip(): counts[a.group(1).strip()] += 1
     dupes = {v for v, c in counts.items() if c > 1}
+    # Figures we author ourselves already carry a deliberate alt. The
+    # boilerplate rule below was written for Duda blog markup and was
+    # rewriting our own gallery captions into filenames.
+    skip = set(re.findall(r'<img[^>]*data-alt-final[^>]*>', html))
     seen = collections.Counter()
     changed = [0, 0]
 
     def one(m):
         t = m.group(0)
+        if "data-alt-final" in t:
+            return t
         src = (SRC.search(t) or ["", ""])[1]
         a = ALT.search(t)
         if not a:                                   # no alt attribute at all
