@@ -80,6 +80,32 @@ def wrap_feature_items():
     print(f"feature lists: wrapped {n} items")
 
 
+
+
+def bust_css():
+    """Fingerprint the stylesheet link.
+
+    The design kept looking broken after deploys because browsers held a cached
+    styles.css: the page HTML updates but the stylesheet URL never changed, so
+    new markup rendered with old rules and giant unstyled icons. Appending a
+    content hash means every CSS change is a new URL and a refresh always gets
+    the matching stylesheet.
+    """
+    import hashlib
+    digest = hashlib.sha1(open("css/styles.css", "rb").read()).hexdigest()[:10]
+    link = re.compile(r'href="/css/styles\.css(?:\?v=[0-9a-f]*)?"')
+    n = 0
+    for f in glob.glob("**/*.html", recursive=True):
+        if f.startswith("build/"):
+            continue
+        s = open(f).read()
+        out = link.sub(f'href="/css/styles.css?v={digest}"', s)
+        if out != s:
+            open(f, "w").write(out); n += 1
+    print(f"css cache-bust: v={digest} on {n} pages")
+
+
 if __name__ == "__main__":
     main()
     wrap_feature_items()
+    bust_css()
