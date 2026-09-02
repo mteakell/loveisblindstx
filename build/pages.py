@@ -14,6 +14,7 @@ PATIO_PAGES = set(json.load(open(os.path.join(ROOT, "data/patio-cities.json")))[
 SHUTTER_PAGES = set(json.load(open(os.path.join(ROOT, "data/shutter-cities.json")))["cities"])
 MOTOR_PAGES = set(json.load(open(os.path.join(ROOT, "data/motorized-cities.json")))["cities"])
 REVIEWS = json.load(open(os.path.join(ROOT, "data/reviews.json")))
+GUARANTEES = json.load(open(os.path.join(ROOT, "data/guarantees.json")))["guarantees"]
 BY_CITY = {}
 for _r in REVIEWS:
     if _r.get("slug"):
@@ -74,9 +75,21 @@ def nearby(city, n=6):
         d = miles(city, o)
         if d is not None: scored.append((d, o))
     if scored:
-        return [o for _, o in sorted(scored, key=lambda x: x[0])[:n]]
-    peers = [o for o in CITIES
-             if T.of(o["slug"])["key"] == T.of(city["slug"])["key"] and o["slug"] != city["slug"]]
+        # Two records can share a label (corsicana-tx and
+        # w-7th-avenue-corsicana-tx are both "Corsicana"), which rendered the
+        # same city name twice in the list. Keep the nearest of each label.
+        out, seen = [], {city["label"]}
+        for _, o in sorted(scored, key=lambda x: x[0]):
+            if o["label"] in seen: continue
+            seen.add(o["label"]); out.append(o)
+            if len(out) == n: break
+        return out
+    peers, seen = [], {city["label"]}
+    for o in CITIES:
+        if o["slug"] == city["slug"]: continue
+        if T.of(o["slug"])["key"] != T.of(city["slug"])["key"]: continue
+        if o["label"] in seen: continue
+        seen.add(o["label"]); peers.append(o)
     return peers[:n]
 
 # ---- demand-driven titles -------------------------------------------------
@@ -265,6 +278,10 @@ def body_block(c, n_reviews=8):
           f'<div class="reviews">{cards}</div>{gbp_cta}</div></section>')
     else:
         reviews_block = ""
+    gtee_cards = "".join(
+        f'<div class="gtee"><h3>{e(g["name"])}</h3><p>{e(g["text"])}</p></div>'
+        for g in GUARANTEES)
+    label = e(c["label"])
     prods = (f'<a class="prod-card reveal" href="{shutter_url}"><div class="pbody">'
              f'<h3>Plantation Shutters</h3><p>Louvered shutters built to the window opening.</p>'
              f'<span class="btn-link">See plantation shutters <span class="arw">&rarr;</span></span>'
@@ -378,6 +395,13 @@ def body_block(c, n_reviews=8):
            alt="Exterior patio shades installed by Love Is Blinds in {e(c['label'])}, TX">
     </div>
   </div>
+</section>
+
+<section class="section">
+  <div class="container center">
+    <h2 class="title">Every job in {label} is backed five ways</h2>
+  </div>
+  <div class="container"><div class="guarantees">{gtee_cards}</div></div>
 </section>
 
 {reviews_block}
