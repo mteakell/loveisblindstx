@@ -530,7 +530,7 @@ def body_block(c, n_reviews=8):
 
 <section class="section bg-cream-tint">
   <div class="container center"><h2 class="title">What we install in {e(c['label'])}</h2></div>
-  <div class="container"><div class="prod-grid">{prods}</div></div>
+  <div class="container"><div class="prod-grid prod-grid-6">{prods}</div></div>
 </section>
 
 <section class="section">

@@ -10,7 +10,7 @@ it off the home page was the worst single omission on the site.
 Runs after convert.py. Idempotent: every block is removed by marker before it
 is re-inserted, so a rebuild does not stack them.
 """
-import json, os, re
+import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -54,6 +54,64 @@ BAND = (
  '</div></section>\n<!-- /lib:band -->\n')
 
 
+
+# ---------------------------------------------------------------- reviews
+REVIEWS = json.load(open("data/reviews.json"))
+
+
+def _slider():
+    """Every 4+ star review in a scroll-snap slider.
+
+    The home page showed three static cards while 364 real reviews sat in the
+    data. Scroll-snap plus two buttons rather than a carousel library: no
+    dependency, works without JS (it stays a horizontal scroller), and keyboard
+    and touch both work for free.
+    """
+    revs = sorted((r for r in REVIEWS if r.get("rating", 5) >= 4),
+                  key=lambda r: r.get("date", ""), reverse=True)
+    cards = "".join(
+        '<article class="rv-card">'
+        '<div class="rv-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
+        f'<p class="rv-quote">{html.escape(r["quote"])}</p>'
+        f'<footer class="rv-by"><span class="rv-name">{html.escape(r["name"])}</span>'
+        f'<span class="rv-city">{html.escape(r["city"])}, TX</span></footer>'
+        '</article>' for r in revs)
+    return (
+      '\n<!-- lib:slider -->\n'
+      '<section class="section bg-cream-tint rv-section">'
+      '<div class="container center">'
+      '<h2 class="title">What Texas homeowners say</h2>'
+      f'<p class="lead">{len(revs)} reviews from customers across {len({r["slug"] for r in revs})} '
+      'Texas cities, straight from our Google profiles.</p>'
+      '</div>'
+      '<div class="rv-wrap">'
+      '<button class="rv-nav rv-prev" type="button" aria-label="Previous reviews">'
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+      'stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>'
+      f'<div class="rv-track" tabindex="0" role="region" aria-label="Customer reviews">{cards}</div>'
+      '<button class="rv-nav rv-next" type="button" aria-label="More reviews">'
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+      'stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>'
+      '</div>'
+      '<div class="container center" style="margin-top:26px">'
+      '<a class="btn btn-secondary btn-lg" href="/areas-we-serve">Find your local team</a></div>'
+      '<script>(function(){'
+      'var w=document.querySelector(".rv-section");if(!w)return;'
+      'var t=w.querySelector(".rv-track");'
+      'var p=w.querySelector(".rv-prev"),n=w.querySelector(".rv-next");'
+      'if(!t||!p||!n)return;'
+      'function step(d){var c=t.querySelector(".rv-card");if(!c)return;'
+      'var cw=c.getBoundingClientRect().width+18;'
+      'var per=Math.max(1,Math.floor(t.clientWidth/cw));'
+      'var from=t.scrollLeft,by=d*cw*per;'
+      't.scrollBy({left:by,behavior:"smooth"});'
+      'setTimeout(function(){if(Math.abs(t.scrollLeft-from)<2)t.scrollLeft=from+by;},260);}'
+      'p.addEventListener("click",function(){step(-1)});'
+      'n.addEventListener("click",function(){step(1)});'
+      '})();</script>'
+      '</section>\n<!-- /lib:slider -->\n')
+
+
 def strip(html, marker):
     return re.sub(rf'\n?<!-- lib:{marker} -->.*?<!-- /lib:{marker} -->\n?', '', html, flags=re.S)
 
@@ -86,6 +144,32 @@ def main():
             j += len("</section>")
             h = h[:j] + BAND + h[j:]
             added.append("patio band")
+
+
+    # .prod-grid is a hard 4 columns; with the patio card added there are 5,
+    # so the fifth was orphaned on its own row.
+    i = h.find("Explore our custom window treatments")
+    if i > 0:
+        m = re.search(r'<div class="prod-grid(?! )', h[i:])
+        if m:
+            at = i + m.start()
+            h = h[:at] + '<div class="prod-grid prod-grid-5' + h[at + len('<div class="prod-grid'):]
+            added.append("5-up grid")
+
+    # Swap the three static testimonials for the full slider. This has to be
+    # idempotent: the first run removes the original section, so on a rebuild
+    # there is nothing left to match. Strip the slider, then insert it at the
+    # original section if it is still there, otherwise at the marker we left.
+    h = strip(h, "slider")
+    m = re.search(r'<section[^>]*>(?:(?!</section>).)*Texas homeowners say it best.*?</section>',
+                  h, re.S)
+    if m:
+        h = h[:m.start()] + "<!-- lib:reviews-anchor -->" + _slider() + h[m.end():]
+        added.append("review slider")
+    elif "<!-- lib:reviews-anchor -->" in h:
+        h = h.replace("<!-- lib:reviews-anchor -->",
+                      "<!-- lib:reviews-anchor -->" + _slider(), 1)
+        added.append("review slider")
 
     open("index.html", "w").write(h)
     t = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ',

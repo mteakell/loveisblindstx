@@ -879,3 +879,77 @@ body.search-open{overflow:hidden}
 .feature-list li > .tick{flex:0 0 auto}
 .feature-list li > *:not(.tick){flex:1 1 auto;min-width:0}
 .feature-list li a{display:inline}
+
+/* .prod-grid is a hard 4 columns, so a 5-card row orphaned the fifth and a
+   6-card row left two stranded. Give those counts their own track counts. */
+.prod-grid-5{grid-template-columns:repeat(5,1fr);gap:18px}
+.prod-grid-6{grid-template-columns:repeat(3,1fr)}
+.prod-grid-5 .prod-card .pic img{height:165px}
+.prod-grid-5 .prod-card .pbody{padding:16px 16px 18px}
+.prod-grid-5 .prod-card h3{font-size:1rem}
+.prod-grid-5 .prod-card p{font-size:13.8px;line-height:1.55}
+@media (max-width:1180px){.prod-grid-5{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:860px){
+  .prod-grid-5,.prod-grid-6{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .prod-grid-5,.prod-grid-6{grid-template-columns:1fr}
+}
+
+/* The band overlay was 58-66% flat, which is not enough over a bright image:
+   the body copy sat on a sunset and disappeared. Deeper, and weighted towards
+   the middle where the text actually is, plus a shadow so it holds up on any
+   photo we drop in later. */
+.parallax-band::before{
+  background:
+    radial-gradient(120% 100% at 50% 50%, rgba(14,20,26,.86) 0%, rgba(14,20,26,.72) 45%, rgba(14,20,26,.62) 100%),
+    linear-gradient(rgba(14,20,26,.30), rgba(14,20,26,.55)) !important}
+.parallax-band .pb-eyebrow,
+.parallax-band .pb-title,
+.parallax-band .pb-body{text-shadow:0 1px 18px rgba(10,14,18,.55)}
+.parallax-band .pb-body{color:rgba(255,255,255,.94)}
+.parallax-band .container{max-width:min(96%,860px)}
+
+/* ---- review slider ---------------------------------------------------- */
+.rv-section{position:relative;overflow:hidden}
+.rv-wrap{position:relative;margin-top:38px;padding:0 clamp(16px,4vw,64px)}
+/* snap is proximity, not mandatory: with mandatory plus CSS scroll-behavior
+   the track fought every programmatic scroll and snapped straight back to
+   card one, so the arrows did nothing. Smooth is passed by the JS instead. */
+.rv-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,340px);gap:18px;
+  overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;
+  padding:6px 4px 22px;scrollbar-width:thin;
+  scrollbar-color:rgba(18,26,32,.22) transparent}
+.rv-track::-webkit-scrollbar{height:8px}
+.rv-track::-webkit-scrollbar-thumb{background:rgba(18,26,32,.20);border-radius:99px}
+.rv-track::-webkit-scrollbar-track{background:transparent}
+.rv-card{scroll-snap-align:start;background:#fff;border:1px solid rgba(18,26,32,.08);
+  border-radius:var(--radius);padding:24px 22px 20px;display:flex;flex-direction:column;
+  box-shadow:0 1px 2px rgba(18,26,32,.05),0 12px 30px -16px rgba(18,26,32,.22)}
+.rv-stars{color:var(--pop);letter-spacing:2px;font-size:14px;line-height:1;margin-bottom:12px}
+.rv-quote{margin:0 0 16px;font-size:14.6px;line-height:1.62;color:var(--ink-body);flex:1}
+.rv-by{display:flex;flex-direction:column;gap:2px;border-top:1px solid rgba(18,26,32,.07);padding-top:12px}
+.rv-name{font-weight:700;font-size:14px;color:var(--ink-strong,var(--ink-body))}
+.rv-city{font-size:12.5px;color:var(--ink-muted)}
+.rv-nav{position:absolute;top:calc(50% - 22px);width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(18,26,32,.10);background:#fff;color:var(--lead);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;z-index:2;
+  box-shadow:0 6px 20px -8px rgba(18,26,32,.35);transition:background .25s var(--ease),color .25s var(--ease)}
+.rv-nav svg{width:20px;height:20px}
+.rv-nav:hover{background:var(--lead);color:#fff}
+.rv-prev{left:0}
+.rv-next{right:0}
+@media (max-width:700px){
+  .rv-wrap{padding:0 14px}
+  .rv-nav{display:none}
+  .rv-track{grid-auto-columns:minmax(260px,80vw)}
+}
+
+/* Reviews run from 49 to 1,446 characters. In a single-row grid every card
+   stretches to the tallest, so one 1,446-character review made all 364 cards
+   1,139px tall. Clamp the quote and fix the card height. */
+.rv-card{height:320px}
+.rv-quote{display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;
+  overflow:hidden;flex:1 1 auto;min-height:0}
+.rv-by{flex:0 0 auto}
+@media (max-width:700px){.rv-card{height:300px}}
