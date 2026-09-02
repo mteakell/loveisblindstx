@@ -1,0 +1,22 @@
+{
+  "_source": "Client-supplied slides, sent by Maddie 2026-09-02. Wording is taken from those slides. Nothing here is inferred.",
+  "_open_questions": [
+    "Limited lifetime warranty: the slide says MANUFACTURER'S, covering factory defects. Does Love Is Blinds' own workmanship/installation sit under the 4-year service guarantee instead?",
+    "GuaranTEN: is the free replacement one per ten on a single order, or cumulative across everything a customer ever buys? Any time limit?",
+    "4-Year Service: runs from install date? Labour only, or parts too? Does it cover motors?",
+    "Apples-to-apples price match: what proof is needed, and does it apply to online-only retailers or local competitors only?",
+    "Transferable warranty: does the new homeowner have to register or notify anyone?"
+  ],
+  "guarantees": [
+    {"id":"lifetime","name":"Limited Lifetime Warranty","short":"Factory defects covered for life",
+     "text":"Your window treatments come with a manufacturer's limited lifetime warranty. Any factory defects found in your treatments are covered for life."},
+    {"id":"price-match","name":"Apples-to-Apples Price Match","short":"We match a like-for-like quote",
+     "text":"We stand behind our pricing. If you find the same treatment specified the same way for less, we match it, so you can buy without second-guessing the number."},
+    {"id":"guaranten","name":"The GuaranTEN","short":"Every tenth treatment replaced free",
+     "text":"For every ten window treatments you buy, we replace one free. Break it, stop liking it, get tired of it: we replace it, no questions asked."},
+    {"id":"service","name":"Here-4-You Service Guarantee","short":"Four years of service at no cost",
+     "text":"We offer a four-year service guarantee. If anything goes wrong with your blinds, shades or shutters, we come out and service them at no cost."},
+    {"id":"transferable","name":"Transferable Warranty","short":"The cover follows the house",
+     "text":"Whether this is your forever home or not, the warranty transfers when you sell, so the cover stays with the windows rather than expiring with the move."}
+  ]
+}
