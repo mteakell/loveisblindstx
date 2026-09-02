@@ -30,6 +30,13 @@
    "done": 10
   },
   {
+   "slug": "fort-worth-tx",
+   "city": "Fort Worth",
+   "reviews": 26,
+   "place_id": "ChIJ-bVNIQvZTYYRoP03jqZ4uj4",
+   "done": 0
+  },
+  {
    "slug": "las-colinas-tx",
    "city": "Las Colinas",
    "reviews": 25,
@@ -41,6 +48,13 @@
    "city": "North Richland Hills",
    "reviews": 19,
    "place_id": "ChIJ-2eGmgSyimgRVyoBAV_DjCA",
+   "done": 0
+  },
+  {
+   "slug": "grapevine-tx-2",
+   "city": "Grapevine (storefront, 1701 W Northwest Hwy)",
+   "reviews": 16,
+   "place_id": "ChIJdQhCX8bVTYYRZ5stYve4Eh4",
    "done": 0
   },
   {
@@ -114,6 +128,13 @@
    "done": 0
   },
   {
+   "slug": "hurst-tx",
+   "city": "Hurst",
+   "reviews": 5,
+   "place_id": "ChIJd-8TYxBLJaoREI8mwcpe1C4",
+   "done": 0
+  },
+  {
    "slug": "dallas-tx",
    "city": "Dallas (Highland Park SAB)",
    "reviews": 4,
@@ -147,8 +168,22 @@
    "reviews": 1,
    "place_id": "ChIJqQBzYEPso2gRdJXakaYVua4",
    "done": 0
+  },
+  {
+   "slug": "celina-tx",
+   "city": "Celina",
+   "reviews": 0,
+   "place_id": "ChIJdRy5melBTIYRLZemA8K8fsY",
+   "done": 0
   }
  ],
  "_status": "Harvest is unreliable. Waco rendered 10 review cards and 4 were saved. Gun Barrel City opened its Reviews tab and showed the 5.0/43 header and the topic filter chips, but never rendered a single review card despite repeated scrolling: no captcha, no 'unusual traffic', no spinner, the panel simply ends at the filters. Reads as Google throttling after repeated place-page loads from one session. Retrying later may work; a paid scraper (~$3/1000 reviews) would take all 327 in one go.",
- "_review_counts_moved": "Gun Barrel City is 43 now, was 42 in the Local Falcon pull. Counts drift; re-check before publishing the badge."
+ "_review_counts_moved": "Gun Barrel City is 43 now, was 42 in the Local Falcon pull. Counts drift; re-check before publishing the badge.",
+ "_unresolved": [
+  "Love is Blinds (Keller, TX + Northlake, TX + 4 other areas)  - DFW service area",
+  "Love is Blinds-Fort Worth (Fort Worth, TX)                   - DFW service area",
+  "Love is Blinds-Gainesville (Gainesville, TX 76240)           - DFW service area",
+  "Love is Blinds (Allen, TX + Celina, TX + 9 other areas)      - NTX service area"
+ ],
+ "_unresolved_note": "Not present in the Local Falcon account, so no place ID. Get each one's link from Business Profile Manager: See your profile > Share, same as the four share.google links already supplied."
 }
