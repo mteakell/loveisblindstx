@@ -229,7 +229,7 @@ def head_block(c):
 {S.render(nodes)}
 </head>'''
 
-def body_block(c):
+def body_block(c, n_reviews=8):
     hero = hero_for(c)
     hero2 = "/images/lib/" + HEROES[(sum(ord(x) for x in c["slug"]) + 5) % len(HEROES)]
     ph   = S.pretty(c["phone"]) or BIZ["phone"]
@@ -242,11 +242,8 @@ def body_block(c):
                   else "/products/plantation-shutters"
     motor_url = ("/motorized-shades-" + c["slug"]) if c["slug"] in MOTOR_PAGES \
                 else "/products/motorized-window-treatment-automations"
-    # Newest first, capped. Waco has 69 reviews; printing all of them turned a
-    # city page into a 3,900-word review wall. Eight is ~450 words, which is the
-    # block this page needs, and the CTA below sends the rest to Google.
     revs = sorted(BY_CITY.get(c["slug"], []),
-                  key=lambda r: r.get("date", ""), reverse=True)[:8]
+                  key=lambda r: r.get("date", ""), reverse=True)[:n_reviews]
     if revs:
         cards = "".join(
           '<div class="review reveal"><div class="stars">'
@@ -387,8 +384,39 @@ def body_block(c):
 </main>
 {FOOT}'''
 
+# Reviews are real, unique, per-city copy and we want as many as possible.
+# They are also customer voice, not product copy, so past a point they dilute
+# what the page is meant to rank for. Waco uncapped printed all 69 and the page
+# became 85% reviews. Cap them at a share of the page instead of a flat number,
+# so a page with more product copy earns more reviews rather than every page
+# getting the same eight.
+REVIEW_SHARE = 0.35          # reviews may be at most this much of the page
+REVIEW_MIN, REVIEW_MAX = 3, 16
+
+
+def _words(html, main_only=False):
+    if main_only:                       # nav and footer are not page content
+        m = re.search(r"<main.*?</main>", html, re.S)
+        html = m.group(0) if m else html
+    t = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.S)
+    return len(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", t)).split())
+
+
+def review_budget(c):
+    """How many reviews fit before they outweigh the rest of the page."""
+    revs = BY_CITY.get(c["slug"], [])
+    if not revs:
+        return 0
+    base = _words(body_block(c, 0), main_only=True)       # page without reviews
+    avg = sum(len(r["quote"].split()) for r in revs) / len(revs) + 6  # +name/city
+    allowed = int((REVIEW_SHARE * base) / ((1 - REVIEW_SHARE) * avg))
+    # clamp to the band first, then to what actually exists: a city with one
+    # review shows one, not the floor of three
+    return min(len(revs), max(REVIEW_MIN, min(REVIEW_MAX, allowed)))
+
+
 def render_city(c):
-    return head_block(c) + "\n" + body_block(c)
+    return head_block(c) + "\n" + body_block(c, review_budget(c))
 
 if __name__ == "__main__":
     n = 0
