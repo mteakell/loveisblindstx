@@ -20,11 +20,18 @@ for _r in REVIEWS:
         BY_CITY.setdefault(_r["slug"], []).append(_r)
 
 HEROES = [
- "blinds-blinds-001-jpg.webp","shutters-shutters-004-jpg.webp","roller-shades-roller-shades-001-jpg.webp",
- "honeycomb-shades-honeycomb-shades-001-jpg.webp","roman-shades-roman-shades-001-jpg.webp",
- "blinds-blinds-005-jpg.webp","shutters-shutters-006-jpg.webp","roller-shades-roller-shades-004-jpg.webp",
- "smart-drapes-smart-drapes-002-jpg.webp","shutters-shutters-008-jpg.webp",
- "honeycomb-shades-honeycomb-shades-008-jpg.webp","roman-shades-roman-shades-005-jpg.webp",
+ "shutters-shutters-101-jpg.webp",
+ "roller-shades-roller-shades-230-jpg.webp",
+ "shutters-shutters-113-jpg.webp",
+ "roller-shades-roller-shades-201-jpg.webp",
+ "woven-wood-shades-woven-wood-shades-003-jpg.webp",
+ "shutters-shutters-091-jpg.webp",
+ "honeycomb-shades-honeycomb-shades-018-jpg.webp",
+ "roller-shades-home-hero-shades-1-jpeg.webp",
+ "shutters-shutters-077-jpg.webp",
+ "roman-shades-roman-shades-036-jpg.webp",
+ "roller-shades-roller-shades-118-jpg.webp",
+ "shutters-shutters-028-jpg.webp",
 ]
 def hero_for(c):
     return "/images/lib/" + HEROES[sum(ord(x) for x in c["slug"]) % len(HEROES)]

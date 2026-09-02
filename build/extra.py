@@ -12,7 +12,7 @@ FOOT = open("build/partials/footer.html").read()
 HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
 e = lambda s: html.escape(s or "", quote=True)
 
-def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-004-jpg.webp"):
+def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-091-jpg.webp"):
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +46,7 @@ def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-004-
 <main>{body}</main>
 {FOOT}'''
 
-HERO = "/images/lib/shutters-shutters-004-jpg.webp"
+HERO = "/images/lib/shutters-shutters-091-jpg.webp"
 SHUTTER_CITY = json.load(open("data/shutter-cities.json"))["cities"]
 TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
         '<path d="m20 6-11 11-5-5"/></svg></span>')
