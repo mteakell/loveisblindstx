@@ -1,7 +1,9 @@
 """City page generator for Love Is Blinds Texas."""
-import json, math, os, re, sys, html
+import hashlib, json, math, os, re, sys, html
 sys.path.insert(0, os.path.dirname(__file__))
 import schema as S, territory as T
+import blocks as BK
+import icons as IC
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D    = json.load(open(os.path.join(ROOT, "data/tx.json")))
@@ -41,12 +43,31 @@ def hero_for(c):
 TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
         '<path d="m20 6-11 11-5-5"/></svg></span>')
 
+# Three blurbs per product, rotated per city. These cards were the same on all
+# 48 pages, which put 60 identical words on every one of them for no reason.
+PRODUCT_BLURBS = {
+ "/products/exterior-patio-shades": [
+   "Outdoor shades that stop the sun before it reaches the glass.",
+   "Exterior shading for patios, porches and west-facing windows.",
+   "Motorized and retractable shades built for Texas afternoons."],
+ "/products/blinds": [
+   "Real wood, faux wood and composite blinds.",
+   "Slat treatments you tilt, in materials matched to the room.",
+   "Wood where it stays dry, faux wood where it does not."],
+ "/products/roller-shades": [
+   "Solar screen and blackout roller shades.",
+   "One fabric on a tube, from sheer through to full blackout.",
+   "Clean lines, almost no stack, and a fabric for every light level."],
+ "/products/honeycomb-shades": [
+   "Cellular shades that cut heat transfer at the glass.",
+   "Air trapped in cells, which is what makes them insulate.",
+   "The option that shows up on the cooling bill."],
+}
 PRODUCTS = [
- ("Exterior Patio Shades","/products/exterior-patio-shades","Outdoor shades that stop the sun before it reaches the glass."),
-
- ("Custom Blinds","/products/blinds","Real wood, faux wood and composite blinds."),
- ("Roller Shades","/products/roller-shades","Solar screen and blackout roller shades."),
- ("Honeycomb Shades","/products/honeycomb-shades","Cellular shades that cut heat transfer at the glass."),
+ ("Exterior Patio Shades","/products/exterior-patio-shades"),
+ ("Custom Blinds","/products/blinds"),
+ ("Roller Shades","/products/roller-shades"),
+ ("Honeycomb Shades","/products/honeycomb-shades"),
 ]
 def e(s): return html.escape(s or "", quote=True)
 
@@ -192,7 +213,37 @@ def faqs_for(c):
           f"Our {c['locality']} location is at {c['street']}, {c['locality']}, TX "
           f"{c.get('postal','')}".strip().rstrip(',') + ". Consultations happen at your home, "
           "so most customers never need to visit us."))
+    out += bpick_many(BK.EXTRA_FAQ, c["slug"], 5, 2)
     return out
+
+
+# ---- block rotation ------------------------------------------------------
+_CIX = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=lambda x: x["slug"]))}
+_STRIDE = {0: 1, 1: 5, 2: 7, 3: 11, 4: 13, 5: 17, 6: 19, 7: 23}
+
+
+def _seed(slug, salt):
+    """Stable per-slug, per-block offset.
+
+    A sequential index times a stride made neighbouring slugs land on the same
+    variant for several blocks at once, so two review-less pages could share
+    half their sentences. Hashing the slug with the salt decorrelates the
+    blocks: matching on one no longer means matching on the rest.
+    """
+    return int(hashlib.sha1(f"{slug}:{salt}".encode()).hexdigest()[:8], 16)
+
+
+def bpick(pool, slug, salt=0):
+    return pool[_seed(slug, salt) % len(pool)]
+
+
+def bpick_many(pool, slug, n, salt=0):
+    """Pick n distinct items, stepping by a stride coprime with the pool."""
+    i = _seed(slug, salt) % len(pool)
+    step = _STRIDE.get(salt, 1)
+    while len(pool) % step == 0 and step > 1:
+        step += 2
+    return [pool[(i + k * step) % len(pool)] for k in range(min(n, len(pool)))]
 
 # ---------------------------------------------------------------- rendering
 def head_block(c):
@@ -279,6 +330,53 @@ def body_block(c, n_reviews=8):
           f'<div class="reviews">{cards}</div>{gbp_cta}</div></section>')
     else:
         reviews_block = ""
+    _rh = bpick(BK.ROOM_HEADS, c["slug"], 0)
+    _rooms = bpick_many(BK.ROOM_ITEMS, c["slug"], 4, 0)
+    rooms_block = (
+      f'<section class="section"><div class="container center">'
+      f'<h2 class="title">{e(_rh.format(city=c["label"]))}</h2></div>'
+      f'<div class="container"><div class="guarantees">' +
+      "".join(f'<div class="gtee"><h3>{e(t)}</h3><p>{e(b.format(city=c["label"]))}</p></div>'
+              for t, b in _rooms) + '</div></div></section>')
+
+    _mh = bpick(BK.MATERIAL_HEADS, c["slug"], 1)
+    _mb = bpick(BK.MATERIAL_BODIES, c["slug"], 4)
+    materials_block = (
+      f'<section class="section bg-cream-tint"><div class="container split">'
+      f'<div class="body"><h2 class="title">{e(_mh)}</h2><div class="prose"><p>{e(_mb)}</p></div></div>'
+      f'<div class="media"><img src="{hero2}" width="900" height="600" loading="lazy" '
+      f'alt="Window treatment materials fitted in {e(c["label"])}, TX by Love Is Blinds"></div>'
+      f'</div></section>')
+
+    _ph = bpick(BK.PATIO_HEADS, c["slug"], 2)
+    _pintro = bpick(BK.PATIO_INTROS, c["slug"], 3)
+    _ptypes = bpick_many(BK.PATIO_ITEMS, c["slug"], 4, 2)
+    patio_types = "".join(
+      f'<div class="type-card">{IC.icon_for(t)}<div class="pbody"><h3>{e(t)}</h3>'
+      f'<p>{e(b.format(city=c["label"]))}</p></div></div>' for t, b in _ptypes)
+    patio_block = (
+      f'<section class="section"><div class="container center">'
+      f'<h2 class="title">{e(_ph.format(city=c["label"]))}</h2>'
+      f'<p class="lead">{e(_pintro.format(city=c["label"]))}</p></div>'
+      f'<div class="container"><div class="prod-grid">{patio_types}</div>'
+      f'<p class="center" style="margin-top:22px"><a class="btn btn-primary btn-lg" '
+      f'href="{patio_url}">Exterior patio shades in {e(c["label"])}</a></p></div></section>')
+
+    _moh = bpick(BK.MOTOR_HEADS, c["slug"], 3)
+    _mob = bpick(BK.MOTOR_BODIES, c["slug"], 1)
+    motor_block = (
+      f'<section class="section bg-cream-tint"><div class="container center">'
+      f'<h2 class="title">{e(_moh.format(city=c["label"]))}</h2></div><div class="container">'
+      f'<div class="prose" style="margin:0 auto"><p>{e(_mob)}</p></div></div></section>')
+
+    _prh, _steps = bpick(BK.PROCESS_VARIANTS, c["slug"], 5)
+    process_block = (
+      f'<section class="section"><div class="container center">'
+      f'<h2 class="title">{e(_prh)} in {e(c["label"])}</h2></div>'
+      f'<div class="container"><div class="guarantees">' +
+      "".join(f'<div class="gtee"><h3>{i}. {e(t)}</h3><p>{e(b)}</p></div>'
+              for i, (t, b) in enumerate(_steps, 1)) + '</div></div></section>')
+
     gtee_cards = "".join(
         f'<div class="gtee"><h3>{e(g["name"])}</h3><p>{e(g["text"])}</p></div>'
         for g in GUARANTEES)
@@ -292,8 +390,9 @@ def body_block(c, n_reviews=8):
              f'<span class="btn-link">See motorization <span class="arw">&rarr;</span></span>'
              f'</div></a>') + "".join(
       f'<a class="prod-card reveal" href="{u}"><div class="pbody"><h3>{e(n)}</h3>'
-      f'<p>{e(d)}</p><span class="btn-link">See {e(n.lower())} <span class="arw">&rarr;</span></span>'
-      f'</div></a>' for n,u,d in PRODUCTS)
+      f'<p>{e(bpick(PRODUCT_BLURBS[u], c["slug"], 6))}</p>'
+      f'<span class="btn-link">See {e(n.lower())} <span class="arw">&rarr;</span></span>'
+      f'</div></a>' for n,u in PRODUCTS)
     nearlinks = " ".join(
       f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
     faqhtml = "".join(
@@ -398,12 +497,19 @@ def body_block(c, n_reviews=8):
   </div>
 </section>
 
+{rooms_block}
+{materials_block}
+{patio_block}
+{motor_block}
+
 <section class="section">
   <div class="container center">
     <h2 class="title">Every job in {label} is backed five ways</h2>
   </div>
   <div class="container"><div class="guarantees">{gtee_cards}</div></div>
 </section>
+
+{process_block}
 
 {reviews_block}
 <section class="section bg-cream-tint">
