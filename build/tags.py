@@ -105,7 +105,54 @@ def bust_css():
     print(f"css cache-bust: v={digest} on {n} pages")
 
 
+
+
+def mark_active_nav():
+    """Underline the nav item for the page you are actually on.
+
+    The shared header hardcoded aria-current="page" on Service Areas, so every
+    page on the site underlined Service Areas. Cleared here and re-set per page
+    from the page's own path.
+    """
+    import json
+    cities = {c["slug"] for c in json.load(open("data/tx.json"))["cities"]}
+
+    def nav_href(path):
+        p = path[:-5] if path.endswith(".html") else path      # strip .html
+        p = p[:-6] if p.endswith("/index") else p
+        if p in ("index", ""): return "/"
+        if p.startswith("products/") or p in ("products", "brands"): return "/products"
+        if p.startswith("services/") or p == "services": return "/services"
+        if p == "gallery": return "/gallery"
+        if p in ("areas-we-serve",) or p in cities: return "/areas-we-serve"
+        if p in ("about", "meet-the-team", "how-it-works", "faqs") or p.startswith("team/"):
+            return "/about"
+        if p == "blog": return "/blog"
+        # product x city pages sell a product in a place; Service Areas fits best
+        if p.endswith("-tx"): return "/areas-we-serve"
+        # everything else (blog posts live at the root) reads as Blog
+        if "/" not in p: return "/blog"
+        return None
+
+    n = 0
+    for f in glob.glob("**/*.html", recursive=True):
+        if f.startswith("build/"):
+            continue
+        s = open(f).read()
+        target = nav_href(f)
+        out = re.sub(r'(<ul class="nav-links".*?</ul>)', lambda m:
+                     m.group(1).replace(' aria-current="page"', ''), s, count=1, flags=re.S)
+        if target:
+            out = re.sub(
+                r'(<ul class="nav-links"[^>]*>.*?<a href="' + re.escape(target) + r'")(>)',
+                r'\1 aria-current="page"\2', out, count=1, flags=re.S)
+        if out != s:
+            open(f, "w").write(out); n += 1
+    print(f"active nav marked on {n} pages")
+
+
 if __name__ == "__main__":
     main()
     wrap_feature_items()
+    mark_active_nav()
     bust_css()
