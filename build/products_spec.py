@@ -64,7 +64,7 @@ SPEC = {
  "slug":"plantation-shutters", "label":"Plantation Shutters", "h1":"Plantation Shutters",
  "title":"Plantation Shutters in {city}, TX", "brandable":False,
  "hero":"/images/lib/shutters-shutters-113-jpg.webp",
- "hero2":"/images/lib/shutters-shutters-091-jpg.webp",
+ "hero2":"/images/lib/shutters-shutters-060-jpg.webp",
  "desc":"Custom plantation shutters built to your openings in {city}, TX. Free in-home measure and professional installation. Call {phone}.",
  "lead":"Louvered shutters built to the opening rather than trimmed to fit, hung in their own frame, and installed by the team that measured them.",
  "why_h2":"Why shutters get measured differently in {city}",

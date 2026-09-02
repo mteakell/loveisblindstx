@@ -26,13 +26,14 @@ HEROES = [
  "shutters-shutters-113-jpg.webp",
  "roller-shades-roller-shades-201-jpg.webp",
  "woven-wood-shades-woven-wood-shades-003-jpg.webp",
- "shutters-shutters-091-jpg.webp",
+ "shutters-shutters-060-jpg.webp",
  "honeycomb-shades-honeycomb-shades-018-jpg.webp",
  "roller-shades-home-hero-shades-1-jpeg.webp",
  "shutters-shutters-077-jpg.webp",
- "roman-shades-roman-shades-036-jpg.webp",
+ "shutters-shutters-151-jpg.webp",
  "roller-shades-roller-shades-118-jpg.webp",
  "shutters-shutters-028-jpg.webp",
+ "roller-shades-roller-shades-137-jpg.webp",
 ]
 def hero_for(c):
     return "/images/lib/" + HEROES[sum(ord(x) for x in c["slug"]) % len(HEROES)]

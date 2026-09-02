@@ -11,6 +11,7 @@ import html, json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 import schema as S, territory as T, pages as P, products_spec as PS, variants as V
 import extra_pools as EP
+import icons as IC
 
 # Assign variants by the city's INDEX rather than a hash of its name. A hash
 # collides: two cities land on the same combination and their pages read
@@ -72,8 +73,9 @@ def page(prod, slug):
     nearlinks = "".join(f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
     # rotate which types lead, so no two city pages open with the same card
     tlist = pick_many(spec["types"] + EP.EXTRA_TYPES[prod], slug, 6, 5)
-    types = "".join(f'<div class="prod-card reveal"><div class="pbody"><h3>{e(n)}</h3>'
-                    f'<p>{e(b)}</p></div></div>' for n, b in tlist)
+    types = "".join(f'<div class="type-card reveal">{IC.icon_for(n)}'
+                    f'<div class="pbody"><h3>{e(n)}</h3><p>{e(b)}</p></div></div>'
+                    for n, b in tlist)
     intro = pick(V.INTRO, slug)
     why_h, why_body = pick(V.WHY[prod], slug, 7)
     close = pick(V.CLOSE, slug, 13)

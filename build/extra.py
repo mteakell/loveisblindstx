@@ -12,7 +12,7 @@ FOOT = open("build/partials/footer.html").read()
 HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
 e = lambda s: html.escape(s or "", quote=True)
 
-def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-091-jpg.webp"):
+def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-060-jpg.webp"):
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +46,7 @@ def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-091-
 <main>{body}</main>
 {FOOT}'''
 
-HERO = "/images/lib/shutters-shutters-091-jpg.webp"
+HERO = "/images/lib/shutters-shutters-060-jpg.webp"
 SHUTTER_CITY = json.load(open("data/shutter-cities.json"))["cities"]
 TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
         '<path d="m20 6-11 11-5-5"/></svg></span>')
@@ -419,7 +419,7 @@ def patio():
             f'<li>{TICK}Measured and installed by the team that quotes it</li></ul>'
             f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">'
             f'Book your free consultation</a></div></div>'
-            f'<div class="media reveal"><img src="/images/lib/exterior-patio-shades-exterior-patio-shades-003-jpg.webp" '
+            f'<div class="media reveal"><img src="/images/lib/roller-shades-roller-shades-137-jpg.webp" '
             f'width="900" height="600" loading="lazy" alt="Motorized exterior patio shades on a covered patio"></div>'
             f'</div></section>'
             f'<section class="section bg-cream-tint"><div class="container center">'

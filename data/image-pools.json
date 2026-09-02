@@ -20,13 +20,11 @@
   "/images/lib/honeycomb-shades-honeycomb-shades-022-jpg.webp",
   "/images/lib/honeycomb-shades-honeycomb-shades-026-jpg.webp",
   "/images/lib/roller-shades-home-hero-shades-1-jpeg.webp",
-  "/images/lib/roller-shades-roller-shades-008-jpg.webp",
   "/images/lib/roller-shades-roller-shades-051-jpg.webp",
   "/images/lib/roller-shades-roller-shades-118-jpg.webp",
   "/images/lib/roller-shades-roller-shades-201-jpg.webp",
   "/images/lib/roller-shades-roller-shades-230-jpg.webp",
   "/images/lib/roman-shades-roman-shades-024-jpg.webp",
-  "/images/lib/roman-shades-roman-shades-036-jpg.webp",
   "/images/lib/roman-shades-roman-shades-050-jpg.webp",
   "/images/lib/woven-wood-shades-woven-wood-shades-003-jpg.webp",
   "/images/lib/woven-wood-shades-woven-wood-shades-026-jpg.webp",
@@ -57,12 +55,10 @@
  "patio-shades": [
   "/images/lib/exterior-patio-shades-exterior-patio-shades-001-jpg.webp",
   "/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp",
-  "/images/lib/exterior-patio-shades-exterior-patio-shades-005-jpg.webp",
-  "/images/lib/exterior-patio-shades-exterior-patio-shades-006-jpg.webp"
+  "/images/lib/exterior-patio-shades-exterior-patio-shades-005-jpg.webp"
  ],
  "motorized-shades": [
   "/images/lib/roller-shades-home-hero-shades-1-jpeg.webp",
-  "/images/lib/roller-shades-roller-shades-008-jpg.webp",
   "/images/lib/roller-shades-roller-shades-051-jpg.webp",
   "/images/lib/roller-shades-roller-shades-118-jpg.webp",
   "/images/lib/roller-shades-roller-shades-201-jpg.webp",
