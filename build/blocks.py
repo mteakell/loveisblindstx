@@ -106,8 +106,9 @@ PATIO = [
     "keeps more view. It is the single most consequential choice on an exterior shade."),
    ("Wind-rated hardware", "Texas weather is the thing that ends outdoor fabric early. Track guided "
     "and wind-rated systems exist because unguided fabric on a windy opening does not last."),
-   ("Motorization and sun triggers", "Scheduled or sensor-driven operation means the shade is down "
-    "through the worst of the afternoon whether or not anyone is home to lower it."),
+   ("Sun and wind sensors", "A sensor drops the shade when the sun hits that elevation and raises it "
+    "when the wind gets up, which is the part people underestimate until they have lost fabric to a "
+    "storm."),
    ("Exterior solar shades for windows", "Not only patios. Mounted outside the glass on a west "
     "elevation, they cut the cooling load on that wall rather than managing it after the fact.")]),
 ]

@@ -22,6 +22,15 @@ for _r in REVIEWS:
     if _r.get("slug"):
         BY_CITY.setdefault(_r["slug"], []).append(_r)
 
+IMG_MOTOR = ["/images/lib/" + f for f in [
+ "roller-shades-roller-shades-118-jpg.webp",
+ "smart-drapes-smart-drapes-008-jpg.webp",
+ "roller-shades-roller-shades-230-jpg.webp",
+ "exterior-patio-shades-exterior-patio-shades-002-jpg.webp",
+ "roller-shades-roller-shades-137-jpg.webp",
+ "smart-drapes-smart-drapes-010-jpg.webp",
+]]
+
 HEROES = [
  "shutters-shutters-101-jpg.webp",
  "roller-shades-roller-shades-230-jpg.webp",
@@ -332,11 +341,13 @@ def body_block(c, n_reviews=8):
         reviews_block = ""
     _rh = bpick(BK.ROOM_HEADS, c["slug"], 0)
     _rooms = bpick_many(BK.ROOM_ITEMS, c["slug"], 4, 0)
+    _used_r, _used_p = set(), set()
     rooms_block = (
       f'<section class="section"><div class="container center">'
       f'<h2 class="title">{e(_rh.format(city=c["label"]))}</h2></div>'
-      f'<div class="container"><div class="guarantees">' +
-      "".join(f'<div class="gtee"><h3>{e(t)}</h3><p>{e(b.format(city=c["label"]))}</p></div>'
+      f'<div class="container"><div class="prod-grid">' +
+      "".join(f'<div class="type-card">{IC.icon_for(t, _used_r)}<div class="pbody">'
+              f'<h3>{e(t)}</h3><p>{e(b.format(city=c["label"]))}</p></div></div>'
               for t, b in _rooms) + '</div></div></section>')
 
     _mh = bpick(BK.MATERIAL_HEADS, c["slug"], 1)
@@ -352,7 +363,7 @@ def body_block(c, n_reviews=8):
     _pintro = bpick(BK.PATIO_INTROS, c["slug"], 3)
     _ptypes = bpick_many(BK.PATIO_ITEMS, c["slug"], 4, 2)
     patio_types = "".join(
-      f'<div class="type-card">{IC.icon_for(t)}<div class="pbody"><h3>{e(t)}</h3>'
+      f'<div class="type-card">{IC.icon_for(t, _used_p)}<div class="pbody"><h3>{e(t)}</h3>'
       f'<p>{e(b.format(city=c["label"]))}</p></div></div>' for t, b in _ptypes)
     patio_block = (
       f'<section class="section"><div class="container center">'
@@ -364,10 +375,20 @@ def body_block(c, n_reviews=8):
 
     _moh = bpick(BK.MOTOR_HEADS, c["slug"], 3)
     _mob = bpick(BK.MOTOR_BODIES, c["slug"], 1)
+    # this was a heading and one grey paragraph on a flat background, which was
+    # the thinnest-looking thing on the page. Same parallax treatment the
+    # product pages use.
+    _mimg = bpick(IMG_MOTOR, c["slug"], 7)
     motor_block = (
-      f'<section class="section bg-cream-tint"><div class="container center">'
-      f'<h2 class="title">{e(_moh.format(city=c["label"]))}</h2></div><div class="container">'
-      f'<div class="prose" style="margin:0 auto"><p>{e(_mob)}</p></div></div></section>')
+      f'<section class="parallax-band" style="background-image:url(\'{_mimg}\')">'
+      f'<div class="container">'
+      f'<p class="pb-eyebrow">Motorization</p>'
+      f'<h2 class="pb-title">{e(_moh.format(city=c["label"]))}</h2>'
+      f'<p class="pb-body">{e(_mob)}</p>'
+      f'<div class="btnrow center" style="justify-content:center">'
+      f'<a class="btn btn-primary btn-lg" href="/products/window-treatment-automations">'
+      f'See motorized options</a></div>'
+      f'</div></section>')
 
     _prh, _steps = bpick(BK.PROCESS_VARIANTS, c["slug"], 5)
     process_block = (

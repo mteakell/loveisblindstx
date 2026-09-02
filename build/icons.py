@@ -51,9 +51,20 @@ RULES = [
 ]
 
 
-def icon_for(name):
+def icon_for(name, used=None):
+    """Pick an icon, avoiding one already used in the same block.
+
+    Three cards about motorization sat side by side with the identical remote
+    icon, which reads as a rendering bug rather than a design choice. `used` is
+    a set the caller mutates, so each card in a block gets a different glyph
+    even when the topic words overlap.
+    """
     t = name.lower()
-    for key, words in RULES:
-        if any(w in t for w in words):
-            return f'<span class="tico">{_S}{ICONS[key]}</svg></span>'
-    return f'<span class="tico">{_S}{ICONS["shade"]}</svg></span>'
+    order = [k for k, words in RULES if any(w in t for w in words)]
+    order += [k for k in ICONS if k not in order]
+    for key in order:
+        if used is None or key not in used:
+            if used is not None:
+                used.add(key)
+            return '<span class="tico">' + _S + ICONS[key] + '</svg></span>'
+    return '<span class="tico">' + _S + ICONS[order[0]] + '</svg></span>'
