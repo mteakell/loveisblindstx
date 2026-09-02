@@ -242,7 +242,11 @@ def body_block(c, n_reviews=8):
                   else "/products/plantation-shutters"
     motor_url = ("/motorized-shades-" + c["slug"]) if c["slug"] in MOTOR_PAGES \
                 else "/products/motorized-window-treatment-automations"
-    revs = sorted(BY_CITY.get(c["slug"], []),
+    # 4+ only. The testimonials block is a curated selection, which is normal
+    # for a site's own reviews. The rating in the footer badge is NOT curated:
+    # it comes from data/gbp-ratings.json, which carries Google's own figure
+    # (Waxahachie 4.9), so the number we publish stays honest.
+    revs = sorted((r for r in BY_CITY.get(c["slug"], []) if r.get("rating", 5) >= 4),
                   key=lambda r: r.get("date", ""), reverse=True)[:n_reviews]
     if revs:
         cards = "".join(
@@ -404,7 +408,7 @@ def _words(html, main_only=False):
 
 def review_budget(c):
     """How many reviews fit before they outweigh the rest of the page."""
-    revs = BY_CITY.get(c["slug"], [])
+    revs = [r for r in BY_CITY.get(c["slug"], []) if r.get("rating", 5) >= 4]
     if not revs:
         return 0
     base = _words(body_block(c, 0), main_only=True)       # page without reviews
