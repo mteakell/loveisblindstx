@@ -242,7 +242,11 @@ def body_block(c):
                   else "/products/plantation-shutters"
     motor_url = ("/motorized-shades-" + c["slug"]) if c["slug"] in MOTOR_PAGES \
                 else "/products/motorized-window-treatment-automations"
-    revs = BY_CITY.get(c["slug"], [])
+    # Newest first, capped. Waco has 69 reviews; printing all of them turned a
+    # city page into a 3,900-word review wall. Eight is ~450 words, which is the
+    # block this page needs, and the CTA below sends the rest to Google.
+    revs = sorted(BY_CITY.get(c["slug"], []),
+                  key=lambda r: r.get("date", ""), reverse=True)[:8]
     if revs:
         cards = "".join(
           '<div class="review reveal"><div class="stars">'
