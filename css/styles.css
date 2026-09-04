@@ -993,3 +993,9 @@ body.search-open{overflow:hidden}
 @media (max-width:900px){
   .phero{aspect-ratio:auto;min-height:min(440px,68vh)}
 }
+
+/* closing call to action band */
+.closing-cta{background:linear-gradient(180deg,var(--n-ink,#222e37),#1a242c);}
+.closing-cta .title{color:#fff}
+.closing-cta .lead{color:rgba(255,255,255,.85);max-width:56ch;margin-inline:auto}
+.closing-cta .btnrow{margin-top:26px}

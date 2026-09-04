@@ -523,7 +523,7 @@ def body_block(c, n_reviews=8):
       <p class="lead">{e(bpick(BK.HERO_LEADS, c["slug"], 12).format(c=c["label"]))}</p>
       <div class="hero-actions btnrow">
         <a class="btn btn-primary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
-        <a class="btn btn-secondary btn-lg" href="/schedule-now">Book a consultation</a>
+        <a class="btn btn-secondary btn-lg" href="/schedule-now">Book your free consultation</a>
       </div>
     </div>
   </div>
@@ -621,6 +621,18 @@ def body_block(c, n_reviews=8):
 <section class="section bg-cream-tint">
   <div class="container center"><h2 class="title">{e(c['label'])} questions, answered</h2></div>
   <div class="container"><div class="faq">{faqhtml}</div></div>
+</section>
+
+<section class="section closing-cta">
+  <div class="container center">
+    <h2 class="title">Ready when your windows are</h2>
+    <p class="lead">A free in-home consultation in {e(c['label'])}: samples at your door, every
+      opening measured, and a written quote before you decide anything.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
+      <a class="btn btn-secondary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
+    </div>
+  </div>
 </section>
 </main>
 {FOOT}'''

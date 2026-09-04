@@ -153,7 +153,7 @@ def page(prod, slug):
     <p class="lead">{e(spec['lead'])} Free in-home consultation in {e(city)}.</p>
     <div class="hero-actions btnrow">
       <a class="btn btn-primary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
-      <a class="btn btn-secondary btn-lg" href="/schedule-now">Book a free measure</a>
+      <a class="btn btn-secondary btn-lg" href="/schedule-now">Book your free consultation</a>
     </div>
   </div></div>
 </section>
@@ -254,7 +254,19 @@ def page(prod, slug):
 </head>
 <body>
 {HEAD_INNER}
-<main>{body}</main>
+<main>{body}
+<section class="section closing-cta">
+  <div class="container center">
+    <h2 class="title">Get {e(spec["label"].lower())} priced for your windows</h2>
+    <p class="lead">Free in-home consultation in {e(city)}. Measured by us, quoted in writing,
+      installed by the same team.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
+      <a class="btn btn-secondary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
+    </div>
+  </div>
+</section>
+</main>
 {P.FOOT}'''
     return url, doc
 

@@ -87,6 +87,13 @@ def areas():
             f'<p class="lead">Three local teams cover the state. Find your city below for the '
             f'number that reaches the crew who will measure and install your windows.</p>'
             f'</div></div></section>{secs}')
+    body += '''<section class="section closing-cta"><div class="container center">
+<h2 class="title">Ready when your windows are</h2>
+<p class="lead">Free in-home consultation anywhere we serve: samples at your door, measured by us, quoted in writing.</p>
+<div class="btnrow" style="justify-content:center">
+<a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
+<a class="btn btn-secondary btn-lg" href="tel:+18665182999">Call (866) 518-2999</a>
+</div></div></section>'''
     open("areas-we-serve.html", "w").write(shell(url, title, desc, nodes, body))
     return len(items)
 
@@ -269,6 +276,13 @@ def blog_index():
             f'automating window treatments for Texas homes.</p></div></div></section>'
             f'<section class="section"><div class="container">'
             f'<div class="prod-grid">{cards}</div></div></section>')
+    body += '''<section class="section closing-cta"><div class="container center">
+<h2 class="title">Ready when your windows are</h2>
+<p class="lead">Free in-home consultation anywhere we serve: samples at your door, measured by us, quoted in writing.</p>
+<div class="btnrow" style="justify-content:center">
+<a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
+<a class="btn btn-secondary btn-lg" href="tel:+18665182999">Call (866) 518-2999</a>
+</div></div></section>'''
     open("blog/index.html", "w").write(shell(url, title, desc, nodes, body))
     return len(idx)
 
