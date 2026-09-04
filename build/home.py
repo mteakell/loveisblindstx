@@ -171,6 +171,19 @@ def main():
                       "<!-- lib:reviews-anchor -->" + _slider(), 1)
         added.append("review slider")
 
+
+    # heading pass: the converted Duda headings were category labels, not
+    # sentences anyone would say. Straight string swaps, safe to re-run.
+    for a, b in [
+        ("Explore our custom window treatments.",
+         "Find the right treatment for every window."),
+        ("Getting custom window treatments is easy.",
+         "From free consultation to finished install."),
+        ("Proudly serving Texas communities.",
+         "48 Texas cities, three local franchises."),
+    ]:
+        h = h.replace(a, b)
+
     open("index.html", "w").write(h)
     t = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ',
         re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', h, flags=re.S)))

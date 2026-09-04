@@ -190,7 +190,7 @@ def page(prod, slug):
 
 <section class="section">
   <div class="container center">
-    <h2 class="title">Work we have installed</h2>
+    <h2 class="title">{e(spec["label"])} we have installed for Texas homes</h2>
     <p class="lead">{e(close)}</p>
   </div>
   <div class="container"><div class="city-gallery">{gallery}</div></div>
@@ -199,16 +199,16 @@ def page(prod, slug):
 <section class="section">
   <div class="container split">
     <div class="body reveal">
-      <h2 class="title">What changes the price</h2>
+      <h2 class="title">What moves the price of {e(spec["label"].lower())}</h2>
       <ul class="nap-list">{prices}</ul>
       <p>We measure the openings and quote from those measurements. The number on your estimate is
          the number you pay.</p>
       <div class="btnrow"><a class="btn btn-primary btn-lg" href="tel:{tel}">Call {e(ph)}</a></div>
     </div>
     <div class="body reveal">
-      <h2 class="title">Also in {e(city)}</h2>
+      <h2 class="title">Other treatments we install in {e(city)}</h2>
       <ul class="nap-list">{others}</ul>
-      <h2 class="title">Nearby areas</h2>
+      <h2 class="title">{e(spec["label"])} near {e(city)}</h2>
       <ul class="nap-list">{nearlinks}</ul>
       <p><a class="btn-link" href="{c['url']}">All window treatments in {e(city)}
         <span class="arw">&rarr;</span></a></p>

@@ -554,14 +554,14 @@ def body_block(c, n_reviews=8):
 </section>
 
 <section class="section bg-cream-tint">
-  <div class="container center"><h2 class="title">What we install in {e(c['label'])}</h2></div>
+  <div class="container center"><h2 class="title">Blinds, shades and shutters we install in {e(c['label'])}</h2></div>
   <div class="container"><div class="prod-grid prod-grid-6">{prods}</div></div>
 </section>
 
 <section class="section">
   <div class="container split">
     <div class="body reveal">
-      <h2 class="title">Reaching us from {e(c['label'])}</h2>
+      <h2 class="title">Talk to your {e(c['label'])} team</h2>
       <ul class="nap-list">
         <li class="contact-line"><a href="tel:{tel}">{e(ph)}</a></li>
         {addr}
@@ -571,7 +571,7 @@ def body_block(c, n_reviews=8):
       <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Request a quote</a></div>
     </div>
     <div class="body reveal">
-      <h2 class="title">Nearby areas we serve</h2>
+      <h2 class="title">We also come to these neighbors</h2>
       <ul class="nap-list">{nearlinks}</ul>
       <p><a class="btn-link" href="/areas-we-serve">All Texas service areas
         <span class="arw">&rarr;</span></a></p>
@@ -582,7 +582,7 @@ def body_block(c, n_reviews=8):
 <section class="section">
   <div class="container split media-right">
     <div class="body reveal">
-      <h2 class="title">Patio shades for {e(c['label'])} outdoor spaces</h2>
+      <h2 class="title">Exterior patio shades built for {e(c['label'])} afternoons</h2>
       <p>A west-facing patio in {e(c['label'])} takes the worst of the afternoon. Exterior shades
          stop that sun on the outside of the glass instead of after it has already come through,
          which is what keeps the space usable and takes heat load off the rooms behind it.</p>
