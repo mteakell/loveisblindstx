@@ -104,6 +104,19 @@ HEROES = [
  "shutters-shutters-028-jpg.webp",
  "roller-shades-roller-shades-137-jpg.webp",
 ]
+# Video hero where we have footage worth leading with. 15MB of H.264, so it
+# stays on the lake pages rather than all 48. Muted plus playsinline makes
+# autoplay legal everywhere; the poster holds the frame until video arrives.
+VIDEO_HERO = {
+ "gun-barrel-city-tx": {
+   "src": "/images/video/lib-texas-lake.mov",
+   "poster": "/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp"},
+ "waco-tx": {
+   "src": "/images/video/lib-texas-lake.mov",
+   "poster": "/images/lib/shutters-shutters-151-jpg.webp"},
+}
+
+
 def hero_for(c):
     return "/images/lib/" + HEROES[sum(ord(x) for x in c["slug"]) % len(HEROES)]
 
@@ -516,6 +529,16 @@ def body_block(c, n_reviews=8):
            + "".join(_pcard(n, u, bpick(PRODUCT_BLURBS[u], c["slug"], 6),
                             _pi(PROD_IMG_KEY[u], 10 + i))
                      for i, (n, u) in enumerate(PRODUCTS)))
+    if c["slug"] in VIDEO_HERO:
+        _v = VIDEO_HERO[c["slug"]]
+        hero_html = ('<video autoplay muted loop playsinline preload="metadata" '
+                     'poster="' + _v["poster"] + '" '
+                     'aria-label="Love Is Blinds installations across Texas">'
+                     '<source src="' + _v["src"] + '" type="video/mp4"></video>')
+    else:
+        hero_html = ('<picture><img src="' + hero + '" alt="Custom window treatments in '
+                     + e(c["label"]) + ', TX by Love Is Blinds" width="2000" height="1500" '
+                     'fetchpriority="high"></picture>')
     map_src = map_embed(c)
     map_caption = (f'<a class="map-gbp" href="{e(c["gbp"][0])}" rel="noopener">'
                    f'Find us on Google Maps <span class="arw">&rarr;</span></a>'
@@ -543,7 +566,7 @@ def body_block(c, n_reviews=8):
 {HEAD.split('<body',1)[1].split('>',1)[1]}
 <main>
 <section class="phero">
-  <picture><img src="{hero}" alt="Custom window treatments in {e(c['label'])}, TX by Love Is Blinds" fetchpriority="high"></picture>
+  {hero_html}
   <div class="container">
     <div class="phero-copy">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/areas-we-serve">Service Areas</a><span class="sep">&rsaquo;</span>{e(c['label'])}, TX</nav>

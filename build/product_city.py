@@ -19,6 +19,31 @@ import blocks as BK
 # identically. An index guarantees the 48 cities spread across the pools.
 CITY_IX = {c["slug"]: i for i, c in enumerate(sorted(P.CITIES, key=lambda x: x["slug"]))}
 
+HERO_POOL = {
+ "blinds": ["blinds-blinds-007-jpg.webp","blinds-blinds-008-jpg.webp","blinds-blinds-009-jpg.webp",
+            "blinds-blinds-011-jpg.webp","blinds-blinds-004-jpg.webp","blinds-blinds-006-jpg.webp"],
+ "shades": ["roller-shades-roller-shades-230-jpg.webp","roller-shades-home-hero-shades-1-jpeg.webp",
+            "roller-shades-roller-shades-137-jpg.webp","roller-shades-roller-shades-245-jpg.webp",
+            "honeycomb-shades-honeycomb-shades-018-jpg.webp","honeycomb-shades-honeycomb-shades-022-jpg.webp",
+            "roller-shades-roller-shades-201-jpg.webp","woven-wood-shades-woven-wood-shades-003-jpg.webp",
+            "banded-shades-banded-shades-011-jpg.webp","roman-shades-roman-shades-050-jpg.webp"],
+ "plantation-shutters": ["shutters-shutters-101-jpg.webp","shutters-shutters-113-jpg.webp",
+            "shutters-shutters-091-jpg.webp","shutters-shutters-151-jpg.webp","shutters-shutters-060-jpg.webp",
+            "shutters-shutters-028-jpg.webp","shutters-shutters-077-jpg.webp","shutters-shutters-123-jpg.webp"],
+ "shutters": ["shutters-shutters-147-jpg.webp","shutters-shutters-162-jpg.webp","shutters-shutters-068-jpg.webp",
+            "shutters-shutters-084-jpg.webp","shutters-shutters-112-jpg.webp","shutters-shutters-030-jpg.webp",
+            "shutters-shutters-101-jpg.webp","shutters-shutters-077-jpg.webp"],
+ "patio-shades": ["exterior-patio-shades-exterior-patio-shades-001-jpg.webp",
+            "exterior-patio-shades-exterior-patio-shades-002-jpg.webp",
+            "exterior-patio-shades-exterior-patio-shades-005-jpg.webp",
+            "exterior-patio-shades-exterior-patio-shades-014-jpg.webp",
+            "exterior-patio-shades-exterior-patio-shades-017-jpg.webp",
+            "exterior-patio-shades-exterior-patio-shades-022-jpg.webp"],
+ "motorized-shades": ["roller-shades-roller-shades-245-jpg.webp","smart-drapes-smart-drapes-002-jpg.webp",
+            "roller-shades-roller-shades-137-jpg.webp","smart-drapes-smart-drapes-010-jpg.webp",
+            "roller-shades-roller-shades-230-jpg.webp","smart-drapes-smart-drapes-008-jpg.webp"],
+}
+
 IMG_POOL = json.load(open(os.path.join(P.ROOT, "data/image-pools.json")))
 
 # Mixed radix decomposition of the city index. Each successive call peels off a
@@ -131,7 +156,13 @@ def page(prod, slug):
         f'<li><a href="/{PS.SPEC[o]["slug"]}-{slug}">{e(PS.SPEC[o]["label"])} in {e(city)}</a></li>'
         for o in PS.SPEC if o != prod)
 
-    hero, hero2 = spec["hero"], spec["hero2"]
+    # every page of a product family shared one fixed hero, so all 48 blinds
+    # pages looked identical. Rotate within a curated per-family pool instead.
+    _hp = HERO_POOL[prod]
+    hero = "/images/lib/" + pick(_hp, slug, 19)
+    hero2 = "/images/lib/" + pick(_hp, slug, 29)
+    if hero2 == hero:
+        hero2 = "/images/lib/" + _hp[(_hp.index(pick(_hp, slug, 29)) + 1) % len(_hp)]
     nodes = [S.organization(BIZ), S.website(BIZ), S.business(BIZ), S.business(BIZ, c),
              S.webpage(url, title, desc, about=f"{S.SITE}{url}#business", primary=hero),
              S.breadcrumbs([("Home","/"),("Products","/products"),

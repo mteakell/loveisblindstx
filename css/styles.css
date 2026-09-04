@@ -1035,3 +1035,6 @@ a.map-gbp:hover{color:var(--pop-deep)}
    card's button spans the card instead of floating at a odd width */
 .contact-side .chips{justify-content:flex-start}
 .contact-card .btnrow .btn{flex:1 1 auto;text-align:center}
+
+/* video hero: same cover behaviour as the image */
+.phero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
