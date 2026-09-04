@@ -284,6 +284,21 @@ def faqs_for(c):
     return out
 
 
+# Google map embed per city: pinned to the city's own GBP where one exists,
+# a plain city map where it does not, which is how the Duda site handled it.
+_PLACE = {q["slug"]: q["place_id"] for q in json.load(open(os.path.join(ROOT, "data/harvest-queue.json")))["queue"]}
+
+
+def map_embed(c):
+    pid = _PLACE.get(c["slug"])
+    if pid:
+        src = f"https://www.google.com/maps?q=place_id:{pid}&output=embed"
+    else:
+        q = (c["label"] + ", TX").replace(" ", "+")
+        src = f"https://www.google.com/maps?q={q}&output=embed"
+    return src
+
+
 # ---- block rotation ------------------------------------------------------
 _CIX = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=lambda x: x["slug"]))}
 _STRIDE = {0: 1, 1: 5, 2: 7, 3: 11, 4: 13, 5: 17, 6: 19, 7: 23, 12: 29, 13: 31}
@@ -501,6 +516,11 @@ def body_block(c, n_reviews=8):
            + "".join(_pcard(n, u, bpick(PRODUCT_BLURBS[u], c["slug"], 6),
                             _pi(PROD_IMG_KEY[u], 10 + i))
                      for i, (n, u) in enumerate(PRODUCTS)))
+    map_src = map_embed(c)
+    map_caption = (f'<a class="map-gbp" href="{e(c["gbp"][0])}" rel="noopener">'
+                   f'Find us on Google Maps <span class="arw">&rarr;</span></a>'
+                   if c.get("gbp") else
+                   f'<span class="map-gbp">Serving {e(c["label"])} and the surrounding area</span>')
     nearchips = " ".join(
       f'<a class="chip" href="{o["url"]}">{e(o["label"])}, TX</a>' for o in near)
     gbp_row = ('<li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
@@ -578,9 +598,13 @@ def body_block(c, n_reviews=8):
       <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a></div>
     </div>
     <div class="contact-side reveal">
-      <h2 class="title">We also come to these neighbors</h2>
-      <p class="lead">Same team, same written quote, no travel charge.</p>
-      <div class="chips">{nearchips}</div>
+      <div class="map-card">
+        <iframe src="{map_src}" title="Love Is Blinds service area map for {e(c['label'])}, TX"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        {map_caption}
+      </div>
+      <h2 class="title" style="margin-top:26px">We also come to these neighbors</h2>
+      <div class="chips" style="margin-top:14px">{nearchips}</div>
       <p style="margin-top:18px"><a class="btn-link" href="/areas-we-serve">All Texas service areas
         <span class="arw">&rarr;</span></a></p>
     </div>
