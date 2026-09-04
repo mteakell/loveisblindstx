@@ -108,7 +108,7 @@ def team():
     made = []
     for m in T.TEAM:
         terr = T.TERRITORIES[m["territory"]] if m["territory"] else None
-        url = f"/team/{m['slug']}"
+        url = f"/meet-the-team/{m['slug']}"
         brand = terr["brand"] if terr else BIZ["name"]
         title = f"{m['name']} | {brand}"
         if len(title) > 62: title = f"{m['name']} | Love Is Blinds"
@@ -137,7 +137,7 @@ def team():
                                 "parentOrganization": {"@id": S.ORGID}}
         nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID), node,
             S.breadcrumbs([("Home", "/"), ("Meet the Team", "/meet-the-team"), (m["name"], url)])]
-        shot = (f'<div class="media"><img src="{m["photo"]}" width="900" height="1000" '
+        shot = (f'<div class="media"><img class="owner-photo" src="{m["photo"]}" width="900" height="1125" '
                 f'alt="{e(m["name"])}, {e(brand)}" fetchpriority="high"></div>'
                 if m.get("photo") else "")
         body = (f'<section class="section"><div class="container split media-right">'
@@ -177,8 +177,8 @@ def team():
         body += (f'<section class="section"><div class="container center">'
                  f'<h2 class="title">Every job is backed five ways</h2></div>'
                  f'<div class="container"><div class="prod-grid gtee-grid">{_g}</div></div></section>')
-        os.makedirs("team", exist_ok=True)
-        open(f"team/{m['slug']}.html", "w").write(shell(url, title, desc, nodes, body))
+        os.makedirs("meet-the-team", exist_ok=True)
+        open(f"meet-the-team/{m['slug']}.html", "w").write(shell(url, title, desc, nodes, body))
         made.append(m["slug"])
     return made
 
@@ -237,7 +237,7 @@ def team_cards():
         # No .reveal here. These cards now sit high on the page, and the reveal
         # transition can stall at opacity:0 when the observer fires before the
         # first paint, leaving the whole team section blank.
-        cards += (f'<a class="prod-card" href="/team/{m["slug"]}">{pic}<div class="pbody">'
+        cards += (f'<a class="prod-card" href="/meet-the-team/{m["slug"]}">{pic}<div class="pbody">'
                   f'<h3>{e(m["name"])}</h3><p class="kicker">{e(sub)}</p><p>{e(blurb)}</p>'
                   f'<span class="btn-link">Read more <span class="arw">&rarr;</span></span>'
                   f'</div></a>')

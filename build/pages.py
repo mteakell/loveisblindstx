@@ -159,7 +159,7 @@ _SLUG = {m["name"]: m["slug"] for m in T.TEAM}
 
 def _leads_linked(terr):
     """Same names, each linked to its own team page."""
-    parts = [f'<a href="/team/{_SLUG[n]}">{html.escape(n)}</a>' if n in _SLUG
+    parts = [f'<a href="/meet-the-team/{_SLUG[n]}">{html.escape(n)}</a>' if n in _SLUG
              else html.escape(n) for n in terr["leads"]]
     return parts[0] if len(parts) == 1 else " and ".join([", ".join(parts[:-1]), parts[-1]])
 

@@ -1378,6 +1378,26 @@
       "source": "/:city--tx:hash*",
       "destination": "/areas-we-serve",
       "statusCode": 301
+    },
+    {
+      "source": "/team/jake-wade",
+      "destination": "/meet-the-team/jake-wade",
+      "statusCode": 301
+    },
+    {
+      "source": "/team/jonathan-arosemena",
+      "destination": "/meet-the-team/jonathan-arosemena",
+      "statusCode": 301
+    },
+    {
+      "source": "/team/durrell",
+      "destination": "/meet-the-team/durrell",
+      "statusCode": 301
+    },
+    {
+      "source": "/team/danny",
+      "destination": "/meet-the-team/danny",
+      "statusCode": 301
     }
   ]
 }
