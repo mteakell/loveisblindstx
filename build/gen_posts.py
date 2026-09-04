@@ -1,13 +1,13 @@
 """Assemble and write the 30 new posts."""
 import json, os, random, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
-import newposts as N, content_cost as C, content_all as A, content_rest as R, content_rooms as RM
+import newposts as N, content_cost as C, content_all as A, content_rest as R, content_rooms as RM, content_vein as CV
 import content_new6 as N6
 C.N = N
 os.chdir(N.ROOT)
 
 BODIES = {}
-BODIES.update(A.build(N, C)); BODIES.update(R.build(N)); BODIES.update(RM.build(N)); BODIES.update(N6.build(N))
+BODIES.update(A.build(N, C)); BODIES.update(R.build(N)); BODIES.update(RM.build(N)); BODIES.update(CV.build(N)); BODIES.update(N6.build(N))
 PLAN = json.load(open("data/new-posts.json"))
 EXISTING = json.load(open("data/blog-index.json"))
 
@@ -117,7 +117,7 @@ if __name__ == "__main__":
         if not body:
             print("MISSING BODY:", post["slug"]); continue
         post = dict(post)
-        post["desc"] = desc_for(post)
+        post["desc"] = post.get("desc") or desc_for(post)
         # spread publish dates back over recent weeks rather than stamping them all today
         post["published"] = f"2026-0{7 if i < 15 else 8}-{(i % 28) + 1:02d}"
         hero = pick_hero(post["slug"])

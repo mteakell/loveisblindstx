@@ -286,5 +286,59 @@
   "vol": 2400,
   "kd": 25,
   "cluster": "compare"
+ },
+ {
+  "slug": "motorized-blinds-not-responding-checklist",
+  "title": "Why Your Motorized Blinds Are Not Responding: A Simple Checklist",
+  "kw": "motorized blinds not working",
+  "vol": 320,
+  "kd": 18,
+  "cluster": "smart",
+  "desc": "The checks that fix most unresponsive motorized blinds: battery, pairing, channels, obstructions and schedules, before anyone blames the motor."
+ },
+ {
+  "slug": "what-to-do-with-blinds-when-remodeling",
+  "title": "What to Do With Your Blinds When You Are Remodeling",
+  "kw": "blinds when remodeling",
+  "vol": 90,
+  "kd": 8,
+  "cluster": "room",
+  "desc": "When to take treatments down, how to store them, and why new blinds should never be measured until the trim is painted."
+ },
+ {
+  "slug": "wind-rated-patio-shades-texas",
+  "title": "Wind-Rated Patio Shades for Texas Weather",
+  "kw": "wind resistant patio shades",
+  "vol": 170,
+  "kd": 12,
+  "cluster": "patio",
+  "desc": "Why Texas wind ends most patio shades early, and how track-guided, wind-rated and retractable systems survive it."
+ },
+ {
+  "slug": "window-treatments-for-texas-lake-houses",
+  "title": "Window Treatments for Texas Lake Houses",
+  "kw": "lake house window treatments",
+  "vol": 210,
+  "kd": 14,
+  "cluster": "room",
+  "desc": "Glare off water, west walls that overheat and weekends away: how to choose treatments for a Texas lake house."
+ },
+ {
+  "slug": "window-treatments-that-make-a-home-look-expensive",
+  "title": "Window Treatments That Make a Home Look Expensive",
+  "kw": "window treatments that look expensive",
+  "vol": 260,
+  "kd": 16,
+  "cluster": "room",
+  "desc": "Fit, fullness and consistency read as expensive. The measuring decisions behind rooms that look custom, because they are."
+ },
+ {
+  "slug": "stop-furniture-fading-texas-sun",
+  "title": "Worried About Furniture Fading? How to Stop Texas Sun Damage",
+  "kw": "protect furniture from sun damage",
+  "vol": 390,
+  "kd": 21,
+  "cluster": "care",
+  "desc": "Fading is a dose of UV and heat. Solar screens, cellular shades and exterior shading cut it without turning the room dark."
  }
 ]

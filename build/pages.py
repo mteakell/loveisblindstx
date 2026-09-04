@@ -501,6 +501,14 @@ def body_block(c, n_reviews=8):
            + "".join(_pcard(n, u, bpick(PRODUCT_BLURBS[u], c["slug"], 6),
                             _pi(PROD_IMG_KEY[u], 10 + i))
                      for i, (n, u) in enumerate(PRODUCTS)))
+    nearchips = " ".join(
+      f'<a class="chip" href="{o["url"]}">{e(o["label"])}, TX</a>' for o in near)
+    gbp_row = ('<li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+               'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+               '<path d="M12 2a10 10 0 1 0 10 10H12Z"/><path d="M12 2v10h10"/></svg></span>'
+               '<span><span class="cc-label">Reviews and photos</span>'
+               f'<a class="cc-value" href="{e(c["gbp"][0])}" rel="noopener">Our Google Business Profile</a>'
+               '</span></li>') if c.get("gbp") else ""
     nearlinks = " ".join(
       f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
     faqhtml = "".join(
@@ -554,22 +562,26 @@ def body_block(c, n_reviews=8):
   <div class="container"><div class="prod-grid prod-grid-6">{prods}</div></div>
 </section>
 
-<section class="section">
-  <div class="container split">
-    <div class="body reveal">
+<section class="section contact-band">
+  <div class="container contact-cols">
+    <div class="contact-card reveal">
       <h2 class="title">Talk to your {e(c['label'])} team</h2>
-      <ul class="nap-list">
-        <li class="contact-line"><a href="tel:{tel}">{e(ph)}</a></li>
-        {addr}
-        <li class="contact-line"><a href="/schedule-now">Send us a message</a></li>
-        {gbp}
+      <ul class="cc-rows">
+        <li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+          <span><span class="cc-label">Call your local team</span><a class="cc-value" href="tel:{tel}">{e(ph)}</a></span></li>
+        <li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span><span class="cc-label">Service area</span><span class="cc-value">{e(c['label'])} and the surrounding area</span></span></li>
+        <li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><span class="cc-label">Prefer to write</span><a class="cc-value" href="/schedule-now">Send us a message</a></span></li>
+        {gbp_row}
       </ul>
-      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Request a quote</a></div>
+      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a></div>
     </div>
-    <div class="body reveal">
+    <div class="contact-side reveal">
       <h2 class="title">We also come to these neighbors</h2>
-      <ul class="nap-list">{nearlinks}</ul>
-      <p><a class="btn-link" href="/areas-we-serve">All Texas service areas
+      <p class="lead">Same team, same written quote, no travel charge.</p>
+      <div class="chips">{nearchips}</div>
+      <p style="margin-top:18px"><a class="btn-link" href="/areas-we-serve">All Texas service areas
         <span class="arw">&rarr;</span></a></p>
     </div>
   </div>
