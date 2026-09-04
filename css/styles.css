@@ -730,7 +730,7 @@ body.search-open{overflow:hidden}
 .blog-empty{text-align:center;color:var(--ink-muted);padding:40px 0;display:none}
 
 /* ---- TX additions: city index grid and migrated blog bodies ---- */
-.city-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.35rem 1.25rem}
+.city-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:.35rem 1.25rem}
 .city-index li{padding:.3rem 0}
 .city-index .sml{display:block;color:var(--ink-3,#8b9098);font-size:.82rem}
 .post-body{max-width:74ch;margin:0 auto}
@@ -777,7 +777,7 @@ body.search-open{overflow:hidden}
 :where(img[width][height]){height:auto}
 
 /* the five guarantees */
-.guarantees{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px;margin-top:26px}
+.guarantees{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:18px;margin-top:26px}
 .gtee{background:var(--surface,#fff);border:1px solid var(--line,rgba(18,26,32,.10));
   border-radius:var(--radius);padding:22px 22px 24px;box-shadow:var(--shadow-1)}
 .gtee h3{font-size:1.02rem;margin:0 0 8px;color:var(--ink-strong,var(--ink-body))}
@@ -827,10 +827,10 @@ body.search-open{overflow:hidden}
 .prod-card .pbody{padding:20px 20px 22px}
 
 /* guarantee cards sit in the same grid as the type cards now */
-.gtee-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.gtee-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
 
 /* numbered process steps, with a rule connecting them on wide screens */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:22px;
   margin-top:44px;position:relative}
 .step{position:relative;padding:34px 22px 24px;background:#fff;
   border:1px solid rgba(18,26,32,.08);border-radius:var(--radius);
@@ -980,7 +980,7 @@ body.search-open{overflow:hidden}
    the article column. */
 .rel-block{max-width:960px;margin:56px auto 0;padding:0 20px}
 .rel-block h2{font-size:clamp(20px,2.2vw,26px);margin:0 0 22px}
-.rel-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:0}
+.rel-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin-top:0}
 .rel-card .pic img{height:150px}
 .rel-card .pbody{padding:16px 16px 18px}
 .rel-card h3{font-size:15px;line-height:1.4;margin:0 0 10px}
