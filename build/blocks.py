@@ -422,3 +422,47 @@ EXTRA_FAQ += [
   "Nothing. The approved quote is the amount you pay. If we got a measurement wrong that is ours to "
   "put right, not something that appears on your invoice."),
 ]
+
+
+# ---------------------------------------------------------------- intros
+# The most-read sentence on every page was the least varied: one fixed hero
+# lead on all 48 city pages, one fixed opening paragraph under it, and five
+# generic intros shared by 288 product pages, none of which named the product.
+# Every entry here puts the product family and the city in the first sentence,
+# which is also where Google reads them.
+HERO_LEADS = [
+ "Custom blinds, shades and shutters, measured and installed in {c} by the team that quotes them. The in-home consultation is free and there is no obligation to order.",
+ "Blinds, shades and shutters built to your windows, not trimmed to fit. We measure every {c} opening ourselves and install what we quoted.",
+ "From faux wood blinds to plantation shutters and exterior patio shades, {c} homes get measured on site and quoted in writing.",
+ "Shopping for blinds or shutters in {c}? Samples come to your door, every window is measured by us, and the price you approve is the price you pay.",
+ "Custom window treatments for {c}: blinds, shades, shutters and patio shades, measured in your home and installed by the same team.",
+ "We fit blinds, shades and plantation shutters across {c}, and we measure every opening before anything is ordered. The consultation costs nothing.",
+ "Blinds, shades and shutters for {c} homes, backed by a written quote, professional installation and a four-year service guarantee.",
+ "Your {c} windows get measured by the owner who quotes them. Blinds, shades, shutters and exterior patio shades, made to those numbers.",
+ "Custom blinds and shutters without the guesswork: we bring samples to {c}, measure on site and install what we sold you.",
+ "Every blind, shade and shutter we install in {c} is cut to measurements we took ourselves, so the fit is ours to guarantee.",
+ "{c} homeowners call us for blinds, shades, shutters and patio shades. We answer with a free consultation and a measured, written quote.",
+ "Window treatments for {c}, done in the right order: samples first, measurements second, and an install by the team that quoted it.",
+]
+
+BODY_INTROS = [
+ "Every blind, shade and shutter here starts with an on-site measure. Nothing is cut to a catalogue size and trimmed to fit, which is what causes the light gaps and crooked bottom rails you see on stock product.",
+ "Custom blinds and shutters only work if the numbers are right, so we take them ourselves at every {c} opening. A treatment cut to a wrong measurement is not returnable, which is why we never work from a list sent over.",
+ "The blinds, shades and shutters we fit in {c} are made to the opening, not adjusted to it. That is the difference you notice at the edges, where stock product leaks light and custom does not.",
+ "A shutter that fits was measured by someone who has to stand behind the fit. We measure every {c} window on site, quote from those numbers and install to them.",
+ "Window treatments fail at the measuring stage more than anywhere else. Ours are measured at your {c} home by the team that installs them, so an error is ours to remake, not yours to live with.",
+ "Blinds and shades bought off a shelf are cut close and shimmed to fit. Everything we install in {c} is built to the window it was measured against, which is why the reveal is even and the rail sits straight.",
+]
+
+PC_INTROS = [
+ "{p} for {c} homes, measured at the window and installed by the team that quoted them.",
+ "If you are pricing {p} in {c}, start with the measuring, because that is where the result is decided. We do it on site, free.",
+ "We build {p} to the opening, not to a catalogue size, and we measure every {c} window ourselves before anything is ordered.",
+ "{p} done properly in {c}: samples at your door, measurements taken on site, and a written quote that does not move.",
+ "The {p} we install around {c} are cut to numbers we took ourselves, so the fit is guaranteed by the people who measured it.",
+ "Every set of {p} we fit in {c} starts with a free in-home consultation, because fabric and finish read differently in your light than in a showroom.",
+ "{p} are a measuring job before they are a style decision. In {c} we take those measurements at your windows and stand behind them.",
+ "Buying {p} in {c} should not involve guesswork. We measure, we quote in writing, and the same team installs.",
+ "For {p} in {c}, the order of operations matters: consultation first, on-site measurements second, then an install by the people who quoted it.",
+ "We have been measuring and installing {p} across {c} and the surrounding area, and every job carries the same written quote and four-year service guarantee.",
+]

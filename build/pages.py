@@ -286,7 +286,7 @@ def faqs_for(c):
 
 # ---- block rotation ------------------------------------------------------
 _CIX = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=lambda x: x["slug"]))}
-_STRIDE = {0: 1, 1: 5, 2: 7, 3: 11, 4: 13, 5: 17, 6: 19, 7: 23}
+_STRIDE = {0: 1, 1: 5, 2: 7, 3: 11, 4: 13, 5: 17, 6: 19, 7: 23, 12: 29, 13: 31}
 
 
 def _seed(slug, salt):
@@ -520,9 +520,7 @@ def body_block(c, n_reviews=8):
     <div class="phero-copy">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/areas-we-serve">Service Areas</a><span class="sep">&rsaquo;</span>{e(c['label'])}, TX</nav>
       <h1 class="title">Custom Blinds, Shades and Shutters in {e(c['label'])}, Texas{' (' + e(c['variant']) + ')' if c.get('variant') else ''}</h1>
-      <p class="lead">We measure your windows, build the treatments to those measurements and
-        install them ourselves. Free in-home consultation in {e(c['label'])}, no charge for the
-        visit and no obligation to order.</p>
+      <p class="lead">{e(bpick(BK.HERO_LEADS, c["slug"], 12).format(c=c["label"]))}</p>
       <div class="hero-actions btnrow">
         <a class="btn btn-primary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
         <a class="btn btn-secondary btn-lg" href="/schedule-now">Book a consultation</a>
@@ -535,9 +533,7 @@ def body_block(c, n_reviews=8):
   <div class="container split media-right">
     <div class="body reveal">
       <h2 class="title">Window treatments fitted to {e(c['label'])} homes</h2>
-      <p>Every opening gets measured on site. Nothing here is cut to a catalogue size and trimmed
-         to fit, which is what causes the light gaps and the crooked bottom rails you see on
-         stock blinds.</p>
+      <p>{e(bpick(BK.BODY_INTROS, c["slug"], 13).format(c=c["label"]))}</p>
       <ul class="feature-list">
         <li>{TICK}Free in-home consultation with samples you can hold against your own light</li>
         <li>{TICK}Measured, ordered and installed by the same local team</li>

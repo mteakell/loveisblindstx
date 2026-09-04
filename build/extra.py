@@ -211,6 +211,15 @@ def team_cards():
              f'is the person who installs them.</p></div><div class="container">'
              f'<div class="team-grid">{cards}</div></div></section>\n')
     s = open("meet-the-team.html").read()
+    # Fix the converted hero: the <source> still pointed at a purged portrait
+    # (roman-005) and the <img> fallback was the dated woven-wood dining room.
+    # One bright landscape shot, no stale source element.
+    s = re.sub(
+        r'<picture><source[^>]*>\s*<img[^>]*fetchpriority="high"[^>]*>',
+        '<picture><img src="/images/lib/roller-shades-home-hero-shades-1-jpeg.webp" '
+        'data-alt-final alt="A Texas living room with custom roller shades by Love Is Blinds" '
+        'width="2000" height="1500" fetchpriority="high">',
+        s, count=1)
     s = re.sub(r'<section class="section bg-cream-tint"><div class="container center">'
                r'<h2 class="title">(?:The three Texas teams|Meet Your Local Owner Operators)'
                r'.*?</section>\s*', lambda m: "", s, flags=re.S)
