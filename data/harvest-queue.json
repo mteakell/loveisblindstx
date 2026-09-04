@@ -185,5 +185,6 @@
   "Love is Blinds-Gainesville (Gainesville, TX 76240)           - DFW service area",
   "Love is Blinds (Allen, TX + Celina, TX + 9 other areas)      - NTX service area"
  ],
- "_unresolved_note": "Not present in the Local Falcon account, so no place ID. Get each one's link from Business Profile Manager: See your profile > Share, same as the four share.google links already supplied."
+ "_unresolved_note": "Not present in the Local Falcon account, so no place ID. Get each one's link from Business Profile Manager: See your profile > Share, same as the four share.google links already supplied.",
+ "_phone_verification": "2026-09-03: all 48 city numbers checked against the live Duda pages. 46 exact matches. Las Colinas: rebuild keeps (972) 947-5677, confirmed by the GBP; Duda's hero button carries the Kerens number (903) 207-5569, a Duda-side bug. Boyd: rebuild keeps (817) 859-6699 (shared with Bedford, per Duda's areas list); Duda's own Boyd page prose says (940) 329-5166 (shared with Euless). Maddie to fact-check Boyd; no Boyd GBP exists to arbitrate. Change data/tx.json cities[boyd-tx].phone if it turns out to be the 940 number, then rebuild pages + product_city."
 }
