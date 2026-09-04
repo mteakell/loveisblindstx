@@ -3,6 +3,10 @@ and the team profiles."""
 import json, os, re, sys, html, collections
 sys.path.insert(0, os.path.dirname(__file__))
 import schema as S, territory as T
+import icons as IC
+
+REVIEWS = json.load(open("data/reviews.json"))
+GUARANTEES = json.load(open("data/guarantees.json"))["guarantees"]
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -148,6 +152,31 @@ def team():
                 f'<a class="btn btn-primary btn-lg" href="/schedule-now">Book a consultation</a>'
                 f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>'
                 f'</div></div>{shot}</div></section>{area}')
+        # the pages ran 130 to 215 words: a portrait, a bio and a city list.
+        # Territory reviews and the guarantees give a visitor a reason to stay.
+        _revs = []
+        if terr:
+            _slugs = {cc["slug"] for cc in CITIES if T.of(cc["slug"])["key"] == terr["key"]}
+            _revs = sorted((r for r in REVIEWS
+                            if r.get("slug") in _slugs and r.get("rating", 5) >= 4),
+                           key=lambda r: r.get("date", ""), reverse=True)[:8]
+        if _revs:
+            _cards = "".join(
+                '<article class="rv-card"><div class="rv-stars" aria-hidden="true">'
+                '&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
+                f'<p class="rv-quote">{e(r["quote"])}</p>'
+                f'<footer class="rv-by"><span class="rv-name">{e(r["name"])}</span>'
+                f'<span class="rv-city">{e(r["city"])}, TX</span></footer></article>' for r in _revs)
+            body += (f'<section class="section bg-cream-tint rv-section rv-compact">'
+                     f'<div class="container center"><h2 class="title">What {e(m["name"].split()[0])}\'s '
+                     f'customers say</h2></div><div class="rv-wrap"><div class="rv-track" tabindex="0" '
+                     f'role="region" aria-label="Customer reviews">{_cards}</div></div></section>')
+        _g = "".join(
+            f'<div class="type-card">{IC.guarantee_icon(g["id"])}<div class="pbody">'
+            f'<h3>{e(g["name"])}</h3><p>{e(g["text"])}</p></div></div>' for g in GUARANTEES)
+        body += (f'<section class="section"><div class="container center">'
+                 f'<h2 class="title">Every job is backed five ways</h2></div>'
+                 f'<div class="container"><div class="prod-grid gtee-grid">{_g}</div></div></section>')
         os.makedirs("team", exist_ok=True)
         open(f"team/{m['slug']}.html", "w").write(shell(url, title, desc, nodes, body))
         made.append(m["slug"])

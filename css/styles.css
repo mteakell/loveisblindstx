@@ -1030,3 +1030,8 @@ a.cc-value:hover{color:var(--pop-deep)}
 .map-gbp{display:block;padding:13px 18px;font-weight:700;font-size:14px;color:var(--lead);
   border-top:1px solid rgba(18,26,32,.07)}
 a.map-gbp:hover{color:var(--pop-deep)}
+
+/* contact band tidy-up: chips left-aligned like the copy above them, and the
+   card's button spans the card instead of floating at a odd width */
+.contact-side .chips{justify-content:flex-start}
+.contact-card .btnrow .btn{flex:1 1 auto;text-align:center}
