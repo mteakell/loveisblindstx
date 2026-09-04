@@ -11,7 +11,7 @@ SPEC = {
 "blinds": {
  "slug":"blinds", "label":"Custom Blinds", "h1":"Custom Blinds",
  "title":"Custom Blinds in {city}, TX", "brandable":True,
- "hero":"/images/lib/blinds-blinds-013-jpg.webp",
+ "hero":"/images/lib/blinds-blinds-009-jpg.webp",
  "hero2":"/images/lib/blinds-blinds-009-jpg.webp",
  "desc":"Real wood, faux wood and composite blinds for {city}, TX homes. Custom measured and professionally installed. Call {phone}.",
  "lead":"Real wood, faux wood and composite blinds, cut to your openings rather than trimmed to fit, and installed by the team that measured them.",
@@ -141,7 +141,7 @@ SPEC = {
 "motorized-shades": {
  "slug":"motorized-shades", "label":"Motorized Shades", "h1":"Motorized Shades and Blinds",
  "title":"Motorized Shades in {city}, TX", "brandable":True,
- "hero":"/images/lib/roller-shades-roller-shades-118-jpg.webp",
+ "hero":"/images/lib/roller-shades-roller-shades-245-jpg.webp",
  "hero2":"/images/lib/smart-drapes-smart-drapes-002-jpg.webp",
  "desc":"Motorized shades and blinds in {city}, TX with app, remote and voice control. Battery, hardwired or solar. Free measure. Call {phone}.",
  "lead":"Shades and blinds that move on a remote, a wall switch, an app or a schedule, paired and programmed before we leave.",

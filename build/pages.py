@@ -50,9 +50,9 @@ GALLERY = ["/images/lib/" + f for f in [
  "woven-wood-shades-woven-wood-shades-003-jpg.webp", "roller-shades-roller-shades-137-jpg.webp",
  "shutters-shutters-151-jpg.webp", "honeycomb-shades-honeycomb-shades-018-jpg.webp",
  "smart-drapes-smart-drapes-002-jpg.webp", "shutters-shutters-101-jpg.webp",
- "roller-shades-roller-shades-201-jpg.webp", "blinds-blinds-013-jpg.webp",
+ "roller-shades-roller-shades-201-jpg.webp", "blinds-blinds-009-jpg.webp",
  "exterior-patio-shades-exterior-patio-shades-001-jpg.webp", "shutters-shutters-060-jpg.webp",
- "roller-shades-roller-shades-118-jpg.webp", "smart-drapes-smart-drapes-010-jpg.webp",
+ "roller-shades-roller-shades-245-jpg.webp", "smart-drapes-smart-drapes-010-jpg.webp",
  "shutters-shutters-028-jpg.webp", "honeycomb-shades-honeycomb-shades-026-jpg.webp",
 ]]
 
@@ -60,12 +60,12 @@ PROD_IMG = {k: ["/images/lib/" + f for f in v] for k, v in {
  "shutters": ["shutters-shutters-113-jpg.webp", "shutters-shutters-077-jpg.webp",
               "shutters-shutters-101-jpg.webp", "shutters-shutters-091-jpg.webp",
               "shutters-shutters-151-jpg.webp"],
- "motor":    ["roller-shades-roller-shades-118-jpg.webp", "smart-drapes-smart-drapes-008-jpg.webp",
+ "motor":    ["roller-shades-roller-shades-245-jpg.webp", "smart-drapes-smart-drapes-008-jpg.webp",
               "roller-shades-roller-shades-137-jpg.webp", "smart-drapes-smart-drapes-010-jpg.webp"],
  "patio":    ["exterior-patio-shades-exterior-patio-shades-001-jpg.webp",
               "exterior-patio-shades-exterior-patio-shades-002-jpg.webp",
               "exterior-patio-shades-exterior-patio-shades-005-jpg.webp"],
- "blinds":   ["blinds-blinds-013-jpg.webp", "blinds-blinds-009-jpg.webp",
+ "blinds":   ["blinds-blinds-009-jpg.webp", "blinds-blinds-009-jpg.webp",
               "blinds-blinds-007-jpg.webp", "blinds-blinds-011-jpg.webp"],
  "roller":   ["roller-shades-roller-shades-230-jpg.webp", "roller-shades-roller-shades-201-jpg.webp",
               "roller-shades-home-hero-shades-1-jpeg.webp", "roller-shades-roller-shades-137-jpg.webp"],
@@ -81,7 +81,7 @@ PROD_IMG_KEY = {
 }
 
 IMG_MOTOR = ["/images/lib/" + f for f in [
- "roller-shades-roller-shades-118-jpg.webp",
+ "roller-shades-roller-shades-245-jpg.webp",
  "smart-drapes-smart-drapes-008-jpg.webp",
  "roller-shades-roller-shades-230-jpg.webp",
  "exterior-patio-shades-exterior-patio-shades-002-jpg.webp",
@@ -100,7 +100,7 @@ HEROES = [
  "roller-shades-home-hero-shades-1-jpeg.webp",
  "shutters-shutters-077-jpg.webp",
  "shutters-shutters-151-jpg.webp",
- "roller-shades-roller-shades-118-jpg.webp",
+ "roller-shades-roller-shades-245-jpg.webp",
  "shutters-shutters-028-jpg.webp",
  "roller-shades-roller-shades-137-jpg.webp",
 ]
