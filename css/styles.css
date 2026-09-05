@@ -1139,3 +1139,12 @@ a.map-gbp:hover{color:var(--pop-deep)}
   padding:12px 16px;letter-spacing:.03em}
 @media (max-width:900px){.vgrid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.vgrid{grid-template-columns:1fr}}
+
+/* full product tree beneath the mega cards */
+.mega-links{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 26px;
+  padding:16px 4px 4px;margin-top:14px;border-top:1px solid rgba(18,26,32,.08)}
+.mega-links b{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-muted);margin-bottom:8px}
+.mega-links a{display:block;font-size:13.5px;font-weight:600;color:var(--ink-body);
+  padding:4px 0;transition:color .2s var(--ease)}
+.mega-links a:hover{color:var(--pop-deep)}
