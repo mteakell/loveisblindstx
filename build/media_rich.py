@@ -206,7 +206,12 @@ def main():
         # before the footer. rfind("<section") walked past <footer on the
         # converted pages, which parked every strip after the page ended.
         i = s.find('<section class="section closing-cta"')
-        jf = s.find("<footer")
+        # the PAGE footer, not a <footer> element inside a component: review
+        # cards attribute their author with <footer class="rv-by">, and finding
+        # the bare tag parked the band inside the first review card
+        jf = s.find('<footer class="footer"')
+        if jf < 0:
+            jf = s.rfind("<footer")
         if i < 0 or (0 < jf < i):
             i = jf
         jm = s.find("</main>")

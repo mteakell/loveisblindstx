@@ -1054,3 +1054,10 @@ a.map-gbp:hover{color:var(--pop-deep)}
   transition:transform .6s var(--ease)}
 .ph-card:hover img{transform:scale(1.05)}
 @media (max-width:700px){.ph-track{grid-auto-columns:minmax(250px,82vw)}.ph-card img{height:220px}}
+
+/* A hero that carries the booking form must grow with it. aspect-ratio plus
+   overflow:hidden removes the automatic content-height minimum, so on shorter
+   viewports the form overflowed out of the top of the hero and slid under the
+   sticky header. */
+.phero:has(.form-card){aspect-ratio:auto;min-height:0;padding:56px 0}
+.phero:has(.form-card) .container{padding-top:0;padding-bottom:0}
