@@ -111,6 +111,31 @@ def main():
     open("products/roman-shades.html", "w").write(
         X.shell(URL, TITLE, DESC, nodes, body, img="/images/lib/roman-shades-roman-shades-060-jpg.webp"))
     print("products/roman-shades.html written")
+    grid_card()
+
+
+def grid_card():
+    """Idempotent: a roman card in the /products grid, after honeycomb."""
+    import re
+    s = open("products/index.html").read()
+    s = re.sub(r'<!-- lib:roman-card -->.*?<!-- /lib:roman-card -->', "", s, flags=re.S)
+    card = ('<!-- lib:roman-card --><a class="prod-card reveal" href="/products/roman-shades"> '
+            '<span class="pic"><picture>'
+            '<img src="/images/lib/roman-shades-roman-shades-062-jpg.webp" data-alt-final '
+            'alt="Flat-fold roman shades in a Texas bedroom" loading="lazy" width="2000" height="1500">'
+            '</picture></span> <span class="pbody"> '
+            '<span class="kicker">Fabric &middot; Tailored</span> '
+            '<h3>Roman Shades</h3> '
+            '<p>One piece of fabric trained into level folds. Flat, relaxed or banded, lined for '
+            'privacy or blackout, built to your measurements.</p> '
+            '<span class="btn-link">Explore <span class="arw">&#8594;</span></span> '
+            '</span> </a><!-- /lib:roman-card -->')
+    m = re.search(r'<a class="prod-card reveal" href="/products/honeycomb-shades">.*?</a>', s, re.S)
+    if not m:
+        raise SystemExit("honeycomb card anchor not found in products/index.html")
+    s = s[:m.end()] + card + s[m.end():]
+    open("products/index.html", "w").write(s)
+    print("roman card added to /products grid")
 
 
 if __name__ == "__main__":
