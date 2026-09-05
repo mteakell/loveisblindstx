@@ -966,8 +966,15 @@ body.search-open{overflow:hidden}
    stretches to the tallest, so one 1,446-character review made all 364 cards
    1,139px tall. Clamp the quote and fix the card height. */
 .rv-card{height:320px}
-.rv-quote{display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;
-  overflow:hidden;flex:1 1 auto;min-height:0}
+/* Full text reachable without growing the card: the quote scrolls inside its
+   own area instead of clamping at seven lines. The mask fades the last line
+   as an affordance that there is more, and disappears once scrolled. */
+.rv-quote{flex:1 1 auto;min-height:0;overflow-y:auto;padding-right:6px;
+  scrollbar-width:thin;scrollbar-color:rgba(18,26,32,.25) transparent;
+  -webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
+.rv-quote::-webkit-scrollbar{width:5px}
+.rv-quote::-webkit-scrollbar-thumb{background:rgba(18,26,32,.22);border-radius:99px}
 .rv-by{flex:0 0 auto}
 @media (max-width:700px){.rv-card{height:300px}}
 
@@ -1061,3 +1068,35 @@ a.map-gbp:hover{color:var(--pop-deep)}
    sticky header. */
 .phero:has(.form-card){aspect-ratio:auto;min-height:0;padding:56px 0}
 .phero:has(.form-card) .container{padding-top:0;padding-bottom:0}
+
+/* editorial split: full-height image with an overlapping caption card, the
+   section shape that breaks the stacked-boxes rhythm on product pages */
+.ed-split{padding:64px 0}
+.ed-inner{display:grid;grid-template-columns:1.15fr .9fr;gap:0;align-items:center;
+  max-width:var(--container);margin:0 auto;padding:0 24px}
+.ed-media{border-radius:var(--radius);overflow:hidden;min-height:420px;
+  box-shadow:0 2px 4px rgba(18,26,32,.06),0 30px 60px -24px rgba(18,26,32,.4)}
+.ed-media img{width:100%;height:100%;min-height:420px;object-fit:cover;display:block;
+  transition:transform .8s var(--ease)}
+.ed-split:hover .ed-media img{transform:scale(1.03)}
+.ed-card{position:relative;background:#fff;border-radius:var(--radius);
+  padding:36px 34px;margin-left:-64px;z-index:2;
+  border:1px solid rgba(18,26,32,.08),;
+  box-shadow:0 2px 4px rgba(18,26,32,.07),0 26px 52px -20px rgba(18,26,32,.35)}
+.ed-flip .ed-inner{grid-template-columns:.9fr 1.15fr}
+.ed-flip .ed-media{order:2}
+.ed-flip .ed-card{order:1;margin-left:0;margin-right:-64px}
+.ed-eyebrow{color:var(--pop-deep,var(--pop));font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;font-size:12px}
+.ed-card h2{font-size:clamp(21px,2.2vw,28px);margin:10px 0 12px;line-height:1.2}
+.ed-card p{margin:0 0 18px;font-size:15px;line-height:1.65;color:var(--ink-muted)}
+@media (max-width:880px){
+  .ed-inner,.ed-flip .ed-inner{grid-template-columns:1fr}
+  .ed-card,.ed-flip .ed-card{margin:-48px 18px 0;order:2}
+  .ed-media,.ed-flip .ed-media{order:1;min-height:280px}
+  .ed-media img{min-height:280px}
+}
+
+/* video presented beside copy rather than as a lone centered block */
+.vid-split .ed-media{min-height:0}
+.vid-split video{width:100%;height:auto;display:block}
