@@ -91,6 +91,7 @@ def business(biz, city=None):
         "areaServed": {"@type": "City", "name": city["locality"],
                        "containedInPlace": {"@type": "AdministrativeArea", "name": "Texas"}},
         "sameAs": city.get("gbp") or None,
+        "hasMap": (city.get("gbp") or [None])[0],
     }
     # Only claim a postal address when a real street address is on file.
     if city.get("street"):

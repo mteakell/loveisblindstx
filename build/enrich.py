@@ -256,6 +256,25 @@ ABOUT_DEPTH = ('<section class="section"><div class="container" style="max-width
  '</div></div></section>')
 
 
+TEAM_DEPTH = ('<section class="section"><div class="container" style="max-width:880px">'
+ '<h2 class="title">What owner-operated actually means for your project</h2>'
+ '<div class="prose">'
+ '<p>Most window treatment companies split the job three ways: a salesperson quotes it, a '
+ 'subcontractor installs it, and a call center answers for it afterward. Love Is Blinds '
+ 'does not. The owner you meet at the consultation takes the measurements himself, orders '
+ 'to those exact numbers, and is on the install. If a shade needs adjusting six months '
+ 'later, the person who answers has stood in your living room.</p>'
+ '<p>It also means the advice is accountable. Nobody here earns a commission for pushing '
+ 'the most expensive line; the same person who recommends a product has to install it, '
+ 'service it, and live in the same town as the review you leave afterward. That is why '
+ 'the reviews across our Texas profiles keep saying the same three things: on time, '
+ 'clean install, honest recommendation.</p>'
+ '<p>Read the bios above, then <a href="/schedule-now">book a free consultation</a> and '
+ 'meet the owner who covers your city, or find your team on the '
+ '<a href="/areas-we-serve">service areas map</a>.</p>'
+ '</div></div></section>')
+
+
 def rebuild_faqs():
     """Rebuild the FAQ page body: grouped, answer-first, with FAQPage schema.
 
@@ -326,6 +345,8 @@ def main():
         done.append("brands")
     if inject("about.html", "aboutdepth", [ABOUT_DEPTH]):
         done.append("about")
+    if inject("meet-the-team.html", "teamdepth", [TEAM_DEPTH], before="<footer"):
+        done.append("meet-the-team")
     rebuild_faqs()
     print("enriched:", ", ".join(done))
 

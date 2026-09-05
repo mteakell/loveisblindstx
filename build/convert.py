@@ -113,13 +113,13 @@ PRODUCT_COPY = {
 SERVICE_COPY = {
  "blinds-installation": ("Blinds Installation in Texas", "Professional blinds installation across Texas, measured and fitted by our own team."),
  "blinds-solutions": ("Blinds Solutions in Texas", "Help choosing the right blinds for light, privacy and heat in each room."),
- "shades-installation": ("Shades Installation in Texas", "Professional shade installation, measured and fitted by our own team."),
- "shades-solutions": ("Shades Solutions in Texas", "Shade recommendations matched to window orientation and room use."),
+ "shades-installation": ("Shades Installation in Texas", "Roller, roman, honeycomb and woven shade installation across Texas. Measured at your windows, fitted by the same local team that quoted them."),
+ "shades-solutions": ("Shades Solutions in Texas", "Shade recommendations matched to window orientation, room use and Texas heat, from a free in-home consultation with samples at your windows."),
  "shutters-installation": ("Shutter Installation in Texas", "Plantation shutter installation, built to the opening and fitted on site."),
- "shutter-solutions": ("Shutter Solutions in Texas", "Shutter configurations for bays, arches, sliders and tall windows."),
+ "shutter-solutions": ("Shutter Solutions in Texas", "Plantation shutter configurations for bays, arches, sliders and tall windows, planned at a free in-home consultation and built to the opening."),
  "drapery-installation": ("Drapery Installation in Texas", "Drapery, hardware and layered treatments measured and hung by our team."),
- "window-treatment-installation": ("Window Treatment Installation in Texas", "Full installation service for blinds, shades, shutters and drapery."),
- "window-treatment-solutions": ("Window Treatment Solutions in Texas", "A free in-home consultation that ends in a written, measured quote."),
+ "window-treatment-installation": ("Window Treatment Installation in Texas", "Full installation service for blinds, shades, shutters and drapery across Texas, by the same local team that measures and quotes your windows."),
+ "window-treatment-solutions": ("Window Treatment Solutions in Texas", "A free in-home consultation that ends in a written, measured quote: samples at your windows, honest guidance and no pressure, anywhere we serve."),
 }
 CORE = {
  "index.html": ("/", "Custom Blinds, Shades & Shutters in Texas | Love Is Blinds",
