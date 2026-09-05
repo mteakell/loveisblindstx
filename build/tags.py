@@ -125,7 +125,7 @@ def mark_active_nav():
         if p.startswith("services/") or p == "services": return "/services"
         if p == "gallery": return "/gallery"
         if p in ("areas-we-serve",) or p in cities: return "/areas-we-serve"
-        if p in ("about", "meet-the-team", "how-it-works", "faqs") or p.startswith("team/") or p.startswith("meet-the-team/"):
+        if p in ("about", "meet-the-team", "how-it-works", "faqs", "design-checklist") or p.startswith("team/") or p.startswith("meet-the-team/"):
             return "/about"
         if p == "blog": return "/blog"
         # product x city pages sell a product in a place; Service Areas fits best

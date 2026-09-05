@@ -275,6 +275,16 @@ TEAM_DEPTH = ('<section class="section"><div class="container" style="max-width:
  '</div></div></section>')
 
 
+PLAN_PROMO = ('<section class="section closing-cta"><div class="container center">'
+ '<h2 class="title">Ten minutes now saves a second visit later</h2>'
+ '<p class="lead">Before we come out, build your window plan: rooms, priorities and '
+ 'products, compiled and sent to the owner who covers your city.</p>'
+ '<div class="btnrow" style="justify-content:center">'
+ '<a class="btn btn-primary btn-lg" href="/design-checklist">Build your window plan</a>'
+ '<a class="btn btn-secondary btn-lg" href="/schedule-now">Book your free consultation</a>'
+ '</div></div></section>')
+
+
 def rebuild_faqs():
     """Rebuild the FAQ page body: grouped, answer-first, with FAQPage schema.
 
@@ -335,7 +345,7 @@ def rebuild_faqs():
 
 def main():
     done = []
-    if inject("how-it-works.html", "how", [HOW_DETAIL, gtee_band(), review_strip(REVS[:8])]):
+    if inject("how-it-works.html", "how", [HOW_DETAIL, gtee_band(), review_strip(REVS[:8]), PLAN_PROMO]):
         done.append("how-it-works")
     if inject("areas-we-serve.html", "areas", [AREAS_INTRO, review_strip(REVS[8:16])]):
         done.append("areas-we-serve")
