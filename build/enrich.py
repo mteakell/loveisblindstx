@@ -200,6 +200,62 @@ def inject(path, marker, blocks, before="<footer"):
 
 
 
+# ------------------------------------------------ thin pages: brands, about
+BRANDS_DEPTH = ('<section class="section"><div class="container" style="max-width:880px">'
+ '<h2 class="title">The options that actually shape the quote</h2>'
+ '<div class="prose">'
+ '<p>Every product line we carry comes in more configurations than any showroom wall can '
+ 'show. These are the four decisions that matter at your windows, and the consultation '
+ 'exists to walk you through each one with samples in hand.</p>'
+ '<p><b>Light control.</b> The same shade fabric runs from light-filtering to full blackout, '
+ 'and liners change what a roman or roller shade does after dark. Bedrooms usually want '
+ 'room-darkening or blackout; living spaces usually want the glow of light-filtering with '
+ 'privacy at night.</p>'
+ '<p><b>Lift and safety.</b> Cordless lift is the standard we quote for homes with kids and '
+ 'pets. From there the step up is motorization: remote, wall switch, app, or a schedule, '
+ 'which earns its keep on tall windows and hard-to-reach glass.</p>'
+ '<p><b>Material.</b> Faux wood shrugs off steam in kitchens and baths; real wood keeps its '
+ 'lines on big living-room windows; woven naturals bring texture; honeycomb cells insulate '
+ 'against Texas heat coming off the glass.</p>'
+ '<p><b>Fit and mount.</b> Inside mount sits flush and tailored when the frame is deep and '
+ 'square; outside mount hides an uneven opening and makes a window read larger. We measure '
+ 'for both and tell you which your windows want.</p>'
+ '</div></div></section>'
+ '<section class="section bg-cream-tint"><div class="container" style="max-width:880px">'
+ '<h2 class="title">Manufacturer warranties, serviced by the people who installed it</h2>'
+ '<div class="prose">'
+ '<p>Everything we sell carries its manufacturer warranty, and the difference with Love Is '
+ 'Blinds is who handles it. A warranty claim goes to the owner-operator who measured and '
+ 'installed your windows, not a national call queue. On top of the manufacturer cover, our '
+ 'own guarantees apply to every job: the Limited Lifetime Warranty, Apples-to-Apples '
+ 'pricing, Our GuaranTEN, Here-4-You service, and a Transferable Warranty if you sell the '
+ 'home.</p>'
+ '<p>That is also why we do not push one brand on every house. The right product line '
+ 'depends on the window, the room, and the budget, and the free in-home consultation is '
+ 'where those three meet. <a href="/schedule-now">Book yours</a> and see the options at '
+ 'your own windows.</p>'
+ '</div></div></section>')
+
+ABOUT_DEPTH = ('<section class="section"><div class="container" style="max-width:880px">'
+ '<h2 class="title">Three territories, three owners, one standard</h2>'
+ '<div class="prose">'
+ '<p>Durrell Glick runs the DFW franchise. Jake Wade and Jonathan Arosemena run North '
+ 'Texas, from the northern suburbs up through Sherman and Gainesville. Danny Rohweder '
+ 'covers East and Central Texas, from Tyler across to Waco and down to the Austin metro. '
+ 'Each one quotes, measures, and installs in his own territory, so the person at your '
+ 'kitchen table on day one is the same person who stands behind the work in year five.</p>'
+ '<p>The process is the same in every territory: a free in-home consultation with samples '
+ 'at your windows, measurements taken by us, a written quote with no games, a custom order '
+ 'built to those numbers, and an installation by the team that took the measurements. '
+ 'The details are on our <a href="/how-it-works">how it works</a> page.</p>'
+ '<p>Every job is backed five ways: the Limited Lifetime Warranty, Apples-to-Apples '
+ 'pricing, Our GuaranTEN, Here-4-You service, and a Transferable Warranty that follows '
+ 'the house if you sell. And the record is public: hundreds of five-star Google reviews '
+ 'across our Texas locations, many of them quoted throughout this site with the city and '
+ 'reviewer they came from.</p>'
+ '</div></div></section>')
+
+
 def rebuild_faqs():
     """Rebuild the FAQ page body: grouped, answer-first, with FAQPage schema.
 
@@ -266,6 +322,10 @@ def main():
         done.append("areas-we-serve")
     if inject("design-checklist.html", "check", [CHECK_INTRO, gtee_band()]):
         done.append("design-checklist")
+    if inject("brands.html", "brandsdepth", [BRANDS_DEPTH]):
+        done.append("brands")
+    if inject("about.html", "aboutdepth", [ABOUT_DEPTH]):
+        done.append("about")
     rebuild_faqs()
     print("enriched:", ", ".join(done))
 

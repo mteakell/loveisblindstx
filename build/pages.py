@@ -109,10 +109,10 @@ HEROES = [
 # autoplay legal everywhere; the poster holds the frame until video arrives.
 VIDEO_HERO = {
  "gun-barrel-city-tx": {
-   "src": "/images/video/lib-texas-lake.mov",
+   "src": "/images/video/lib-texas-lake.mp4",
    "poster": "/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp"},
  "waco-tx": {
-   "src": "/images/video/lib-texas-lake.mov",
+   "src": "/images/video/lib-texas-lake.mp4",
    "poster": "/images/lib/shutters-shutters-151-jpg.webp"},
 }
 
