@@ -333,10 +333,46 @@ def main():
 
 # Hero overrides for converted pages, applied idempotently so a convert.py
 # re-run cannot quietly restore the old photo.
+def _h(name, alt):
+    return ("/images/lib/" + name + "-jpg.webp", alt)
+
+
+# The nicest vetted shot per product family, chosen at the real 5:2 crop.
 HERO_OVERRIDE = {
- "products/index.html": (
-   "/images/lib/roller-shades-roller-shades-208-jpg.webp",
+ "products/index.html": _h("roller-shades-roller-shades-208",
    "A Texas great room with a stone fireplace and floor-to-ceiling roller shades by Love Is Blinds"),
+ "products/blinds.html": _h("blinds-blinds-008",
+   "Faux wood blinds on three windows of a shiplap wall with candle sconces"),
+ "products/faux-wood-blinds.html": _h("blinds-blinds-009",
+   "Faux wood blinds over a marble counter in a bright white Texas kitchen"),
+ "products/real-wood-blinds.html": _h("blinds-blinds-007",
+   "Real wood blinds against dark wood cabinetry in a Texas kitchen"),
+ "products/plantation-shutters.html": _h("shutters-shutters-113",
+   "Plantation shutters on a navy gallery wall of framed art"),
+ "products/shutters.html": _h("shutters-shutters-love-05",
+   "White plantation shutters opening onto a backyard pool"),
+ "products/roller-shades.html": _h("roller-shades-roller-shades-237",
+   "Solar roller shades behind a sectional with a pool view"),
+ "products/shades.html": _h("roller-shades-roller-shades-230",
+   "Roller shades in an octagonal bay beneath a chandelier"),
+ "products/dual-shades.html": _h("banded-shades-banded-shades-011",
+   "Banded dual shades across three tall windows"),
+ "products/energy-efficient-custom-window-shades.html": _h("honeycomb-shades-honeycomb-shades-018",
+   "Honeycomb shades on an arched Texas window wall"),
+ "products/honeycomb-shades.html": _h("honeycomb-shades-honeycomb-shades-022",
+   "Top-down honeycomb shades filtering afternoon light"),
+ "products/motorized-window-treatment-automations.html": _h("roller-shades-roller-shades-245",
+   "Motorized roller shades in a bright living room overlooking a pool"),
+ "products/window-treatment-automations.html": _h("smart-drapes-smart-drapes-002",
+   "Motorized drapery and shutters in a chandelier-lit Texas bedroom"),
+ "products/remote-window-treatments.html": _h("roller-shades-roller-shades-137",
+   "Remote-controlled roller shades in a sunlit Texas family room"),
+ "products/panel-track-shades.html": _h("banded-shades-banded-shades-003",
+   "Panel and banded shades over a breakfast nook"),
+ "products/woven-wood-shades.html": _h("roman-shades-roman-shades-060",
+   "Woven wood shades and rattan pendants over a Texas dining table"),
+ "products/exterior-patio-shades.html": _h("exterior-patio-shades-exterior-patio-shades-drew-wrap-front",
+   "Exterior shades across the wrap porch of a white Texas farmhouse"),
 }
 
 
@@ -345,14 +381,14 @@ def apply_hero_overrides():
         if not os.path.exists(f):
             continue
         s = open(f).read()
-        m = re.search(r'(<section class="phero">.*?<img[^>]*src=")([^"]+)("[^>]*alt=")([^"]*)(")', s, re.S)
+        m = re.search(r'(<section class="phero[^"]*">.*?<img[^>]*src=")([^"]+)("[^>]*alt=")([^"]*)(")', s, re.S)
         if not m:
             continue
         if m.group(2) == src:
             continue
         s = s[:m.start(2)] + src + s[m.end(2):m.start(4)] + alt + s[m.end(4):]
         # kill any stale <source> above the img
-        s = re.sub(r'(<section class="phero">\s*<picture>)<source[^>]*>', r'\1', s, count=1)
+        s = re.sub(r'(<section class="phero[^"]*">\s*<picture>)<source[^>]*>', r'\1', s, count=1)
         open(f, "w").write(s)
         print(f"hero override applied: {f} -> {src.split('/')[-1]}")
 
