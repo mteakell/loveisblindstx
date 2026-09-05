@@ -530,6 +530,23 @@ def _mpt(lng, lat):
 
 TKEY_CLASS = {"dfw": "t-dfw", "north": "t-north", "eastwaco": "t-east"}
 
+ANCHOR_PINS = {"dallas-tx", "fort-worth-tx", "austin-tx", "waco-tx", "tyler-tx", "sherman-tx"}
+# nudge colliding anchor labels apart in the metroplex
+LBL_OFFSET = {"fort-worth-tx": (-16, "end"), "dallas-tx": (16, "start")}
+
+def _county_paths():
+    """One faint path per Texas county ring, clipped to the state shape."""
+    feats = json.load(open("data/tx-counties.json"))
+    d = []
+    for f in feats:
+        g = f["geometry"]
+        polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+        for poly in polys:
+            for ring in poly:
+                seg = [_mpt(lng, lat) for lng, lat in ring]
+                d.append("M" + " ".join(f"{round(x)},{round(y)}" for x, y in seg) + "Z")
+    return "".join(d)
+
 def tx_map():
     pts = " ".join(f"{x},{y}" for x, y in (_mpt(*p) for p in TX_OUTLINE))
     pins, xs, ys = [], [], []
@@ -537,10 +554,13 @@ def tx_map():
         x, y = _mpt(c["lng"], c["lat"])                 # southern labels stack on top
         tk = [k for k in TKEY_CLASS if T.of(c["slug"])["name"] == T.TERRITORIES[k]["name"]][0]
         if tk in ("dfw", "north"): xs.append(x); ys.append(y)
+        anchor = " anchor" if c["slug"] in ANCHOR_PINS else ""
+        dx, ta = LBL_OFFSET.get(c["slug"], (0, "middle"))
         pins.append(
-            f'<a class="mpin {TKEY_CLASS[tk]}" href="{c["url"]}" transform="translate({x},{y})">'
-            f'<title>{e(c["label"])}, TX</title><circle r="9"></circle>'
-            f'<text y="-15">{e(c["label"])}</text></a>')
+            f'<a class="mpin {TKEY_CLASS[tk]}{anchor}" href="{c["url"]}" transform="translate({x},{y})">'
+            f'<title>{e(c["label"])}, TX</title><circle class="halo" r="14"></circle>'
+            f'<circle class="pt" r="9"></circle>'
+            f'<text x="{dx}" y="-15" style="text-anchor:{ta}">{e(c["label"])}</text></a>')
     pad = 55
     dfw_vb = (f"{round(min(xs)-pad,1)} {round(min(ys)-pad,1)} "
               f"{round(max(xs)-min(xs)+2*pad,1)} {round(max(ys)-min(ys)+2*pad,1)}")
@@ -585,7 +605,10 @@ def tx_map():
         '</div></div>'
         f'<svg id="txmap" viewBox="{full_vb}" role="img" '
         'aria-label="Map of Texas showing every Love Is Blinds service city">'
-        f'<polygon class="txshape" points="{pts}"></polygon>{"".join(pins)}</svg>'
+        f'<defs><clipPath id="txclip"><polygon points="{pts}"></polygon></clipPath></defs>'
+        f'<polygon class="txshape" points="{pts}"></polygon>'
+        f'<path class="txcounties" clip-path="url(#txclip)" d="{_county_paths()}"></path>'
+        f'<polygon class="txedge" points="{pts}"></polygon>{"".join(pins)}</svg>'
         f'</div></div><script>{js}</script></section>\n')
 
 

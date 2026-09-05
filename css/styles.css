@@ -1165,25 +1165,34 @@ a.map-gbp:hover{color:var(--pop-deep)}
   color:var(--ink-muted);background:transparent;border:0;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
 .txmap-toggle button.on{background:var(--primary);color:#fff}
 #txmap{display:block;width:100%;height:auto;max-height:74vh}
-#txmap .txshape{fill:#FCFAF4;stroke:#C9C2B2;stroke-width:1.6;stroke-linejoin:round;
+#txmap .txshape{fill:#FCFAF4;stroke:none;
   filter:drop-shadow(0 12px 26px rgba(34,46,55,.12))}
+#txmap .txcounties{fill:none;stroke:#E8E2D3;stroke-width:1}
+#txmap .txedge{fill:none;stroke:#C2BBA9;stroke-width:1.8;stroke-linejoin:round}
 #txmap .mpin{cursor:pointer}
-#txmap .mpin circle{r:7;stroke:#fff;stroke-width:1.8;transition:r .18s var(--ease)}
+#txmap .mpin .halo{opacity:.16;r:13;transition:r .18s var(--ease)}
+#txmap .mpin .pt{r:7;stroke:#fff;stroke-width:1.8;transition:r .18s var(--ease)}
 #txmap .mpin.t-dfw circle{fill:var(--pop-deep)}
 #txmap .mpin.t-north circle{fill:var(--primary)}
 #txmap .mpin.t-east circle{fill:#9C7A3C}
 #txmap .mpin text{font-family:var(--font-display);font-size:19px;font-weight:800;fill:var(--ink-display);
   text-anchor:middle;opacity:0;pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:5px;
   transition:opacity .15s var(--ease)}
-#txmap .mpin:hover circle,#txmap .mpin:focus circle{r:11}
-#txmap .mpin:hover text,#txmap .mpin:focus text{opacity:1}
-#txmap.zoomed .mpin circle{r:4.5;stroke-width:1.2}
-#txmap.zoomed .mpin:hover circle,#txmap.zoomed .mpin:focus circle{r:7.5}
-#txmap.zoomed .mpin text{font-size:11px;stroke-width:3px}
+#txmap .mpin.anchor text{opacity:.9;font-size:16px;font-weight:700;fill:var(--ink-muted);stroke-width:4px}
+#txmap .mpin:hover .pt,#txmap .mpin:focus .pt{r:10}
+#txmap .mpin:hover .halo,#txmap .mpin:focus .halo{r:18}
+#txmap .mpin:hover text,#txmap .mpin:focus text{opacity:1;fill:var(--ink-display)}
+#txmap.zoomed .mpin .pt{r:4.5;stroke-width:1.2}
+#txmap.zoomed .mpin .halo{r:8}
+#txmap.zoomed .mpin:hover .pt,#txmap.zoomed .mpin:focus .pt{r:7}
+#txmap.zoomed .mpin:hover .halo,#txmap.zoomed .mpin:focus .halo{r:12}
+#txmap.zoomed .mpin text,#txmap.zoomed .mpin.anchor text{font-size:11px;stroke-width:3px}
 @media (max-width:640px){
   .txmap-head{justify-content:center}
-  #txmap .mpin circle{r:11}
-  #txmap.zoomed .mpin circle{r:6}
+  #txmap .mpin .pt{r:10}
+  #txmap .mpin .halo{r:17}
+  #txmap.zoomed .mpin .pt{r:5.5}
+  #txmap .mpin.anchor text{font-size:20px}
 }
 
 /* ===== FAQ page layout ===== */
