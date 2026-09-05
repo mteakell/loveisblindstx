@@ -180,7 +180,7 @@ def main():
         ("Getting custom window treatments is easy.",
          "From free consultation to finished install."),
         ("Proudly serving Texas communities.",
-         "48 Texas cities, three local franchises."),
+         "Three local franchises, covering Texas from DFW to Austin."),
     ]:
         h = h.replace(a, b)
 

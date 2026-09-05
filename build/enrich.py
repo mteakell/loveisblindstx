@@ -169,9 +169,10 @@ FAQ_GROUPS = [
  ]),
  ("Coverage and after the install", [
   ("What areas of Texas do you serve?",
-   "48 cities across DFW and the Mid-Cities, North Texas from Denton up to Sherman, and East and "
-   "Central Texas through Tyler, Corsicana, Gun Barrel City and Waco down to the Austin metro. Every "
-   "city page lists its own local phone number."),
+   "Three territories cover the state: DFW and the Mid-Cities, North Texas from Denton up to "
+   "Sherman, and East and Central Texas through Tyler, Corsicana, Gun Barrel City and Waco down to "
+   "the Austin metro. If you are anywhere near a town on our service areas page, we come to you, "
+   "and each area lists its own local phone number."),
   ("What happens if something breaks after installation?",
    "Two layers. Factory defects are covered for life by the manufacturer's limited lifetime "
    "warranty. On top of that, our four-year service guarantee means we come out and service your "
