@@ -575,7 +575,7 @@ body.nav-open{overflow:hidden}
 /* photo mega-menu (Window Treatments) */
 .nav-links .has-mega{position:static}
 .nav-links .has-mega::after{display:none}
-.nav-mega{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);width:min(860px,94vw);padding-top:10px;
+.nav-mega{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);width:min(1020px,96vw);padding-top:10px;
   opacity:0;visibility:hidden;transition:opacity .18s var(--ease),transform .18s var(--ease);z-index:90}
 .nav-links .has-mega:hover .nav-mega,.nav-links .has-mega:focus-within .nav-mega{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .nav-links .has-mega>a::before{content:"";position:absolute;left:-24px;right:-24px;top:100%;height:34px;z-index:80}
@@ -583,20 +583,21 @@ body.nav-open{overflow:hidden}
 .nav-links .has-dd.dd-open .nav-dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .nav-links .has-mega.dd-open .nav-mega{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .nav-links .has-dd.dd-open .dd-caret,.nav-links .has-mega.dd-open .dd-caret{transform:rotate(180deg)}
-.mega-inner{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);box-shadow:var(--shadow-3);padding:16px}
-.mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mega-inner{background:#fff;border:1px solid var(--hairline);border-radius:var(--radius);box-shadow:var(--shadow-3);padding:16px;
+  max-height:calc(100vh - 170px);overflow-y:auto}
+.mega-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .nav-mega a{padding:0;display:block;font-size:inherit;font-weight:inherit;color:inherit}
 .nav-mega a.mega-card{display:flex}
 .nav-mega a::after{display:none}
 .mega-card{display:flex;flex-direction:column;border:1px solid var(--hairline);border-radius:var(--radius-sm);overflow:hidden;
   background:#fff;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
 .mega-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);border-color:var(--soft)}
-.mega-card .mc-pic{display:block;height:120px;overflow:hidden}
+.mega-card .mc-pic{display:block;height:88px;overflow:hidden}
 .mega-card .mc-pic img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease)}
 .mega-card:hover .mc-pic img{transform:scale(1.05)}
-.mega-card .mc-body{padding:12px 14px 14px}
-.mega-card .mc-body b{display:block;font-family:var(--font-display);font-size:15.5px;font-weight:700;color:var(--ink-display)}
-.mega-card .mc-body span{display:block;font-size:12.5px;color:var(--ink-muted);margin-top:3px}
+.mega-card .mc-body{padding:10px 12px 12px}
+.mega-card .mc-body b{display:block;font-family:var(--font-display);font-size:14.5px;font-weight:700;color:var(--ink-display)}
+.mega-card .mc-body span{display:block;font-size:12px;color:var(--ink-muted);margin-top:2px}
 .mega-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:14px;padding-top:13px;border-top:1px solid var(--hairline-soft)}
 .mega-foot a{font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--pop-deep);display:inline-flex;align-items:center;gap:7px}
 .mega-foot a .arw{transition:transform .2s var(--ease)}
@@ -605,7 +606,7 @@ body.nav-open{overflow:hidden}
   .nav-links .has-mega{position:relative}
   .nav-mega{position:static;width:auto;transform:none;opacity:1;visibility:visible;padding-top:0;z-index:auto}
   .nav-links .has-mega:hover .nav-mega,.nav-links .has-mega:focus-within .nav-mega{transform:none}
-  .mega-inner{border:0;box-shadow:none;background:transparent;padding:2px 0 6px 16px}
+  .mega-inner{border:0;box-shadow:none;background:transparent;padding:2px 0 6px 16px;max-height:none;overflow:visible}
   .mega-grid{grid-template-columns:1fr;gap:0}
   .mega-card{flex-direction:row;align-items:center;gap:12px;border:0;border-bottom:1px solid var(--hairline-soft);border-radius:0}
   .mega-card:hover{transform:none;box-shadow:none;border-color:transparent;border-bottom-color:var(--hairline-soft)}
