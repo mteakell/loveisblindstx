@@ -1258,3 +1258,18 @@ a.map-gbp:hover{color:var(--pop-deep)}
 .wp-sum li{font-size:13.5px;padding:8px 0;border-bottom:1px solid var(--hairline-soft);color:var(--ink-body)}
 .wp-sum li b{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-muted)}
 .wp-sum li.empty{color:var(--ink-muted);border:0}
+
+/* planner spacing polish */
+#planner{scroll-margin-top:96px}
+.wp-block .kicker{display:block;color:var(--pop-deep);font-size:11.5px;font-weight:800;
+  letter-spacing:.13em;text-transform:uppercase;margin:0 0 10px}
+.wp-block h2{margin:0 0 10px}
+.wp-help{margin-bottom:20px}
+#wp-rooms{margin-top:20px}
+.wp-block .form-row{margin-bottom:16px}
+.wp-block .form-row:last-child{margin-bottom:0}
+.wp-form button[type="submit"]{margin-top:8px}
+.wp-card .kicker{display:block;color:var(--pop-deep);font-size:11.5px;font-weight:800;
+  letter-spacing:.13em;text-transform:uppercase;margin:0 0 12px}
+.wp-side .wp-card+.wp-card{margin-top:0}
+.wp-block .form-grid{margin-bottom:20px}
