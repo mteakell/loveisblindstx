@@ -377,6 +377,8 @@ HERO_OVERRIDE = {
    "Woven wood shades and rattan pendants over a Texas dining table"),
  "products/exterior-patio-shades.html": _h("exterior-patio-shades-exterior-patio-shades-drew-wrap-front",
    "Exterior shades across the wrap porch of a white Texas farmhouse"),
+ "brands.html": _h("shutters-shutters-156",
+   "Plantation shutters framing a lake view in a Texas living room"),
 }
 
 
