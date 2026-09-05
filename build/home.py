@@ -178,6 +178,29 @@ def main():
         added.append("review slider")
 
 
+
+    # video split: real footage on the home page
+    h = strip(h, "video")
+    vid = ('\n<!-- lib:video -->\n'
+           '<section class="ed-split vid-split bg-cream-tint"><div class="ed-inner">'
+           '<div class="ed-media video-frame">'
+           '<video autoplay muted loop playsinline preload="metadata" '
+           'poster="/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp" '
+           'aria-label="An exterior patio shade lowering automatically on a Texas porch">'
+           '<source src="/images/video/videos-drew-exterior-shades-mov.mp4" type="video/mp4">'
+           '</video></div>'
+           '<div class="ed-card"><p class="ed-eyebrow">Watch it work</p>'
+           '<h2>Shade that shows up on schedule</h2>'
+           '<p>Exterior patio shades and motorized interiors, moving on a remote, an app or a '
+           'sun sensor. Measured at your windows and installed by the team that quoted them.</p>'
+           '<a class="btn btn-primary" href="/products/exterior-patio-shades">'
+           'See exterior patio shades</a></div>'
+           '</div></section>\n<!-- /lib:video -->\n')
+    i = h.find("<!-- lib:band -->")
+    if i > 0:
+        h = h[:i] + vid + h[i:]
+        added.append("video split")
+
     # heading pass: the converted Duda headings were category labels, not
     # sentences anyone would say. Straight string swaps, safe to re-run.
     for a, b in [

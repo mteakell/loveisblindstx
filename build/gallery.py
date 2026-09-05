@@ -26,6 +26,19 @@ FAMS = [
  ("blinds",    ("blinds-blinds",),            "Custom Blinds"),
  ("drapes",    ("smart-drapes", "banded-shades"), "Drapery & Banded"),
 ]
+
+VIDEOS = [
+ ("videos-drew-exterior-shades-mov.mp4", "Exterior patio shades", "Exterior shades lowering across a Texas patio"),
+ ("videos-automated-exterior-patio-shade-mov.mp4", "Automated patio shade", "An automated exterior patio shade running on schedule"),
+ ("videos-motorized-cable-guided-patio-shade-mov.mp4", "Cable-guided patio shade", "A cable-guided motorized patio shade holding steady in the wind"),
+ ("videos-automated-roller-shades-mov.mp4", "Automated roller shades", "A bank of roller shades moving together"),
+ ("videos-jana-motorized-roller-down-a-mov.mp4", "Motorized roller, lowering", "A motorized roller shade lowering on command"),
+ ("videos-jana-motorized-roller-up-a-mov.mp4", "Motorized roller, rising", "A motorized roller shade rising on command"),
+ ("videos-automated-sheer-shades-mov.mp4", "Automated sheer shades", "Sheer shades tilting open automatically"),
+ ("videos-bathroom-roller-shade-mov.mp4", "Bathroom roller shade", "A moisture-friendly roller shade in a Texas bathroom"),
+ ("videos-video-001-mov.mp4", "On the job", "Love Is Blinds installation footage"),
+]
+
 ALT_T = [
  "{p} installed by Love Is Blinds in a Texas home",
  "{p} fitted to the window opening by Love Is Blinds",
@@ -96,6 +109,18 @@ def main():
       f'<div class="gchips">{chips}</div>'
       f'<div class="gwall">{tiles}</div>'
       '</div></section>'
+      '<section class="section bg-cream-tint"><div class="container center">'
+      '<h2 class="title">Watch the work</h2>'
+      '<p class="lead">Motorized and exterior shades, filmed on real installs.</p></div>'
+      '<div class="container"><div class="vgrid">'
+      + "".join(
+          f'<figure class="vcard"><video controls preload="none" playsinline '
+          f'poster="/images/lib/roller-shades-roller-shades-230-jpg.webp" '
+          f'aria-label="{html.escape(cap)}">'
+          f'<source src="/images/video/{fn}" type="video/mp4"></video>'
+          f'<figcaption>{html.escape(label)}</figcaption></figure>'
+          for fn, label, cap in VIDEOS if os.path.exists("images/video/" + fn))
+      + '</div></div></section>'
       '<dialog class="glight" id="glight"><button class="gclose" aria-label="Close">&times;</button>'
       '<img alt="" id="glimg"><p id="glcap"></p></dialog>'
       '<script>(function(){'

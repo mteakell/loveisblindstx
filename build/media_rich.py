@@ -21,6 +21,10 @@ VIDEOS = {
    ("videos-automated-exterior-patio-shade-mov.mp4", "An automated exterior patio shade lowering"),
  "services/shades-installation.html":
    ("videos-motorized-cable-guided-patio-shade-mov.mp4", "A cable-guided motorized patio shade"),
+ "about.html":
+   ("videos-video-001-mov.mp4", "Love Is Blinds installers at work in a Texas home"),
+ "how-it-works.html":
+   ("videos-automated-roller-shades-mov.mp4", "A finished install: a bank of roller shades moving together"),
 }
 
 def _pool(prefixes, exclude=()):
