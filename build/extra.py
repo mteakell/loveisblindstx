@@ -194,9 +194,37 @@ CHECK = [
  ("Budget range per room", "Bring a range rather than a single number. It lets us show you where spending more actually changes the result and where it does not."),
 ]
 def checklist():
+    """/design-checklist: an interactive planner, not a static page.
+
+    Duda's version was a 57-input questionnaire; the first rebuild dropped the
+    form entirely. This is the standout version: tap through rooms, priorities,
+    products and upgrades (the exact option lists from the Duda form), watch a
+    live summary assemble, and send it to the same Formspree inbox as every
+    other form. The eight editorial steps stay below for SEO and for people
+    who want to read before they tap.
+    """
     url, title = "/design-checklist", "Window Treatment Design Checklist | Love Is Blinds"
-    desc = ("Work through this checklist before your in-home consultation: rooms, window "
-            "orientation, privacy, trim depth, cord safety, motorization and budget.")
+    desc = ("Build your window plan in ten minutes: rooms, priorities, products and "
+            "upgrades, sent straight to your local Love Is Blinds owner so the free "
+            "consultation turns into a quote in one visit.")
+    ROOMS = ["Living room", "Primary bedroom", "Bedroom", "Kitchen", "Bathroom",
+             "Home office", "Media room", "Dining room", "Patio / outdoor"]
+    CONSIDER = ["Privacy (bedrooms & bathrooms)", "Adding Design to Your Space",
+                "Sound Absorption", "Room Darkening / Blackout",
+                "Reduce glare on screens and electronics", "Regulate in-home temperature",
+                "Easy to use products", "Easy to clean"]
+    PRODUCTS = ["Honeycomb Cellular Shades", "Faux Wood Blinds", "Wood Blinds",
+                "Roller Shades", "Woven Wood Shades", "Fabric Roman Shades",
+                "Dual Shade / Zebra Shades", "Faux Wood Shutters", "Wood Shutters",
+                "Exterior Patio Shades"]
+    UPGRADES = ["Cordless Shades / Blinds (Best for Kids & Pets)", "Motorized Operation",
+                "Top Down Bottom Up", "No Holes or Cloth Tape (Wood / Faux Wood Blinds)",
+                "Cornices / Valances / Top Treatments", "Invisible Tilt (Shutters)"]
+
+    def chips(name, opts):
+        return "".join(f'<button type="button" class="pchip" data-group="{name}" '
+                       f'data-val="{e(o)}">{e(o)}</button>' for o in opts)
+
     items = "".join(
         f'<div class="prod-card reveal"><div class="pbody">'
         f'<p class="kicker">Step {i}</p><h3>{e(h)}</h3><p>{e(b)}</p></div></div>'
@@ -208,14 +236,123 @@ def checklist():
     nodes = BASE() + [S.webpage(url, title, desc),
                       S.breadcrumbs([("Home", "/"), ("Design Checklist", url)]), lst,
                       S.faq(url, [(h, b) for h, b in CHECK[:4]])]
+
+    js = (
+"(function(){"
+"var picked={consider:[],products:[],upgrades:[]};var rooms={};"
+"function summarize(){var out=[];var rk=Object.keys(rooms);"
+"if(rk.length)out.push('ROOMS: '+rk.map(function(r){return r+' ('+rooms[r]+(rooms[r]===1?' window)':' windows)')}).join(', '));"
+"if(picked.consider.length)out.push('PRIORITIES: '+picked.consider.join(', '));"
+"if(picked.products.length)out.push('INTERESTED IN: '+picked.products.join(', '));"
+"if(picked.upgrades.length)out.push('UPGRADES: '+picked.upgrades.join(', '));"
+"var tl=document.getElementById('wp-timeline').value;"
+"if(tl)out.push('TIMELINE: '+tl);"
+"document.getElementById('wp-plan').value=out.join('\\n');"
+"var box=document.getElementById('wp-summary');"
+"box.innerHTML=out.length"
+"?out.map(function(l){var p=l.split(': ');return '<li><b>'+p[0].toLowerCase()+'</b> '+p.slice(1).join(': ')+'</li>'}).join('')"
+":'<li class=empty>Tap options above and your plan builds itself here.</li>';"
+"var total=rk.reduce(function(a,r){return a+rooms[r]},0);"
+"document.getElementById('wp-count').textContent=total?total+' windows in '+rk.length+' rooms':'';}"
+"document.querySelectorAll('.pchip').forEach(function(b){b.addEventListener('click',function(){"
+"var g=b.getAttribute('data-group'),v=b.getAttribute('data-val');"
+"if(g==='rooms'){if(rooms[v]===undefined){rooms[v]=1;b.classList.add('on');}else{delete rooms[v];b.classList.remove('on');}renderRooms();}"
+"else{var i=picked[g].indexOf(v);if(i<0)picked[g].push(v);else picked[g].splice(i,1);b.classList.toggle('on',i<0);}"
+"summarize();});});"
+"function renderRooms(){var host=document.getElementById('wp-rooms');host.innerHTML='';"
+"Object.keys(rooms).forEach(function(r){var row=document.createElement('div');row.className='wp-room';"
+"row.innerHTML='<span>'+r+'</span><span class=wp-step>'"
+"+'<button type=button aria-label=\"Fewer windows\">&minus;</button>'"
+"+'<b>'+rooms[r]+'</b>'"
+"+'<button type=button aria-label=\"More windows\">+</button></span>';"
+"var btns=row.querySelectorAll('button');"
+"btns[0].onclick=function(){if(rooms[r]>1)rooms[r]--;renderRooms();summarize();};"
+"btns[1].onclick=function(){rooms[r]++;renderRooms();summarize();};"
+"host.appendChild(row);});}"
+"document.getElementById('wp-timeline').addEventListener('change',summarize);"
+"summarize();})();")
+
+    planner = (
+        '<section class="section" id="planner"><div class="container">'
+        '<div class="wp-grid">'
+        '<form class="wp-form" action="https://formspree.io/f/xbgjdnvg" method="POST">'
+        '<input type="hidden" name="_subject" value="New window plan - design checklist">'
+        '<input type="hidden" name="window_plan" id="wp-plan">'
+
+        '<div class="wp-block"><p class="kicker">1 &middot; Your rooms</p>'
+        '<h2>Which rooms are we covering?</h2>'
+        '<p class="wp-help">Tap every room on the list, then set how many windows each one has. '
+        'Bay and corner windows count separately; that is where quotes usually surprise people.</p>'
+        f'<div class="pchips">{chips("rooms", ROOMS)}</div>'
+        '<div id="wp-rooms"></div></div>'
+
+        '<div class="wp-block"><p class="kicker">2 &middot; Priorities</p>'
+        '<h2>What matters most?</h2>'
+        '<p class="wp-help">West and south rooms fight the Texas afternoon; bedrooms need to go '
+        'dark; screens hate glare. Pick everything that applies.</p>'
+        f'<div class="pchips">{chips("consider", CONSIDER)}</div></div>'
+
+        '<div class="wp-block"><p class="kicker">3 &middot; Products</p>'
+        '<h2>Anything you are already drawn to?</h2>'
+        '<p class="wp-help">Skip this if you are not sure. That is what the samples at the '
+        'consultation are for.</p>'
+        f'<div class="pchips">{chips("products", PRODUCTS)}</div></div>'
+
+        '<div class="wp-block"><p class="kicker">4 &middot; Upgrades</p>'
+        '<h2>Worth-it extras</h2>'
+        '<p class="wp-help">Cordless is a safety call with kids and pets. Motorization earns its '
+        'keep on tall or hard-to-reach glass.</p>'
+        f'<div class="pchips">{chips("upgrades", UPGRADES)}</div></div>'
+
+        '<div class="wp-block"><p class="kicker">5 &middot; Timing</p>'
+        '<h2>When do you need it done?</h2>'
+        '<div class="form-row"><select id="wp-timeline" name="timeline">'
+        '<option value="">No deadline yet</option>'
+        '<option>As soon as possible</option><option>Within a month</option>'
+        '<option>1 to 3 months</option><option>Just planning ahead</option></select></div>'
+        '<div class="form-row"><label>Anything else we should know'
+        '<textarea name="notes" rows="3" placeholder="Special shapes, arches, sliders, HOA rules..."></textarea></label></div></div>'
+
+        '<div class="wp-block"><p class="kicker">6 &middot; Send it</p>'
+        '<h2>Where should your plan go?</h2>'
+        '<div class="form-grid">'
+        '<label>Name<input type="text" name="name" required autocomplete="name"></label>'
+        '<label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>'
+        '<label>Email<input type="email" name="email" required autocomplete="email"></label>'
+        '<label>City<input type="text" name="city" required autocomplete="address-level2"></label>'
+        '<label>How did you hear about us?<input type="text" name="hear_about"></label>'
+        '<label>Referral name (if any)<input type="text" name="referral"></label>'
+        '</div>'
+        '<button class="btn btn-primary btn-lg" type="submit">Send my window plan</button>'
+        '<p class="wp-fine">Your local owner reads this before the visit, so the consultation '
+        'starts at the quote, not the questionnaire. No pressure, no obligation.</p></div>'
+        '</form>'
+
+        '<aside class="wp-side"><div class="wp-card">'
+        '<p class="kicker">Your window plan</p>'
+        '<p id="wp-count" class="wp-count"></p>'
+        '<ul id="wp-summary" class="wp-sum"></ul>'
+        '</div>'
+        '<div class="wp-card wp-quiet"><p><b>Why this works:</b> owners quote in one visit when '
+        'they arrive knowing the rooms, the priorities and the deadline. This plan is read by '
+        'the owner who covers your city, not a call center.</p></div></aside>'
+        '</div></div></section>'
+        f'<script>{js}</script>')
+
     body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Design Checklist</span></nav>'
-            f'<h1 class="title">Window Treatment Design Checklist</h1>'
-            f'<p class="lead">Eight things worth deciding before anyone measures your windows. '
-            f'Work through them and your consultation turns into a quote in one visit instead '
-            f'of two.</p></div></div></section>'
-            f'<section class="section"><div class="container"><div class="prod-grid">{items}</div>'
+            f'<h1 class="title">Plan Your Windows in Ten Minutes</h1>'
+            f'<p class="lead">Tap through six quick steps and send your local owner a ready-made '
+            f'window plan. Your free consultation turns into a quote in one visit instead of two.</p>'
+            f'<div class="hero-actions btnrow"><a class="btn btn-primary btn-lg" href="#planner">Start your plan</a>'
+            f'<a class="btn btn-secondary btn-lg" href="/schedule-now">Skip to booking</a></div>'
+            f'</div></div></section>'
+            + planner +
+            f'<section class="section bg-cream-tint"><div class="container center">'
+            f'<h2 class="title">Prefer to think it through first?</h2>'
+            f'<p class="lead">The eight decisions behind the planner, in plain English.</p></div>'
+            f'<div class="container"><div class="prod-grid">{items}</div>'
             f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>'
             f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
             f'</div></section>')
