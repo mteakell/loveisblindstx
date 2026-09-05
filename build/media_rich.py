@@ -330,5 +330,33 @@ def main():
     print(f"media: {strips} photo strips, {vids} video bands")
 
 
+
+# Hero overrides for converted pages, applied idempotently so a convert.py
+# re-run cannot quietly restore the old photo.
+HERO_OVERRIDE = {
+ "products/index.html": (
+   "/images/lib/roller-shades-roller-shades-208-jpg.webp",
+   "A Texas great room with a stone fireplace and floor-to-ceiling roller shades by Love Is Blinds"),
+}
+
+
+def apply_hero_overrides():
+    for f, (src, alt) in HERO_OVERRIDE.items():
+        if not os.path.exists(f):
+            continue
+        s = open(f).read()
+        m = re.search(r'(<section class="phero">.*?<img[^>]*src=")([^"]+)("[^>]*alt=")([^"]*)(")', s, re.S)
+        if not m:
+            continue
+        if m.group(2) == src:
+            continue
+        s = s[:m.start(2)] + src + s[m.end(2):m.start(4)] + alt + s[m.end(4):]
+        # kill any stale <source> above the img
+        s = re.sub(r'(<section class="phero">\s*<picture>)<source[^>]*>', r'\1', s, count=1)
+        open(f, "w").write(s)
+        print(f"hero override applied: {f} -> {src.split('/')[-1]}")
+
+
 if __name__ == "__main__":
     main()
+    apply_hero_overrides()
