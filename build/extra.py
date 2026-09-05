@@ -212,7 +212,7 @@ def checklist():
     CONSIDER = ["Privacy (bedrooms & bathrooms)", "Adding Design to Your Space",
                 "Sound Absorption", "Room Darkening / Blackout",
                 "Reduce glare on screens and electronics", "Regulate in-home temperature",
-                "Easy to use products", "Easy to clean"]
+                "Energy Efficiency", "Easy to use products", "Easy to clean"]
     PRODUCTS = ["Honeycomb Cellular Shades", "Faux Wood Blinds", "Wood Blinds",
                 "Roller Shades", "Woven Wood Shades", "Fabric Roman Shades",
                 "Dual Shade / Zebra Shades", "Faux Wood Shutters", "Wood Shutters",
