@@ -15,6 +15,7 @@ FOOT = open("build/partials/footer.html").read()
 HEAD_INNER = HEAD.split("<body", 1)[1].split(">", 1)[1]
 
 TEXT = [
+ ("a new Hoschton build", "a new Celina build"),
  # No public inbox. Every contact route is the form, so leads land in one
  # place and the address cannot be scraped. Email rules run before the
  # domain rule below, which would otherwise rewrite only the domain half.

@@ -139,6 +139,34 @@ FAQ_GROUPS = [
    "Yes. Shaped openings are a frame and mount problem rather than a fabric one, which is exactly "
    "why we measure on site instead of working from a list."),
  ]),
+ ("Choosing and design", [
+  ("Will you help me choose, or just quote what I ask for?",
+   "We help you choose, and we will tell you when you are overspending. A guest room used a few "
+   "nights a year does not need what a west-facing living room needs, and saying so at the "
+   "consultation is part of the job. Samples come to your home so decisions happen in your own "
+   "light."),
+  ("Can window treatments actually lower my electric bill?",
+   "The right ones, on the right glass, yes. Honeycomb shades insulate by trapping air in their "
+   "cells, solar screens cut heat at the window, and exterior patio shades stop sun before it "
+   "reaches the glass at all. The savings live on the west- and south-facing windows, which is "
+   "where we focus them."),
+  ("Which treatments suit my style of home?",
+   "Plantation shutters carry traditional and farmhouse homes and read well from the street. "
+   "Roller and banded shades suit modern builds with big glass. Woven woods bring texture to lake "
+   "and ranch houses. The consultation settles it faster than a catalogue, because we are looking "
+   "at your rooms, not a showroom's."),
+  ("Do you have showrooms I can visit?",
+   "No, and that is deliberate. The showroom comes to you: samples at your door, held against "
+   "your own walls and your own light, which is the only place fabric and stain decisions are "
+   "reliable."),
+  ("Do you offer financing?",
+   "Ask at the consultation and we will walk through what is available. What we promise up front "
+   "is simpler: the written quote you approve is the amount you pay, with no movement after."),
+  ("Can you work within my budget?",
+   "Yes. Custom has a wider price range than people expect, and there is almost always a "
+   "combination of material and lift that lands inside a real number. Tell us the budget at the "
+   "consultation and we will design to it rather than around it."),
+ ]),
  ("Coverage and after the install", [
   ("What areas of Texas do you serve?",
    "48 cities across DFW and the Mid-Cities, North Texas from Denton up to Sherman, and East and "
