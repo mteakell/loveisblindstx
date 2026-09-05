@@ -215,7 +215,7 @@ def checklist():
                 "Energy Efficiency", "Easy to use products", "Easy to clean"]
     PRODUCTS = ["Honeycomb Cellular Shades", "Faux Wood Blinds", "Wood Blinds",
                 "Roller Shades", "Woven Wood Shades", "Fabric Roman Shades",
-                "Dual Shade / Zebra Shades", "Faux Wood Shutters", "Wood Shutters",
+                "Dual Shade / Zebra Shades", "Plantation Shutters", "Wood Shutters",
                 "Exterior Patio Shades"]
     UPGRADES = ["Cordless Shades / Blinds (Best for Kids & Pets)", "Motorized Operation",
                 "Top Down Bottom Up", "No Holes or Cloth Tape (Wood / Faux Wood Blinds)",
