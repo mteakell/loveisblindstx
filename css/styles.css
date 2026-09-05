@@ -1165,18 +1165,19 @@ a.map-gbp:hover{color:var(--pop-deep)}
   color:var(--ink-muted);background:transparent;border:0;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
 .txmap-toggle button.on{background:var(--primary);color:#fff}
 #txmap{display:block;width:100%;height:auto;max-height:74vh}
-#txmap .txshape{fill:#fff;stroke:var(--n-stone);stroke-width:3;stroke-linejoin:round}
+#txmap .txshape{fill:#FCFAF4;stroke:#C9C2B2;stroke-width:1.6;stroke-linejoin:round;
+  filter:drop-shadow(0 12px 26px rgba(34,46,55,.12))}
 #txmap .mpin{cursor:pointer}
-#txmap .mpin circle{stroke:#fff;stroke-width:2.5;transition:r .18s var(--ease)}
+#txmap .mpin circle{r:7;stroke:#fff;stroke-width:1.8;transition:r .18s var(--ease)}
 #txmap .mpin.t-dfw circle{fill:var(--pop-deep)}
 #txmap .mpin.t-north circle{fill:var(--primary)}
 #txmap .mpin.t-east circle{fill:#9C7A3C}
 #txmap .mpin text{font-family:var(--font-display);font-size:19px;font-weight:800;fill:var(--ink-display);
   text-anchor:middle;opacity:0;pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:5px;
   transition:opacity .15s var(--ease)}
-#txmap .mpin:hover circle,#txmap .mpin:focus circle{r:13}
+#txmap .mpin:hover circle,#txmap .mpin:focus circle{r:11}
 #txmap .mpin:hover text,#txmap .mpin:focus text{opacity:1}
-#txmap.zoomed .mpin circle{r:5;stroke-width:1.4}
+#txmap.zoomed .mpin circle{r:4.5;stroke-width:1.2}
 #txmap.zoomed .mpin:hover circle,#txmap.zoomed .mpin:focus circle{r:7.5}
 #txmap.zoomed .mpin text{font-size:11px;stroke-width:3px}
 @media (max-width:640px){
