@@ -424,7 +424,34 @@ def body_block(c, n_reviews=8):
           f'{e(c["label"])}.</p></div><div class="container">'
           f'<div class="reviews">{cards}</div>{gbp_cta}</div></section>')
     else:
-        reviews_block = ""
+        # Cities whose profile has no reviews yet (Celina's is new, for one)
+        # borrow the territory's pool: real reviews, each labeled with the
+        # city it actually came from, rotated per-slug so neighbors differ.
+        import hashlib as _hl
+        terr_name = T.of(c["slug"])["name"]
+        pool = sorted(
+            (r for s2, rl in BY_CITY.items() if T.of(s2)["name"] == terr_name
+             for r in rl if r.get("rating", 5) >= 4),
+            key=lambda r: r.get("date", ""), reverse=True)
+        if pool:
+            off = int(_hl.sha1(c["slug"].encode()).hexdigest()[:6], 16) % max(1, len(pool))
+            picks = (pool[off:] + pool[:off])[:6]
+            cards = "".join(
+              '<div class="review reveal"><div class="stars">'
+              + "&#9733;" * int(r.get("rating", 5)) + "</div>"
+              + f'<p>"{e(r["quote"])}"</p><div class="who">{e(r["name"])}</div>'
+              + f'<div class="where">{e(r.get("city", "Texas"))}, TX</div></div>' for r in picks)
+            gbp_cta = (f'<p><a class="btn-link" href="{e(c["gbp"][0])}" rel="noopener">'
+                       f'Find us on Google in {e(c["label"])} '
+                       f'<span class="arw">&rarr;</span></a></p>' if c.get("gbp") else "")
+            reviews_block = (
+              f'<section class="section"><div class="container center">'
+              f'<h2 class="title">What your {e(terr_name)} neighbors say</h2>'
+              f'<p class="lead">Reviews from our Google profiles across {e(terr_name)}, '
+              f'left for the same local team that covers {e(c["label"])}.</p></div>'
+              f'<div class="container"><div class="reviews">{cards}</div>{gbp_cta}</div></section>')
+        else:
+            reviews_block = ""
     _rh = bpick(BK.ROOM_HEADS, c["slug"], 0)
     _rooms = bpick_many(BK.ROOM_ITEMS, c["slug"], 4, 0)
     _used_r, _used_p = set(), set()

@@ -184,7 +184,7 @@ def main():
     vid = ('\n<!-- lib:video -->\n'
            '<section class="ed-split vid-split bg-cream-tint"><div class="ed-inner">'
            '<div class="ed-media video-frame">'
-           '<video autoplay muted loop playsinline preload="metadata" '
+           '<video autoplay muted loop playsinline preload="metadata" onloadedmetadata="this.playbackRate=2" '
            'poster="/images/lib/exterior-patio-shades-exterior-patio-shades-002-jpg.webp" '
            'aria-label="An exterior patio shade lowering automatically on a Texas porch">'
            '<source src="/images/video/videos-drew-exterior-shades-mov.mp4" type="video/mp4">'
