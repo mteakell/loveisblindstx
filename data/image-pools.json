@@ -1,13 +1,14 @@
 {
  "blinds": [
-  "/images/lib/blinds-blinds-004-jpg.webp",
-  "/images/lib/blinds-blinds-005-jpg.webp",
-  "/images/lib/blinds-blinds-006-jpg.webp",
   "/images/lib/blinds-blinds-007-jpg.webp",
   "/images/lib/blinds-blinds-008-jpg.webp",
   "/images/lib/blinds-blinds-009-jpg.webp",
   "/images/lib/blinds-blinds-011-jpg.webp",
-  "/images/lib/blinds-blinds-013-jpg.webp"
+  "/images/lib/blinds-blinds-013-jpg.webp",
+  "/images/lib/blinds-blinds-014-jpg.webp",
+  "/images/lib/blinds-blinds-015-jpg.webp",
+  "/images/lib/blinds-blinds-016-jpg.webp",
+  "/images/lib/blinds-blinds-017-jpg.webp"
  ],
  "shades": [
   "/images/lib/banded-shades-banded-shades-003-jpg.webp",

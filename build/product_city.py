@@ -21,7 +21,7 @@ CITY_IX = {c["slug"]: i for i, c in enumerate(sorted(P.CITIES, key=lambda x: x["
 
 HERO_POOL = {
  "blinds": ["blinds-blinds-007-jpg.webp","blinds-blinds-008-jpg.webp","blinds-blinds-009-jpg.webp",
-            "blinds-blinds-011-jpg.webp","blinds-blinds-004-jpg.webp","blinds-blinds-006-jpg.webp"],
+            "blinds-blinds-011-jpg.webp","blinds-blinds-013-jpg.webp","blinds-blinds-016-jpg.webp"],
  "shades": ["roller-shades-roller-shades-230-jpg.webp","roller-shades-home-hero-shades-1-jpeg.webp",
             "roller-shades-roller-shades-137-jpg.webp","roller-shades-roller-shades-245-jpg.webp",
             "honeycomb-shades-honeycomb-shades-018-jpg.webp","honeycomb-shades-honeycomb-shades-022-jpg.webp",
