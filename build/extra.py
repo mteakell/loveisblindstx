@@ -90,7 +90,7 @@ def areas():
             f'<h1 class="title">Where Love Is Blinds Works in Texas</h1>'
             f'<p class="lead">Three local teams cover the state. Find your city below for the '
             f'number that reaches the crew who will measure and install your windows.</p>'
-            f'</div></div></section>{secs}')
+            f'</div></div></section>{tx_map()}{secs}')
     body += '''<section class="section closing-cta"><div class="container center">
 <h2 class="title">Ready when your windows are</h2>
 <p class="lead">Free in-home consultation anywhere we serve: samples at your door, measured by us, quoted in writing.</p>
@@ -259,21 +259,19 @@ def team_cards():
     s = re.sub(r'<section class="section bg-cream-tint"><div class="container center">'
                r'<h2 class="title">(?:The three Texas teams|Meet Your Local Owner Operators)'
                r'.*?</section>\s*', lambda m: "", s, flags=re.S)
-    # sit the cards directly under the page intro. Falling back to <footer>
-    # is what buried them below the closing CTA.
-    i = -1
-    for m in re.finditer(r'<section\b', s):
-        if "Ready to love the way your home feels" in s[m.start():m.start() + 1200]:
-            i = m.start(); break
-    if i < 0: i = s.find("<footer")
-    open("meet-the-team.html", "w").write(s[:i] + block + s[i:])
+    # The converted intro carried a bedroom photo alt-texted as the owners.
+    # Drop the media pane and let the intro text run full width.
+    s = re.sub(r'<div class="media reveal">\s*<img class="owner-photo"[^>]*>\s*</div>\s*', "", s)
+    s = s.replace('<div class="container split media-right"> <div class="body reveal"> '
+                  '<h2 class="title">Meet the Owner-Operators</h2>',
+                  '<div class="container" style="max-width:880px"> <div class="body reveal"> '
+                  '<h2 class="title">Meet the Owner-Operators</h2>')
+    s = s.replace("/images/lib/shutters-shutters-005-jpg.webp",
+                  "/images/lib/roller-shades-home-hero-shades-1-jpeg.webp")
+    # owner photos are the FIRST thing under the hero
+    hero_end = s.find("</section>", s.find('<section class="phero')) + len("</section>")
+    open("meet-the-team.html", "w").write(s[:hero_end] + "\n" + block + s[hero_end:])
     return len(T.TEAM)
-
-if __name__ == "__main__":
-    print("areas-we-serve:", areas(), "cities")
-    print("team pages    :", ", ".join(team()))
-    print("owner cards   :", team_cards())
-    checklist(); print("design-checklist: written")
 
 # ------------------------------------------------------------------- /blog
 def blog_index():
@@ -488,3 +486,90 @@ def patio():
             f'<span class="arw">&rarr;</span></a></p></div></section>')
     open("products/exterior-patio-shades.html", "w").write(shell(url, title, desc, nodes, body))
     return len(PATIO_FAQ), len(PATIO_TYPES)
+
+# --------------------------------------------------- /areas-we-serve map
+# Simplified Texas border, (lng, lat), clockwise from the NW panhandle
+# corner. Same projection as the city pins so everything lines up.
+TX_OUTLINE = [
+ (-103.04,36.50),(-100.00,36.50),(-100.00,34.56),(-99.50,34.42),(-98.60,34.15),
+ (-97.95,33.90),(-97.20,33.82),(-96.60,33.85),(-95.80,33.87),(-94.90,33.75),
+ (-94.04,33.55),(-94.04,32.00),(-93.85,31.50),(-93.75,31.00),(-93.70,30.60),
+ (-93.70,30.05),(-93.85,29.70),(-94.70,29.35),(-95.30,28.95),(-96.40,28.40),
+ (-97.15,27.90),(-97.35,27.30),(-97.15,26.50),(-97.15,25.95),(-97.50,25.90),
+ (-98.30,26.10),(-99.10,26.40),(-99.45,27.00),(-99.50,27.50),(-99.90,27.90),
+ (-100.40,28.60),(-100.65,29.10),(-101.00,29.35),(-101.40,29.75),(-102.30,29.87),
+ (-102.70,29.75),(-102.85,29.35),(-103.15,28.97),(-103.75,29.25),(-104.40,29.55),
+ (-104.90,30.35),(-105.40,30.85),(-106.15,31.45),(-106.53,31.78),(-106.62,31.90),
+ (-106.62,32.00),(-103.06,32.00),(-103.04,36.50),
+]
+_LNG0, _LAT1, _XS, _YS = -106.75, 36.65, 86.0, 100.0
+
+def _mpt(lng, lat):
+    return round((lng - _LNG0) * _XS, 1), round((_LAT1 - lat) * _YS, 1)
+
+TKEY_CLASS = {"dfw": "t-dfw", "north": "t-north", "eastwaco": "t-east"}
+
+def tx_map():
+    pts = " ".join(f"{x},{y}" for x, y in (_mpt(*p) for p in TX_OUTLINE))
+    pins, xs, ys = [], [], []
+    for c in sorted(CITIES, key=lambda x: -x["lat"]):   # north pins first, so
+        x, y = _mpt(c["lng"], c["lat"])                 # southern labels stack on top
+        tk = [k for k in TKEY_CLASS if T.of(c["slug"])["name"] == T.TERRITORIES[k]["name"]][0]
+        if tk in ("dfw", "north"): xs.append(x); ys.append(y)
+        pins.append(
+            f'<a class="mpin {TKEY_CLASS[tk]}" href="{c["url"]}" transform="translate({x},{y})">'
+            f'<title>{e(c["label"])}, TX</title><circle r="9"></circle>'
+            f'<text y="-15">{e(c["label"])}</text></a>')
+    pad = 55
+    dfw_vb = (f"{round(min(xs)-pad,1)} {round(min(ys)-pad,1)} "
+              f"{round(max(xs)-min(xs)+2*pad,1)} {round(max(ys)-min(ys)+2*pad,1)}")
+    full_vb = "0 0 1150 1095"
+    js = """
+(function(){
+  var svg=document.getElementById('txmap');if(!svg)return;
+  var btns=document.querySelectorAll('.txmap-toggle button');
+  function parse(v){return v.split(' ').map(Number)}
+  function setVB(v){svg.setAttribute('viewBox',v.join(' '))}
+  function go(target,zoomed){
+    var from=parse(svg.getAttribute('viewBox')),to=parse(target),t0=null;
+    svg.classList.toggle('zoomed',zoomed);
+    function step(ts){
+      if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/350);k=1-Math.pow(1-k,3);
+      setVB(from.map(function(f,i){return f+(to[i]-f)*k}));
+      if(k<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+    setTimeout(function(){setVB(to)},450);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(o){o.classList.remove('on')});b.classList.add('on');
+    go(b.getAttribute('data-vb'),b.hasAttribute('data-zoom'));
+  })});
+})();"""
+    return (
+        '\n<section class="section txmap-section"><div class="container center">'
+        '<h2 class="title">Tap your city on the map</h2>'
+        '<p class="lead">Every pin is a city page with the local number, reviews from your '
+        'neighbors and directions to the team that covers you. Do not see your town? We still '
+        'likely serve you, so call and ask.</p></div>'
+        '<div class="container"><div class="txmap-card">'
+        '<div class="txmap-head">'
+        '<div class="txmap-legend">'
+        '<span><i class="dot t-dfw"></i>DFW</span>'
+        '<span><i class="dot t-north"></i>North Texas</span>'
+        '<span><i class="dot t-east"></i>East &amp; Central Texas</span></div>'
+        f'<div class="txmap-toggle" role="group" aria-label="Map zoom">'
+        f'<button type="button" class="on" data-vb="{full_vb}">All of Texas</button>'
+        f'<button type="button" data-vb="{dfw_vb}" data-zoom>DFW &amp; North Texas</button>'
+        '</div></div>'
+        f'<svg id="txmap" viewBox="{full_vb}" role="img" '
+        'aria-label="Map of Texas showing every Love Is Blinds service city">'
+        f'<polygon class="txshape" points="{pts}"></polygon>{"".join(pins)}</svg>'
+        f'</div></div><script>{js}</script></section>\n')
+
+
+if __name__ == "__main__":
+    print("areas-we-serve:", areas(), "cities")
+    print("team pages    :", ", ".join(team()))
+    print("owner cards   :", team_cards())
+    checklist(); print("design-checklist: written")

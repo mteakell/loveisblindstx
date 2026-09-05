@@ -209,15 +209,33 @@ def rebuild_faqs():
     """
     s = open("faqs.html").read()
     qs = []
-    secs = ""
-    for group, items in FAQ_GROUPS:
+    slug = lambda g: re.sub(r"[^a-z]+", "-", g.lower()).strip("-")
+    chips = "".join(
+        f'<a class="chip" href="#faq-{slug(g)}">{html.escape(g)} '
+        f'<span class="sml">{len(items)}</span></a>' for g, items in FAQ_GROUPS)
+    secs = ('<section class="section faq-nav"><div class="container center">'
+            f'<div class="faq-chips">{chips}</div></div></section>')
+    for gi, (group, items) in enumerate(FAQ_GROUPS):
         faqs_html = "".join(
             f'<details><summary>{html.escape(q)}</summary>'
             f'<div class="a">{html.escape(a)}</div></details>' for q, a in items)
-        secs += (f'<section class="section"><div class="container center">'
-                 f'<h2 class="title">{html.escape(group)}</h2></div>'
-                 f'<div class="container"><div class="faq">{faqs_html}</div></div></section>')
+        tint = ' bg-cream-tint' if gi % 2 else ''
+        secs += (f'<section class="section{tint}" id="faq-{slug(group)}">'
+                 f'<div class="container center"><h2 class="title">{html.escape(group)}</h2></div>'
+                 f'<div class="container"><div class="faq faq-grid">{faqs_html}</div></div></section>')
         qs += items
+    secs += (
+        '<section class="ed-split bg-cream-tint"><div class="ed-inner">'
+        '<div class="ed-media"><img src="/images/lib/honeycomb-shades-honeycomb-shades-018-jpg.webp" '
+        'data-alt-final alt="Honeycomb shades softening afternoon light in a Texas living room" '
+        'loading="lazy" width="2000" height="1500"></div>'
+        '<div class="ed-card"><p class="ed-eyebrow">Still have a question?</p>'
+        '<h2>Ask the owner, not a call center</h2>'
+        '<p>Call and you reach the owner-operator who covers your city. Or book the free '
+        'consultation and ask everything at your own windows, with samples in hand.</p>'
+        '<div class="btnrow"><a class="btn btn-primary" href="/schedule-now">Book your free '
+        'consultation</a><a class="btn btn-secondary" href="tel:+18665182999">Call (866) 518-2999'
+        '</a></div></div></div></section>')
     node = {"@context": "https://schema.org", "@type": "FAQPage",
             "mainEntity": [{"@type": "Question", "name": q,
                             "acceptedAnswer": {"@type": "Answer", "text": a}}
@@ -226,6 +244,11 @@ def rebuild_faqs():
                '<script type="application/ld+json">' + json.dumps(node) + '</script>'
                '\n<!-- /enrich:faq -->\n')
     s = re.sub(r'\n?<!-- enrich:faq -->.*?<!-- /enrich:faq -->\n?', '\n', s, flags=re.S)
+    # the converted page parked its dark CTA band directly under the hero;
+    # the ask-the-owner split is the closer now, so the band goes entirely
+    s = re.sub(r'<section class="section bg-deep">\s*<div class="container center">\s*'
+               r'<h2 class="title">Ready to love the way your home feels\?'
+               r'(?:(?!</section>).)*</section>\s*', '', s, flags=re.S)
     # remove the old flat FAQ block: every details element outside our marker
     s = re.sub(r'<section[^>]*>(?:(?!</section>).)*<details(?:(?!</section>).)*</section>', '', s, flags=re.S)
     i = s.find('<section class="section closing-cta"')
