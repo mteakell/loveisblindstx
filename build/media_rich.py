@@ -45,6 +45,8 @@ FAM_PREFIX = {
  "honeycomb": ("honeycomb-shades",),
  "drapes":  ("smart-drapes",),
  "banded":  ("banded-shades",),
+ "dual":    ("banded-shades",),
+ "panel":   ("roller-shades", "banded-shades"),
  "mixed":   ("shutters-shutters", "roller-shades", "exterior-patio-shades",
              "roman-shades", "honeycomb-shades", "blinds-blinds"),
 }
@@ -53,6 +55,7 @@ FAM_LABEL = {
  "patio": "Exterior patio shades", "roman": "Roman and woven shades",
  "blinds": "Custom blinds", "honeycomb": "Honeycomb shades",
  "drapes": "Drapery and motorization", "banded": "Banded shades",
+ "dual": "Dual shades", "panel": "Custom shades",
  "mixed": "Custom window treatments",
 }
 ALT_T = [
@@ -69,7 +72,8 @@ ALT_T = [
 # topic per page, else mixed
 PAGE_FAM = {
  "products/plantation-shutters.html": "shutter", "products/shutters.html": "shutter",
- "products/faux-wood-blinds.html": "mixed", "products/real-wood-blinds.html": "mixed",
+ "products/faux-wood-blinds.html": "blinds", "products/real-wood-blinds.html": "blinds",
+ "products/dual-shades.html": "dual", "products/panel-track-shades.html": "panel",
  "products/roller-shades.html": "roller", "products/exterior-patio-shades.html": "patio",
  "about.html": "mixed", "how-it-works.html": "mixed", "faqs.html": "mixed",
  "areas-we-serve.html": "mixed", "design-checklist.html": "roman",
