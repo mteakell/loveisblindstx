@@ -122,8 +122,11 @@ def main():
     added = []
 
     # 1. patio shades into the product grid, first, ahead of the interior lines
-    if "/products/exterior-patio-shades" not in h.split("Explore our custom")[1][:3000]:
-        i = h.find("Explore our custom window treatments")
+    # the section heading was renamed by the heading pass, so anchor on the
+    # grid itself rather than the old title text
+    grid_at = h.find('<div class="prod-grid')
+    if grid_at > 0 and "/products/exterior-patio-shades" not in h[grid_at:grid_at + 3500]:
+        i = grid_at
         m = re.search(r'<div class="prod-grid[^"]*">', h[i:])
         if m:
             at = i + m.end()
