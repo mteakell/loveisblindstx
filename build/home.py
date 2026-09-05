@@ -140,7 +140,10 @@ def main():
         added.append("guarantees")
 
     # 3. parallax band, after the process section
-    i = h.find("Getting custom window treatments is easy")
+    # this heading was renamed by the heading pass; accept either form
+    i = h.find("From free consultation to finished install")
+    if i < 0:
+        i = h.find("Getting custom window treatments is easy")
     if i > 0:
         j = h.find("</section>", i)
         if j > 0:
