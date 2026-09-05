@@ -380,8 +380,8 @@ def team_cards():
                   f'</div></a>')
     block = (f'<section class="section bg-cream-tint"><div class="container center">'
              f'<h2 class="title">Meet Your Local Owner Operators</h2>'
-             f'<p class="lead">Three franchises cover Texas. The person who quotes your windows '
-             f'is the person who installs them.</p></div><div class="container">'
+             f'<p class="lead">Three franchises cover Texas. The person who quotes your window '
+             f'treatments is the person who installs them.</p></div><div class="container">'
              f'<div class="team-grid">{cards}</div></div></section>\n')
     s = open("meet-the-team.html").read()
     # Fix the converted hero: the <source> still pointed at a purged portrait
@@ -405,6 +405,11 @@ def team_cards():
                   '<h2 class="title">Meet the Owner-Operators</h2>')
     s = s.replace("/images/lib/shutters-shutters-005-jpg.webp",
                   "/images/lib/roller-shades-home-hero-shades-1-jpeg.webp")
+    # old Georgia-site hero lead: this is three owner-operators, not a couple
+    s = s.replace("A husband-and-wife team that handles your project personally, "
+                  "from first hello to final install.",
+                  "Three owner-operators who handle your project personally, "
+                  "from first hello to final install.")
     # owner photos are the FIRST thing under the hero
     hero_end = s.find("</section>", s.find('<section class="phero')) + len("</section>")
     open("meet-the-team.html", "w").write(s[:hero_end] + "\n" + block + s[hero_end:])

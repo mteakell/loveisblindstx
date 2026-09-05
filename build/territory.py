@@ -8,21 +8,25 @@ territory outright, and from Maddie's corrections:
 Dustin Herron was removed from the site at Maddie's direction.
 Boyd, Paradise, Lewisville and Flower Mound sit with DFW, not North TX.
 Dallas rides with East & Central for now and Maddie expects that to move.
+2026-09-05, Maddie: North Texas is only the Celina/Sherman/Plano/McKinney
+orbit plus Prosper and Frisco. The Denton-side corridor (Argyle, Denton,
+Gainesville, Justin, Northlake, Roanoke, Trophy Club, Westlake) is Durrell's
+DFW, matching the GBP manager's own DFW labels on those profiles.
 One file so a correction never means resweeping 48 generated pages.
 """
-NORTH = {'mckinney-tx', 'frisco-tx', 'celina-tx', 'roanoke-tx', 'argyle-tx', 'sherman-tx', 'westlake-tx', 'plano-tx', 'denton-tx', 'trophy-club-tx', 'justin-tx', 'northlake-tx', 'gainesville-tx'}
+NORTH = {'mckinney-tx', 'frisco-tx', 'celina-tx', 'sherman-tx', 'plano-tx'}
 
 EASTWACO = {'gun-barrel-city-tx', 'taylor-tx', 'highland-park-tx', 'las-colinas-tx', 'w-7th-avenue-corsicana-tx', 'tyler-tx', 'kerens-tx', 'waco-tx', 'dallas-tx', 'georgetown-tx', 'austin-tx', 'waxahachie-tx', 'irving-tx', 'corsicana-tx', 'round-rock-tx'}
 
 TERRITORIES = {
  "north": {"key":"north","name":"North Texas","brand":"Love Is Blinds North Texas",
    "leads":["Jake Wade","Jonathan Arosemena"],
-   "blurb":"Sherman, Celina, Plano, McKinney, Denton and the northern suburbs"},
+   "blurb":"Sherman, Celina, Plano, McKinney, Frisco and the surrounding suburbs"},
  "eastwaco": {"key":"eastwaco","name":"East & Central Texas",
    "brand":"Love Is Blinds East & Central Texas","leads":["Danny Rohweder"],
    "blurb":"Tyler, Corsicana, Gun Barrel City, Waco, the Austin metro, Highland Park and Las Colinas"},
  "dfw": {"key":"dfw","name":"DFW","brand":"Love Is Blinds DFW","leads":["Durrell Glick"],
-   "blurb":"Fort Worth, the Mid-Cities, Southlake, Grapevine, Coppell and Granbury"},
+   "blurb":"Fort Worth, Denton, the Mid-Cities, Southlake, Grapevine, Coppell and Granbury"},
 }
 
 TEAM = [
