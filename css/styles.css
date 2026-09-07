@@ -1317,6 +1317,8 @@ a.map-gbp:hover{color:var(--pop-deep)}
 .ot-byline span{display:block;font-size:13px;color:var(--ink-muted);margin-top:2px}
 .ot-answer{background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--pop-deep);
   border-radius:var(--radius-sm);padding:16px 20px;font-size:16.5px;line-height:1.65}
-.ot-quote{margin:34px 0;padding:26px 30px;background:var(--lead);border-radius:var(--radius);color:#fff}
-.ot-quote p{font-family:var(--font-display);font-size:clamp(19px,2.4vw,24px);font-weight:700;line-height:1.45;color:#fff;margin:0}
-.ot-quote footer{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.75);font-weight:600}
+.post-body blockquote.ot-quote{margin:34px 0;padding:26px 30px;background:var(--lead);
+  border:0;border-radius:var(--radius);color:#fff}
+.post-body blockquote.ot-quote p{font-family:var(--font-display);font-size:clamp(19px,2.4vw,24px);
+  font-weight:700;line-height:1.45;color:#fff;margin:0}
+.post-body blockquote.ot-quote footer{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.75);font-weight:600}
