@@ -125,8 +125,13 @@ def page(prod, slug):
     plist = pick_many(spec["price"], slug, len(spec["price"]), 17)
     prices = "".join(f"<li>{e(x)}</li>" for x in plist)
 
+    if terr.get("name_cities", True) or slug in terr.get("named_slugs", ()):
+        _who = f"{leads} runs {terr['brand']}, which covers {city} along with {terr['blurb']}."
+    else:
+        _who = (f"{terr['brand']} covers {city} along with {terr['blurb']}. "
+                "It is an owner-operated franchise.")
     faqs = [(f"Do you install {spec['label'].lower()} in {city}?",
-             f"Yes. {leads} runs {terr['brand']}, which covers {city} along with {terr['blurb']}. "
+             f"Yes. {_who} "
              f"The person who measures your windows is the person who fits them. Call {ph}.")]
     faqs += pick_many(spec["faq"] + EP.EXTRA_FAQ[prod], slug, 5, 11)
     faqs.append((f"How much do {spec['label'].lower()} cost in {city}?",
@@ -198,7 +203,7 @@ def page(prod, slug):
       <ul class="feature-list">
         <li>{P.TICK}Free in-home consultation with samples you can hold against your own light</li>
         <li>{P.TICK}Every opening measured on site, not estimated</li>
-        <li>{P.TICK}{e(city)} is covered by {e(terr['brand'])}, run by {P._leads_linked(terr)}</li>
+        <li>{P.TICK}{e(city)} is covered by {e(terr['brand'])}, {P._run_by(terr, slug)}</li>
         <li>{P.TICK}Remade at no cost if it does not match the approved measurements</li>
       </ul>
       <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a></div>

@@ -23,6 +23,13 @@ TERRITORIES = {
    "leads":["Jake Wade","Jonathan Arosemena"],
    "blurb":"Sherman, Celina, Plano, McKinney, Frisco and the surrounding suburbs"},
  "eastwaco": {"key":"eastwaco","name":"East & Central Texas",
+   # 2026-09-05, approved by Maddie (Option 2): no per-city name attribution
+   # across a territory this size - Danny: "local owner of Austin AND
+   # Waxahachie doesn't make sense". Waco is his primary, so his name stays
+   # there. Territory-level copy on about/meet-the-team/faqs keeps naming
+   # him - that framing he approved. DFW and North Texas keep names by
+   # their owners' preference; flip name_cities to change any territory.
+   "name_cities": False, "named_slugs": {"waco-tx"},
    "brand":"Love Is Blinds East & Central Texas","leads":["Danny Rohweder"],
    "blurb":"Tyler, Corsicana, Gun Barrel City, Waco, the Austin metro, Highland Park and Las Colinas"},
  "dfw": {"key":"dfw","name":"DFW","brand":"Love Is Blinds DFW","leads":["Durrell Glick"],

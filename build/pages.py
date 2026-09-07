@@ -163,6 +163,14 @@ def _leads_linked(terr):
              else html.escape(n) for n in terr["leads"]]
     return parts[0] if len(parts) == 1 else " and ".join([", ".join(parts[:-1]), parts[-1]])
 
+def _run_by(terr, slug):
+    """Per-city attribution: named owner where the franchise wants it,
+    otherwise the honest franchise-level claim (Option 2, 2026-09-05)."""
+    if terr.get("name_cities", True) or slug in terr.get("named_slugs", ()):
+        return "run by " + _leads_linked(terr)
+    return "an owner-operated local franchise"
+
+
 def miles(a, b):
     if not (a.get("lat") and b.get("lat")): return None
     la1, lo1, la2, lo2 = map(math.radians, [a["lat"], a["lng"], b["lat"], b["lng"]])
@@ -278,8 +286,12 @@ def faqs_for(c):
        "Most custom orders arrive within two to four weeks of approval, depending on the product line "
        "and fabric. Motorized treatments can run longer. We confirm the timeline in writing on your quote."),
       (f"Who measures and installs in {c['label']}?",
-       f"{_leads(terr)} run {terr['brand']}, which covers {c['label']} along with "
-       f"{terr['blurb']}. The person who measures your windows is the person who fits them."),
+       ((f"{_leads(terr)} {'run' if len(terr['leads']) > 1 else 'runs'} {terr['brand']}, "
+         f"which covers {c['label']} along with {terr['blurb']}.")
+        if terr.get("name_cities", True) or c["slug"] in terr.get("named_slugs", ())
+        else (f"{terr['brand']}, an owner-operated franchise, covers {c['label']} along with "
+              f"{terr['blurb']}."))
+       + " The person who measures your windows is the person who fits them."),
       (f"Do you install exterior patio shades in {c['label']}?",
        f"Yes. Exterior patio shades, outdoor roller shades and motorized patio screens are a large "
        f"part of what we do in {c['label']}, because shading the outside of the glass is far more "
@@ -615,7 +627,7 @@ def body_block(c, n_reviews=8):
       <ul class="feature-list">
         <li>{TICK}Free in-home consultation with samples you can hold against your own light</li>
         <li>{TICK}Measured, ordered and installed by the same local team</li>
-        <li>{TICK}{e(c['label'])} is covered by {e(terr['brand'])}, run by {_leads_linked(terr)}</li>
+        <li>{TICK}{e(c['label'])} is covered by {e(terr['brand'])}, {_run_by(terr, c['slug'])}</li>
         <li>{TICK}Remade at no cost if a treatment does not match the approved measurements</li>
       </ul>
       <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a></div>
