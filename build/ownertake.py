@@ -221,5 +221,25 @@ will tell you that too.</p>'''
     print(f"{SLUG}.html written; index has {len(idx)} posts")
 
 
+# ---------------------------------------------------------------- staged post
+# Danny Rohweder (Waco) on panel track shades. BLOCKED on two inputs:
+#   DANNY_QUOTE - his verbatim words (2-3 sentences), like Durrell supplied.
+#     We never invent an owner's opinion; the byline only carries what the
+#     owner actually said.
+#   Real panel-track install photos - the library has none; the draft below
+#     leans on the two closest wide-panel shots, which real photos should
+#     replace before or shortly after publishing.
+# When the quote arrives: paste it into DANNY_QUOTE, set DANNY_READY = True,
+# run this file, then extra.blog_index(), crosslinks, altfix, dims, tags,
+# sitemap.
+DANNY_READY = False
+DANNY_QUOTE = None  # verbatim from Danny, via Maddie/Dustin
+DANNY_SLUG = "are-panel-track-shades-worth-it"
+DANNY_TITLE = "Are Panel Track Shades Worth It? A Waco Owner's Honest Take"
+DANNY_DESC = ("Danny Rohweder, owner of Love Is Blinds East & Central Texas in Waco, on "
+              "panel track shades: the modern replacement for vertical blinds on sliders "
+              "and wide glass, and when to choose them.")
+
+
 if __name__ == "__main__":
     main()
