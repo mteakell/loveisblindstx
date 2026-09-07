@@ -1293,14 +1293,7 @@ a.map-gbp:hover{color:var(--pop-deep)}
 }
 
 /* ===== mobile drawer typography + step-number spacing ===== */
-@media (max-width:880px){
-  .nav-links > li > a{font-size:17px;font-weight:800}
-  .nav-dd a{font-size:15px;font-weight:600;padding:12px 0 12px 16px}
-  .mega-card .mc-body b{font-size:15px}
-  .mega-card .mc-body span{font-size:12.5px}
-  .mega-links b{font-size:11px}
-  .mega-links a{font-size:14.5px;font-weight:600}
-}
+
 @media (max-width:760px){
   .step{padding-top:46px}
   .step-n{top:-14px}
@@ -1338,3 +1331,25 @@ a.map-gbp:hover{color:var(--pop-deep)}
 
 /* number-circle cards: restore the breathing room a later .step h3 rule stole */
 .step .num + h3{margin-top:22px;font-size:19px}
+
+/* ===== mobile drawer: one canonical type + spacing system =====
+   Five appended media blocks had drifted: dropdown links, mega-card titles
+   and product-list links each carried their own size, weight and indent.
+   This block is last in the file, so it settles every drawer rule. */
+@media (max-width:880px){
+  /* top level: one size, one rhythm */
+  .nav-links > li > a{font-size:17px;font-weight:800;padding:16px 12px}
+  /* every submenu container indents the same 16px */
+  .nav-dd,.mega-inner{padding:2px 0 10px 16px}
+  /* submenu entries: dropdown links and mega-card titles read identically */
+  .nav-dd a{font-size:15px;font-weight:700;padding:13px 10px;border-bottom:1px solid var(--hairline-soft)}
+  .mega-card .mc-body{padding:13px 10px}
+  .mega-card .mc-body b{font-size:15px;font-weight:700}
+  .mega-card .mc-body span{font-size:12.5px;margin-top:3px}
+  /* product-list columns: quiet caps headers, links one step below entries */
+  .mega-links{grid-template-columns:1fr 1fr;gap:2px 16px;padding:12px 10px 8px 10px;border-top:0}
+  .mega-links b{font-size:11px;margin-top:12px}
+  .mega-links a{font-size:14px;font-weight:600;padding:7px 0}
+  /* breathing room before the call/consult buttons */
+  .nav-cta{padding:20px 12px 10px}
+}
