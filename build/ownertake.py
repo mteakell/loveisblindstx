@@ -222,24 +222,24 @@ will tell you that too.</p>'''
 
 
 # ---------------------------------------------------------------- staged post
-# Danny Rohweder (Waco) on panel track shades. BLOCKED on two inputs:
-#   DANNY_QUOTE - his verbatim words (2-3 sentences), like Durrell supplied.
-#     We never invent an owner's opinion; the byline only carries what the
-#     owner actually said.
-#   Real panel-track install photos - the library has none; the draft below
-#     leans on the two closest wide-panel shots, which real photos should
-#     replace before or shortly after publishing.
-# When the quote arrives: paste it into DANNY_QUOTE, set DANNY_READY = True,
-# run this file, then extra.blog_index(), crosslinks, altfix, dims, tags,
-# sitemap.
+# Danny Rohweder (Waco) on MagnaTrack exterior shades. (Maddie's "Manga Track"
+# = MagnaTrack, the motorized exterior screen brand; the site already has a
+# 2,028-word post at /magnatrack-shades-in-texas-for-summer-homes whose facts
+# ground this one: free-floating inner track, neodymium magnetic tensioning,
+# wind resilience vs zip-track systems, stops solar energy before the glass.)
+# Photos: exterior-patio-shades family has 29 verified shots, so images are
+# covered; real MagnaTrack install photos from Danny would still upgrade it.
+# BLOCKED only on DANNY_QUOTE - his verbatim words (2-3 sentences), like
+# Durrell supplied. We never invent an owner's opinion.
+# When the quote arrives: paste it in, set DANNY_READY = True, run this file,
+# then extra.blog_index(), crosslinks, altfix, dims, tags, sitemap.
 DANNY_READY = False
 DANNY_QUOTE = None  # verbatim from Danny, via Maddie/Dustin
-DANNY_SLUG = "are-panel-track-shades-worth-it"
-DANNY_TITLE = "Are Panel Track Shades Worth It? A Waco Owner's Honest Take"
+DANNY_SLUG = "are-magnatrack-shades-worth-it"
+DANNY_TITLE = "Are MagnaTrack Shades Worth It? A Waco Owner's Honest Take"
 DANNY_DESC = ("Danny Rohweder, owner of Love Is Blinds East & Central Texas in Waco, on "
-              "panel track shades: the modern replacement for vertical blinds on sliders "
-              "and wide glass, and when to choose them.")
-
+              "MagnaTrack motorized exterior shades: magnetic-track wind resilience, real "
+              "cooling for Texas patios, and when to choose them.")
 
 if __name__ == "__main__":
     main()

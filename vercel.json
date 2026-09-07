@@ -1398,6 +1398,11 @@
       "source": "/team/danny",
       "destination": "/meet-the-team/danny",
       "statusCode": 301
+    },
+    {
+      "source": "/mangatrack-shades-in-texas-for-summer-homes",
+      "destination": "/magnatrack-shades-in-texas-for-summer-homes",
+      "statusCode": 301
     }
   ]
 }
