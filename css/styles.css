@@ -1305,3 +1305,18 @@ a.map-gbp:hover{color:var(--pop-deep)}
   .step{padding-top:46px}
   .step-n{top:-14px}
 }
+
+/* ===== Owner's Take blog type ===== */
+.ot-eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pop-deep);margin:6px 0 10px}
+.ot-byline{display:flex;align-items:center;gap:14px;margin:18px 0 8px;padding:14px 18px;
+  background:var(--n-cream-tint);border:1px solid var(--hairline);border-radius:var(--radius)}
+.ot-byline img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:top;flex:none}
+.ot-byline b{font-family:var(--font-display);font-size:15.5px}
+.ot-byline b a{color:var(--ink-display)}
+.ot-byline b a:hover{color:var(--pop-deep)}
+.ot-byline span{display:block;font-size:13px;color:var(--ink-muted);margin-top:2px}
+.ot-answer{background:var(--surface);border:1px solid var(--hairline);border-left:4px solid var(--pop-deep);
+  border-radius:var(--radius-sm);padding:16px 20px;font-size:16.5px;line-height:1.65}
+.ot-quote{margin:34px 0;padding:26px 30px;background:var(--lead);border-radius:var(--radius);color:#fff}
+.ot-quote p{font-family:var(--font-display);font-size:clamp(19px,2.4vw,24px);font-weight:700;line-height:1.45;color:#fff;margin:0}
+.ot-quote footer{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.75);font-weight:600}
