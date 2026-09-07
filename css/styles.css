@@ -1335,3 +1335,6 @@ a.map-gbp:hover{color:var(--pop-deep)}
   .section:not([class*="bg-"]):not(.closing-cta) + .section:not([class*="bg-"]):not(.closing-cta){padding-top:26px}
   .section.bg-cream-tint + .section.bg-cream-tint{padding-top:26px}
 }
+
+/* number-circle cards: restore the breathing room a later .step h3 rule stole */
+.step .num + h3{margin-top:22px;font-size:19px}
