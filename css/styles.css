@@ -1347,7 +1347,10 @@ a.map-gbp:hover{color:var(--pop-deep)}
   .mega-card .mc-body b{font-size:15px;font-weight:700}
   .mega-card .mc-body span{font-size:12.5px;margin-top:3px}
   /* product-list columns: quiet caps headers, links one step below entries */
-  .mega-links{grid-template-columns:1fr 1fr;gap:2px 16px;padding:12px 10px 8px 10px;border-top:0}
+  /* grid rows paired short groups against long ones, leaving blank holes;
+     masonry columns pack the groups instead */
+  .mega-links{display:block;columns:2;column-gap:20px;padding:12px 10px 8px 10px;border-top:0}
+  .mega-links > div{break-inside:avoid;margin-bottom:14px}
   .mega-links b{font-size:11px;margin-top:12px}
   .mega-links a{font-size:14px;font-weight:600;padding:7px 0}
   /* breathing room before the call/consult buttons */
