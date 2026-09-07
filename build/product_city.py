@@ -223,7 +223,7 @@ def page(prod, slug):
 <section class="parallax-band" style="background-image:url('{band}')">
   <div class="container center">
     <span class="pb-eyebrow">Love Is Blinds &middot; {e(label)}</span>
-    <h2 class="pb-title">{e(spec['label'])}, measured and installed in {e(label)} by {e(leads)}.</h2>
+    <h2 class="pb-title">{e(spec['label'])}, measured and installed in {e(label)} by {e(leads) if (terr.get('name_cities', True) or slug in terr.get('named_slugs', ())) else 'your local owner-operated team'}.</h2>
   </div>
 </section>
 
