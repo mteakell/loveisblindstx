@@ -14,6 +14,8 @@ TAGS = [
  ('venbit',
   '<script defer src="https://venbit.com/m.js?s=vb_ae6a489f0305" '
   'data-site="vb_ae6a489f0305"></script>'),
+ ('vercel-analytics',
+  '<script defer src="/_vercel/insights/script.js"></script>'),
 ]
 
 
