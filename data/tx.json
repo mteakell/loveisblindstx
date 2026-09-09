@@ -674,7 +674,8 @@
    "gbp": [],
    "twin": "corsicana-tx",
    "variant": "W 7th Ave",
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "unlisted": true
   },
   {
    "slug": "waco-tx",

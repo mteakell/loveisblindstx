@@ -65,6 +65,7 @@ def areas():
             "North Texas, Dallas, Waco, Austin and Cedar Creek Lake.")
     groups = collections.OrderedDict()
     for c in sorted(CITIES, key=lambda x: x["label"]):
+        if c.get("unlisted"): continue
         groups.setdefault(T.of(c["slug"])["name"], []).append(c)
     secs, items = "", []
     for name, cs in groups.items():
@@ -696,6 +697,7 @@ def tx_map():
     pts = " ".join(f"{x},{y}" for x, y in (_mpt(*p) for p in TX_OUTLINE))
     pins, xs, ys = [], [], []
     for c in sorted(CITIES, key=lambda x: -x["lat"]):   # north pins first, so
+        if c.get("unlisted"): continue
         x, y = _mpt(c["lng"], c["lat"])                 # southern labels stack on top
         tk = [k for k in TKEY_CLASS if T.of(c["slug"])["name"] == T.TERRITORIES[k]["name"]][0]
         if tk in ("dfw", "north", "dallas"): xs.append(x); ys.append(y)

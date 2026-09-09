@@ -186,6 +186,7 @@ def nearby(city, n=6):
     scored = []
     for o in CITIES:
         if o["slug"] == city["slug"] or o["slug"] == city.get("twin"): continue
+        if o.get("unlisted"): continue
         d = miles(city, o)
         if d is not None: scored.append((d, o))
     if scored:

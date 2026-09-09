@@ -78,6 +78,7 @@ def region_cards(html_src):
     cities = json.load(open("data/tx.json"))["cities"]
     by_terr = {}
     for c in sorted(cities, key=lambda x: x["label"]):
+        if c.get("unlisted"): continue
         by_terr.setdefault(T.of(c["slug"])["key"], []).append(c)
     cards = ""
     for key in ("dfw", "north", "dallas", "cedarcreek", "waco", "austin"):
