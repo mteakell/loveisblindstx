@@ -41,7 +41,7 @@ post("how-to-clean-roman-shades",
    "A monthly pass with a vacuum brush attachment along the folds prevents buildup. Spot clean as needed and address spills immediately by blotting."),
   ("Do liners make roman shades easier to maintain?",
    "Yes. A liner takes the sun exposure and much of the airborne dust, protecting the face fabric that gives the shade its look.")],
- [("Roman Shades vs Roller Shades: How to Choose", "/roman-shades-vs-roller-shades-how-to-choose"),
+ [("Roman Shades vs Roller Shades: How to Choose", "/roman-shades-vs-roller-shades"),
   ("How Do I Maintain and Clean My Window Treatments?", "/how-do-i-maintain-and-clean-my-window-treatments"),
   ("Roman Shades", "/products/roman-shades")])
 
@@ -90,8 +90,8 @@ post("top-down-bottom-up-shades-explained",
    "Yes. Motorization moves either rail from a remote, app or schedule, which suits tall windows and hard-to-reach glass."),
   ("Which rooms use top-down bottom-up shades most?",
    "Bathrooms and street-facing bedrooms lead: daylight comes in over the covered glass, so privacy never trades against light.")],
- [("Are Honeycomb and Cellular Shades the Same Thing?", "/are-honeycomb-and-cellular-shades-the-same-thing"),
-  ("Blackout Shades for Bedrooms: What Actually Blocks Light", "/blackout-shades-for-bedrooms-what-actually-blocks-light"),
+ [("Are Honeycomb and Cellular Shades the Same Thing?", "/are-honeycomb-shades-and-cellular-shades-the-same"),
+  ("Blackout Shades for Bedrooms: What Actually Blocks Light", "/blackout-shades-for-bedrooms"),
   ("Honeycomb Shades", "/products/honeycomb-shades")])
 
 post("window-treatments-for-tall-two-story-windows",
@@ -162,7 +162,7 @@ post("best-window-treatments-for-media-rooms",
    "Inside-mounted shades need clearance to move, and that clearance becomes a glowing edge gap in a dark room. Side tracks or outside mounting with overlap solves it."),
   ("Are motorized shades worth it in a media room?",
    "Yes. One button darkens the whole room, and shades can join the movie-mode scene on a smart lighting system.")],
- [("Blackout Shades for Bedrooms: What Actually Blocks Light", "/blackout-shades-for-bedrooms-what-actually-blocks-light"),
+ [("Blackout Shades for Bedrooms: What Actually Blocks Light", "/blackout-shades-for-bedrooms"),
   ("Solar Shades vs Blackout Shades: Which Do You Need?", "/solar-shades-vs-blackout-shades-which-do-you-need"),
   ("Custom Shades", "/products/shades")])
 
@@ -431,7 +431,7 @@ post("roman-shade-fold-styles-guide",
    "Flat folds. Large patterns stay unbroken across the panel, while relaxed curves interrupt them."),
   ("Can any roman fold style be blackout lined?",
    "Yes. Liners attach behind the face fabric, so bedrooms can have any fold with real darkness behind it.")],
- [("Roman Shades vs Roller Shades: How to Choose", "/roman-shades-vs-roller-shades-how-to-choose"),
+ [("Roman Shades vs Roller Shades: How to Choose", "/roman-shades-vs-roller-shades"),
   ("How to Clean Roman Shades Without Ruining the Folds", "/how-to-clean-roman-shades"),
   ("Roman Shades", "/products/roman-shades")])
 
