@@ -63,8 +63,8 @@ def business(biz, city=None):
             "image": {"@type": "ImageObject", "url": SITE + "/images/shutters.jpg",
                       "width": 1200, "height": 800},
             "description": ("Custom blinds, shades, plantation shutters and motorized "
-                            "window treatments across North Texas, East Texas, Waco and "
-                            "the Austin metro. Free in-home consultations and "
+                            "window treatments across North Texas, Dallas, Waco, Austin and "
+                            "the Cedar Creek Lake area. Free in-home consultations and "
                             "professional installation."),
             "address": {"@type": "PostalAddress", "streetAddress": hq["street"],
                         "addressLocality": hq["locality"], "addressRegion": hq["region"],

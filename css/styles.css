@@ -1355,3 +1355,10 @@ a.map-gbp:hover{color:var(--pop-deep)}
   /* breathing room before the call/consult buttons */
   .nav-cta{padding:20px 12px 10px}
 }
+
+/* six-brand map + region palette (2026-09 restructure) */
+.dot.t-dallas{background:#A64B2E} #txmap .mpin.t-dallas circle{fill:#A64B2E}
+.dot.t-lake{background:#4E7D6B}   #txmap .mpin.t-lake circle{fill:#4E7D6B}
+.dot.t-waco{background:#9C7A3C}   #txmap .mpin.t-waco circle{fill:#9C7A3C}
+.dot.t-austin{background:#6B8FB3} #txmap .mpin.t-austin circle{fill:#6B8FB3}
+.dot.t-etx{background:#8B959D}    #txmap .mpin.t-etx circle{fill:#8B959D}

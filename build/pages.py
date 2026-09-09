@@ -153,6 +153,8 @@ def e(s): return html.escape(s or "", quote=True)
 
 def _leads(terr):
     L = terr["leads"]
+    if not L:
+        return "The " + terr["brand"] + " team"
     return L[0] if len(L) == 1 else " and ".join([", ".join(L[:-1]), L[-1]])
 
 _SLUG = {m["name"]: m["slug"] for m in T.TEAM}
@@ -161,6 +163,8 @@ def _leads_linked(terr):
     """Same names, each linked to its own team page."""
     parts = [f'<a href="/meet-the-team/{_SLUG[n]}">{html.escape(n)}</a>' if n in _SLUG
              else html.escape(n) for n in terr["leads"]]
+    if not parts:
+        return "the " + html.escape(terr["brand"]) + " team"
     return parts[0] if len(parts) == 1 else " and ".join([", ".join(parts[:-1]), parts[-1]])
 
 def _run_by(terr, slug):

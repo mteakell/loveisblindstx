@@ -55,6 +55,51 @@ BAND = (
 
 
 
+# ------------------------------------------------- franchise region cards
+# The card block was hand-baked once and drifted stale (wrong city counts).
+# Generated from territory.py + tx.json so restructures flow automatically.
+REGION_ANCHOR = {
+ "dfw": ("/fort-worth-tx", "See our Fort Worth page"),
+ "north": ("https://maps.app.goo.gl/74ggCgog8Zhd5CQDA", "See our Plano profile"),
+ "dallas": ("/las-colinas-tx", "See our Las Colinas page"),
+ "cedarcreek": ("/gun-barrel-city-tx", "See our Gun Barrel City page"),
+ "waco": ("/waco-tx", "See our Waco page"),
+ "austin": ("/austin-tx", "See our Austin page"),
+}
+_PIN = ('<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 '
+        '6.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>')
+_STAR = ('<svg viewBox="0 0 24 24"><path d="M12 17.3 6.8 20l1-5.8-4.2-4.1 '
+         '5.8-.9L12 4l2.6 5.2 5.8.9-4.2 4.1 1 5.8z"/></svg>')
+
+def region_cards(html_src):
+    import sys as _s
+    _s.path.insert(0, "build")
+    import territory as T
+    cities = json.load(open("data/tx.json"))["cities"]
+    by_terr = {}
+    for c in sorted(cities, key=lambda x: x["label"]):
+        by_terr.setdefault(T.of(c["slug"])["key"], []).append(c)
+    cards = ""
+    for key in ("dfw", "north", "dallas", "cedarcreek", "waco", "austin"):
+        terr = T.TERRITORIES[key]
+        cs = by_terr.get(key, [])
+        if terr.get("name_cities", True):
+            leads = terr["leads"]
+            who = "Run by " + (leads[0] if len(leads) == 1 else " and ".join(leads)) + "."
+        else:
+            who = "Owner-operated."
+        href, label = REGION_ANCHOR[key]
+        ext = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
+        chips = "".join(f'<a class="chip" href="{c["url"]}">{html.escape(c["label"])}, TX</a>'
+                        for c in cs)
+        cards += (f'<div class="area-region"><h3>{_PIN}{html.escape(terr["brand"])}</h3>'
+                  f'<p class="sml">{who} {len(cs)} cities.</p>'
+                  f'<a class="region-gbp" href="{href}"{ext}>{_STAR}{label} &rarr;</a>'
+                  f'<div class="chips">{chips}</div></div>')
+    block = f'<div class="area-regions">{cards}</div></div>'
+    return re.sub(r'<div class="area-regions">.*?</section>',
+                  block + "</section>", html_src, count=1, flags=re.S)
+
 # ---------------------------------------------------------------- reviews
 REVIEWS = json.load(open("data/reviews.json"))
 
@@ -209,10 +254,11 @@ def main():
         ("Getting custom window treatments is easy.",
          "From free consultation to finished install."),
         ("Proudly serving Texas communities.",
-         "Three local franchises, covering Texas from DFW to Austin."),
+         "Three local owners, six local brands. DFW to Austin."),
     ]:
         h = h.replace(a, b)
 
+    h = region_cards(h)
     open("index.html", "w").write(h)
     t = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ',
         re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', h, flags=re.S)))

@@ -306,7 +306,7 @@
     },
     {
       "source": "/local-attractions/annual-texas-rose-festival",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {
@@ -331,7 +331,7 @@
     },
     {
       "source": "/local-attractions/caldwell-zoo",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {
@@ -386,7 +386,7 @@
     },
     {
       "source": "/local-attractions/downtown-tyler-tx",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {
@@ -411,7 +411,7 @@
     },
     {
       "source": "/local-attractions/goodman-legrand-house-museum",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {
@@ -531,7 +531,7 @@
     },
     {
       "source": "/local-attractions/tyler-municipal-rose-garden",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {
@@ -616,7 +616,7 @@
     },
     {
       "source": "/our-community/exploring-tyler-tx",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {
@@ -1311,12 +1311,12 @@
     },
     {
       "source": "/window-treatments/tyler--tx",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {
       "source": "/window-treatments/tyler-tx",
-      "destination": "/tyler-tx",
+      "destination": "/gun-barrel-city-tx",
       "statusCode": 301
     },
     {

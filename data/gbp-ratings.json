@@ -1,6 +1,6 @@
 {
  "_source": "Outscraper Google Maps Reviews exports, 2026-09-02, cross-checked against Local Falcon",
- "_note": "Review counts as Google reports them. Profiles with 0 reviews count as a location but contribute nothing to the average. build/ratings.py recomputes the footer badge from this file, so updating a number here and rebuilding is all that is needed.",
+ "_note": "Review counts as Google reports them. Profiles with 0 reviews count as a location but contribute nothing to the average. build/ratings.py recomputes the footer badge from this file, so updating a number here and rebuilding is all that is needed. Tyler profile removed 2026-09-05: location closed.",
  "_coverage": "25 of 29 profiles. Four service-area profiles are not in the Local Falcon account and have no place ID, so they are excluded rather than estimated: Keller/Northlake, Fort Worth (SAB), Gainesville, and Allen/Celina. The badge therefore understates.",
  "profiles": [
   {
@@ -45,11 +45,6 @@
   },
   {
    "city": "Round Rock",
-   "rating": 5.0,
-   "reviews": 13
-  },
-  {
-   "city": "Tyler",
    "rating": 5.0,
    "reviews": 13
   },

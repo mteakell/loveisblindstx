@@ -62,7 +62,7 @@ def areas():
     url = "/areas-we-serve"
     title = "Texas Service Areas | Love Is Blinds"
     desc = ("Every Texas city we serve for custom blinds, shades and shutters, across DFW, "
-            "North Texas, East Texas, Waco and the Austin metro.")
+            "North Texas, Dallas, Waco, Austin and Cedar Creek Lake.")
     groups = collections.OrderedDict()
     for c in sorted(CITIES, key=lambda x: x["label"]):
         groups.setdefault(T.of(c["slug"])["name"], []).append(c)
@@ -366,8 +366,9 @@ def team_cards():
     cards = ""
     for m in T.TEAM:
         terr = T.TERRITORIES[m["territory"]] if m["territory"] else None
-        sub = terr["brand"] if terr else "Love Is Blinds Texas"
-        blurb = (f"Covers {terr['blurb']}." if terr
+        sub = m.get("sub") or (terr["brand"] if terr else "Love Is Blinds Texas")
+        blurb = (f"Covers {m['covers']}." if m.get("covers")
+                 else f"Covers {terr['blurb']}." if terr
                  else "Works with Love Is Blinds across Texas.")
         pic = (f'<div class="pic"><img src="{m["photo"]}" alt="{e(m["name"])}, {e(sub)}" '
                f'loading="lazy" width="600" height="667"></div>' if m.get("photo") else "")
@@ -534,8 +535,8 @@ PATIO_FAQ = [
   "opening and quote from those measurements at the free in-home consultation, so the number you "
   "get is the number, not a range that moves later."),
  ("Do you install patio shades across Texas?",
-  "Yes, across all three of our territories: DFW and the Mid-Cities, North Texas, and East and "
-  "Central Texas including Waco and the Austin metro. Find your city on our service areas page."),
+  "Yes, across all our Texas territories: DFW and the Mid-Cities, North Texas, Dallas, "
+  "Cedar Creek Lake, Waco and the Austin metro. Find your city on our service areas page."),
 ]
 PATIO_TYPES = [
  ("Solar screen patio shades",
@@ -670,7 +671,9 @@ _LNG0, _LAT1, _XS, _YS = -106.75, 36.65, 86.0, 100.0
 def _mpt(lng, lat):
     return round((lng - _LNG0) * _XS, 1), round((_LAT1 - lat) * _YS, 1)
 
-TKEY_CLASS = {"dfw": "t-dfw", "north": "t-north", "eastwaco": "t-east"}
+TKEY_CLASS = {"dfw": "t-dfw", "north": "t-north", "dallas": "t-dallas",
+              "cedarcreek": "t-lake", "waco": "t-waco", "austin": "t-austin",
+              "tyler": "t-etx"}
 
 ANCHOR_PINS = {"dallas-tx", "fort-worth-tx", "austin-tx", "waco-tx", "tyler-tx", "sherman-tx"}
 # nudge colliding anchor labels apart in the metroplex
@@ -695,7 +698,7 @@ def tx_map():
     for c in sorted(CITIES, key=lambda x: -x["lat"]):   # north pins first, so
         x, y = _mpt(c["lng"], c["lat"])                 # southern labels stack on top
         tk = [k for k in TKEY_CLASS if T.of(c["slug"])["name"] == T.TERRITORIES[k]["name"]][0]
-        if tk in ("dfw", "north"): xs.append(x); ys.append(y)
+        if tk in ("dfw", "north", "dallas"): xs.append(x); ys.append(y)
         anchor = " anchor" if c["slug"] in ANCHOR_PINS else ""
         dx, ta = LBL_OFFSET.get(c["slug"], (0, "middle"))
         pins.append(
@@ -740,7 +743,11 @@ def tx_map():
         '<div class="txmap-legend">'
         '<span><i class="dot t-dfw"></i>DFW</span>'
         '<span><i class="dot t-north"></i>North Texas</span>'
-        '<span><i class="dot t-east"></i>East &amp; Central Texas</span></div>'
+        '<span><i class="dot t-dallas"></i>Dallas</span>'
+        '<span><i class="dot t-lake"></i>Cedar Creek Lake</span>'
+        '<span><i class="dot t-waco"></i>Waco</span>'
+        '<span><i class="dot t-austin"></i>Austin</span>'
+        '<span><i class="dot t-etx"></i>Tyler &middot; East Texas</span></div>'
         f'<div class="txmap-toggle" role="group" aria-label="Map zoom">'
         f'<button type="button" class="on" data-vb="{full_vb}">All of Texas</button>'
         f'<button type="button" data-vb="{dfw_vb}" data-zoom>DFW &amp; North Texas</button>'

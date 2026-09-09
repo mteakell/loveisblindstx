@@ -237,7 +237,7 @@ DANNY_READY = False
 DANNY_QUOTE = None  # verbatim from Danny, via Maddie/Dustin
 DANNY_SLUG = "are-magnatrack-shades-worth-it"
 DANNY_TITLE = "Are MagnaTrack Shades Worth It? A Waco Owner's Honest Take"
-DANNY_DESC = ("Danny Rohweder, owner of Love Is Blinds East & Central Texas in Waco, on "
+DANNY_DESC = ("Danny Rohweder, owner of Love Is Blinds Waco, on "
               "MagnaTrack motorized exterior shades: magnetic-track wind resilience, real "
               "cooling for Texas patios, and when to choose them.")
 

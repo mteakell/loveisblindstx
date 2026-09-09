@@ -22,8 +22,7 @@ GENERIC_FAQ = [
   "We measured it, so we correct it. If an opening does not match the approved measurements we "
   "remake it and reinstall at no cost to you."),
  ("Which parts of Texas do you cover?",
-  "Three territories: DFW and the Mid-Cities, North Texas from Denton up to Sherman, and East and "
-  "Central Texas covering Tyler, Corsicana, Gun Barrel City, Waco and the Austin metro."),
+  "Our teams cover DFW and the Mid-Cities, North Texas around Sherman, Plano and McKinney, Dallas, the Cedar Creek Lake communities, Waco and the Austin metro."),
 ]
 COST_FAQ = [
  ("Can you give me a price over the phone?",

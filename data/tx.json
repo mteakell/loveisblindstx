@@ -159,21 +159,6 @@
    "geo_source": "legacy-site"
   },
   {
-   "slug": "w-7th-avenue-corsicana-tx",
-   "label": "Corsicana",
-   "url": "/w-7th-avenue-corsicana-tx",
-   "phone": "9035056553",
-   "street": "",
-   "locality": "Corsicana",
-   "postal": "",
-   "lat": 32.0954,
-   "lng": -96.4689,
-   "gbp": [],
-   "twin": "corsicana-tx",
-   "variant": "W 7th Ave",
-   "geo_source": "legacy-site"
-  },
-  {
    "slug": "dallas-tx",
    "label": "Dallas",
    "url": "/dallas-tx",
@@ -674,6 +659,21 @@
    "lng": -95.3011,
    "gbp": [],
    "twin": null,
+   "geo_source": "legacy-site"
+  },
+  {
+   "slug": "w-7th-avenue-corsicana-tx",
+   "label": "Corsicana",
+   "url": "/w-7th-avenue-corsicana-tx",
+   "phone": "9035056553",
+   "street": "",
+   "locality": "Corsicana",
+   "postal": "",
+   "lat": 32.0954,
+   "lng": -96.4689,
+   "gbp": [],
+   "twin": "corsicana-tx",
+   "variant": "W 7th Ave",
    "geo_source": "legacy-site"
   },
   {

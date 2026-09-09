@@ -63,8 +63,8 @@ AREAS_INTRO = ('<section class="section"><div class="container split media-right
  '<div class="body"><h2 class="title">One standard, three local teams</h2>'
  '<div class="prose">'
  '<p>Love Is Blinds Texas is three locally owned franchises: Durrell Glick across DFW and the '
- 'Mid-Cities, Jake Wade and Jonathan Arosemena across North Texas, and Danny Rohweder across East '
- 'and Central Texas down through Waco to the Austin metro. Whichever city you call from, you '
+ 'Mid-Cities, Jake Wade and Jonathan Arosemena across North Texas, and Danny Rohweder across the '
+ 'Waco corridor, the Austin metro, Dallas and Cedar Creek Lake. Whichever city you call from, you '
  'reach the team that will actually measure and install your windows.</p>'
  '<p>Every territory works the same way: a free in-home consultation with samples, measurements '
  'taken on site, a written quote that covers installation, and the same five guarantees behind '
@@ -117,8 +117,8 @@ FAQ_GROUPS = [
    "remade and reinstalled at no cost to you. That is the point of measuring every opening ourselves."),
   ("Who actually shows up?",
    "The local owner-operator. Love Is Blinds Texas is three locally owned franchises: Durrell Glick "
-   "across DFW, Jake Wade and Jonathan Arosemena across North Texas, and Danny Rohweder across East "
-   "and Central Texas. The person who quotes your windows is the person who installs them."),
+   "across DFW, Jake Wade and Jonathan Arosemena across North Texas, and Danny Rohweder across the "
+   "Waco, Austin, Dallas and Cedar Creek Lake areas. The person who quotes your windows is the person who installs them."),
  ]),
  ("Products for Texas conditions", [
   ("Which window treatments handle Texas heat best?",
@@ -170,7 +170,7 @@ FAQ_GROUPS = [
  ("Coverage and after the install", [
   ("What areas of Texas do you serve?",
    "Three territories cover the state: DFW and the Mid-Cities, North Texas from Denton up to "
-   "Sherman, and East and Central Texas through Tyler, Corsicana, Gun Barrel City and Waco down to "
+   "Sherman, Danny Rohweder around Waco, Austin, Dallas and Cedar Creek Lake down to "
    "the Austin metro. If you are anywhere near a town on our service areas page, we come to you, "
    "and each area lists its own local phone number."),
   ("What happens if something breaks after installation?",
@@ -241,7 +241,8 @@ ABOUT_DEPTH = ('<section class="section"><div class="container" style="max-width
  '<div class="prose">'
  '<p>Durrell Glick runs the DFW franchise. Jake Wade and Jonathan Arosemena run North '
  'Texas, from the northern suburbs up through Sherman and Gainesville. Danny Rohweder '
- 'covers East and Central Texas, from Tyler across to Waco and down to the Austin metro. '
+ 'runs Love Is Blinds Waco, Austin, Dallas and Cedar Creek Lake, from the lake communities '
+ 'across to Waco and down to the Austin metro. '
  'Each one quotes, measures, and installs in his own territory, so the person at your '
  'kitchen table on day one is the same person who stands behind the work in year five.</p>'
  '<p>The process is the same in every territory: a free in-home consultation with samples '
