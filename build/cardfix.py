@@ -1,30 +1,75 @@
-"""Product-card images verified by eye, mapped by href.
+"""Product-card images: LIB photo library only, verified against the title.
 
-The legacy Duda gallery-*.jpg files are mislabeled at source (gallery-roman
-shows a honeycomb page card, gallery-woven holds a roller photo, blinds.jpg
-is sheer shadings), so cards here point at lib photos that were visually
-confirmed to show the product they sell. Idempotent: keyed on href, rewrites
-the whole <picture> for mapped cards wherever they appear.
+Two separate problems this file fixes.
+
+1. Eight cards still pointed at legacy Duda files (/images/gallery-*.jpg,
+   motorization.jpg, shutters.jpg). Those are not from the LIB photo library
+   and are the wrong product in several cases. Every card now resolves to
+   /images/lib/.
+
+2. The library's FOLDER NAMES ARE NOT RELIABLE. Confirmed by the owners:
+   woven-wood-shades-003 is actually a solar/screen roller shade, and several
+   roller-* files show other products. So picks here are by what the photo
+   SHOWS, verified by eye, not by which folder the file sits in. Where a
+   filename disagrees with the product, that is expected: trust the comment.
+
+CONFIDENCE column is honest. "owner" = confirmed by Dustin/Danny.
+Anything marked NEEDS-REVIEW is a best guess awaiting owner confirmation;
+build/cardproof.py renders them all on one page for a quick pass.
 """
-import glob, os, re, sys
+import glob, os, re
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+#  href: (library file stem, alt text, confidence)
 CARD_IMG = {
- "/products/blinds": ("blinds-blinds-007", "White faux wood blinds in a Texas kitchen"),
- "/products/real-wood-blinds": ("blinds-blinds-011", "Stained wood blinds with drapery panels in a Texas bedroom"),
- "/products/roller-shades": ("roller-shades-roller-shades-137", "Light-filtering roller shades in a bright Texas living room"),
- "/products/honeycomb-shades": ("honeycomb-shades-honeycomb-shades-022", "Top-down bottom-up honeycomb shades beside striped armchairs"),
- "/products/energy-efficient-custom-window-shades": ("honeycomb-shades-honeycomb-shades-018", "Insulating cellular shades on an arched Texas window"),
- "/products/woven-wood-shades": ("woven-wood-shades-woven-wood-shades-003", "Textured woven shades around a Texas dining room"),
- "/products/panel-track-shades": ("roller-shades-roller-shades-245", "Wide flat fabric panels across tall two-story Texas windows"),
+ "/products/blinds":
+   ("blinds-blinds-007", "White faux wood blinds over a Texas kitchen sink", "high"),
+ "/products/faux-wood-blinds":
+   ("blinds-blinds-016", "White faux wood blinds on three Texas bedroom windows", "high"),
+ "/products/real-wood-blinds":
+   ("blinds-blinds-011", "Stained real wood blinds framed by drapery panels", "high"),
+ "/products/shades":
+   ("roller-shades-roller-shades-137", "Light-filtering shades across a bright Texas living room", "high"),
+ # owner-confirmed screen roller, despite the woven-wood filename
+ "/products/roller-shades":
+   ("woven-wood-shades-woven-wood-shades-003", "Solar screen roller shade over a Texas dining room window", "owner"),
+ "/products/honeycomb-shades":
+   ("honeycomb-shades-honeycomb-shades-022", "Top-down bottom-up honeycomb cellular shades in a Texas sitting room", "high"),
+ "/products/energy-efficient-custom-window-shades":
+   ("honeycomb-shades-honeycomb-shades-018", "Insulating cellular shades on an arched Texas window", "high"),
+ "/products/roman-shades":
+   ("roman-shades-roman-shades-062", "Fabric roman shades across three Texas bedroom windows", "NEEDS-REVIEW"),
+ "/products/woven-wood-shades":
+   ("woven-wood-shades-woven-wood-shades-love-01", "Bamboo woven wood shades over a Texas kitchen counter", "high"),
+ "/products/dual-shades":
+   ("banded-shades-banded-shades-011", "Dual zebra shades with alternating sheer and solid bands", "high"),
+ # No true panel-track photo exists in the library yet. This is wide-glass
+ # solar roller. Owners to supply a real panel track install photo.
+ "/products/panel-track-shades":
+   ("roller-shades-roller-shades-245", "Shades covering tall two-story Texas windows", "NEEDS-PHOTO"),
+ "/products/shutters":
+   ("shutters-shutters-151", "Plantation shutters across a bright Texas living room", "high"),
+ "/products/plantation-shutters":
+   ("shutters-shutters-113", "Plantation shutters on a Texas front room window", "high"),
+ "/products/window-treatment-automations":
+   ("smart-drapes-smart-drapes-008", "Motorized drapery and shades in a Texas primary bedroom", "high"),
+ "/products/motorized-window-treatment-automations":
+   ("smart-drapes-smart-drapes-love-01", "Motorized drapery panels in a Texas home", "NEEDS-REVIEW"),
+ "/products/remote-window-treatments":
+   ("roller-shades-roller-shades-230", "Remote-controlled roller shades in a Texas living space", "NEEDS-REVIEW"),
 }
+
+TARGETS = ["products/index.html", "index.html"]
+
 
 def main():
     total = 0
-    for f in ["products/index.html", "index.html"]:
+    for f in TARGETS:
+        if not os.path.exists(f):
+            continue
         s = open(f).read()
         n = 0
-        for href, (img, alt) in CARD_IMG.items():
+        for href, (img, alt, _conf) in CARD_IMG.items():
             pat = re.compile(
                 r'(<a class="prod-card[^"]*" href="' + re.escape(href) + r'">\s*'
                 r'<span class="pic">)<picture>.*?</picture>', re.S)
@@ -37,6 +82,7 @@ def main():
         print(f"{f}: {n} cards repointed")
         total += n
     return total
+
 
 if __name__ == "__main__":
     main()
