@@ -25,7 +25,7 @@ HERO_POOL = {
  "shades": ["roller-shades-roller-shades-230-jpg.webp","roller-shades-home-hero-shades-1-jpeg.webp",
             "roller-shades-roller-shades-137-jpg.webp","roller-shades-roller-shades-245-jpg.webp",
             "honeycomb-shades-honeycomb-shades-018-jpg.webp","honeycomb-shades-honeycomb-shades-022-jpg.webp",
-            "roller-shades-roller-shades-201-jpg.webp","woven-wood-shades-woven-wood-shades-003-jpg.webp",
+            "roller-shades-roller-shades-201-jpg.webp","roller-shades-roller-shades-901-jpg.webp",
             "banded-shades-banded-shades-011-jpg.webp","roman-shades-roman-shades-050-jpg.webp"],
  "plantation-shutters": ["shutters-shutters-101-jpg.webp","shutters-shutters-113-jpg.webp",
             "shutters-shutters-091-jpg.webp","shutters-shutters-151-jpg.webp","shutters-shutters-060-jpg.webp",

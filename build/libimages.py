@@ -17,7 +17,7 @@ DEFAULT = {
  "gallery-roller":       ("roller-shades-roller-shades-137", "Roller shades in a bright Texas living room"),
  "roller-shades":        ("roller-shades-roller-shades-137", "Roller shades in a bright Texas living room"),
  "gallery-woven":        ("woven-wood-shades-woven-wood-shades-love-01", "Bamboo woven wood shades in a Texas kitchen"),
- "gallery-roman":        ("roman-shades-roman-shades-062", "Fabric shades on three Texas bedroom windows"),
+ "gallery-roman":        ("roman-shades-roman-shades-039", "Flat-fold roman shade over a Texas dining room window"),
  "gallery-banded":       ("banded-shades-banded-shades-011", "Dual zebra shades with alternating sheer and solid bands"),
  "banded-after":         ("banded-shades-banded-shades-011", "Dual zebra shades with alternating sheer and solid bands"),
  "gallery-smartdrapes":  ("smart-drapes-smart-drapes-008", "Motorized drapery in a Texas primary bedroom"),
@@ -46,11 +46,11 @@ BY_FAMILY = {
  "faux-wood-blinds":  ("blinds-blinds-016", "White faux wood blinds on Texas bedroom windows"),
  "real-wood-blinds":  ("blinds-blinds-011", "Stained real wood blinds framed by drapery"),
  "shades":            ("roller-shades-roller-shades-137", "Roller shades in a bright Texas living room"),
- "roller-shades":     ("woven-wood-shades-woven-wood-shades-003", "Solar screen roller shade in a Texas dining room"),
+ "roller-shades":     ("roller-shades-roller-shades-901", "Solar screen roller shade in a Texas dining room"),
  "honeycomb-shades":  ("honeycomb-shades-honeycomb-shades-022", "Honeycomb cellular shades in a Texas sitting room"),
  "energy-efficient-custom-window-shades":
                       ("honeycomb-shades-honeycomb-shades-018", "Insulating cellular shades on an arched window"),
- "roman-shades":      ("roman-shades-roman-shades-062", "Fabric shades on Texas bedroom windows"),
+ "roman-shades":      ("roman-shades-roman-shades-039", "Flat-fold roman shade over a Texas dining room window"),
  "woven-wood-shades": ("woven-wood-shades-woven-wood-shades-011", "Bamboo woven wood shade in a Texas kitchen"),
  "dual-shades":       ("banded-shades-banded-shades-011", "Dual zebra shades with alternating sheer and solid bands"),
  "panel-track-shades":("roller-shades-roller-shades-245", "Shades across tall two-story Texas windows"),
@@ -58,8 +58,8 @@ BY_FAMILY = {
  "plantation-shutters":("shutters-shutters-113", "Plantation shutters on a Texas front room window"),
  "exterior-patio-shades":("exterior-patio-shades-exterior-patio-shades-005", "Exterior patio shades on a Texas porch"),
  "window-treatment-automations":("smart-drapes-smart-drapes-008", "Motorized treatments in a Texas bedroom"),
- "motorized-window-treatment-automations":("smart-drapes-smart-drapes-008", "Motorized drapery in a Texas bedroom"),
- "remote-window-treatments":("roller-shades-roller-shades-230", "Remote-controlled roller shades in a Texas room"),
+ "motorized-window-treatment-automations":("roller-shades-roller-shades-hardwired-motorized-down", "Hardwired motorized shades on high foyer windows"),
+ "remote-window-treatments":("roller-shades-roller-shades-motorized-remote-good-a", "Handheld remote controlling motorized roller shades"),
  "brands":            ("shutters-shutters-151", "Custom window treatments in a Texas living room"),
 }
 SERVICE_FAMILY = {

@@ -47,7 +47,7 @@ def GAL_LABEL(path):
 GALLERY = ["/images/lib/" + f for f in [
  "shutters-shutters-113-jpg.webp", "roller-shades-roller-shades-230-jpg.webp",
  "exterior-patio-shades-exterior-patio-shades-002-jpg.webp", "shutters-shutters-077-jpg.webp",
- "woven-wood-shades-woven-wood-shades-003-jpg.webp", "roller-shades-roller-shades-137-jpg.webp",
+ "roller-shades-roller-shades-901-jpg.webp", "roller-shades-roller-shades-137-jpg.webp",
  "shutters-shutters-151-jpg.webp", "honeycomb-shades-honeycomb-shades-018-jpg.webp",
  "smart-drapes-smart-drapes-002-jpg.webp", "shutters-shutters-101-jpg.webp",
  "roller-shades-roller-shades-201-jpg.webp", "blinds-blinds-009-jpg.webp",
@@ -94,7 +94,7 @@ HEROES = [
  "roller-shades-roller-shades-230-jpg.webp",
  "shutters-shutters-113-jpg.webp",
  "roller-shades-roller-shades-201-jpg.webp",
- "woven-wood-shades-woven-wood-shades-003-jpg.webp",
+ "roller-shades-roller-shades-901-jpg.webp",
  "shutters-shutters-060-jpg.webp",
  "honeycomb-shades-honeycomb-shades-018-jpg.webp",
  "roller-shades-home-hero-shades-1-jpeg.webp",
