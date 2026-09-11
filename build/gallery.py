@@ -24,6 +24,7 @@ FAMS = [
  ("roman",     ("roman-shades", "woven-wood-shades"), "Roman & Woven"),
  ("honeycomb", ("honeycomb-shades",),         "Honeycomb Shades"),
  ("blinds",    ("blinds-blinds",),            "Custom Blinds"),
+ ("panel",     ("panel-track-shades",),       "Panel Track Shades"),
  ("drapes",    ("smart-drapes", "banded-shades"), "Drapery & Banded"),
 ]
 

@@ -46,7 +46,7 @@ FAM_PREFIX = {
  "drapes":  ("smart-drapes",),
  "banded":  ("banded-shades",),
  "dual":    ("banded-shades",),
- "panel":   ("roller-shades", "banded-shades"),
+ "panel":   ("panel-track-shades",),
  "mixed":   ("shutters-shutters", "roller-shades", "exterior-patio-shades",
              "roman-shades", "honeycomb-shades", "blinds-blinds"),
 }
@@ -55,7 +55,7 @@ FAM_LABEL = {
  "patio": "Exterior patio shades", "roman": "Roman and woven shades",
  "blinds": "Custom blinds", "honeycomb": "Honeycomb shades",
  "drapes": "Drapery and motorization", "banded": "Banded shades",
- "dual": "Dual shades", "panel": "Custom shades",
+ "dual": "Dual shades", "panel": "Panel track shades",
  "mixed": "Custom window treatments",
 }
 ALT_T = [
@@ -375,8 +375,8 @@ HERO_OVERRIDE = {
    "Motorized drapery and shutters in a chandelier-lit Texas bedroom"),
  "products/remote-window-treatments.html": _h("roller-shades-roller-shades-137",
    "Remote-controlled roller shades in a sunlit Texas family room"),
- "products/panel-track-shades.html": _h("banded-shades-banded-shades-003",
-   "Panel and banded shades over a breakfast nook"),
+ "products/panel-track-shades.html": _h("panel-track-shades-panel-track-shades-002",
+   "Panel track shades stacked open beside a Texas patio slider"),
  "products/woven-wood-shades.html": _h("roman-shades-roman-shades-060",
    "Woven wood shades and rattan pendants over a Texas dining table"),
  "products/exterior-patio-shades.html": _h("exterior-patio-shades-exterior-patio-shades-drew-wrap-front",

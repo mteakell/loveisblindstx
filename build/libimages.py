@@ -33,6 +33,8 @@ PAGE = {
    "gallery-roman": ("honeycomb-shades-honeycomb-shades-022", "Top-down bottom-up honeycomb cellular shades")},
  "products/energy-efficient-custom-window-shades.html": {
    "gallery-roman": ("honeycomb-shades-honeycomb-shades-018", "Insulating cellular shades on an arched Texas window")},
+ "products/panel-track-shades.html": {
+   "gallery-banded": ("panel-track-shades-panel-track-shades-001", "Panel track shades closed across a Texas patio slider")},
  "products/woven-wood-shades.html": {
    "gallery-roller": ("woven-wood-shades-woven-wood-shades-011", "Bamboo woven wood shade over a Texas kitchen window")},
 }
@@ -53,7 +55,7 @@ BY_FAMILY = {
  "roman-shades":      ("roman-shades-roman-shades-039", "Flat-fold roman shade over a Texas dining room window"),
  "woven-wood-shades": ("woven-wood-shades-woven-wood-shades-011", "Bamboo woven wood shade in a Texas kitchen"),
  "dual-shades":       ("banded-shades-banded-shades-011", "Dual zebra shades with alternating sheer and solid bands"),
- "panel-track-shades":("roller-shades-roller-shades-245", "Shades across tall two-story Texas windows"),
+ "panel-track-shades":("panel-track-shades-panel-track-shades-001", "Panel track shades closed across a Texas patio slider"),
  "shutters":          ("shutters-shutters-151", "Plantation shutters in a Texas living room"),
  "plantation-shutters":("shutters-shutters-113", "Plantation shutters on a Texas front room window"),
  "exterior-patio-shades":("exterior-patio-shades-exterior-patio-shades-005", "Exterior patio shades on a Texas porch"),

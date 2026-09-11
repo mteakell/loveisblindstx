@@ -43,10 +43,9 @@ CARD_IMG = {
    ("woven-wood-shades-woven-wood-shades-home-a", "Bamboo woven wood shades across three Texas living room windows", "NEEDS-REVIEW"),
  "/products/dual-shades":
    ("banded-shades-banded-shades-011", "Dual zebra shades with alternating sheer and solid bands", "high"),
- # No true panel-track photo exists in the library yet. This is wide-glass
- # solar roller. Owners to supply a real panel track install photo.
+ # Owner-supplied install photos, 2026-09-11 (closed 001, stacked open 002).
  "/products/panel-track-shades":
-   ("roller-shades-roller-shades-245", "Shades covering tall two-story Texas windows", "NEEDS-PHOTO"),
+   ("panel-track-shades-panel-track-shades-001", "Panel track shades closed across a Texas patio slider", "owner"),
  "/products/shutters":
    ("shutters-shutters-151", "Plantation shutters across a bright Texas living room", "high"),
  "/products/plantation-shutters":
