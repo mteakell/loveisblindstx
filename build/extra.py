@@ -276,7 +276,7 @@ def checklist():
     planner = (
         '<section class="section" id="planner"><div class="container">'
         '<div class="wp-grid">'
-        '<form class="wp-form" action="https://formspree.io/f/xbgjdnvg" method="POST">'
+        '<form class="wp-form" action="https://formspree.io/f/xyezwzlb" method="POST">'
         '<input type="hidden" name="_subject" value="New window plan - design checklist">'
         '<input type="hidden" name="window_plan" id="wp-plan">'
 

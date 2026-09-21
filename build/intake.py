@@ -36,7 +36,7 @@ def build():
     <p class="sml">This page is for the team. It is not linked from the site and it does not
       appear in search.</p>
 
-    <form class="form-card" action="https://formspree.io/f/xbgjdnvg" method="POST">
+    <form class="form-card" action="https://formspree.io/f/xyezwzlb" method="POST">
       <input type="hidden" name="_subject" value="Job notes from the field">
       <div class="field-row">
         <div class="field">
