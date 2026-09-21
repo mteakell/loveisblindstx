@@ -1379,3 +1379,6 @@ a.map-gbp:hover{color:var(--pop-deep)}
 .closing-cta .city-form{border-top-color:rgba(255,255,255,.22)}
 .closing-cta .city-form label{color:rgba(255,255,255,.92)}
 .closing-cta .cf-fine{color:rgba(255,255,255,.7)}
+
+/* Formspree honeypot: off-screen for people, visible to bots */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
