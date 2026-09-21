@@ -21,6 +21,8 @@ e = lambda s: html.escape(s or "", quote=True)
 
 SLUG = "are-plantation-shutters-worth-it"
 TITLE = "Are Plantation Shutters Worth It? A DFW Owner's Honest Take"
+# search-results title: the H1 keeps the full headline, this stays under 65
+TITLE_TAG = "Are Plantation Shutters Worth It? Owner's Take"
 DESC = ("Durrell Glick, owner of Love Is Blinds DFW, on why plantation shutters are his "
         "favorite window treatment: timeless style, real curb appeal, and when he would "
         "point you to something else.")
@@ -163,7 +165,7 @@ will tell you that too.</p>'''
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{e(TITLE[:57])} | Love Is Blinds</title>
+<title>{e(TITLE_TAG)} | Love Is Blinds</title>
 <meta name="description" content="{e(DESC[:155])}">
 <link rel="canonical" href="{S.SITE}{url}">
 <link rel="icon" href="/favicon.ico" sizes="any">

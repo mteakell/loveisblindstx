@@ -206,8 +206,8 @@ def checklist():
     """
     url, title = "/design-checklist", "Window Treatment Design Checklist | Love Is Blinds"
     desc = ("Build your window plan in ten minutes: rooms, priorities, products and "
-            "upgrades, sent straight to your local Love Is Blinds owner so the free "
-            "consultation turns into a quote in one visit.")
+            "upgrades, sent to your local Love Is Blinds owner before the free "
+            "consultation.")
     ROOMS = ["Living room", "Primary bedroom", "Bedroom", "Kitchen", "Bathroom",
              "Home office", "Media room", "Dining room", "Patio / outdoor"]
     CONSIDER = ["Privacy (bedrooms & bathrooms)", "Adding Design to Your Space",

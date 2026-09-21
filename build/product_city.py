@@ -125,6 +125,24 @@ def page(prod, slug):
     plist = pick_many(spec["price"], slug, len(spec["price"]), 17)
     prices = "".join(f"<li>{e(x)}</li>" for x in plist)
 
+    # Inline lead form: product-city pages carried only call/booking links.
+    pc_form = (
+        '<form class="city-form pc-form" action="https://formspree.io/f/xyezwzlb" method="POST">'
+        f'<input type="hidden" name="_subject" value="New request - {e(spec["label"])} in {e(city)}, TX">'
+        f'<input type="hidden" name="city" value="{e(city)}, TX">'
+        f'<input type="hidden" name="product" value="{e(spec["label"])}">'
+        '<div class="cf-grid">'
+        '<label>Name<input type="text" name="name" required autocomplete="name"></label>'
+        '<label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>'
+        '<label>Email<input type="email" name="email" required autocomplete="email"></label>'
+        '<label>Timeline<select name="timeline"><option>No deadline yet</option>'
+        '<option>As soon as possible</option><option>Within a month</option>'
+        '<option>1 to 3 months</option></select></label>'
+        '</div>'
+        '<button class="btn btn-primary btn-block" type="submit">Request my free consultation</button>'
+        '<p class="cf-fine">No pressure, no obligation. We never share your information.</p>'
+        '</form>')
+
     if terr.get("name_cities", True) or slug in terr.get("named_slugs", ()):
         _who = f"{leads} runs {terr['brand']}, which covers {city} along with {terr['blurb']}."
     else:
@@ -297,9 +315,9 @@ def page(prod, slug):
     <p class="lead">Free in-home consultation in {e(city)}. Measured by us, quoted in writing,
       installed by the same team.</p>
     <div class="btnrow" style="justify-content:center">
-      <a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
       <a class="btn btn-secondary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
     </div>
+    <div class="cf-wrap">{pc_form}</div>
   </div>
 </section>
 </main>

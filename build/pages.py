@@ -596,6 +596,29 @@ def body_block(c, n_reviews=8):
                '<span><span class="cc-label">Reviews and photos</span>'
                f'<a class="cc-value" href="{e(c["gbp"][0])}" rel="noopener">Our Google Business Profile</a>'
                '</span></li>') if c.get("gbp") else ""
+    # Inline lead form on every city page. 337 city pages previously offered
+    # only a phone number and a link to /schedule-now; the extra click is where
+    # local traffic leaked. City is prefilled and named in the subject so leads
+    # route to the right owner.
+    city_form = (
+        '<form class="city-form" action="https://formspree.io/f/xyezwzlb" method="POST">'
+        f'<input type="hidden" name="_subject" value="New consultation request - {e(c["label"])}, TX">'
+        f'<input type="hidden" name="city" value="{e(c["label"])}, TX">'
+        '<p class="cf-lede">Prefer to write? Send this and your local team replies '
+        'within one business day.</p>'
+        '<div class="cf-grid">'
+        '<label>Name<input type="text" name="name" required autocomplete="name"></label>'
+        '<label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>'
+        '<label>Email<input type="email" name="email" required autocomplete="email"></label>'
+        '<label>What are you considering?<select name="considering">'
+        '<option>Not sure yet</option><option>Blinds</option><option>Shades</option>'
+        '<option>Plantation shutters</option><option>Exterior patio shades</option>'
+        '<option>Motorization</option></select></label>'
+        '</div>'
+        '<button class="btn btn-primary btn-block" type="submit">Request my free consultation</button>'
+        '<p class="cf-fine">No pressure, no obligation. We never share your information.</p>'
+        '</form>')
+
     nearlinks = " ".join(
       f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
     faqhtml = "".join(
@@ -635,7 +658,7 @@ def body_block(c, n_reviews=8):
         <li>{TICK}{e(c['label'])} is covered by {e(terr['brand'])}, {_run_by(terr, c['slug'])}</li>
         <li>{TICK}Remade at no cost if a treatment does not match the approved measurements</li>
       </ul>
-      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a></div>
+      {city_form}
     </div>
     <div class="media reveal">
       <img src="{hero2}" width="900" height="600" loading="lazy"
