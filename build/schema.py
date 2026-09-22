@@ -130,10 +130,16 @@ def faq(url, pairs):
                            for q, a in pairs]}
 
 def service(url, name, desc, provider_id, area=None, catalog=None):
-    """Service, not Product: we publish no prices, and a priceless Offer is noise."""
+    """Service, not Product. Visible copy carries no prices at Maddie's
+    direction (2026-09-22); the owner-supplied project range (single window
+    up to ~$10,000 whole-home) lives in structured data only, as an
+    AggregateOffer, so cost-intent queries get a machine-readable answer
+    without a number ever appearing on the page."""
     return _clean({
         "@type": "Service", "@id": SITE + url + "#service", "name": name,
         "description": desc, "serviceType": name, "provider": {"@id": provider_id},
+        "offers": {"@type": "AggregateOffer", "priceCurrency": "USD",
+                   "lowPrice": 0, "highPrice": 10000},
         "areaServed": area or {"@type": "AdministrativeArea", "name": "Texas"},
         "hasOfferCatalog": ({"@type": "OfferCatalog", "name": name,
             "itemListElement": [{"@type": "Offer", "itemOffered":

@@ -1382,3 +1382,9 @@ a.map-gbp:hover{color:var(--pop-deep)}
 
 /* Formspree honeypot: off-screen for people, visible to bots */
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+
+/* ===== /reviews hub ===== */
+.rvh-city{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:34px 0 6px;
+  font-size:18px;color:var(--ink-display)}
+.rvh-city .sml{color:var(--ink-muted);font-size:13px;font-weight:600}
+.rvh-city .btn-link{font-size:13.5px}
