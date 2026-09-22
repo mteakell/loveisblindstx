@@ -1466,7 +1466,7 @@ a.map-gbp:hover{color:var(--pop-deep)}
 /* ---- Homepage hero, mobile only: photo + overlapping white card ----
    Desktop keeps the original full-bleed hero untouched. */
 @media (max-width:880px){
-  .phero-mob-card{min-height:0;display:block;background:#fff;padding:0}
+  .phero.has-form.phero-mob-card{min-height:0;display:block;background:#fff;padding:0}
   .phero-mob-card::after{display:none}
   .phero-mob-card picture{display:block;position:relative;height:336px}
   .phero-mob-card picture img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:center}
