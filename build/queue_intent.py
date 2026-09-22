@@ -215,6 +215,35 @@ post("what-a-window-treatment-quote-should-include",
   ("What Happens at a Free In-Home Window Treatment Consultation", "/what-happens-at-a-free-in-home-consultation"),
   ("Book a Free Consultation", "/schedule-now")])
 
+post("window-treatments-for-west-facing-windows-texas",
+ "Window Treatments for West-Facing Windows in Texas",
+ "West glass takes the worst of Texas heat. The shades that actually stop afternoon sun, what each does to your view, and when exterior shades win.",
+ L + "roller-shades-roller-shades-237-jpg.webp",
+ p("West-facing windows get the hardest job in a Texas house: the sun arrives low, hot and glaring exactly when the day is hottest, and it keeps coming until it sets. The best treatments for west glass are solar shades, honeycomb shades and exterior shades, chosen by whether you want to keep the view, kill the heat, or both. Here is how to pick.")
+ + sec("Why west windows punish ordinary treatments",
+   p("Morning sun through east glass is high and brief. Afternoon sun through west glass is low-angle, which means it comes straight in rather than glancing off, and it lands during peak heat, stacking on top of the hottest part of the day. Fabrics fade, floors bleach in stripes, glare wipes out the TV, and the room the family uses most becomes the room nobody sits in from three to seven."))
+ + sec("Solar shades: keep the view, cut the heat",
+   p("Solar roller shades are woven screens that reject heat and glare while staying see-through from inside. Openness is the number to know: a tighter weave blocks more sun and shows less view, an open weave keeps the view and lets more light through. On a west wall with a backyard worth looking at, solar shades are usually the first thing we reach for, because the alternative most people fear, a dark room with the shades down all afternoon, never happens."))
+ + sec("Honeycomb shades: the insulation play",
+   p("When the problem is heat gain more than glare, honeycomb cellular shades trap air in their cells and insulate the glass itself. They give up the view when lowered, which makes them the bedroom and street-facing answer, and the strongest choice where cooling costs matter more than sightlines."))
+ + sec("Exterior shades: stop the heat before the glass",
+   p("Everything inside the window intercepts sun after it has already passed through the glass. Exterior shades stop it outside, which is why they outperform any interior treatment on brutal west exposures, patios and big slider walls. For a west-facing outdoor living area, they are the difference between a patio you abandon in June and one you use all summer."))
+ + sec("The motorization move that does the real work",
+   li("A schedule that drops the west bank at 3pm and raises it at sunset, every day, without anyone thinking about it",
+      "Remote control for the tall or wide west windows nobody wants to crank by hand",
+      "Pairing: solar shades for the day, and drapery or room-darkening shades layered for evenings"))
+ + sec("What we look at in your actual room",
+   p("West is not one condition. A covered porch changes it, a neighbor's tree changes it, and a lake view changes what you are willing to cover. The free in-home consultation exists for exactly this: we look at the glass at your house, bring the fabric openness samples, and quote the wall in writing on the spot.")),
+ [("What is the best window treatment for west-facing windows?",
+   "Solar roller shades for view and glare control, honeycomb shades for maximum insulation, and exterior shades where the heat is severe. Many west walls pair solar shades with a schedule that drops them each afternoon."),
+  ("Do solar shades block the view?",
+   "No, that is their advantage. The woven screen cuts heat and glare while staying see-through from inside; the openness factor you choose sets the balance between sun-blocking and view."),
+  ("Are exterior shades worth it on west-facing glass?",
+   "On severe west exposures, yes. Stopping sun before it reaches the glass beats any interior treatment, which is why exterior shades rule west patios and big slider walls.")],
+ [("Solar Shades vs Blackout Shades: Which Do You Need?", "/solar-shades-vs-blackout-shades"),
+  ("Cellular Shades vs Roller Shades for Texas Heat", "/cellular-shades-vs-roller-shades"),
+  ("Roller Shades", "/products/roller-shades")])
+
 
 # ------------------------------------------------------------- render queue
 def main():

@@ -1396,3 +1396,10 @@ a.map-gbp:hover{color:var(--pop-deep)}
   line-height:1.4;padding:20px}
 .rv-card.rv-more a .arw{display:inline-block;transition:transform .2s var(--ease)}
 .rv-card.rv-more a:hover .arw{transform:translateX(5px)}
+
+/* purchase-intent band on winner posts */
+.ir-band{background:var(--cream-tint,#F7F3EC);border-left:4px solid var(--accent,#C77A3B);
+  border-radius:10px;padding:16px 20px;margin:22px 0}
+.ir-band .ir-kicker{font-size:.78rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;margin:0 0 10px;color:var(--ink-soft,#5b6672)}
+.ir-band .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin:0}
