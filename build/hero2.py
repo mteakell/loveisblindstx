@@ -119,6 +119,62 @@ def options_page():
     print(f"hero-options: {len(CANDIDATES)} candidates rendered")
 
 
+
+
+PHOTOS = [
+ ("SMA Home Hero Shades 1.jpeg", "Approved hero photo (current default)",
+  "roller-shades-home-hero-shades-1-jpeg",
+  "Light-filtering roller shades around a furnished bedroom sitting area"),
+ ("SMA shutters-love-14.jpg", "Approved for the neighbors section",
+  "shutters-shutters-love-14-jpg",
+  "White plantation shutters above a gray sectional in a bright living room"),
+ ("SMA roller-shades-love-31.jpg", "Hero alternative, previous set first preference",
+  "roller-shades-roller-shades-love-31-jpg",
+  "Roller shades across an open Texas kitchen"),
+ ("SMA shutters-love-02.jpg", "Hero alternative, previous set second preference",
+  "shutters-shutters-love-02-jpg",
+  "Plantation shutters beside a fireplace in a Texas living room"),
+ ("SMA roman-shades-036.jpg", "Hero alternative, previous set third preference",
+  "roman-shades-roman-shades-036-jpg",
+  "Roman shades in a Texas sitting room"),
+ ("SMA roller-shades-love-28.jpg", "Hero alternative, set 2 option 4 (liked)",
+  "roller-shades-roller-shades-love-28-jpg",
+  "Roller shades in a sunny Texas dining room"),
+ ("SMA shutters-160.jpg", "Hero alternative, set 2 option 5 (liked)",
+  "shutters-shutters-160-jpg",
+  "Plantation shutters in an open Texas kitchen"),
+]
+
+
+def photo_review():
+    """Plain full-size gallery of every photo in the handoff package,
+    labeled with original filenames, for client review. Noindexed."""
+    url = "/photo-review"
+    title = "Photo Review"
+    desc = "Full-size review of the homepage photo package."
+    blocks = ""
+    for orig, role, stem, alt in PHOTOS:
+        blocks += (f'<figure class="pr-item"><figcaption class="ho-label">'
+                   f'<strong>{e(role)}</strong><span>{e(orig)}</span></figcaption>'
+                   f'<img src="{_src(stem)}" data-alt-final alt="{e(alt)}" loading="lazy" '
+                   f'width="2000" height="1500" style="width:100%;height:auto;border-radius:12px"></figure>')
+    body = ('<section class="section"><div class="container" style="max-width:1000px">'
+            '<h1 class="title">Photo review</h1>'
+            '<p class="lead">All seven photos from the homepage package at full frame: the two '
+            'approved placements and the five hero alternatives. To see any alternative in the '
+            'hero layout itself, use the <a href="/hero-options">hero options page</a>.</p>'
+            '<p class="sml">This page is for review only. It is not linked from the site '
+            'and does not appear in search.</p>'
+            f'{blocks}</div></section>')
+    nodes = X.BASE() + [S.webpage(url, title, desc)]
+    out = X.shell(url, title, desc, nodes, body)
+    out = out.replace('<meta charset="UTF-8">',
+                      '<meta charset="UTF-8">\n<meta name="robots" content="noindex,nofollow">')
+    open("photo-review.html", "w").write(out)
+    print(f"photo-review: {len(PHOTOS)} photos rendered")
+
+
 if __name__ == "__main__":
     tag_home_hero()
     options_page()
+    photo_review()
