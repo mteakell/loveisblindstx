@@ -120,7 +120,12 @@ def options_page():
         # phones cannot render fixed-width iframes reliably (iOS expands
         # them), but a phone IS the mobile viewport: render the hero inline
         # there and it lays out natively. Desktop gets the 390px iframe rig.
-        inline = re.sub(r'<form class="form-card".*?</form>', "", page, flags=re.S)
+        # The form stays visible in every preview; ids are stripped so six
+        # copies stay valid HTML, and the subject marks any submission as a
+        # test from this page rather than a real lead.
+        inline = re.sub(r'\s(?:id|for)="[^"]*"', "", page)
+        inline = inline.replace('value="New consultation request - home"',
+                                'value="Test submission - hero options page"')
         frames += (f'<div class="ho-item"><div class="ho-label"><strong>{e(label)}</strong>'
                    f'<span>{e(room)}</span></div>'
                    f'<div class="ho-phone"><iframe src="/hero-mob/{stem}" title="{e(label)}" '
