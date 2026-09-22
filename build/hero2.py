@@ -94,31 +94,52 @@ def tag_home_hero():
 
 
 def options_page():
+    """/hero-options: every candidate photo inside the REAL homepage mobile
+    hero, rendered in true 390px iframes so the mobile media queries fire
+    and what Dustin sees is exactly what a phone renders. Each iframe loads
+    a minimal /hero-mob/<stem> page holding the live hero markup with the
+    photo swapped in."""
+    src = open("index.html").read()
+    hero = re.search(r'<section class="phero has-form phero-mob-card">.*?</section>', src, re.S)
+    if not hero:
+        print("hero-options: homepage hero not found"); return
+    hero = hero.group(0)
+
+    frames = ""
+    for label, room, stem, alt in CANDIDATES:
+        page = hero
+        page = re.sub(r'<img [^>]*fetchpriority="high"[^>]*>', _img(stem, alt), page, count=1)
+        mini = ('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">'
+                '<meta name="robots" content="noindex,nofollow">'
+                '<meta name="viewport" content="width=device-width, initial-scale=1">'
+                f'<title>Hero preview: {e(stem)}</title>'
+                '<link rel="stylesheet" href="/css/styles.css">'
+                '</head><body style="margin:0;background:#fff">'
+                f'<main>{page}</main></body></html>')
+        open(f"hero-mob/{stem}.html", "w").write(mini)
+        frames += (f'<div class="ho-item"><div class="ho-label"><strong>{e(label)}</strong>'
+                   f'<span>{e(room)}</span></div>'
+                   f'<div class="ho-phone"><iframe src="/hero-mob/{stem}" title="{e(label)}" '
+                   f'loading="lazy" width="390" height="740"></iframe></div></div>')
+
     url = "/hero-options"
     title = "Homepage Hero Options"
-    desc = "Side-by-side review of the shortlisted homepage hero photos in the approved layout."
-    blocks = ""
-    for label, room, stem, alt in CANDIDATES:
-        blocks += (f'<div class="ho-item"><div class="ho-label"><strong>{e(label)}</strong>'
-                   f'<span>{e(room)} &middot; {e(stem)}</span></div>'
-                   f'<section class="option-two-hero"><div class="container option-two-grid ho-solo">'
-                   f'{story(stem, alt)}</div></section></div>')
+    desc = "Each shortlisted photo shown in the real mobile homepage hero."
     body = ('<section class="section"><div class="container" style="max-width:1000px">'
-            '<h1 class="title">Homepage hero options</h1>'
-            '<p class="lead">Each photo below is shown in the real approved hero layout, '
-            'exactly as it would render on the homepage. Best reviewed on a phone as well '
-            'as desktop. The consultation form sits beside the card on the live page.</p>'
-            '<p class="sml">This page is for review only. It is not linked from the site '
-            'and does not appear in search.</p></div>'
-            f'<div class="container" style="max-width:1000px">{blocks}</div></section>')
+            '<h1 class="title">Homepage hero: photo options on mobile</h1>'
+            '<p class="lead">Each frame below is the real homepage mobile hero, rendered at '
+            'phone width, with one of the shortlisted photos. Scroll inside a frame to see '
+            'the card and the form, exactly as a phone shows them.</p>'
+            '<p class="sml">For review only. Not linked from the site, not in search. '
+            'Full-frame versions of every photo are on the '
+            '<a href="/photo-review">photo review page</a>.</p>'
+            '<div class="ho-grid">' + frames + '</div></div></section>')
     nodes = X.BASE() + [S.webpage(url, title, desc)]
     out = X.shell(url, title, desc, nodes, body)
     out = out.replace('<meta charset="UTF-8">',
                       '<meta charset="UTF-8">\n<meta name="robots" content="noindex,nofollow">')
     open("hero-options.html", "w").write(out)
-    print(f"hero-options: {len(CANDIDATES)} candidates rendered")
-
-
+    print(f"hero-options: {len(CANDIDATES)} phone-frame previews rendered")
 
 
 PHOTOS = [
