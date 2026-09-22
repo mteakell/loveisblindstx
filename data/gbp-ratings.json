@@ -120,8 +120,9 @@
   },
   {
    "city": "Celina",
-   "rating": null,
-   "reviews": 0
+   "rating": 5.0,
+   "reviews": 11,
+   "_note": "count from Maddie's GBP paste 2026-09-22; re-verify with next Outscraper harvest"
   }
  ]
 }
