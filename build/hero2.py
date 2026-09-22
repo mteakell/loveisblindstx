@@ -81,16 +81,36 @@ def hero_section(form_html):
 
 
 def tag_home_hero():
-    """Mobile-only card layout hook. Desktop hero is untouched; the class
-    scopes the (max-width:880px) card styles to the homepage hero alone."""
+    """Mobile-only card layout hook plus the photo carousel. Desktop shows
+    only the first (approved) photo exactly as before; at phone widths the
+    hero crossfades through every shortlisted candidate."""
     t = open("index.html").read()
-    if "phero-mob-card" in t:
-        print("home hero: mobile-card class already present"); return
-    t2 = t.replace('<section class="phero has-form">',
-                   '<section class="phero has-form phero-mob-card">', 1)
-    if t2 != t:
-        open("index.html", "w").write(t2)
-        print("home hero: mobile-card class stamped")
+    if "phero-mob-card" not in t:
+        t = t.replace('<section class="phero has-form">',
+                      '<section class="phero has-form phero-mob-card">', 1)
+    hero = re.search(r'<section class="phero has-form phero-mob-card">.*?</section>', t, re.S)
+    if not hero:
+        print("home hero: hero section not found"); return
+    h = hero.group(0)
+    if 'class="hero-slides"' not in h:
+        pic = re.search(r'<picture>(\s*<img[^>]*>)\s*</picture>', h)
+        if not pic:
+            print("home hero: picture not found"); return
+        main_img = re.sub(r'<img ', '<img class="hs-slide on" ', pic.group(1).strip(), count=1)
+        extras = ""
+        for label, room, stem, alt in CANDIDATES[1:]:
+            extras += (f'<img class="hs-slide" src="/images/lib/r/800/{stem}.webp" '
+                       f'data-alt-final alt="{e(alt)}" loading="lazy" '
+                       f'width="800" height="600">')
+        slides = f'<div class="hero-slides">{main_img}{extras}</div>'
+        js = ('<script>(function(){if(!matchMedia("(max-width:880px)").matches)return;'
+              'var s=document.querySelectorAll(".hero-slides .hs-slide");if(s.length<2)return;'
+              'var i=0;setInterval(function(){s[i].classList.remove("on");'
+              'i=(i+1)%s.length;s[i].classList.add("on");},4000);})();</script>')
+        h2 = h.replace(pic.group(0), slides) + js
+        t = t.replace(h, h2, 1)
+    open("index.html", "w").write(t)
+    print("home hero: mobile carousel in place")
 
 
 def options_page():
