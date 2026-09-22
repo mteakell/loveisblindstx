@@ -106,15 +106,16 @@ REVIEWS = json.load(open("data/reviews.json"))
 
 
 def _slider():
-    """Every 4+ star review in a scroll-snap slider.
+    """The 40 most recent 4+ star reviews in a scroll-snap slider.
 
-    The home page showed three static cards while 364 real reviews sat in the
-    data. Scroll-snap plus two buttons rather than a carousel library: no
-    dependency, works without JS (it stays a horizontal scroller), and keyboard
-    and touch both work for free.
+    It used to inline all 364, which made the home page's HTML 217KB and its
+    DOM the heaviest on the site for text nobody scrolled to. Now the slider
+    is a teaser: 40 recent cards plus an end card into /reviews, where the
+    full record lives. Counts in the copy still come from the full set.
     """
-    revs = sorted((r for r in REVIEWS if r.get("rating", 5) >= 4),
-                  key=lambda r: r.get("date", ""), reverse=True)
+    revs_all = sorted((r for r in REVIEWS if r.get("rating", 5) >= 4),
+                      key=lambda r: r.get("date", ""), reverse=True)
+    revs = revs_all[:40]
     cards = "".join(
         '<article class="rv-card">'
         '<div class="rv-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
@@ -127,19 +128,22 @@ def _slider():
       '<section class="section bg-cream-tint rv-section">'
       '<div class="container center">'
       '<h2 class="title">What Texas homeowners say</h2>'
-      f'<p class="lead">{len(revs)} reviews from customers across {len({r["slug"] for r in revs})} '
+      f'<p class="lead">{len(revs_all)} reviews from customers across {len({r["slug"] for r in revs_all})} '
       'Texas cities, straight from our Google profiles.</p>'
       '</div>'
       '<div class="rv-wrap">'
       '<button class="rv-nav rv-prev" type="button" aria-label="Previous reviews">'
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
       'stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>'
-      f'<div class="rv-track" tabindex="0" role="region" aria-label="Customer reviews">{cards}</div>'
+      f'<div class="rv-track" tabindex="0" role="region" aria-label="Customer reviews">{cards}'
+      '<article class="rv-card rv-more"><a href="/reviews">'
+      f'Read all {len(revs_all)} reviews <span class="arw">&rarr;</span></a></article></div>'
       '<button class="rv-nav rv-next" type="button" aria-label="More reviews">'
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
       'stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>'
       '</div>'
       '<div class="container center" style="margin-top:26px">'
+      f'<a class="btn btn-primary btn-lg" href="/reviews">Read all {len(revs_all)} reviews</a> '
       '<a class="btn btn-secondary btn-lg" href="/areas-we-serve">Find your local team</a></div>'
       '<script>(function(){'
       'var w=document.querySelector(".rv-section");if(!w)return;'

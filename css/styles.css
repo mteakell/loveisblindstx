@@ -1388,3 +1388,11 @@ a.map-gbp:hover{color:var(--pop-deep)}
   font-size:18px;color:var(--ink-display)}
 .rvh-city .sml{color:var(--ink-muted);font-size:13px;font-weight:600}
 .rvh-city .btn-link{font-size:13.5px}
+
+/* review slider end card: the road to /reviews */
+.rv-card.rv-more{display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--lead);border-color:var(--lead)}
+.rv-card.rv-more a{color:#fff;font-family:var(--font-display);font-weight:800;font-size:18px;
+  line-height:1.4;padding:20px}
+.rv-card.rv-more a .arw{display:inline-block;transition:transform .2s var(--ease)}
+.rv-card.rv-more a:hover .arw{transform:translateX(5px)}
