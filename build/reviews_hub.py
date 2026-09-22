@@ -70,8 +70,8 @@ def main():
 
     nodes = X.BASE() + [S.webpage(URL, TITLE, DESC),
                         S.breadcrumbs([("Home", "/"), ("Reviews", URL)])]
-    body = f'''<section class="phero"><picture><img src="/images/lib/shutters-shutters-151-jpg.webp"
-  data-alt-final alt="Plantation shutters installed by Love Is Blinds in a bright Texas living room"
+    body = f'''<section class="phero"><picture><img src="/images/lib/shutters-shutters-love-15-jpg.webp"
+  data-alt-final alt="Plantation shutters on tall dining room windows in a Texas family home, installed by Love Is Blinds"
   width="2000" height="1500" fetchpriority="high"></picture>
   <div class="container"><div class="phero-copy">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span class="sep">&rsaquo;</span>Reviews</nav>
@@ -97,7 +97,8 @@ def main():
     <a class="btn btn-secondary btn-lg" href="tel:+18665182999">Call (866) 518-2999</a>
   </div>
 </div></section>'''
-    open("reviews.html", "w").write(X.shell(URL, TITLE, DESC, nodes, body))
+    open("reviews.html", "w").write(X.shell(URL, TITLE, DESC, nodes, body,
+        img="/images/lib/shutters-shutters-love-15-jpg.webp"))
     print(f"reviews.html: {TOTAL} badge reviews, {sum(len(v) for t in by_terr.values() for v in t.values())} quotes on page, avg {AVG}")
 
 

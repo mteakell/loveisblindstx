@@ -97,8 +97,8 @@ def main():
                         S.breadcrumbs([("Home", "/"), ("Gallery", url)]), gallery_node]
     body = (
       '<section class="phero"><picture>'
-      '<img src="/images/lib/shutters-shutters-151-jpg.webp" data-alt-final '
-      'alt="Open plantation shutters over a lakeside view, installed by Love Is Blinds" '
+      '<img src="/images/lib/shutters-shutters-love-01-jpg.webp" data-alt-final '
+      'alt="Plantation shutters in a vaulted Texas living room with a stone fireplace, installed by Love Is Blinds" '
       'width="2000" height="1500" fetchpriority="high"></picture>'
       '<div class="container"><div class="phero-copy">'
       '<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
@@ -141,7 +141,7 @@ def main():
       'document.querySelector(".gclose").addEventListener("click",function(){dlg.close();});'
       '})();</script>')
     open("gallery.html", "w").write(X.shell(url, title, desc, nodes, body,
-                                           img="/images/lib/shutters-shutters-151-jpg.webp"))
+                                           img="/images/lib/shutters-shutters-love-01-jpg.webp"))
     print(f"gallery: {len(shots)} unique photos, {len([k for k in counts if counts[k]])} families")
 
 

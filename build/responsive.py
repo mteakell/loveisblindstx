@@ -53,8 +53,16 @@ def sweep():
         def add(m):
             nonlocal n_tags
             tag, name = m.group(0), m.group(1)
-            if "srcset=" in tag or name.startswith("_unused"):
+            if name.startswith("_unused"):
                 return tag
+            if "srcset=" in tag:
+                # a hero override may have swapped src after the srcset was
+                # stamped; a srcset naming a different file is stale — strip
+                # it and rebuild from the current src
+                if f"/{name} " in re.search(r'srcset="([^"]*)"', tag).group(1):
+                    return tag
+                tag = re.sub(r' srcset="[^"]*"', "", tag)
+                tag = re.sub(r' sizes="[^"]*"', "", tag)
             cands = [(w, f"{OUT}/{w}/{name}") for w in WIDTHS]
             cands = [(w, p) for w, p in cands if os.path.exists(p)]
             if not cands:

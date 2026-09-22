@@ -51,6 +51,9 @@ def shell(url, title, desc, nodes, body, img="/images/lib/shutters-shutters-060-
 {FOOT}'''
 
 HERO = "/images/lib/shutters-shutters-060-jpg.webp"
+# Every main page gets its own hero; these two used to share HERO with /areas-we-serve
+HERO_CHECKLIST = "/images/lib/smart-drapes-smart-drapes-love-02-jpg.webp"
+HERO_BLOG = "/images/lib/shutters-shutters-love-08-jpg.webp"
 SHUTTER_CITY = json.load(open("data/shutter-cities.json"))["cities"]
 TICK = ('<span class="tick"><svg viewBox="0 0 24 24">'
         '<path d="m20 6-11 11-5-5"/></svg></span>')
@@ -340,7 +343,7 @@ def checklist():
         '</div></div></section>'
         f'<script>{js}</script>')
 
-    body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
+    body = (f'<section class="phero"><picture><img src="' + HERO_CHECKLIST + '" data-alt-final alt="Custom drapes framing a lake view in a Texas bedroom, installed by Love Is Blinds" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Design Checklist</span></nav>'
             f'<h1 class="title">Plan Your Windows in Ten Minutes</h1>'
@@ -357,7 +360,7 @@ def checklist():
             f'<div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>'
             f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a></div>'
             f'</div></section>')
-    open("design-checklist.html", "w").write(shell(url, title, desc, nodes, body))
+    open("design-checklist.html", "w").write(shell(url, title, desc, nodes, body, img=HERO_CHECKLIST))
 
 
 # ------------------------------------------------- meet-the-team owner cards
@@ -439,7 +442,7 @@ def blog_index():
                           "datePublished": p.get("date") or "2024-01-01"} for p in idx]}
     nodes = BASE() + [S.webpage(url, title, desc, about=S.ORGID),
                       S.breadcrumbs([("Home", "/"), ("Blog", url)]), blog]
-    body = (f'<section class="phero"><picture><img src="' + HERO + '" alt="Custom window treatments by Love Is Blinds Texas" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
+    body = (f'<section class="phero"><picture><img src="' + HERO_BLOG + '" data-alt-final alt="Cafe plantation shutters around a sunny Texas breakfast nook, installed by Love Is Blinds" fetchpriority="high"></picture><div class="container"><div class="phero-copy">'
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Blog</span></nav>'
             f'<h1 class="title">Window Treatment Guides</h1>'
@@ -454,7 +457,7 @@ def blog_index():
 <a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
 <a class="btn btn-secondary btn-lg" href="tel:+18665182999">Call (866) 518-2999</a>
 </div></div></section>'''
-    open("blog/index.html", "w").write(shell(url, title, desc, nodes, body))
+    open("blog/index.html", "w").write(shell(url, title, desc, nodes, body, img=HERO_BLOG))
     return len(idx)
 
 # ---------------------------------------------------------------- /vodyssey

@@ -383,6 +383,11 @@ HERO_OVERRIDE = {
    "Exterior shades across the wrap porch of a white Texas farmhouse"),
  "brands.html": _h("shutters-shutters-156",
    "Plantation shutters framing a lake view in a Texas living room"),
+ # main-page heroes de-duplicated: about keeps 137, meet-the-team keeps home-hero
+ "how-it-works.html": _h("roller-shades-roller-shades-love-21",
+   "Custom shades in a styled Texas sunroom, installed by Love Is Blinds"),
+ "schedule-now.html": _h("roller-shades-roller-shades-love-10",
+   "Light-filtering shades flanking a modern fireplace in a Texas living room"),
 }
 
 
@@ -394,11 +399,16 @@ def apply_hero_overrides():
         m = re.search(r'(<section class="phero[^"]*">.*?<img[^>]*src=")([^"]+)("[^>]*alt=")([^"]*)(")', s, re.S)
         if not m:
             continue
-        if m.group(2) == src:
-            continue
-        s = s[:m.start(2)] + src + s[m.end(2):m.start(4)] + alt + s[m.end(4):]
+        before = s
+        if m.group(2) != src:
+            s = s[:m.start(2)] + src + s[m.end(2):m.start(4)] + alt + s[m.end(4):]
         # kill any stale <source> above the img
         s = re.sub(r'(<section class="phero[^"]*">\s*<picture>)<source[^>]*>', r'\1', s, count=1)
+        # og:image should show the same photo the page leads with
+        s = re.sub(r'(property="og:image" content="https?://[^"]*?)/images/[^"]*(")',
+                   r'\1' + src + r'\2', s, count=1)
+        if s == before:
+            continue
         open(f, "w").write(s)
         print(f"hero override applied: {f} -> {src.split('/')[-1]}")
 
