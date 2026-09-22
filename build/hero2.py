@@ -6,11 +6,11 @@ mobile is the majority of clicks. Approved replacement: landscape photo with
 an overlapping cream card, the existing consultation form beside it in solid
 site navy, and the landscape shutter photo in the neighbors section.
 
-The hero rebuilds from constants on every run (the production form is
-extracted from whichever hero markup is present and re-seated verbatim), so
-changing HERO here is a one-line edit. /hero-options renders every
-shortlisted photo in the real hero layout, noindexed, so Dustin can compare
-on his phone at a link on the real domain.
+Decision so far: desktop keeps the original full-bleed hero; only the
+MOBILE layout changes, to a white overlapping card (tan rejected), applied
+by CSS scoped to the phero-mob-card class this pass stamps on the homepage
+hero. /hero-options renders every shortlisted photo in the card layout,
+noindexed, so Dustin can compare on his phone at a link on the real domain.
 """
 import html, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
@@ -80,29 +80,17 @@ def hero_section(form_html):
             f'<div id="consultation">{form_html}</div></div></section>')
 
 
-def build_preview():
-    """The live homepage stays as built; the approved changes render at
-    /home-preview (noindexed) until Dustin signs off on the preview."""
-    s = open("index.html").read()
-    m = re.search(r'<section class="phero has-form">.*?</section>', s, re.S)
-    if not m:
-        print("home preview: source hero not found"); return
-    form = re.search(r'<form class="form-card".*?</form>', m.group(0), re.S)
-    if not form:
-        print("home preview: production form not found, aborting"); return
-    s = s[:m.start()] + hero_section(form.group(0)) + s[m.end():]
-    # approved landscape shutter photo in the neighbors section
-    s = re.sub(
-        r'<img class="owner-photo[^"]*"[^>]*>',
-        f'<img class="owner-photo approved-shutter-photo" src="{_src(SHUTTER[0])}" '
-        f'data-alt-final alt="{e(SHUTTER[1])}" loading="lazy" width="2000" height="1500">',
-        s, count=1)
-    s = s.replace('<meta charset="UTF-8">',
-                  '<meta charset="UTF-8">\n<meta name="robots" content="noindex,nofollow">', 1)
-    s = re.sub(r'<link rel="canonical" href="[^"]*">',
-               '<link rel="canonical" href="https://www.loveisblindstx.com/home-preview">', s, count=1)
-    open("home-preview.html", "w").write(s)
-    print(f"home preview written ({HERO[0]} hero, shutter photo swapped)")
+def tag_home_hero():
+    """Mobile-only card layout hook. Desktop hero is untouched; the class
+    scopes the (max-width:880px) card styles to the homepage hero alone."""
+    t = open("index.html").read()
+    if "phero-mob-card" in t:
+        print("home hero: mobile-card class already present"); return
+    t2 = t.replace('<section class="phero has-form">',
+                   '<section class="phero has-form phero-mob-card">', 1)
+    if t2 != t:
+        open("index.html", "w").write(t2)
+        print("home hero: mobile-card class stamped")
 
 
 def options_page():
@@ -132,5 +120,5 @@ def options_page():
 
 
 if __name__ == "__main__":
-    build_preview()
+    tag_home_hero()
     options_page()

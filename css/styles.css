@@ -1412,7 +1412,7 @@ a.map-gbp:hover{color:var(--pop-deep)}
 .o2-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 .o2-badge{position:absolute;top:20px;left:20px;background:#fff;color:#3a4d5c;padding:9px 13px;
   border-radius:30px;font-size:10px;letter-spacing:.09em;font-weight:800;text-transform:uppercase}
-.o2-card{position:relative;margin:-50px 22px 0;background:#f5efe0;border-radius:14px;padding:30px;
+.o2-card{position:relative;margin:-50px 22px 0;background:#fff;border-radius:14px;padding:30px;
   box-shadow:0 16px 40px rgba(34,46,55,.03)}
 .o2-eyebrow{font-size:10px;letter-spacing:.14em;font-weight:800;text-transform:uppercase;color:#46535e}
 .o2-card h1{font-size:clamp(32px,3.5vw,48px);font-weight:800;letter-spacing:-.045em;line-height:1.08;
@@ -1462,3 +1462,26 @@ a.map-gbp:hover{color:var(--pop-deep)}
   border-bottom:2px solid var(--accent,#C77A3B);padding-bottom:8px;margin-bottom:6px}
 .ho-label span{font-size:.8rem;color:#67737C}
 .ho-solo{grid-template-columns:1fr;max-width:640px}
+
+/* ---- Homepage hero, mobile only: photo + overlapping white card ----
+   Desktop keeps the original full-bleed hero untouched. */
+@media (max-width:880px){
+  .phero-mob-card{min-height:0;display:block;background:#fff}
+  .phero-mob-card::after{display:none}
+  .phero-mob-card picture{display:block;position:relative;height:336px}
+  .phero-mob-card picture img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:center}
+  .phero-mob-card .container{padding-top:0;padding-bottom:34px}
+  .phero-mob-card .phero-copy{position:relative;z-index:2;background:#fff;margin:-43px 0 0;
+    border-radius:14px;padding:24px 22px;box-shadow:0 16px 40px rgba(34,46,55,.14)}
+  .phero-mob-card .eyebrow{color:var(--pop-deep,#E07A00);text-shadow:none}
+  .phero-mob-card .title{color:#2B3742;text-shadow:none;font-size:32px}
+  .phero-mob-card .sub{color:#46535E;text-shadow:none}
+  .phero-mob-card .btn-primary{background:var(--pop-deep,#E07A00);color:#fff}
+  .phero-mob-card .btn-primary:hover{background:#CC6E00;color:#fff;box-shadow:none}
+  .phero-mob-card .hero-trust{color:#46535E}
+  .phero-mob-card .form-card{margin-top:26px}
+}
+@media (max-width:360px){
+  .phero-mob-card .phero-copy{padding:22px 18px}
+  .phero-mob-card .title{font-size:29px}
+}

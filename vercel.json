@@ -1413,6 +1413,11 @@
    "source": "/what-types-of-roller-shades-are-best-in-sliding-doors",
    "destination": "/can-you-use-roller-shades-on-a-sliding-glass-door",
    "statusCode": 301
+  },
+  {
+   "source": "/home-preview",
+   "destination": "/",
+   "statusCode": 301
   }
  ]
 }
