@@ -70,7 +70,7 @@ def main():
 
     nodes = X.BASE() + [S.webpage(URL, TITLE, DESC),
                         S.breadcrumbs([("Home", "/"), ("Reviews", URL)])]
-    body = f'''<section class="phero"><picture><img src="/images/lib/shutters-shutters-love-15-jpg.webp"
+    body = f'''<section class="phero"><picture><img src="/images/lib/shutters-shutters-love-15-jpg.webp" style="object-position:50% 22%"
   data-alt-final alt="Plantation shutters on tall dining room windows in a Texas family home, installed by Love Is Blinds"
   width="2000" height="1500" fetchpriority="high"></picture>
   <div class="container"><div class="phero-copy">
