@@ -14,6 +14,34 @@ TAGS = [
  ('venbit',
   '<script defer src="https://venbit.com/m.js?s=vb_ae6a489f0305" '
   'data-site="vb_ae6a489f0305"></script>'),
+ # The Venbit AI site agent (chat / live-visitor view) is a separate product
+ # from the analytics tag above. The old Duda site lazy-loaded it on first
+ # interaction or 30s so it never hurts LCP; same pattern kept here.
+ ('venbit-agent',
+  '<script>(function(){var l=false;function f(){if(l)return;l=true;'
+  "var s=document.createElement('script');"
+  "s.src='https://www.venbit.ai/venbit-site-agent.js?id=site_073933e290';"
+  's.async=true;document.head.appendChild(s);}'
+  "['mousemove','touchstart','click','scroll'].forEach(function(e){"
+  'window.addEventListener(e,f,{once:true,passive:true});});'
+  'setTimeout(f,30000);})();</script>'),
+ # GA4 + GTM carried over from the old Duda site so measurement history
+ # continues in the same properties.
+ ('ga4',
+  '<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7R0VY8T52"></script>'
+  '<script>window.dataLayer=window.dataLayer||[];'
+  'function gtag(){dataLayer.push(arguments);}gtag(\'js\',new Date());'
+  'gtag(\'config\',\'G-G7R0VY8T52\');</script>'),
+ ('gtm',
+  "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':"
+  "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"
+  "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;"
+  "j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;"
+  "f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WCKH3TQ5');</script>"),
+ # CallRail dynamic number insertion, same company/script as the old site,
+ # so tracked numbers keep swapping in and call attribution survives the move.
+ ('callrail',
+  '<script defer src="https://cdn.callrail.com/companies/177791272/a1a94f3d60d5a5867e90/12/swap.js"></script>'),
  ('vercel-analytics',
   '<script defer src="/_vercel/insights/script.js"></script>'),
 ]
