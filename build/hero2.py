@@ -80,15 +80,16 @@ def hero_section(form_html):
             f'<div id="consultation">{form_html}</div></div></section>')
 
 
-def apply_home():
+def build_preview():
+    """The live homepage stays as built; the approved changes render at
+    /home-preview (noindexed) until Dustin signs off on the preview."""
     s = open("index.html").read()
-    m = (re.search(r'<section class="option-two-hero".*?</section>', s, re.S)
-         or re.search(r'<section class="phero has-form">.*?</section>', s, re.S))
+    m = re.search(r'<section class="phero has-form">.*?</section>', s, re.S)
     if not m:
-        print("home hero: no hero section found"); return
+        print("home preview: source hero not found"); return
     form = re.search(r'<form class="form-card".*?</form>', m.group(0), re.S)
     if not form:
-        print("home hero: production form not found, aborting"); return
+        print("home preview: production form not found, aborting"); return
     s = s[:m.start()] + hero_section(form.group(0)) + s[m.end():]
     # approved landscape shutter photo in the neighbors section
     s = re.sub(
@@ -96,8 +97,12 @@ def apply_home():
         f'<img class="owner-photo approved-shutter-photo" src="{_src(SHUTTER[0])}" '
         f'data-alt-final alt="{e(SHUTTER[1])}" loading="lazy" width="2000" height="1500">',
         s, count=1)
-    open("index.html", "w").write(s)
-    print(f"home hero: option-two applied ({HERO[0]}), shutter photo swapped")
+    s = s.replace('<meta charset="UTF-8">',
+                  '<meta charset="UTF-8">\n<meta name="robots" content="noindex,nofollow">', 1)
+    s = re.sub(r'<link rel="canonical" href="[^"]*">',
+               '<link rel="canonical" href="https://www.loveisblindstx.com/home-preview">', s, count=1)
+    open("home-preview.html", "w").write(s)
+    print(f"home preview written ({HERO[0]} hero, shutter photo swapped)")
 
 
 def options_page():
@@ -127,5 +132,5 @@ def options_page():
 
 
 if __name__ == "__main__":
-    apply_home()
+    build_preview()
     options_page()
