@@ -117,10 +117,15 @@ def options_page():
                 '</head><body style="margin:0;background:#fff">'
                 f'<main>{page}</main></body></html>')
         open(f"hero-mob/{stem}.html", "w").write(mini)
+        # phones cannot render fixed-width iframes reliably (iOS expands
+        # them), but a phone IS the mobile viewport: render the hero inline
+        # there and it lays out natively. Desktop gets the 390px iframe rig.
+        inline = re.sub(r'<form class="form-card".*?</form>', "", page, flags=re.S)
         frames += (f'<div class="ho-item"><div class="ho-label"><strong>{e(label)}</strong>'
                    f'<span>{e(room)}</span></div>'
                    f'<div class="ho-phone"><iframe src="/hero-mob/{stem}" title="{e(label)}" '
-                   f'loading="lazy" width="390" height="740"></iframe></div></div>')
+                   f'loading="lazy" width="390" height="740"></iframe></div>'
+                   f'<div class="ho-inline">{inline}</div></div>')
 
     url = "/hero-options"
     title = "Homepage Hero Options"
