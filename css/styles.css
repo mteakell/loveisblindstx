@@ -1403,3 +1403,62 @@ a.map-gbp:hover{color:var(--pop-deep)}
 .ir-band .ir-kicker{font-size:.78rem;font-weight:700;text-transform:uppercase;
   letter-spacing:.08em;margin:0 0 10px;color:var(--ink-soft,#5b6672)}
 .ir-band .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+
+/* ---- Approved Option 2 homepage hero (LIB-TX handoff, Sep 2026) ---- */
+.option-two-hero{padding:36px 0 40px;background:#fff}
+.option-two-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.o2-story{min-width:0}
+.o2-photo{position:relative;border-radius:14px;overflow:hidden}
+.o2-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.o2-badge{position:absolute;top:20px;left:20px;background:#fff;color:#3a4d5c;padding:9px 13px;
+  border-radius:30px;font-size:10px;letter-spacing:.09em;font-weight:800;text-transform:uppercase}
+.o2-card{position:relative;margin:-50px 22px 0;background:#f5efe0;border-radius:14px;padding:30px;
+  box-shadow:0 16px 40px rgba(34,46,55,.03)}
+.o2-eyebrow{font-size:10px;letter-spacing:.14em;font-weight:800;text-transform:uppercase;color:#46535e}
+.o2-card h1{font-size:clamp(32px,3.5vw,48px);font-weight:800;letter-spacing:-.045em;line-height:1.08;
+  margin:16px 0;color:#2b3742}
+.o2-card p{font-size:15px;line-height:1.65;margin:0 0 22px;color:#46535e}
+.o2-cta{display:flex;align-items:center;justify-content:center;gap:24px;background:#222e37;color:#fff;
+  border-radius:9px;padding:16px 12px;font-size:13px;font-weight:800;text-decoration:none}
+.o2-cta:hover{background:#3a4d5c;color:#fff}
+.o2-cta span{color:#f88800;font-size:26px;line-height:1}
+.o2-fine{font-size:10px;text-align:center;color:#67737c;margin-top:12px}
+.o2-proof{display:flex;justify-content:center;gap:10px;align-items:center;padding:22px 0 0;
+  font-size:11px;color:#46535e}
+.o2-proof span{color:#f88800;letter-spacing:1px}
+.option-two-hero #consultation{scroll-margin-top:110px}
+@media(max-width:880px){
+  .option-two-hero{padding:0 0 36px}
+  .option-two-grid{display:block;padding:0!important;width:100%;max-width:none}
+  .o2-photo{border-radius:0}
+  .o2-photo img{aspect-ratio:auto;height:336px;object-position:center}
+  .o2-badge{top:18px;left:20px}
+  .o2-card{margin:-43px 20px 0;padding:24px 22px;border-radius:14px}
+  .o2-card h1{font-size:32px}
+  .o2-card p{font-size:14px;margin-bottom:20px}
+  .o2-eyebrow{font-size:9px}
+  .o2-cta{font-size:12px}
+  .o2-proof{padding:20px 0 24px}
+  .option-two-hero #consultation{margin:0 20px}
+  .option-two-hero .form-card{padding:32px}
+}
+@media(max-width:360px){
+  .o2-card{margin-left:14px;margin-right:14px;padding:22px 18px}
+  .o2-card h1{font-size:29px}
+  .option-two-hero #consultation{margin:0 14px}
+  .option-two-hero .form-card{padding:24px}
+}
+/* Approved form color: solid site navy, no blur */
+.option-two-hero .form-card{background:#3A4D5C;border:1px solid #3A4D5C;color:#FFFFFF;
+  box-shadow:0 6px 20px rgba(34,46,55,.04);-webkit-backdrop-filter:none;backdrop-filter:none}
+.option-two-hero .form-card h3,.option-two-hero .form-card label{color:#FFFFFF}
+.option-two-hero .form-card .sml,.option-two-hero .form-card .legal{color:#E4EAF0}
+.option-two-hero .form-card input,.option-two-hero .form-card select{background:#FFFFFF;color:#2B3742}
+/* Approved landscape shutter photo, scoped to the neighbors section swap */
+.split .media img.approved-shutter-photo{width:100%;height:auto;max-height:none;aspect-ratio:4/3;object-fit:contain}
+/* /hero-options review page */
+.ho-item{margin:34px 0}
+.ho-label{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;
+  border-bottom:2px solid var(--accent,#C77A3B);padding-bottom:8px;margin-bottom:6px}
+.ho-label span{font-size:.8rem;color:#67737C}
+.ho-solo{grid-template-columns:1fr;max-width:640px}

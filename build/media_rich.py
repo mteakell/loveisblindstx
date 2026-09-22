@@ -388,6 +388,10 @@ HERO_OVERRIDE = {
    "Custom shades in a styled Texas sunroom, installed by Love Is Blinds"),
  "schedule-now.html": _h("roller-shades-roller-shades-love-10",
    "Light-filtering shades flanking a modern fireplace in a Texas living room"),
+ # the approved homepage hero photo took over home-hero-shades-1, so
+ # meet-the-team gets its own shot to keep every main-page hero unique
+ "meet-the-team.html": _h("shutters-shutters-love-04",
+   "Plantation shutters and black French doors in a Texas sitting room"),
 }
 
 

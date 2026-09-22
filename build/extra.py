@@ -394,9 +394,9 @@ def team_cards():
     # One bright landscape shot, no stale source element.
     s = re.sub(
         r'<picture><source[^>]*>\s*<img[^>]*fetchpriority="high"[^>]*>',
-        '<picture><img src="/images/lib/roller-shades-home-hero-shades-1-jpeg.webp" '
-        'data-alt-final alt="A Texas living room with custom roller shades by Love Is Blinds" '
-        'width="2000" height="1500" fetchpriority="high">',
+        '<picture><img src="/images/lib/shutters-shutters-love-04-jpg.webp" '
+        'data-alt-final alt="Plantation shutters and black French doors in a Texas sitting room" '
+        'width="1200" height="900" fetchpriority="high">',
         s, count=1)
     s = re.sub(r'<section class="section bg-cream-tint"><div class="container center">'
                r'<h2 class="title">(?:The three Texas teams|Meet Your Local Owner Operators)'
@@ -409,7 +409,7 @@ def team_cards():
                   '<div class="container" style="max-width:880px"> <div class="body reveal"> '
                   '<h2 class="title">Meet the Owner-Operators</h2>')
     s = s.replace("/images/lib/shutters-shutters-005-jpg.webp",
-                  "/images/lib/roller-shades-home-hero-shades-1-jpeg.webp")
+                  "/images/lib/shutters-shutters-love-04-jpg.webp")
     # old Georgia-site hero lead: this is three owner-operators, not a couple
     s = s.replace("A husband-and-wife team that handles your project personally, "
                   "from first hello to final install.",
