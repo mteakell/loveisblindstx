@@ -300,7 +300,9 @@ def faqs_for(c):
       (f"Do you install exterior patio shades in {c['label']}?",
        f"Yes. Exterior patio shades, outdoor roller shades and motorized patio screens are a large "
        f"part of what we do in {c['label']}, because shading the outside of the glass is far more "
-       f"effective against Texas afternoon sun than an interior blind on the same opening."),
+       f"effective against Texas afternoon sun than an interior blind on the same opening. As a "
+       f"patio enclosure supplier, we also design and quote full patio enclosures at the same "
+       f"free in-home visit."),
       ("What if a treatment does not fit correctly?",
        "We measured it, so we correct it. If an opening is wrong against the approved measurements, "
        "we remake it and reinstall at no cost to you."),
