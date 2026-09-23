@@ -45,6 +45,8 @@ def main():
         if k:
             out.append(s[pos:])
             s = "".join(out)
+        if "data-hp-guard" not in s and "</body>" in s:
+            s = s.replace("</body>", GUARD + "</body>", 1)
         if s != orig:
             open(f, "w").write(s)
             n += k; files += 1
