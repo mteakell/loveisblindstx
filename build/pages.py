@@ -304,6 +304,13 @@ def faqs_for(c):
       ("What if a treatment does not fit correctly?",
        "We measured it, so we correct it. If an opening is wrong against the approved measurements, "
        "we remake it and reinstall at no cost to you."),
+      # carries the exact GBP category phrases ("blinds shop", "window
+      # treatment store") the profiles rank under, which the pages never
+      # said anywhere; an FAQ keeps it natural instead of stuffing an H1
+      (f"Are you a blinds shop or a window treatment store in {c['label']}?",
+       f"Both, minus the storefront. We are the window treatment store that comes to you: the "
+       f"blinds shop showroom arrives at your {c['label']} home as a case of real samples, and "
+       f"everything from measuring to installation happens at your windows, not ours."),
     ]
     if c.get("street"):
         out.append((f"Where are you located near {c['label']}?",
