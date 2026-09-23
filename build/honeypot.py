@@ -13,6 +13,15 @@ import glob, os, re
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FIELD = ('<input type="text" name="_gotcha" class="hp" tabindex="-1" '
          'autocomplete="off" aria-hidden="true">')
+
+# Browsers and password managers sometimes autofill hidden fields, and
+# Formspree marks any submission with a filled _gotcha as spam, so an
+# autofilled honeypot turns a real lead into spam. On a human submit
+# (JS running, real submit event) the honeypot is cleared; direct-POST
+# bots never execute this and still get caught.
+GUARD = ('<script data-hp-guard>document.addEventListener("submit",function(ev){'
+         'var f=ev.target&&ev.target.querySelector&&ev.target.querySelector'
+         '(\'input[name="_gotcha"]\');if(f)f.value="";},true);</script>')
 pat = re.compile(r'(<form\b[^>]*formspree\.io[^>]*>)')
 
 def main():
