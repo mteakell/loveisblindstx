@@ -135,6 +135,7 @@ def page(prod, slug):
         '<label>Name<input type="text" name="name" required autocomplete="name"></label>'
         '<label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>'
         '<label>Email<input type="email" name="email" required autocomplete="email"></label>'
+        '<label>ZIP code<input type="text" name="zip" required inputmode="numeric" pattern="\\d{5}(-\\d{4})?" autocomplete="postal-code"></label>'
         '<label>Timeline<select name="timeline"><option>No deadline yet</option>'
         '<option>As soon as possible</option><option>Within a month</option>'
         '<option>1 to 3 months</option></select></label>'

@@ -324,6 +324,7 @@ def checklist():
         '<label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>'
         '<label>Email<input type="email" name="email" required autocomplete="email"></label>'
         '<label>City<input type="text" name="city" required autocomplete="address-level2"></label>'
+        '<label>ZIP code<input type="text" name="zip" required inputmode="numeric" pattern="\\d{5}(-\\d{4})?" autocomplete="postal-code"></label>'
         '<label>How did you hear about us?<input type="text" name="hear_about"></label>'
         '<label>Referral name (if any)<input type="text" name="referral"></label>'
         '</div>'

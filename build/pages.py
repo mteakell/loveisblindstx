@@ -619,6 +619,7 @@ def body_block(c, n_reviews=8):
         '<label>Name<input type="text" name="name" required autocomplete="name"></label>'
         '<label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>'
         '<label>Email<input type="email" name="email" required autocomplete="email"></label>'
+        '<label>ZIP code<input type="text" name="zip" required inputmode="numeric" pattern="\\d{5}(-\\d{4})?" autocomplete="postal-code"></label>'
         '<label>What are you considering?<select name="considering">'
         '<option>Not sure yet</option><option>Blinds</option><option>Shades</option>'
         '<option>Plantation shutters</option><option>Exterior patio shades</option>'
