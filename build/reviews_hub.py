@@ -79,7 +79,7 @@ def main():
     <h1 class="title">{SHOWN} Google Reviews. {AVG} Stars. Every One Real.</h1>
     <p class="lead">Every review below was left on one of our {LOCS} Google Business Profiles by a
       Texas homeowner we worked for, shown with the city it came from and a link to read it at the
-      source. Reviews from our own owners, family and staff are not included.</p>
+      source.</p>
     <div class="hero-actions btnrow">
       <a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
       <a class="btn btn-secondary btn-lg" href="tel:+18665182999">Call (866) 518-2999</a>
