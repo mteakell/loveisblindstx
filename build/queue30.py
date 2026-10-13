@@ -769,6 +769,12 @@ post("cafe-shutters-half-height-charm",
 
 # ------------------------------------------------------------- render queue
 def main():
+    # Queued posts are now edited and rescheduled by build/queue_restart.py.
+    # Re-rendering from here would undo those fixes (and queue30 would reset
+    # every entry to unpublished), so refuse once the queue is live.
+    if os.path.exists("data/post-queue.json") and any(
+            p.get("published") for p in json.load(open("data/post-queue.json"))):
+        sys.exit("queue is live: edit build/queue_restart.py and run it instead")
     import datetime
     start = datetime.date(2026, 9, 6)
     manifest = []
