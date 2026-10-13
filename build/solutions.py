@@ -393,6 +393,123 @@ dict(
 ]
 
 
+
+# ----------------------------------------------------- depth: real content
+# Reviews: verbatim Google reviews whose text is about the page's topic.
+# French doors has none that genuinely are, so it gets no review block
+# rather than a forced one. Tall windows uses motorized-shade reviews,
+# labelled as such, since no review mentions tall windows directly.
+import json as _json
+_ALL = _json.load(open("data/reviews.json"))
+# Only quote people who reviewed a single profile. 102 of 373 reviews come
+# from names that appear on 2+ profiles, including an owner's name; until
+# the owners identify family/staff, multi-profile reviewers are left out.
+_CITIES_BY = {}
+for _r in _ALL:
+    _CITIES_BY.setdefault((_r.get("name") or "").strip().lower(), set()).add(_r.get("city"))
+_REVS = [r for r in _ALL if float(r.get("rating", 5)) >= 4
+         and len(_CITIES_BY[(r.get("name") or "").strip().lower()]) == 1]
+REVIEW_TOPICS = {
+ "sliding-glass-doors": (r"sliding (glass )?doors?|slider|back door|patio door",
+                         "What homeowners say about their sliding door shades"),
+ "arched-and-specialty-windows": (r"\barch(ed|es)?\b|bay windows?|angled|specialty window|odd[- ]shaped|transom",
+                                  "What homeowners say about their specialty windows"),
+ "tall-and-two-story-windows": (r"motoriz", "What homeowners say about their motorized shades"),
+ "child-and-pet-safe": (r"\bdogs?\b|\bpets?\b|\bkids?\b|\bchild(ren)?\b|grandkids|cordless",
+                        "What homeowners with kids and pets say"),
+ "heat-and-glare": (r"\bglare\b|\bsolar\b|\bheat\b|\bsun ?block|\bsunlight\b|afternoon sun|\bcooler\b",
+                    "What homeowners say about sun and glare"),
+}
+
+def _pick_reviews(slug, n=4):
+    if slug not in REVIEW_TOPICS:
+        return []
+    pat = REVIEW_TOPICS[slug][0]
+    out = []
+    for r in _REVS:
+        q = r.get("quote") or ""
+        w = len(q.split())
+        if not (12 <= w <= 100) or "  " in q:
+            continue
+        m = re.findall(pat, q.lower())
+        if m:
+            out.append((len(set(map(str, m))), -abs(w - 45), r))
+    out.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    picked, names = [], set()
+    for _, _, r in out:            # one review per person: some posted on two profiles
+        who = (r.get("name") or "").strip().lower()
+        if who in names:
+            continue
+        names.add(who)
+        picked.append(r)
+        if len(picked) == n:
+            break
+    return picked
+
+def _who(r):
+    parts = (r.get("name") or "").split()
+    name = parts[0] + (f" {parts[-1][0]}." if len(parts) > 1 else "") if parts else "Google reviewer"
+    return f"{name}, {r.get('city', 'Texas')}"
+
+def reviews_html(slug):
+    picks = _pick_reviews(slug)
+    if not picks:
+        return ""
+    cards = "".join(
+        f'<figure class="sol-review"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'
+        f'<blockquote>{e(r["quote"])}</blockquote><figcaption>{e(_who(r))}, TX</figcaption></figure>'
+        for r in picks)
+    return (f'<section class="section bg-cream-tint"><div class="container">'
+            f'<h2 class="title center">{e(REVIEW_TOPICS[slug][1])}</h2>'
+            f'<div class="sol-reviews">{cards}</div>'
+            f'<p class="lead center" style="margin:26px auto 0">Verbatim Google reviews. '
+            f'<a href="/reviews">Read all of our reviews</a>.</p></div></section>')
+
+# Installed photos, hand-picked and viewed; alt text describes the photo.
+G = {
+ "roller-love-01-after": ("roller-shades-roller-shades-love-01-after", "Roller shades lowered across tall windows in a modern Texas dining room"),
+ "roller-love-10": ("roller-shades-roller-shades-love-10", "Light-filtering shades on tall windows beside a modern fireplace"),
+ "roller-love-21": ("roller-shades-roller-shades-love-21", "Roller shades on a wall of windows in a Texas sitting room"),
+ "roller-love-45": ("roller-shades-roller-shades-love-45", "Roller shade over a kitchen sink window in a Texas home"),
+ "drapes-love-01": ("smart-drapes-smart-drapes-love-01", "Floor-to-ceiling drapery across a Texas bedroom wall"),
+ "drapes-love-02": ("smart-drapes-smart-drapes-love-02", "Custom drapes framing a lake view in a Texas bedroom"),
+ "shut-love-01": ("shutters-shutters-love-01", "Plantation shutters beneath angled transom windows in a vaulted Texas living room"),
+ "shut-love-08": ("shutters-shutters-love-08", "Plantation shutters around a bay breakfast nook with transom windows above"),
+ "shut-love-14": ("shutters-shutters-love-14", "White plantation shutters above a gray sectional in a bright living room"),
+ "shut-160": ("shutters-shutters-160", "Plantation shutters in an open Texas kitchen"),
+ "blinds-008": ("blinds-blinds-008", "Faux wood blinds on three windows of a shiplap wall with candle sconces"),
+}
+GALLERY = {
+ "sliding-glass-doors": ["roller-love-01-after", "roller-love-21", "drapes-love-01"],
+ "french-doors": ["shut-love-14", "shut-160", "shut-love-08"],
+ "arched-and-specialty-windows": ["shut-love-01", "shut-love-08"],
+ "tall-and-two-story-windows": ["roller-love-01-after", "roller-love-10", "drapes-love-02"],
+ "child-and-pet-safe": ["blinds-008", "shut-love-14", "shut-love-08"],
+ "heat-and-glare": ["roller-love-21", "roller-love-45", "roller-love-10"],
+}
+
+def gallery_html(slug):
+    items = "".join(f'<figure class="sol-shot"><picture>{img(*G[k])}</picture>'
+                    f'<figcaption>{e(G[k][1])}</figcaption></figure>' for k in GALLERY.get(slug, []))
+    if not items:
+        return ""
+    return (f'<section class="section"><div class="container">'
+            f'<h2 class="title center">Installed in Texas homes</h2>'
+            f'<p class="lead center" style="margin:0 auto 26px">Photos from projects measured and installed by our teams.</p>'
+            f'<div class="sol-gallery">{items}</div></div></section>')
+
+_CITIES = [c for c in _json.load(open("data/tx.json"))["cities"] if not c.get("unlisted")]
+
+def cities_html(p):
+    chips = "".join(f'<a class="sol-city" href="/{c["slug"]}">{e(c["label"])}</a>'
+                    for c in sorted(_CITIES, key=lambda c: c["label"]))
+    return (f'<section class="section"><div class="container" style="max-width:980px">'
+            f'<h2 class="title center">Find your local team</h2>'
+            f'<p class="lead center" style="margin:0 auto 22px">Every Love Is Blinds team measures and '
+            f'installs in person. Find your city for local reviews and the team that covers you.</p>'
+            f'<div class="sol-cities">{chips}</div></div></section>')
+
+
 def options_html(opts):
     out = ""
     for i, (name, url, stem, alt, para) in enumerate(opts):
@@ -424,7 +541,8 @@ def build_page(p):
             + '<section class="section"><div class="container" style="max-width:880px">'
               '<h2 class="title">What we check before recommending one</h2><ul class="sol-checks">'
             + "".join(f"<li>{c}</li>" for c in p["checks"]) + "</ul></div></section>"
-            + faq_block(p["faqs"]) + related(p["related"]) + CLOSE)
+            + gallery_html(p["slug"]) + reviews_html(p["slug"])
+            + faq_block(p["faqs"]) + related(p["related"]) + cities_html(p) + CLOSE)
     nodes = X.BASE() + [
         S.webpage(url, p["title"], p["desc"], primary=L + p["hero"][0] + "-jpg.webp"),
         S.breadcrumbs([("Home", "/"), ("Solutions", "/solutions"), (p["nav"], url)]),
