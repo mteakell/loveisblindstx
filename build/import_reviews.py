@@ -51,6 +51,8 @@ def main(paths):
     existing = json.load(open(REVIEWS))
     seen = {clean(x["quote"])[:80] for x in existing}
     added = skipped = unmapped = 0
+    # owners, family and staff never re-enter on a re-harvest
+    _excl = {n.lower() for n in json.load(open("data/review-exclusions.json"))["names"]}
     for p in paths:
         for r in rows_from(p):
             pid = r.get("place_id")
@@ -58,6 +60,8 @@ def main(paths):
                 unmapped += 1; continue
             text = clean(r.get("review_text"))
             if len(text) < 40:                      # star-only, nothing to quote
+                skipped += 1; continue
+            if short_name(r.get("author_title")).strip().lower() in _excl:
                 skipped += 1; continue
             if text[:80] in seen:
                 skipped += 1; continue

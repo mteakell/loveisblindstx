@@ -23,6 +23,7 @@ AVG = round(sum(p["rating"] * p["reviews"] for p in RATINGS if p["rating"]) /
             max(1, sum(p["reviews"] for p in RATINGS if p["rating"])), 1)
 REVIEWS = [r for r in json.load(open("data/reviews.json")) if r.get("rating", 5) >= 4]
 CITIES = {c["slug"]: c for c in json.load(open("data/tx.json"))["cities"]}
+SHOWN = len(REVIEWS)   # the headline counts what the page shows, not Google's total
 
 URL = "/reviews"
 TITLE = f"Love Is Blinds Reviews | {AVG} Stars Across Texas"
@@ -75,10 +76,10 @@ def main():
   width="2000" height="1500" fetchpriority="high"></picture>
   <div class="container"><div class="phero-copy">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span class="sep">&rsaquo;</span>Reviews</nav>
-    <h1 class="title">{TOTAL} Google Reviews. {AVG} Stars. Every One Real.</h1>
+    <h1 class="title">{SHOWN} Google Reviews. {AVG} Stars. Every One Real.</h1>
     <p class="lead">Every review below was left on one of our {LOCS} Google Business Profiles by a
       Texas homeowner we worked for, shown with the city it came from and a link to read it at the
-      source. No cherry-picked testimonials page: this is the whole record.</p>
+      source. Reviews from our own owners, family and staff are not included.</p>
     <div class="hero-actions btnrow">
       <a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
       <a class="btn btn-secondary btn-lg" href="tel:+18665182999">Call (866) 518-2999</a>
