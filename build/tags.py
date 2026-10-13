@@ -152,7 +152,8 @@ def mark_active_nav():
         p = p[:-6] if p.endswith("/index") else p
         if p in ("index", ""): return "/"
         if p.startswith("products/") or p in ("products", "brands"): return "/products"
-        if p.startswith("services/") or p == "services": return "/services"
+        if p.startswith(("services/", "solutions")) or p in ("services", "installation-standards"):
+            return "/services"
         if p == "gallery": return "/gallery"
         if p in ("areas-we-serve",) or p in cities: return "/areas-we-serve"
         if p in ("about", "meet-the-team", "how-it-works", "faqs", "design-checklist", "reviews") or p.startswith("team/") or p.startswith("meet-the-team/"):

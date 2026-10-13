@@ -404,7 +404,9 @@ def apply_hero_overrides():
         if not m:
             continue
         before = s
-        if m.group(2) != src:
+        # the override owns the alt too: a src that was already right kept
+        # whatever alt altfix had guessed from the filename
+        if m.group(2) != src or m.group(4) != alt:
             s = s[:m.start(2)] + src + s[m.end(2):m.start(4)] + alt + s[m.end(4):]
         # kill any stale <source> above the img
         s = re.sub(r'(<section class="phero[^"]*">\s*<picture>)<source[^>]*>', r'\1', s, count=1)
