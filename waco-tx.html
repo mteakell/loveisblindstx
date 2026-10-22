@@ -481,7 +481,7 @@
 </header>
 <main>
 <section class="phero">
-  <video autoplay muted loop playsinline preload="metadata" poster="/images/lib/shutters-shutters-151-jpg.webp" aria-label="Love Is Blinds installations across Texas"><source src="/images/video/lib-texas-lake.mp4" type="video/mp4"></video>
+  <video data-lazy-video muted loop playsinline poster="/images/lib/shutters-shutters-151-jpg.webp" aria-label="Love Is Blinds installations across Texas" preload="none"><source data-src="/images/video/lib-texas-lake.mp4" type="video/mp4"></video>
   <div class="container">
     <div class="phero-copy">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/areas-we-serve">Service Areas</a><span class="sep">&rsaquo;</span>Waco, TX</nav>
@@ -753,5 +753,6 @@
 })();
 </script>
 
-<script data-hp-guard>document.addEventListener("submit",function(ev){var f=ev.target&&ev.target.querySelector&&ev.target.querySelector('input[name="_gotcha"]');if(f)f.value="";},true);</script></body>
+<script data-hp-guard>document.addEventListener("submit",function(ev){var f=ev.target&&ev.target.querySelector&&ev.target.querySelector('input[name="_gotcha"]');if(f)f.value="";},true);</script><script data-lazy-video-loader>(function(){var v=document.querySelectorAll("video[data-lazy-video]");if(!v.length)return;if(matchMedia("(prefers-reduced-motion: reduce)").matches||(navigator.connection&&navigator.connection.saveData))return;function go(x){if(x.dataset.loaded)return;x.dataset.loaded=1;x.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});x.load();var p=x.play();if(p&&p.catch)p.catch(function(){})}function start(){if(!("IntersectionObserver" in window)){v.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:"200px"});v.forEach(function(x){io.observe(x)})}if(document.readyState==="complete")start();else addEventListener("load",start)})();</script>
+</body>
 </html>

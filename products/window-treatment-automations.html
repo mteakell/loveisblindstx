@@ -160,7 +160,7 @@
 </section> 
 
 <!-- media:video -->
-<section class="ed-split vid-split bg-cream-tint"><div class="ed-inner"><div class="ed-media video-frame"><video autoplay muted loop playsinline preload="metadata" aria-label="A motorized roller shade lowering on command"><source src="/images/video/videos-jana-motorized-roller-down-a-mov.mp4" type="video/mp4"></video></div><div class="ed-card"><p class="ed-eyebrow">Watch it work</p><h2>See it move</h2><p>A motorized roller shade lowering on command. Motorized, measured to the opening and installed by the same team that quoted it.</p><a class="btn btn-primary" href="/schedule-now">Book your free consultation</a></div></div></section>
+<section class="ed-split vid-split bg-cream-tint"><div class="ed-inner"><div class="ed-media video-frame"><video data-lazy-video muted loop playsinline aria-label="A motorized roller shade lowering on command" preload="none"><source data-src="/images/video/videos-jana-motorized-roller-down-a-mov.mp4" type="video/mp4"></video></div><div class="ed-card"><p class="ed-eyebrow">Watch it work</p><h2>See it move</h2><p>A motorized roller shade lowering on command. Motorized, measured to the opening and installed by the same team that quoted it.</p><a class="btn btn-primary" href="/schedule-now">Book your free consultation</a></div></div></section>
 <!-- /media:video -->
 
 <!-- media:strip -->
@@ -176,5 +176,6 @@
 })();
 </script>
 
-<script data-hp-guard>document.addEventListener("submit",function(ev){var f=ev.target&&ev.target.querySelector&&ev.target.querySelector('input[name="_gotcha"]');if(f)f.value="";},true);</script></body>
+<script data-hp-guard>document.addEventListener("submit",function(ev){var f=ev.target&&ev.target.querySelector&&ev.target.querySelector('input[name="_gotcha"]');if(f)f.value="";},true);</script><script data-lazy-video-loader>(function(){var v=document.querySelectorAll("video[data-lazy-video]");if(!v.length)return;if(matchMedia("(prefers-reduced-motion: reduce)").matches||(navigator.connection&&navigator.connection.saveData))return;function go(x){if(x.dataset.loaded)return;x.dataset.loaded=1;x.querySelectorAll("source[data-src]").forEach(function(s){s.src=s.dataset.src});x.load();var p=x.play();if(p&&p.catch)p.catch(function(){})}function start(){if(!("IntersectionObserver" in window)){v.forEach(go);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go(e.target);io.unobserve(e.target)}})},{rootMargin:"200px"});v.forEach(function(x){io.observe(x)})}if(document.readyState==="complete")start();else addEventListener("load",start)})();</script>
+</body>
 </html>
