@@ -27,9 +27,9 @@ SHOWN = len(REVIEWS)   # the headline counts what the page shows, not Google's t
 
 URL = "/reviews"
 TITLE = f"Love Is Blinds Reviews | {AVG} Stars Across Texas"
-DESC = (f"{TOTAL} Google reviews across {LOCS} Texas locations, {AVG} stars. Read what "
+DESC = (f"{TOTAL} Google reviews across {LOCS} Texas locations, {AVG} stars. What "
         "homeowners in DFW, North Texas, Dallas, Waco, Austin and Cedar Creek Lake say "
-        "about Love Is Blinds.")
+        "about us.")
 ORDER = ["dfw", "north", "dallas", "cedarcreek", "waco", "austin", "tyler"]
 
 

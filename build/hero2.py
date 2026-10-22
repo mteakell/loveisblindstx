@@ -109,6 +109,21 @@ def tag_home_hero():
               'i=(i+1)%s.length;s[i].classList.add("on");},4000);})();</script>')
         h2 = h.replace(pic.group(0), slides) + js
         t = t.replace(h, h2, 1)
+    # Preload the first hero slide. It is the Largest Contentful Paint on
+    # both phone and desktop, and without a hint the browser only finds it
+    # after the stylesheet and font CSS arrive.
+    if 'rel="preload" as="image"' not in t:
+        first = re.search(r'<img class="hs-slide on" [^>]*>', t)
+        if first:
+            ss = re.search(r'srcset="([^"]+)"', first.group(0))
+            sz = re.search(r'sizes="([^"]+)"', first.group(0))
+            src = re.search(r'src="([^"]+)"', first.group(0)).group(1)
+            hint = (f'<link rel="preload" as="image" href="{src}"'
+                    + (f' imagesrcset="{ss.group(1)}"' if ss else "")
+                    + (f' imagesizes="{sz.group(1)}"' if sz else "")
+                    + ' fetchpriority="high">')
+            t = t.replace('<link rel="stylesheet" href="/css/styles.css', hint + "\n" +
+                          '<link rel="stylesheet" href="/css/styles.css', 1)
     open("index.html", "w").write(t)
     print("home hero: mobile carousel in place")
 

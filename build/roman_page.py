@@ -15,7 +15,7 @@ os.chdir(ROOT)
 
 URL = "/products/roman-shades"
 TITLE = "Roman Shades in Texas | Custom Built & Installed"
-DESC = ("Custom roman shades for Texas homes: flat, relaxed and banded folds, light filtering "
+DESC = ("Custom Roman shades: flat, relaxed and banded folds, light filtering "
         "to blackout, measured in your home and installed by the team that quoted them.")
 
 FAQS = [

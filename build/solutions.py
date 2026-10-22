@@ -77,8 +77,8 @@ dict(
   slug="sliding-glass-doors", nav="Sliding Glass Doors",
   title="Sliding Glass Door Blinds, Shades & Shutters | Love Is Blinds",
   h1="Window Treatments for Sliding Glass Doors", eyebrow="Solutions · Sliding doors",
-  desc=("What works on a sliding glass door: panel track shades, solar roller shades, plantation "
-        "shutters on a bypass track, and drapery. How to choose, measured and installed across Texas."),
+  desc=("What works on a sliding glass door: panel track shades, solar roller shades, "
+        "shutters on a bypass track, and drapery. Measured and installed across Texas."),
   hero=("panel-track-shades-panel-track-shades-002", "Panel track shades stacked open beside a Texas patio slider"),
   # sources: plantation-shutters-for-sliding-glass-doors, products/panel-track-shades, products/roller-shades
   intro=("A sliding door is wide, full height and used every day, so its treatment has to move the "
@@ -139,8 +139,8 @@ dict(
   slug="french-doors", nav="French Doors & Door Glass",
   title="French Door Blinds, Shades & Shutters | Love Is Blinds",
   h1="Window Treatments for French Doors and Door Glass", eyebrow="Solutions · French doors & sidelights",
-  desc=("What works on French doors, door glass and sidelights: door-mounted shutters, cellular and "
-        "roller shades, and drapery that clears the doors. Measured and installed across Texas."),
+  desc=("What works on French doors and sidelights: door-mounted shutters, cellular and "
+        "roller shades, and drapery that clears the doors. Installed across Texas."),
   hero=("shutters-shutters-love-04", "Plantation shutters beside black French doors in a Texas living room"),
   # sources: window-treatments-for-french-doors, window-treatments-for-sidelights-and-door-glass
   intro=("French doors and the glass beside a front door have one thing in common: the treatment is "
@@ -243,7 +243,7 @@ dict(
   title="Two-Story & Tall Window Treatments | Love Is Blinds",
   h1="Window Treatments for Tall and Two-Story Windows", eyebrow="Solutions · Tall windows",
   desc=("Motorized shades for two-story and tall windows, with shutters or cellular shades on the "
-        "lower tier. Measured and installed across Texas, on ladders where it takes ladders."),
+        "lower tier you can reach. Measured and installed across Texas."),
   hero=("roller-shades-roller-shades-love-31", "Roller shades on tall windows in an open Texas kitchen"),
   # sources: window-treatments-for-tall-two-story-windows (merged here, 301),  products/window-treatment-automations
   intro=("Two-story great rooms and tall glass bring in the most light in a house, and the most heat. "
@@ -587,7 +587,7 @@ def build_standards():
     url = "/installation-standards"
     title = "Installation Standards | Love Is Blinds Texas"
     desc = ("How every Love Is Blinds team in Texas measures and installs: on-site measuring, a written "
-            "quote that includes installation, and a remake at no cost if anything does not fit.")
+            "quote that includes install, and a free remake if it does not fit.")
     # sources: how-it-works (process + five guarantees, wording followed closely),
     # products/window-treatment-automations (motor pairing on install day)
     steps = [

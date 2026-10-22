@@ -37,7 +37,7 @@ def organization(biz):
     return {
         "@type": "Organization", "@id": ORGID, "name": biz["name"],
         "url": SITE + "/", "logo": {"@type": "ImageObject",
-            "url": SITE + "/images/lib-logo.png", "width": 512, "height": 512},
+            "url": SITE + "/images/lib-logo.png", "width": 1000, "height": 550},
         "email": biz["email"], "telephone": tel(biz["tel"]),
         "areaServed": {"@type": "AdministrativeArea", "name": "Texas"},
     }

@@ -165,7 +165,7 @@ will tell you that too.</p>'''
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{e(TITLE_TAG)} | Love Is Blinds</title>
+<title>{e(TITLE_TAG)}</title>
 <meta name="description" content="{e(DESC[:155])}">
 <link rel="canonical" href="{S.SITE}{url}">
 <link rel="icon" href="/favicon.ico" sizes="any">
