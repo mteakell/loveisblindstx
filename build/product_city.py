@@ -94,7 +94,10 @@ def page(prod, slug):
     url = f"/{spec['slug']}-{slug}"
     base = spec["title"].format(city=label)
     title = fit([f"{base} | Love Is Blinds", base, base.replace("Custom ", "")])
-    desc = spec["desc"].format(city=label, phone=ph)[:155]
+    desc = spec["desc"].format(city=label, phone=ph)
+    if len(desc) > 155:   # long labels (Corsicana (W 7th Ave)) cut the phone in half
+        desc = desc.replace(" Free measure.", "").replace(" Free in-home measure and installation.", "")
+    desc = desc if len(desc) <= 155 else desc[:155].rsplit(" ", 1)[0]
     near = P.nearby(c, 6)
     nearlinks = "".join(f'<li><a href="{o["url"]}">{e(o["label"])}, TX</a></li>' for o in near)
     # rotate which types lead, so no two city pages open with the same card

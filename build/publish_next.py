@@ -41,7 +41,7 @@ def main():
     sys.path.insert(0, "build")
     import extra
     extra.blog_index()
-    for mod in ("expand_posts", "crosslinks", "altfix", "dims", "tags", "sitemap", "search_index", "lazyvideo"):
+    for mod in ("expand_posts", "metafix", "crosslinks", "altfix", "dims", "tags", "sitemap", "search_index", "lazyvideo"):
         run(sys.executable, f"build/{mod}.py")
     # report, don't block: a dead link should not hold a post back a day
     lc = subprocess.run([sys.executable, "build/linkcheck.py"], capture_output=True, text=True)
