@@ -1418,6 +1418,11 @@
    "source": "/home-preview",
    "destination": "/",
    "statusCode": 301
+  },
+  {
+   "source": "/window-treatments-for-tall-two-story-windows",
+   "destination": "/solutions/tall-and-two-story-windows",
+   "statusCode": 301
   }
  ]
 }

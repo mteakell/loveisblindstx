@@ -41,8 +41,13 @@ def main():
     sys.path.insert(0, "build")
     import extra
     extra.blog_index()
-    for mod in ("crosslinks", "altfix", "dims", "tags", "sitemap"):
+    for mod in ("crosslinks", "altfix", "dims", "tags", "sitemap", "search_index"):
         run(sys.executable, f"build/{mod}.py")
+    # report, don't block: a dead link should not hold a post back a day
+    lc = subprocess.run([sys.executable, "build/linkcheck.py"], capture_output=True, text=True)
+    print(lc.stdout.strip().splitlines()[-1] if lc.stdout.strip() else "linkcheck: no output")
+    if lc.returncode:
+        print(lc.stdout)
     run("git", "add", "-A")
     titles = ", ".join(p2["slug"] for p2 in due)
     run("git", "commit", "-m",

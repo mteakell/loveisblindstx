@@ -22,7 +22,7 @@ Danny's per-city naming preference (Option 2) carries over: name only on
 waco-tx; other cities in his three territories use franchise attribution.
 One file so a correction never means resweeping generated pages.
 """
-NORTH = {'mckinney-tx', 'frisco-tx', 'celina-tx', 'sherman-tx', 'plano-tx'}
+NORTH = {'mckinney-tx', 'frisco-tx', 'celina-tx', 'sherman-tx', 'plano-tx', 'prosper-tx'}
 
 CEDARCREEK = {'gun-barrel-city-tx', 'kerens-tx', 'corsicana-tx',
               'w-7th-avenue-corsicana-tx'}
@@ -38,7 +38,7 @@ DALLAS = {'dallas-tx', 'highland-park-tx', 'irving-tx', 'las-colinas-tx'}
 TERRITORIES = {
  "north": {"key":"north","name":"North Texas","brand":"Love Is Blinds North Texas",
    "leads":["Jake Wade","Jonathan Arosemena"],
-   "blurb":"Sherman, Celina, Plano, McKinney, Frisco and the surrounding suburbs"},
+   "blurb":"Sherman, Celina, Prosper, Plano, McKinney, Frisco and the surrounding suburbs"},
  "cedarcreek": {"key":"cedarcreek","name":"Cedar Creek Lake",
    "brand":"Love Is Blinds at Cedar Creek Lake","leads":["Danny Rohweder"],
    "name_cities": False,

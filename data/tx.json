@@ -546,6 +546,20 @@
    "geo_source": "gbp"
   },
   {
+   "slug": "prosper-tx",
+   "label": "Prosper",
+   "url": "/prosper-tx",
+   "phone": "9728469683",
+   "street": "",
+   "locality": "Prosper",
+   "postal": "",
+   "lat": 33.2362,
+   "lng": -96.8011,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center"
+  },
+  {
    "slug": "richland-hills-tx",
    "label": "Richland Hills",
    "url": "/richland-hills-tx",

@@ -143,6 +143,31 @@ RELATED_FIX = {
    "/transform-your-home-with-stylish-plantation-shutters-the-ultimate-guide",
  "/top-10-dog-proof-window-blinds":
    "/top-10-dog-proof-window-blinds-durable-and-pet-friendly",
+ # slugs the queue posts were written against, mapped to the live posts (Oct 22)
+ "/how-to-measure-for-blinds-a-room-by-room-guide":
+   "/how-to-measure-for-blinds",
+ "/custom-window-treatment-solutions-for-every-texas-home":
+   "/custom-window-treatment-solutions-for-every-texan-home",
+ "/inside-mount-vs-outside-mount-which-should-you-choose":
+   "/inside-mount-vs-outside-mount-blinds",
+ "/how-to-choose-a-patio-shade-openness-factor":
+   "/how-to-choose-patio-shade-openness-factor",
+ "/window-treatments-for-home-offices-and-glare-control":
+   "/window-treatments-for-home-offices",
+ "/cellular-shades-vs-roller-shades-for-texas-heat":
+   "/cellular-shades-vs-roller-shades",
+ "/worried-about-furniture-fading-how-to-stop-texas-sun-damage":
+   "/stop-furniture-fading-texas-sun",
+ "/solar-shades-vs-blackout-shades-which-do-you-need":
+   "/solar-shades-vs-blackout-shades",
+ "/window-treatments-that-fit-modern-homes-in-weatherford-tx":
+   "/window-treatments-that-fit-the-way-modern-homes-are-lived-in",
+ "/why-cordless-blinds-are-becoming-the-new-standard-in-home-safety":
+   "/the-shift-to-cordless-window-treatments",
+ "/blackout-curtains-vs-blackout-blinds-which-one-is-right-for-you":
+   "/what-is-the-difference-between-blackout-and-blackout-blinds",
+ "/why-your-motorized-blinds-are-not-responding-a-simple-checklist":
+   "/motorized-blinds-not-responding-checklist",
 }
 
 

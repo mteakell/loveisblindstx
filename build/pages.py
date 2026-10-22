@@ -422,12 +422,17 @@ def body_block(c, n_reviews=8):
     tel  = S.tel(c["phone"] or BIZ["tel"])
     terr = T.of(c["slug"])
     near = nearby(c)
-    patio_url = ("/patio-shades-" + c["slug"]) if c["slug"] in PATIO_PAGES \
-                else "/products/exterior-patio-shades"
-    shutter_url = ("/plantation-shutters-" + c["slug"]) if c["slug"] in SHUTTER_PAGES \
-                  else "/products/plantation-shutters"
-    motor_url = ("/motorized-shades-" + c["slug"]) if c["slug"] in MOTOR_PAGES \
-                else "/products/motorized-window-treatment-automations"
+    # Every city has all of its own product pages (product_city.py builds the
+    # full grid), so the city page, which is the page each Google profile
+    # sends people to, links to its local children rather than the
+    # statewide product pages. Before Oct 2026 only cities with measured
+    # volume linked locally, which left e.g. Sherman's patio page with no
+    # link from Sherman's own hub.
+    patio_url = "/patio-shades-" + c["slug"]
+    shutter_url = "/plantation-shutters-" + c["slug"]
+    motor_url = "/motorized-shades-" + c["slug"]
+    blinds_url = "/blinds-" + c["slug"]
+    shades_url = "/shades-" + c["slug"]
     # 4+ only. The testimonials block is a curated selection, which is normal
     # for a site's own reviews. The rating in the footer badge is NOT curated:
     # it comes from data/gbp-ratings.json, which carries Google's own figure
@@ -565,23 +570,30 @@ def body_block(c, n_reviews=8):
     # These were text-only cards on every city page while the home page versions
     # carried photos. Six product cards with no imagery was the flattest thing
     # on the page.
-    def _pcard(name, url, blurb, img):
+    def _pcard(name, url, blurb, img, local=True):
+        where = f' in {e(c["label"])}' if local else ""
         return (f'<a class="prod-card reveal" href="{url}">'
                 f'<span class="pic"><img src="{img}" alt="{e(name)} installed in '
                 f'{e(c["label"])}, TX by Love Is Blinds" loading="lazy" '
                 f'width="2000" height="1500"></span>'
                 f'<div class="pbody"><h3>{e(name)}</h3><p>{e(blurb)}</p>'
-                f'<span class="btn-link">See {e(name.lower())} '
+                f'<span class="btn-link">See {e(name.lower())}{where} '
                 f'<span class="arw">&rarr;</span></span></div></a>')
 
     _pi = lambda k, salt: bpick(PROD_IMG[k], c["slug"], salt)
+    _pb = lambda u: bpick(PRODUCT_BLURBS[u], c["slug"], 6)
+    # five local product pages plus honeycomb, which has no per-city page
     prods = (_pcard("Plantation Shutters", shutter_url,
                     "Louvered shutters built to the window opening.", _pi("shutters", 8))
-           + _pcard("Motorization", motor_url,
+           + _pcard("Motorized Shades", motor_url,
                     "App, remote and voice control.", _pi("motor", 9))
-           + "".join(_pcard(n, u, bpick(PRODUCT_BLURBS[u], c["slug"], 6),
-                            _pi(PROD_IMG_KEY[u], 10 + i))
-                     for i, (n, u) in enumerate(PRODUCTS)))
+           + _pcard("Exterior Patio Shades", patio_url,
+                    _pb("/products/exterior-patio-shades"), _pi("patio", 10))
+           + _pcard("Custom Blinds", blinds_url, _pb("/products/blinds"), _pi("blinds", 11))
+           + _pcard("Custom Shades", shades_url,
+                    "Roller, solar, cellular, Roman and woven wood shades.", _pi("roller", 12))
+           + _pcard("Honeycomb Shades", "/products/honeycomb-shades",
+                    _pb("/products/honeycomb-shades"), _pi("honeycomb", 13), local=False))
     if c["slug"] in VIDEO_HERO:
         _v = VIDEO_HERO[c["slug"]]
         hero_html = ('<video autoplay muted loop playsinline preload="metadata" '

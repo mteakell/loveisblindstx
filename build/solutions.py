@@ -245,7 +245,7 @@ dict(
   desc=("Motorized shades for two-story and tall windows, with shutters or cellular shades on the "
         "lower tier. Measured and installed across Texas, on ladders where it takes ladders."),
   hero=("roller-shades-roller-shades-love-31", "Roller shades on tall windows in an open Texas kitchen"),
-  # sources: window-treatments-for-tall-two-story-windows, products/window-treatment-automations
+  # sources: window-treatments-for-tall-two-story-windows (merged here, 301),  products/window-treatment-automations
   intro=("Two-story great rooms and tall glass bring in the most light in a house, and the most heat. "
          "Covering them comes down to reach, scale, and how the wall looks from both floors. Motorized "
          "shades handle the height, and matching fabrics keep the whole wall reading as one design."),
@@ -279,7 +279,7 @@ dict(
     ("Can motorized shades be added without new wiring?",
      "Yes. Battery-powered motors retrofit without wiring."),
   ],
-  related=[("Window Treatments for Tall and Two-Story Windows", "/window-treatments-for-tall-two-story-windows"),
+  related=[("Motorized Shades Without Wiring: Battery, Solar and Hardwired Options", "/battery-vs-hardwired-vs-solar-motorized-shades"),
            ("The Best Blinds for Large Windows", "/best-blinds-for-large-windows"),
            ("How Much Sun Hits Each Side of a Texas House", "/how-much-sun-hits-each-side-of-a-texas-house")],
 ),
