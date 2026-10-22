@@ -20,7 +20,7 @@ import newposts as NP
 import queue30, queue_intent
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-START = datetime.date(2026, 10, 14)
+START = datetime.date(2026, 10, 22)   # restarted again Oct 22: the Mac was off Oct 15-21
 
 # held: premise not confirmed by the owners (do they convert existing shades?)
 HOLD = {"can-existing-shades-be-motorized"}
