@@ -86,7 +86,9 @@ E = {
  ]),
 ]),
 
-"faux-wood-vs-real-wood-blinds": dict(sections=[
+"faux-wood-vs-real-wood-blinds": dict(
+ replace=[("faux wood is limited to painted finishes", "faux wood cannot take a real stain")],
+ sections=[
  ("Slat width and the look of the window", [
   "Wider slats mean fewer lines across the window and a clearer view when the blind is open. They "
   "suit larger windows and rooms where the blind should read as a design element. Narrower slats suit "

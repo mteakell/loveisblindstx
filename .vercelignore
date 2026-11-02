@@ -1,0 +1,10 @@
+# Keep build tooling, data and internal notes off the public site.
+# The site is plain HTML at the repo root; nothing served reads these.
+# The daily GitHub Action publisher reads them from the repo, not from Vercel.
+build/
+data/
+.github/
+*.md
+OUTSCRAPER-*.txt
+netlify.toml
+_redirects

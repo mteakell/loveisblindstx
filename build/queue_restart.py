@@ -185,6 +185,8 @@ def main():
         if entry["published"]:
             continue
         slug = entry["slug"]
+        if slug not in posts:          # rendered by another module (articles_nov.py)
+            continue
         ps = posts[slug]
         if slug in HOLD:
             entry["held"] = True
