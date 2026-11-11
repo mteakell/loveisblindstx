@@ -129,17 +129,22 @@ def faq(url, pairs):
                             "acceptedAnswer": {"@type": "Answer", "text": a}}
                            for q, a in pairs]}
 
+CONSULT_OFFER = {"@type": "Offer", "name": "Free in-home consultation",
+                 "description": "In-home measure and written quote. No obligation to order.",
+                 "price": 0, "priceCurrency": "USD",
+                 "itemOffered": {"@type": "Service", "name": "In-home window treatment consultation"}}
+
 def service(url, name, desc, provider_id, area=None, catalog=None):
-    """Service, not Product. Visible copy carries no prices at Maddie's
-    direction (2026-09-22); the owner-supplied project range (single window
-    up to ~$10,000 whole-home) lives in structured data only, as an
-    AggregateOffer, so cost-intent queries get a machine-readable answer
-    without a number ever appearing on the page."""
+    """Service, not Product. Visible copy carries no prices, so the schema
+    carries none either. Until Nov 2026 this added a $0-$10,000
+    AggregateOffer that appeared nowhere on the page; Google requires
+    structured data to describe visible content, and an independent audit
+    (Nov 10 2026) flagged it on 376 pages. The only priced offer is the free
+    consultation, which every page states."""
     return _clean({
         "@type": "Service", "@id": SITE + url + "#service", "name": name,
         "description": desc, "serviceType": name, "provider": {"@id": provider_id},
-        "offers": {"@type": "AggregateOffer", "priceCurrency": "USD",
-                   "lowPrice": 0, "highPrice": 10000},
+        "offers": CONSULT_OFFER,
         "areaServed": area or {"@type": "AdministrativeArea", "name": "Texas"},
         "hasOfferCatalog": ({"@type": "OfferCatalog", "name": name,
             "itemListElement": [{"@type": "Offer", "itemOffered":

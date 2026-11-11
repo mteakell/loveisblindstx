@@ -128,7 +128,7 @@ def _slider():
       '<section class="section bg-cream-tint rv-section">'
       '<div class="container center">'
       '<h2 class="title">What Texas homeowners say</h2>'
-      f'<p class="lead">{len(revs_all)} reviews from customers across {len({r["slug"] for r in revs_all})} '
+      f'<p class="lead">Reviews from customers in {len({r["slug"] for r in revs_all})} '
       'Texas cities, straight from our Google profiles.</p>'
       '</div>'
       '<div class="rv-wrap">'

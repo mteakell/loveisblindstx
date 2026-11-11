@@ -191,7 +191,7 @@ def page(prod, slug):
     if hero2 == hero:
         hero2 = "/images/lib/" + _hp[(_hp.index(pick(_hp, slug, 29)) + 1) % len(_hp)]
     nodes = [S.organization(BIZ), S.website(BIZ), S.business(BIZ), S.business(BIZ, c),
-             S.webpage(url, title, desc, about=f"{S.SITE}{url}#business", primary=hero),
+             S.webpage(url, title, desc, about=f"{S.SITE}{c['url']}#business", primary=hero),
              S.breadcrumbs([("Home","/"),("Products","/products"),
                             (spec["label"], f"/products/{'plantation-shutters' if prod=='plantation-shutters' else 'blinds' if prod=='blinds' else 'shades' if prod=='shades' else 'shutters' if prod=='shutters' else 'exterior-patio-shades' if prod=='patio-shades' else 'motorized-window-treatment-automations'}"),
                             (f"{city}, TX", url)]),
@@ -199,7 +199,7 @@ def page(prod, slug):
              S.service(url, f"{spec['label']} in {city}, TX",
                        f"Measurement, custom order and professional installation of "
                        f"{spec['label'].lower()} for homes in {city}, Texas.",
-                       f"{S.SITE}{url}#business",
+                       f"{S.SITE}{c['url']}#business",   # the city's business node, defined above
                        area={"@type":"City","name":c["locality"]},
                        catalog=[n for n,_ in spec["types"]])]
     body = f'''<section class="phero">

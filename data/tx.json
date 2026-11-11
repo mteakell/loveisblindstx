@@ -14,7 +14,9 @@
    "lat": 32.9127,
    "lng": -97.2789
   },
-  "region": "DFW, North Texas, East Texas, Waco and the Austin metro"
+  "region": "DFW, North Texas, East Texas, Waco and the Austin metro",
+  "lat": 32.9120463,
+  "lng": -97.2719303
  },
  "cities": [
   {
@@ -57,12 +59,13 @@
    "street": "",
    "locality": "Austin",
    "postal": "",
-   "lat": 30.267,
-   "lng": -97.743,
+   "lat": 30.4632616,
+   "lng": -97.7930389,
    "gbp": [
     "https://maps.app.goo.gl/NRiuAwViE5z3iBU68"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "bedford-tx",
@@ -120,12 +123,13 @@
    "street": "",
    "locality": "Colleyville",
    "postal": "",
-   "lat": 32.881,
-   "lng": -97.155,
+   "lat": 32.889755,
+   "lng": -97.148937,
    "gbp": [
     "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8"
    ],
-   "twin": null
+   "twin": null,
+   "geo_source": "gbp"
   },
   {
    "slug": "coppell-tx",
@@ -228,11 +232,11 @@
    "street": "9500 Ray White Rd Suite 276",
    "locality": "Fort Worth",
    "postal": "76244",
-   "lat": 32.7555,
-   "lng": -97.3308,
+   "lat": 32.9120463,
+   "lng": -97.2719303,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "gbp"
   },
   {
    "slug": "frisco-tx",
@@ -449,11 +453,11 @@
    "street": "",
    "locality": "Las Colinas",
    "postal": "",
-   "lat": 32.8577,
-   "lng": -96.9427,
+   "lat": 32.8603747,
+   "lng": -96.9346525,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "gbp"
   },
   {
    "slug": "lewisville-tx",
@@ -477,13 +481,13 @@
    "street": "",
    "locality": "McKinney",
    "postal": "",
-   "lat": 33.1972,
-   "lng": -96.6397,
+   "lat": 33.248184,
+   "lng": -96.6394285,
    "gbp": [
     "https://maps.app.goo.gl/3XYfyAsPh12hmyxVA"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "gbp"
   },
   {
    "slug": "north-richland-hills-tx",

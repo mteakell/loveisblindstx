@@ -27,7 +27,7 @@ SHOWN = len(REVIEWS)   # the headline counts what the page shows, not Google's t
 
 URL = "/reviews"
 TITLE = f"Love Is Blinds Reviews | {AVG} Stars Across Texas"
-DESC = (f"{TOTAL} Google reviews across {LOCS} Texas locations, {AVG} stars. What "
+DESC = (f"{TOTAL} Google reviews across {LOCS} Texas Google Business Profiles, {AVG} stars. What "
         "homeowners in DFW, North Texas, Dallas, Waco, Austin and Cedar Creek Lake say "
         "about us.")
 ORDER = ["dfw", "north", "dallas", "cedarcreek", "waco", "austin", "tyler"]
@@ -76,7 +76,7 @@ def main():
   width="2000" height="1500" fetchpriority="high"></picture>
   <div class="container"><div class="phero-copy">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span class="sep">&rsaquo;</span>Reviews</nav>
-    <h1 class="title">{SHOWN} Google Reviews. {AVG} Stars. Every One Real.</h1>
+    <h1 class="title">{TOTAL} Google Reviews. {AVG} Stars. Every One Real.</h1>
     <p class="lead">Every review below was left on one of our {LOCS} Google Business Profiles by a
       Texas homeowner we worked for, shown with the city it came from and a link to read it at the
       source.</p>

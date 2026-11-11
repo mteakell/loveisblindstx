@@ -414,7 +414,7 @@ def team_cards():
     # old Georgia-site hero lead: this is three owner-operators, not a couple
     s = s.replace("A husband-and-wife team that handles your project personally, "
                   "from first hello to final install.",
-                  "Three owner-operators who handle your project personally, "
+                  "Four owner-operators across three franchises, handling your project personally "
                   "from first hello to final install.")
     # owner photos are the FIRST thing under the hero
     hero_end = s.find("</section>", s.find('<section class="phero')) + len("</section>")

@@ -29,7 +29,7 @@ def badge(avg, total, locations):
         f'<div class="ftrust">'
         f'<span class="fstars" aria-hidden="true">{stars}</span>'
         f'<span class="ftrust-text"><strong>{avg} average</strong> from {total} Google '
-        f'reviews across {locations} Texas locations</span>'
+        f'reviews across {locations} Texas Google Business Profiles</span>'
         f'</div>\n      '
     )
 
