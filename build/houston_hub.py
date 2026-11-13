@@ -15,7 +15,7 @@ CITY = {
     "slug": "north-houston-tx",
     "label": "North Houston",
     "url": "/north-houston-tx",
-    "phone": "8665182999",
+    "phone": "2818643309",   # North Houston GBP (Nov 13 2026)
     "street": "",
     "locality": "North Houston",
     "postal": "",
@@ -40,7 +40,7 @@ TOWNS_FAQ = (
     "Which North Houston communities does Love Is Blinds serve?",
     "This hub covers Tomball, Magnolia and Montgomery, plus the communities "
     "between them along SH 249, FM 1488 and SH 105. If your town is nearby "
-    "but not named here, call (866) 518-2999 and ask; the free in-home "
+    "but not named here, call (281) 864-3309 and ask; the free in-home "
     "consultation works the same way everywhere we serve.",
 )
 

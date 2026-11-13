@@ -428,11 +428,17 @@ def body_block(c, n_reviews=8):
     # statewide product pages. Before Oct 2026 only cities with measured
     # volume linked locally, which left e.g. Sherman's patio page with no
     # link from Sherman's own hub.
-    patio_url = "/patio-shades-" + c["slug"]
-    shutter_url = "/plantation-shutters-" + c["slug"]
-    motor_url = "/motorized-shades-" + c["slug"]
-    blinds_url = "/blinds-" + c["slug"]
-    shades_url = "/shades-" + c["slug"]
+    # Local product page when it exists, statewide page otherwise: hubs
+    # rendered on their own (north-houston-tx) have no product-city pages,
+    # and linking the local URL left five dead links on that hub (Nov 2026).
+    def _local(prefix, fallback):
+        u = f"/{prefix}-{c['slug']}"
+        return u if os.path.exists(os.path.join(ROOT, u.lstrip("/") + ".html")) else fallback
+    patio_url = _local("patio-shades", "/products/exterior-patio-shades")
+    shutter_url = _local("plantation-shutters", "/products/plantation-shutters")
+    motor_url = _local("motorized-shades", "/products/motorized-window-treatment-automations")
+    blinds_url = _local("blinds", "/products/blinds")
+    shades_url = _local("shades", "/products/shades")
     # 4+ only. The testimonials block is a curated selection, which is normal
     # for a site's own reviews. The rating in the footer badge is NOT curated:
     # it comes from data/gbp-ratings.json, which carries Google's own figure
@@ -515,7 +521,7 @@ def body_block(c, n_reviews=8):
       f'<p class="lead">{e(_pintro.format(city=c["label"]))}</p></div>'
       f'<div class="container"><div class="prod-grid">{patio_types}</div>'
       f'<p class="center" style="margin-top:22px"><a class="btn btn-primary btn-lg" '
-      f'href="{patio_url}">Exterior patio shades in {e(c["label"])}</a></p></div></section>')
+      f'href="{patio_url}">Exterior patio shades{" in " + e(c["label"]) if patio_url.endswith(c["slug"]) else ""}</a></p></div></section>')
 
     _moh = bpick(BK.MOTOR_HEADS, c["slug"], 3)
     _mob = bpick(BK.MOTOR_BODIES, c["slug"], 1)
@@ -571,7 +577,7 @@ def body_block(c, n_reviews=8):
     # carried photos. Six product cards with no imagery was the flattest thing
     # on the page.
     def _pcard(name, url, blurb, img, local=True):
-        where = f' in {e(c["label"])}' if local else ""
+        where = f' in {e(c["label"])}' if local and url.endswith(c["slug"]) else ""
         return (f'<a class="prod-card reveal" href="{url}">'
                 f'<span class="pic"><img src="{img}" alt="{e(name)} installed in '
                 f'{e(c["label"])}, TX by Love Is Blinds" loading="lazy" '
