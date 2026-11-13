@@ -35,6 +35,11 @@ AUSTIN = {'austin-tx', 'round-rock-tx', 'georgetown-tx', 'taylor-tx'}
 
 DALLAS = {'dallas-tx', 'highland-park-tx', 'irving-tx', 'las-colinas-tx'}
 
+# North Houston hub (2026-11-13, Maddie): new coverage area ahead of the
+# Houston/Magnolia launch (see lib-expansion-research). No franchisee signed
+# yet, so it renders like Tyler: neutral brand, no owner named, no home card.
+HOUSTON = {'north-houston-tx'}
+
 TERRITORIES = {
  "north": {"key":"north","name":"North Texas","brand":"Love Is Blinds North Texas",
    "leads":["Jake Wade","Jonathan Arosemena"],
@@ -55,6 +60,10 @@ TERRITORIES = {
    "leads":["Danny Rohweder"],
    "name_cities": False,
    "blurb":"Dallas, Highland Park, Irving and Las Colinas"},
+ "houston": {"key":"houston","name":"North Houston","brand":"Love Is Blinds Texas",
+   "leads":[],
+   "name_cities": False,
+   "blurb":"Tomball, Magnolia, Montgomery and the North Houston communities"},
  "tyler": {"key":"tyler","name":"East Texas","brand":"Love Is Blinds Texas",
    "leads":[],
    "name_cities": False,
@@ -79,6 +88,7 @@ def of(slug):
     if slug in AUSTIN: return TERRITORIES["austin"]
     if slug in DALLAS: return TERRITORIES["dallas"]
     if slug in TYLER: return TERRITORIES["tyler"]
+    if slug in HOUSTON: return TERRITORIES["houston"]
     return TERRITORIES["dfw"]
 
 def leads_for(slug):

@@ -240,7 +240,7 @@ ABOUT_DEPTH = ('<section class="section"><div class="container" style="max-width
  '<h2 class="title">Three territories, three owners, one standard</h2>'
  '<div class="prose">'
  '<p>Durrell Glick runs the DFW franchise. Jake Wade and Jonathan Arosemena run North '
- 'Texas, from the northern suburbs up through Sherman and Gainesville. Danny Rohweder '
+ 'Texas, from the northern suburbs up through Sherman. Danny Rohweder '
  'runs Love Is Blinds Waco, Austin, Dallas and Cedar Creek Lake, from the lake communities '
  'across to Waco and down to the Austin metro. '
  'Each one quotes, measures, and installs in his own territory, so the person at your '

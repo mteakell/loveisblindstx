@@ -752,6 +752,20 @@
    "gbp": [],
    "twin": null,
    "geo_source": "legacy-site"
+  },
+  {
+   "slug": "north-houston-tx",
+   "label": "North Houston",
+   "url": "/north-houston-tx",
+   "phone": "8665182999",
+   "street": "",
+   "locality": "North Houston",
+   "postal": "",
+   "lat": 30.2315,
+   "lng": -95.6877,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "area-centroid"
   }
  ]
 }
