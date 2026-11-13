@@ -330,6 +330,12 @@ _PLACE = {q["slug"]: q["place_id"] for q in json.load(open(os.path.join(ROOT, "d
 
 def map_embed(c):
     pid = _PLACE.get(c["slug"])
+    # Regional hubs whose label is not a real place: "North Houston, TX"
+    # resolves to a Houston neighborhood outside the territory, so these
+    # carry a map center and zoom instead of a search query.
+    if c.get("map_view"):
+        v = c["map_view"]
+        return f"https://www.google.com/maps?ll={v['lat']},{v['lng']}&z={v['z']}&output=embed"
     if pid:
         src = f"https://www.google.com/maps?q=place_id:{pid}&output=embed"
     else:
@@ -614,7 +620,7 @@ def body_block(c, n_reviews=8):
     map_caption = (f'<a class="map-gbp" href="{e(c["gbp"][0])}" rel="noopener">'
                    f'Find us on Google Maps <span class="arw">&rarr;</span></a>'
                    if c.get("gbp") else
-                   f'<span class="map-gbp">Serving {e(c["label"])} and the surrounding area</span>')
+                   f'<span class="map-gbp">{e(c.get("map_caption") or ("Serving " + c["label"] + " and the surrounding area"))}</span>')
     nearchips = " ".join(
       f'<a class="chip" href="{o["url"]}">{e(o["label"])}, TX</a>' for o in near)
     gbp_row = ('<li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '

@@ -24,6 +24,8 @@ CITY = {
     "gbp": [],
     "twin": None,
     "geo_source": "area-centroid",
+    "map_view": {"lat": 30.22, "lng": -95.6, "z": 9},   # territory center, not a pin
+    "map_caption": "Serving Tomball, Magnolia, Montgomery and nearby communities",
 }
 
 d = json.load(open("data/tx.json"))

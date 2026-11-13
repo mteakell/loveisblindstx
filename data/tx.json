@@ -765,7 +765,13 @@
    "lng": -95.6877,
    "gbp": [],
    "twin": null,
-   "geo_source": "area-centroid"
+   "geo_source": "area-centroid",
+   "map_view": {
+    "lat": 30.22,
+    "lng": -95.6,
+    "z": 9
+   },
+   "map_caption": "Serving Tomball, Magnolia, Montgomery and nearby communities"
   }
  ]
 }
