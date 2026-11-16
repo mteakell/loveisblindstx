@@ -2,3 +2,7 @@
 __pycache__/
 .vercel
 incoming-photos/
+
+# macOS/iCloud duplicate copies ("file 2.html") made during branch switches
+* 2.*
+* 2
