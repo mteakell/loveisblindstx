@@ -146,3 +146,6 @@ CLOSE = [
  "the result and where it genuinely does not.",
  "If you already know what you want, the consultation is short. If you do not, that is what it is for.",
 ]
+
+import products_spec_more as _M
+WHY.update(_M.WHY)

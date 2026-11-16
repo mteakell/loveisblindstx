@@ -79,3 +79,7 @@ EXTRA_FAQ = {
  ("Is it noisy?","Modern motors are quiet enough that a bedroom schedule does not wake anyone. You can hear them, but only just."),
 ],
 }
+
+import products_spec_more as _M
+EXTRA_TYPES.update(_M.EXTRA_TYPES)
+EXTRA_FAQ.update(_M.EXTRA_FAQ)

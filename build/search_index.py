@@ -13,7 +13,7 @@ import html, json, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 BASE = "https://www.loveisblindstx.com"
-PCITY = re.compile(r"^/(blinds|shades|shutters|plantation-shutters|motorized-shades|patio-shades)-[a-z0-9-]+-tx$")
+PCITY = re.compile(r"^/(blinds|shades|shutters|plantation-shutters|motorized-shades|patio-shades|roller-shades|honeycomb-shades|roman-shades|woven-wood-shades|dual-shades|panel-track-shades|faux-wood-blinds|wood-blinds|drapery)-[a-z0-9-]+-tx$")
 
 
 def path_for(url):

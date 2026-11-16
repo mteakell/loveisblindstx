@@ -165,3 +165,6 @@ SPEC = {
         ("What if a motor needs reprogramming later?","You call the same team that installed it. That is the practical difference between buying motorization locally and buying it online.")],
 },
 }
+
+import products_spec_more as _M
+SPEC.update(_M.SPEC)

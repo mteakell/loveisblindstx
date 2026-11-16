@@ -46,6 +46,10 @@ HERO_POOL = {
 
 IMG_POOL = json.load(open(os.path.join(P.ROOT, "data/image-pools.json")))
 
+import products_spec_more as _M   # nine specific types (Nov 16 2026)
+HERO_POOL.update(_M.HERO)
+IMG_POOL.update(_M.IMG)
+
 # Mixed radix decomposition of the city index. Each successive call peels off a
 # different digit, so two cities cannot share every selection: with pools of 5,
 # 5, 5 and 10 the combination space is far larger than 48 cities.
@@ -147,10 +151,13 @@ def page(prod, slug):
         '<p class="cf-fine">No pressure, no obligation. We never share your information.</p>'
         '</form>')
 
+    # "covers Dallas along with Dallas, Highland Park..." read as a typo: drop the city from its own blurb
+    _items = [x for x in terr['blurb'].replace(" and ", ", ").split(", ") if x != city]
+    _bl = ", ".join(_items[:-1]) + " and " + _items[-1] if len(_items) > 1 else _items[0]
     if terr.get("name_cities", True) or slug in terr.get("named_slugs", ()):
-        _who = f"{leads} runs {terr['brand']}, which covers {city} along with {terr['blurb']}."
+        _who = f"{leads} runs {terr['brand']}, which covers {city} along with {_bl}."
     else:
-        _who = (f"{terr['brand']} covers {city} along with {terr['blurb']}. "
+        _who = (f"{terr['brand']} covers {city} along with {_bl}. "
                 "It is an owner-operated franchise.")
     faqs = [(f"Do you install {spec['label'].lower()} in {city}?",
              f"Yes. {_who} "
@@ -193,7 +200,7 @@ def page(prod, slug):
     nodes = [S.organization(BIZ), S.website(BIZ), S.business(BIZ), S.business(BIZ, c),
              S.webpage(url, title, desc, about=f"{S.SITE}{c['url']}#business", primary=hero),
              S.breadcrumbs([("Home","/"),("Products","/products"),
-                            (spec["label"], f"/products/{'plantation-shutters' if prod=='plantation-shutters' else 'blinds' if prod=='blinds' else 'shades' if prod=='shades' else 'shutters' if prod=='shutters' else 'exterior-patio-shades' if prod=='patio-shades' else 'motorized-window-treatment-automations'}"),
+                            (spec["label"], spec.get("product_url") or f"/products/{'plantation-shutters' if prod=='plantation-shutters' else 'blinds' if prod=='blinds' else 'shades' if prod=='shades' else 'shutters' if prod=='shutters' else 'exterior-patio-shades' if prod=='patio-shades' else 'motorized-window-treatment-automations'}"),
                             (f"{city}, TX", url)]),
              S.faq(url, faqs),
              S.service(url, f"{spec['label']} in {city}, TX",
@@ -332,6 +339,8 @@ if __name__ == "__main__":
     n = 0
     for prod in PS.SPEC:
         for c in P.CITIES:
+            if c.get("hub") or c["slug"] == "north-houston-tx":   # regional hub: no product pages
+                continue
             url, doc = page(prod, c["slug"])
             open(url.lstrip("/") + ".html", "w").write(doc)
             n += 1
