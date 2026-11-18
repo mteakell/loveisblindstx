@@ -678,9 +678,11 @@ def _mpt(lng, lat):
 
 TKEY_CLASS = {"dfw": "t-dfw", "north": "t-north", "dallas": "t-dallas",
               "cedarcreek": "t-lake", "waco": "t-waco", "austin": "t-austin",
-              "tyler": "t-etx"}
+              "tyler": "t-etx", "houston": "t-hou"}
 
-ANCHOR_PINS = {"dallas-tx", "fort-worth-tx", "austin-tx", "waco-tx", "tyler-tx", "sherman-tx"}
+ANCHOR_PINS = {"dallas-tx", "fort-worth-tx", "austin-tx", "waco-tx", "north-houston-tx", "sherman-tx"}
+# Nov 18 2026, Maddie: "take tyler off the map and add houston"
+MAP_HIDE = {"tyler-tx"}
 # nudge colliding anchor labels apart in the metroplex
 LBL_OFFSET = {"fort-worth-tx": (-16, "end"), "dallas-tx": (16, "start")}
 
@@ -701,7 +703,7 @@ def tx_map():
     pts = " ".join(f"{x},{y}" for x, y in (_mpt(*p) for p in TX_OUTLINE))
     pins, xs, ys = [], [], []
     for c in sorted(CITIES, key=lambda x: -x["lat"]):   # north pins first, so
-        if c.get("unlisted"): continue
+        if c.get("unlisted") or c["slug"] in MAP_HIDE: continue
         x, y = _mpt(c["lng"], c["lat"])                 # southern labels stack on top
         tk = [k for k in TKEY_CLASS if T.of(c["slug"])["name"] == T.TERRITORIES[k]["name"]][0]
         if tk in ("dfw", "north", "dallas"): xs.append(x); ys.append(y)
@@ -753,7 +755,7 @@ def tx_map():
         '<span><i class="dot t-lake"></i>Cedar Creek Lake</span>'
         '<span><i class="dot t-waco"></i>Waco</span>'
         '<span><i class="dot t-austin"></i>Austin</span>'
-        '<span><i class="dot t-etx"></i>Tyler &middot; East Texas</span></div>'
+        '<span><i class="dot t-hou"></i>North Houston</span></div>'
         f'<div class="txmap-toggle" role="group" aria-label="Map zoom">'
         f'<button type="button" class="on" data-vb="{full_vb}">All of Texas</button>'
         f'<button type="button" data-vb="{dfw_vb}" data-zoom>DFW &amp; North Texas</button>'
