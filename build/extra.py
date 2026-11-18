@@ -92,7 +92,7 @@ def areas():
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Service Areas</span></nav>'
             f'<h1 class="title">Where Love Is Blinds Works in Texas</h1>'
-            f'<p class="lead">Three local teams cover the state. Find your city below for the '
+            f'<p class="lead">Local, owner-operated teams cover the state. Find your city below for the '
             f'number that reaches the crew who will measure and install your windows.</p>'
             f'</div></div></section>{tx_map()}{secs}')
     body += '''<section class="section closing-cta"><div class="container center">

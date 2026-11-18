@@ -17,7 +17,7 @@ import blocks as BK
 # Assign variants by the city's INDEX rather than a hash of its name. A hash
 # collides: two cities land on the same combination and their pages read
 # identically. An index guarantees the 48 cities spread across the pools.
-CITY_IX = {c["slug"]: i for i, c in enumerate(sorted(P.CITIES, key=lambda x: x["slug"]))}
+CITY_IX = {c["slug"]: i for i, c in enumerate(sorted(P.CITIES, key=lambda x: (x.get("added", ""), x["slug"])))}
 
 HERO_POOL = {
  "blinds": ["blinds-blinds-007-jpg.webp","blinds-blinds-008-jpg.webp","blinds-blinds-009-jpg.webp",
@@ -332,6 +332,8 @@ if __name__ == "__main__":
     n = 0
     for prod in PS.SPEC:
         for c in P.CITIES:
+            if c.get("hub") or c.get("custom") or c["slug"] == "north-houston-tx":
+                continue          # hub and hand-written Houston towns: no product pages yet
             url, doc = page(prod, c["slug"])
             open(url.lstrip("/") + ".html", "w").write(doc)
             n += 1

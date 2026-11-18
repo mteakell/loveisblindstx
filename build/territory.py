@@ -38,7 +38,11 @@ DALLAS = {'dallas-tx', 'highland-park-tx', 'irving-tx', 'las-colinas-tx'}
 # North Houston hub (2026-11-13, Maddie): new coverage area ahead of the
 # Houston/Magnolia launch (see lib-expansion-research). No franchisee signed
 # yet, so it renders like Tyler: neutral brand, no owner named, no home card.
-HOUSTON = {'north-houston-tx'}
+HOUSTON = {'north-houston-tx',
+           # Nov 2026 town pages (build/houston_towns.py), inside the FA Exhibit A map
+           'magnolia-tx', 'tomball-tx', 'the-woodlands-tx', 'spring-tx', 'conroe-tx',
+           'montgomery-tx', 'willis-tx', 'pinehurst-tx', 'stagecoach-tx', 'hockley-tx',
+           'waller-tx', 'prairie-view-tx', 'shenandoah-tx', 'oak-ridge-north-tx'}
 
 TERRITORIES = {
  "north": {"key":"north","name":"North Texas","brand":"Love Is Blinds North Texas",
@@ -63,7 +67,7 @@ TERRITORIES = {
  "houston": {"key":"houston","name":"North Houston","brand":"Love Is Blinds Texas",
    "leads":[],
    "name_cities": False,
-   "blurb":"Tomball, Magnolia, Montgomery and the North Houston communities"},
+   "blurb":"Magnolia, Tomball, The Woodlands, Spring, Conroe, Montgomery, Willis, Waller and the communities between them"},
  "tyler": {"key":"tyler","name":"East Texas","brand":"Love Is Blinds Texas",
    "leads":[],
    "name_cities": False,

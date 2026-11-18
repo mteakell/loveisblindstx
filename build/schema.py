@@ -101,7 +101,8 @@ def business(biz, city=None):
     else:
         node["address"] = {"@type": "PostalAddress", "addressLocality": city["locality"],
                            "addressRegion": "TX", "addressCountry": "US"}
-    if city.get("lat") and city.get("lng"):
+    # town-center / area-centroid points are not a business location, so no geo for them
+    if city.get("lat") and city.get("lng") and city.get("geo_source") not in ("town-center", "area-centroid"):
         node["geo"] = {"@type": "GeoCoordinates",
                        "latitude": city["lat"], "longitude": city["lng"]}
     return _clean(node)

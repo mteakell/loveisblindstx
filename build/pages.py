@@ -345,7 +345,7 @@ def map_embed(c):
 
 
 # ---- block rotation ------------------------------------------------------
-_CIX = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=lambda x: x["slug"]))}
+_CIX = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=lambda x: (x.get("added", ""), x["slug"])))}
 _STRIDE = {0: 1, 1: 5, 2: 7, 3: 11, 4: 13, 5: 17, 6: 19, 7: 23, 12: 29, 13: 31}
 
 
@@ -834,6 +834,8 @@ def render_city(c):
 if __name__ == "__main__":
     n = 0
     for c in CITIES:
+        if c.get("custom"):      # hand-written pages (build/houston_towns.py)
+            continue
         open(os.path.join(ROOT, c["slug"] + ".html"), "w").write(render_city(c))
         n += 1
     print(f"wrote {n} city pages")
