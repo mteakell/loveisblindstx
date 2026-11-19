@@ -1,3 +1,5 @@
+# STALE OWNERSHIP TEXT (Nov 19 2026): Dallas moved to Jake and Jonathan and North Houston was added.
+# This script is not run any more; its output pages were patched directly. Update these strings before ever rerunning it.
 """Enrich the thin converted pages.
 
 how-it-works, design-checklist and areas-we-serve came through the Duda
@@ -62,7 +64,7 @@ HOW_DETAIL = ('<section class="section"><div class="container split media-right"
 AREAS_INTRO = ('<section class="section"><div class="container split media-right">'
  '<div class="body"><h2 class="title">One standard, three local teams</h2>'
  '<div class="prose">'
- '<p>Love Is Blinds Texas is three locally owned franchises: Durrell Glick across DFW and the '
+ '<p>Love Is Blinds Texas is four locally owned franchises: Durrell Glick across DFW and the '
  'Mid-Cities, Jake Wade and Jonathan Arosemena across North Texas, and Danny Rohweder across the '
  'Waco corridor, the Austin metro, Dallas and Cedar Creek Lake. Whichever city you call from, you '
  'reach the team that will actually measure and install your windows.</p>'
@@ -116,7 +118,7 @@ FAQ_GROUPS = [
    "We measured it, so we correct it. Anything that does not match the approved measurements is "
    "remade and reinstalled at no cost to you. That is the point of measuring every opening ourselves."),
   ("Who actually shows up?",
-   "The local owner-operator. Love Is Blinds Texas is three locally owned franchises: Durrell Glick "
+   "The local owner-operator. Love Is Blinds Texas is four locally owned franchises: Durrell Glick "
    "across DFW, Jake Wade and Jonathan Arosemena across North Texas, and Danny Rohweder across the "
    "Waco, Austin, Dallas and Cedar Creek Lake areas. The person who quotes your windows is the person who installs them."),
  ]),
@@ -241,7 +243,7 @@ ABOUT_DEPTH = ('<section class="section"><div class="container" style="max-width
  '<div class="prose">'
  '<p>Durrell Glick runs the DFW franchise. Jake Wade and Jonathan Arosemena run North '
  'Texas, from the northern suburbs up through Sherman. Danny Rohweder '
- 'runs Love Is Blinds Waco, Austin, Dallas and Cedar Creek Lake, from the lake communities '
+ 'runs Love Is Blinds Waco, Austin and Cedar Creek Lake, from the lake communities '
  'across to Waco and down to the Austin metro. '
  'Each one quotes, measures, and installs in his own territory, so the person at your '
  'kitchen table on day one is the same person who stands behind the work in year five.</p>'

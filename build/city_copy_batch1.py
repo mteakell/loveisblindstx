@@ -325,7 +325,7 @@ dict(
    "<li><strong>Living room:</strong> cellular or roman shades for softer sound.</li>"
    "<li><strong>Kitchen:</strong> faux wood blinds, which wipe clean.</li></ul>"],
   ("Do you serve Las Colinas too?",
-   "Yes. Irving and Las Colinas are both served by our Dallas-area team.")),
+   "Yes. Irving and Las Colinas are both served by our North Texas team, the same team that covers Dallas.")),
 ),
 
 # ---------------------------------------------------------------------------

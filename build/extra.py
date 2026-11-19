@@ -127,7 +127,7 @@ def team():
             area = (f'<section class="section bg-cream-tint"><div class="container">'
                     f'<h2 class="title">Cities {e(m["name"].split()[0])} covers</h2>'
                     f'<ul class="nap-list city-index">{links}</ul></div></section>')
-            intro = (f'{e(m["name"])} runs {e(brand)}, one of the three Love Is Blinds '
+            intro = (f'{e(m["name"])} runs {e(brand)}, one of the locally owned Love Is Blinds '
                      f'franchises working across the state. That territory covers '
                      f'{e(terr["blurb"])}.')
         else:
@@ -751,7 +751,6 @@ def tx_map():
         '<div class="txmap-legend">'
         '<span><i class="dot t-dfw"></i>DFW</span>'
         '<span><i class="dot t-north"></i>North Texas</span>'
-        '<span><i class="dot t-dallas"></i>Dallas</span>'
         '<span><i class="dot t-lake"></i>Cedar Creek Lake</span>'
         '<span><i class="dot t-waco"></i>Waco</span>'
         '<span><i class="dot t-austin"></i>Austin</span>'
