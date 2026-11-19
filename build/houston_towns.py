@@ -22,6 +22,8 @@ os.chdir(ROOT)
 from houston_towns_copy import TOWNS, EXTRA
 
 PHONE = "2818643309"
+import hashlib
+CITY_V = hashlib.md5(open("css/city.css","rb").read()).hexdigest()[:10]
 
 # --- 1. data/tx.json -------------------------------------------------------
 d = json.load(open("data/tx.json"))
@@ -79,6 +81,12 @@ def body_html(parts):
     return "".join(out)
 
 
+PRODUCT_LINKS = [("Roller and solar shades", "/products/roller-shades"), ("Roman shades", "/products/roman-shades"),
+                 ("Woven wood shades", "/products/woven-wood-shades"), ("Faux wood blinds", "/products/faux-wood-blinds"),
+                 ("Dual and zebra shades", "/products/dual-shades"), ("Panel track shades", "/products/panel-track-shades"),
+                 ("Drapery", "/services/drapery-installation"), ("Exterior patio shades", "/products/exterior-patio-shades"),
+                 ("Plantation shutters", "/products/plantation-shutters"), ("Honeycomb shades", "/products/honeycomb-shades")]
+
 PRODUCTS = [
     ("Plantation Shutters", "/products/plantation-shutters", "shutters-shutters-091-jpg"),
     ("Custom Shades", "/products/shades", "roller-shades-roller-shades-230-jpg"),
@@ -87,6 +95,33 @@ PRODUCTS = [
     ("Motorized Shades", "/products/motorized-window-treatment-automations", "smart-drapes-smart-drapes-010-jpg"),
     ("Honeycomb Shades", "/products/honeycomb-shades", "honeycomb-shades-honeycomb-shades-018-jpg"),
 ]
+
+
+KEYS = {"patio": ["patio", "porch", "outdoor", "exterior"], "roller": ["roller", "solar"], "solar": ["solar", "roller"],
+        "woven": ["woven"], "roman": ["roman"], "honeycomb": ["cellular", "honeycomb"], "cellular": ["cellular"],
+        "shutter": ["shutter"], "faux": ["faux"], "real wood": ["real wood"], "panel": ["panel track", "slider", "sliding"],
+        "dual": ["dual", "zebra"], "motoriz": ["motor"], "drapery": ["drapery"], "blinds": ["blind"],
+        "french": ["french door"], "sliding": ["slider", "sliding"], "heat": ["heat", "sun"], "child": ["cordless", "child"],
+        "energy": ["insulat", "heat"], "shades": ["shade"]}
+
+
+OVERRIDE = {("pinehurst-tx", 1): ("Light filtering shades", "/products/shades"),
+            ("shenandoah-tx", 0): ("Blackout roller shades", "/products/roller-shades"),
+            ("willis-tx", 2): ("Energy-efficient shades", "/products/energy-efficient-custom-window-shades")}
+
+
+def pick_link(t, sec, i):
+    if (t["slug"], i) in OVERRIDE:
+        return OVERRIDE[(t["slug"], i)]
+    h, paras, f = sec
+    text = (h + " " + " ".join(paras)).lower()
+    best, score = None, 0
+    for name, url in t["links"] + PRODUCT_LINKS:
+        ks = [w for k, ws in KEYS.items() if k in name.lower() for w in ws]
+        sc = sum(text.count(w) for w in ks) + (2 if h.lower().split()[0] in name.lower() else 0)
+        if sc > score:
+            best, score = (name, url), sc
+    return best or t["links"][i % len(t["links"])]
 
 
 def render(t):
@@ -143,6 +178,7 @@ def render(t):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/city.css?v={CITY_V}">
 <style>.town-copy h2+p,.town-copy h2+ul{{margin-top:14px}}.town-copy p+p,.town-copy p+ul,.town-copy ul+p{{margin-top:14px}}.town-copy ul:not(.feature-list){{padding-left:1.2em;list-style:disc}}.town-copy ul:not(.feature-list) li{{margin:8px 0}}</style>
 {S.render(nodes)}
 </head>'''
@@ -166,140 +202,140 @@ def render(t):
         '<p class="cf-fine">No pressure, no obligation. We never share your information.</p>'
         '</form>')
 
-    secs = []
-    for i, (h, paras, f) in enumerate(t["sections"]):
-        side = "media-right" if i % 2 == 0 else "media-left"
-        bg = " bg-cream-tint" if i % 2 == 1 else ""
-        secs.append(
-            f'<section class="section{bg}"><div class="container split {side}">'
-            f'<div class="body reveal town-copy"><h2 class="title">{e(h)}</h2>{body_html(paras)}</div>'
-            f'<div class="media reveal">{fig(f)}</div></div></section>')
+    ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">'
+             '<path d="M7 17 17 7M8 7h9v9"/></svg>')
+    gloss = {"Limited Lifetime Warranty": "Manufacturer coverage for factory defects.",
+             "Apples-to-Apples": "A price-match guarantee.",
+             "Our GuaranTEN": "One free replacement for every ten treatments.",
+             "Here-4-You": "Four years of service visits at no cost.",
+             "Transferable Warranty": "Coverage transfers if you sell."}
 
-    links = " ".join(f'<a class="btn btn-secondary" href="{u}">{e(n)}</a>' for n, u in t["links"])
-    prods = "".join(
-        f'<a class="prod-card reveal" href="{u}"><span class="pic"><img src="{img(s)}" '
-        f'alt="{e(n)} from Love Is Blinds, available in {e(t["label"])}, TX" loading="lazy" '
-        f'width="2000" height="1500"></span><span class="pbody"><h3>{e(n)}</h3>'
-        f'<span class="btn-link">See {e(n.lower())} <span class="arw">&rarr;</span></span></span></a>'
-        for n, u, s in PRODUCTS)
-    chips = " ".join(f'<a class="chip" href="/{o["slug"]}">{e(o["label"])}, TX</a>' for o in near(t)) \
-        + ' <a class="chip" href="/north-houston-tx">All of North Houston</a>'
-    gloss = {"Limited Lifetime Warranty": "manufacturer coverage for factory defects",
-             "Apples-to-Apples": "a price-match guarantee",
-             "Our GuaranTEN": "one free replacement for every ten treatments",
-             "Here-4-You": "four years of service visits at no cost",
-             "Transferable Warranty": "coverage that transfers if you sell"}
-    gtee = "".join(f'<li>{TICK}<span><strong>{e(g["name"])}:</strong> {e(gloss.get(g["name"], ""))}</span></li>'
-                   for g in P.GUARANTEES)
-    faqhtml = "".join(f'<details><summary>{e(q)}</summary><div class="a">{e(a)}</div></details>'
-                      for q, a in faqs)
+    def chapter(i, sec):
+        h, paras, (stem, alt, cap) = sec
+        kind = ["wide", "flip", "small"][i % 3]
+        pname, purl = pick_link(t, sec, i)
+        return (
+            f'<section class="cx-ch {kind}"><div class="wrap">'
+            f'<div class="cx-ch-text cx-rv"><div class="cx-num">0{i+1}</div>'
+            f'<div class="cx-eyebrow">{e(pname)}</div><h2>{e(h)}</h2>{body_html(paras)}'
+            f'<a class="cx-link" href="{purl}">See {e(pname.lower())} {ARROW}</a></div>'
+            f'<figure class="cx-ch-media cx-rv" style="margin-left:0;margin-right:0">'
+            f'<div class="cx-par cx-frame" data-par="0.10"><img src="/images/lib/r/1600/{stem}.webp" '
+            f'data-alt-final alt="{e(alt)}" loading="lazy" width="1600" height="1200" '
+            f'srcset="{srcset(stem)}" sizes="(max-width: 900px) 100vw, 50vw"></div>'
+            f'<figcaption class="cx-cap"><span>{e(cap)}</span><span>{e(t["label"])}, TX homes</span></figcaption>'
+            f'</figure></div></section>')
+
+    chapters = "".join(chapter(i, sec) for i, sec in enumerate(t["sections"]))
+    rules = "".join(f'<li><b>0{i+1}</b><span>{x}</span></li>' for i, x in enumerate([
+        "Free in-home consultation with samples you can hold against your own light",
+        "Every opening measured on site before anything is ordered",
+        "Measured and installed by the same local North Houston team",
+        "Remade at no cost if a treatment does not match the approved measurements"]))
+    start_urls = {u for _, u in t["links"]}
+    plist = "".join(
+        f'<a href="{u}"><img src="/images/lib/r/400/{s}.webp" alt="" loading="lazy" width="96" height="72">'
+        f'<span>{e(n)}</span>{ARROW}</a>' for n, u, s in PRODUCTS)
+    starts = "".join(
+        f'<a class="start" href="{u}"><img src="/images/lib/r/400/{st}.webp" alt="" loading="lazy" width="96" height="72">'
+        f'<span><small>Start here in {e(t["label"])}</small>{e(n)}</span>{ARROW}</a>'
+        for (n, u), st in zip(t["links"], [x[2][0] for x in t["sections"]]))
+    plist = starts + "".join(
+        f'<a href="{u}"><img src="/images/lib/r/400/{s}.webp" alt="" loading="lazy" width="96" height="72">'
+        f'<span>{e(n)}</span>{ARROW}</a>' for n, u, s in PRODUCTS if u not in start_urls)
+    near_li = "".join(
+        f'<li><a href="/{o["slug"]}">{e(o["label"])}, TX <em>{round(miles(t, o))} mi</em></a></li>'
+        for o in near(t, 5)) + '<li><a href="/north-houston-tx">All of North Houston <em>14 towns</em></a></li>'
+    trust = "".join(f'<div><b>{e(g["name"])}</b><span>{e(gloss.get(g["name"], ""))}</span></div>'
+                    for g in P.GUARANTEES)
+    faqhtml = "".join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in faqs)
     rd_t, rd_u = t["read"]
     map_src = f"https://www.google.com/maps?q={t['label'].replace(' ', '+')},+TX&output=embed"
+    plan = body_html(xbody)
 
-    body = f'''<body>
+    body = f"""<body>
 {P.HEAD.split('<body', 1)[1].split('>', 1)[1]}
-<main>
-<section class="phero">
-  <picture><img src="{img(hero_stem)}" alt="{e(hero_alt)}" width="2000" height="1500" fetchpriority="high"></picture>
-  <div class="container">
-    <div class="phero-copy">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">&rsaquo;</span><a href="/areas-we-serve">Service Areas</a><span class="sep">&rsaquo;</span><a href="/north-houston-tx">North Houston</a><span class="sep">&rsaquo;</span>{e(t['label'])}, TX</nav>
-      <h1 class="title">Blinds, Shades and Shutters in {e(t['label'])}, Texas</h1>
-      <p class="lead">{e(t['lead'])}</p>
-      <div class="hero-actions btnrow">
-        <a class="btn btn-primary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
-        <a class="btn btn-secondary btn-lg" href="/schedule-now">Book your free consultation</a>
+<main class="cx">
+<section class="cx-hero cx-par" data-par="0.18">
+  <img src="{img(hero_stem)}" alt="{e(hero_alt)}" width="2000" height="1500" fetchpriority="high" srcset="{srcset(hero_stem)}, {img(hero_stem)} 2000w" sizes="100vw">
+  <nav class="cx-crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/areas-we-serve">Service Areas</a><span>/</span><a href="/north-houston-tx">North Houston</a><span>/</span>{e(t['label'])}, TX</nav>
+  <div class="wrap"><div class="cx-hero-row">
+    <div>
+      <div class="cx-eyebrow" style="color:#fff;opacity:.85">Love Is Blinds &middot; North Houston</div>
+      <h1>Blinds, Shades and Shutters in {e(t['label'])}, Texas</h1>
+      <p class="cx-lead">{e(t['lead'])}</p>
+      <div class="cx-actions">
+        <a class="cx-btn cx-btn-light" href="tel:{tel}">Call {e(ph)}</a>
+        <a class="cx-btn cx-btn-line" href="#consult">Book a free consultation</a>
       </div>
     </div>
-  </div>
+    <div class="cx-hero-tag"><i></i>Scroll</div>
+  </div></div>
 </section>
 
-<section class="section">
-  <div class="container split media-right">
-    <div class="body reveal town-copy">
-      <h2 class="title">Window treatments for {e(t['label'])} homes</h2>
-      {body_html(t['intro'])}
-      <ul class="feature-list">
-        <li>{TICK}Free in-home consultation with samples you can hold against your own light</li>
-        <li>{TICK}Every opening measured on site before anything is ordered</li>
-        <li>{TICK}Measured and installed by the same local North Houston team</li>
-        <li>{TICK}Remade at no cost if a treatment does not match the approved measurements</li>
-      </ul>
-      {form}
-    </div>
-    <div class="media reveal">
-      <img src="/images/lib/r/800/{m_stem}.webp" data-alt-final alt="{e(m_alt)}" width="900" height="600" loading="lazy" srcset="{srcset(m_stem)}" sizes="(max-width: 760px) 100vw, 560px">
-    </div>
-  </div>
-</section>
-
-{"".join(secs)}
-
-<section class="section"><div class="container town-copy" style="max-width:820px">
-  <h2 class="title">{e(xh)}</h2>{body_html(xbody)}
+<section class="cx-intro"><div class="wrap">
+  <div class="cx-rv"><div class="cx-eyebrow">Window treatments for {e(t['label'])} homes</div>
+    <p class="cx-statement" style="margin-top:18px">{t['intro'][0]}</p></div>
+  <div class="cx-rv"><p>{t['intro'][1]}</p><ul class="cx-rules">{rules}</ul>
+    <a class="cx-link" href="#consult">Book your free consultation {ARROW}</a></div>
 </div></section>
 
-<section class="section">
-  <div class="container center">
-    <h2 class="title">Where to start in {e(t['label'])}</h2>
-    <p class="lead">Most {e(t['label'])} consultations start with these. For more detail, read <a href="{rd_u}">{e(rd_t)}</a>.</p>
-    <div class="btnrow" style="justify-content:center;margin-top:18px">{links}</div>
+{chapters}
+
+<section class="cx-band cx-par" data-par="0.16">
+  <img src="/images/lib/r/1600/{m_stem}.webp" data-alt-final alt="{e(m_alt)}" loading="lazy" width="1600" height="1200" srcset="{srcset(m_stem)}" sizes="100vw">
+  <div class="wrap"><div class="cx-eyebrow">{e(t['label'])}, Texas</div><h2>{e(xh)}</h2></div>
+</section>
+
+<section class="cx-plan"><div class="wrap">
+  <div class="cx-rv"><div class="cx-eyebrow">Planning the house</div>
+    <p style="margin-top:18px">Every plan starts at your windows, with samples in your own light. For more detail, read <a href="{rd_u}">{e(rd_t)}</a>.</p>
+    <a class="cx-link" href="#consult">Plan yours with us {ARROW}</a></div>
+  <div class="cx-rv">{plan}</div>
+</div></section>
+
+<section class="cx-prod"><div class="wrap">
+  <div class="cx-prod-head cx-rv"><div><div class="cx-eyebrow">What we install</div><h2 style="margin-top:12px">Everything we fit in {e(t['label'])}</h2></div>
+    <p>Each is measured on site and built to the opening, then installed by the team that measured it.</p></div>
+  <div class="cx-plist cx-rv">{plist}</div>
+</div></section>
+
+<section class="cx-trust"><div class="wrap">{trust}</div></section>
+
+<section class="cx-area"><div class="wrap">
+  <iframe class="cx-map cx-rv" src="{map_src}" title="Map of {e(t['label'])}, TX" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  <div class="cx-rv"><div class="cx-eyebrow">Service area</div><h2 style="margin-top:12px">{e(t['label'])} and the towns around it</h2>
+    <ul class="cx-near">{near_li}</ul></div>
+</div></section>
+
+<section class="cx-faq"><div class="wrap">
+  <div class="cx-rv"><div class="cx-eyebrow">Questions</div><h2 style="margin-top:12px">{e(t['label'])} window treatment questions</h2></div>
+  <div class="cx-rv">{faqhtml}</div>
+</div></section>
+
+<section class="cx-close" id="consult">
+  <div class="cx-close-dark">
+    <div><div class="cx-eyebrow" style="color:var(--pop)">Free in-home consultation</div>
+      <h2 style="margin-top:14px">Book a free consultation in {e(t['label'])}</h2>
+      <p>Samples at your door, every opening measured, and a written quote with installation included before you decide anything.</p></div>
+    <div><small>Call your North Houston team</small><a class="cx-phone" href="tel:{tel}">{e(ph)}</a></div>
   </div>
-</section>
-
-<section class="section bg-cream-tint">
-  <div class="container center"><h2 class="title">Everything we install in {e(t['label'])}</h2></div>
-  <div class="container"><div class="prod-grid prod-grid-6">{prods}</div></div>
-</section>
-
-<section class="section contact-band">
-  <div class="container contact-cols">
-    <div class="contact-card reveal">
-      <h2 class="title">Talk to your North Houston team</h2>
-      <ul class="cc-rows">
-        <li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
-          <span><span class="cc-label">Call your local team</span><a class="cc-value" href="tel:{tel}">{e(ph)}</a></span></li>
-        <li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <span><span class="cc-label">Service area</span><span class="cc-value">{e(t['label'])} and North Houston</span></span></li>
-        <li><span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-          <span><span class="cc-label">Prefer to write</span><a class="cc-value" href="/schedule-now">Send us a message</a></span></li>
-      </ul>
-      <div class="btnrow"><a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a></div>
-    </div>
-    <div class="contact-side reveal">
-      <div class="map-card">
-        <iframe src="{map_src}" title="Map of {e(t['label'])}, TX" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        <span class="map-gbp">Serving {e(t['label'])} and the North Houston area</span>
-      </div>
-      <h2 class="title" style="margin-top:26px">Nearby towns we serve</h2>
-      <div class="chips" style="margin-top:14px">{chips}</div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container town-copy" style="max-width:820px"><h2 class="title">Backed five ways</h2>
-    <ul class="feature-list">{gtee}</ul>
-    <p><a class="btn-link" href="/installation-standards">How we install and what is covered <span class="arw">&rarr;</span></a></p></div>
-</section>
-
-<section class="section bg-cream-tint">
-  <div class="container center"><h2 class="title">{e(t['label'])} window treatment questions</h2></div>
-  <div class="container"><div class="faq">{faqhtml}</div></div>
-</section>
-
-<section class="section closing-cta">
-  <div class="container center">
-    <h2 class="title">Book a free consultation in {e(t['label'])}</h2>
-    <p class="lead">Samples at your door, every opening measured, and a written quote before you decide anything.</p>
-    <div class="btnrow" style="justify-content:center">
-      <a class="btn btn-primary btn-lg" href="/schedule-now">Book your free consultation</a>
-      <a class="btn btn-secondary btn-lg" href="tel:{tel}">Call {e(ph)}</a>
-    </div>
-  </div>
+  <div class="cx-close-form">{form}</div>
 </section>
 </main>
-{P.FOOT}'''
+<script>(function(){{
+var els=[].slice.call(document.querySelectorAll('.cx-par'));
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches||innerWidth<900;
+if(!reduce&&els.length){{var tick=false;function run(){{tick=false;var vh=innerHeight;
+els.forEach(function(el){{var r=el.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
+var k=parseFloat(el.getAttribute('data-par'))||.12;var c=(r.top+r.height/2-vh/2);
+var im=el.querySelector('img');if(im)im.style.transform='translate3d(0,'+(-c*k).toFixed(1)+'px,0)';}});}}
+addEventListener('scroll',function(){{if(!tick){{tick=true;requestAnimationFrame(run);}}}},{{passive:true}});addEventListener('resize',run);run();}}
+var rv=[].slice.call(document.querySelectorAll('.cx-rv'));
+if('IntersectionObserver' in window){{var io=new IntersectionObserver(function(es){{es.forEach(function(x){{if(x.isIntersecting){{x.target.classList.add('in');io.unobserve(x.target);}}}});}},{{rootMargin:'0px 0px -8% 0px'}});rv.forEach(function(x){{io.observe(x);}});}}
+else rv.forEach(function(x){{x.classList.add('in');}});
+}})();</script>
+{P.FOOT}"""
     return head + "\n" + body
 
 
