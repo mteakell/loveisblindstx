@@ -175,7 +175,7 @@
    "lat": 32.777,
    "lng": -96.797,
    "gbp": [
-    "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
+    "https://www.google.com/maps/place/?q=place_id:ChIJq_pEM1Dcs4YRSfANfXjdWVg"
    ],
    "twin": null,
    "custom": true
@@ -372,7 +372,9 @@
    "postal": "",
    "lat": 32.8334,
    "lng": -96.792,
-   "gbp": [],
+   "gbp": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJq_pEM1Dcs4YRSfANfXjdWVg"
+   ],
    "twin": null,
    "geo_source": "legacy-site"
   },
@@ -402,7 +404,9 @@
    "postal": "75062",
    "lat": 32.814,
    "lng": -96.9489,
-   "gbp": [],
+   "gbp": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJp9JeRw-DToYRrsk8s3hV2GE"
+   ],
    "twin": null,
    "geo_source": "legacy-site",
    "custom": true
@@ -461,7 +465,9 @@
    "postal": "",
    "lat": 32.8603747,
    "lng": -96.9346525,
-   "gbp": [],
+   "gbp": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJp9JeRw-DToYRrsk8s3hV2GE"
+   ],
    "twin": null,
    "geo_source": "gbp"
   },

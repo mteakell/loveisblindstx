@@ -46,9 +46,7 @@
  {
   "url": "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA",
   "primary": "corsicana-tx",
-  "also": [
-   "dallas-tx"
-  ]
+  "also": []
  },
  {
   "url": "https://maps.app.goo.gl/bFVM1ooF1JWAcLv28",
@@ -111,5 +109,19 @@
   "url": "https://maps.app.goo.gl/VohNBHJa1xjutCTW7",
   "primary": "weatherford-tx",
   "also": []
+ },
+ {
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJq_pEM1Dcs4YRSfANfXjdWVg",
+  "primary": "highland-park-tx",
+  "also": [
+   "dallas-tx"
+  ]
+ },
+ {
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJp9JeRw-DToYRrsk8s3hV2GE",
+  "primary": "las-colinas-tx",
+  "also": [
+   "irving-tx"
+  ]
  }
 ]

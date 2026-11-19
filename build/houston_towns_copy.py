@@ -164,7 +164,7 @@ dict(
  links=[("Motorized window treatments", "/products/motorized-window-treatment-automations"),
         ("Honeycomb shades", "/products/honeycomb-shades"),
         ("Exterior patio shades", "/products/exterior-patio-shades")],
- read=("Window treatments for tall and two-story windows", "/window-treatments-for-tall-two-story-windows"),
+ read=("Window treatments for tall and two-story windows", "/solutions/tall-and-two-story-windows"),
 ),
 
 # ---------------------------------------------------------------------------

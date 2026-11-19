@@ -132,7 +132,7 @@ dict(
         "Dining room with a woven wood shade on a window looking out to water and trees"),
  intro=[
   "Austin homes tend to have more glass and more view than most, and both come with sun. West-facing windows that look over the hills take the full afternoon, and natural materials inside, like stone, wood and light fabrics, fade where that light lands.",
-  "An Austin consultation is about controlling that sun while keeping the view you bought the house for. We bring see-through solar fabrics and natural weaves to the house so you can judge them in your own light."],
+  "An Austin consultation is about controlling that sun while keeping the view you bought the house for. We bring see-through solar fabrics and natural weaves to the house to judge in your own light."],
  sections=[
   ("See-through solar shades for view windows",
    ["A solar screen shade cuts glare and UV at the glass while you still see out. Darker fabrics are easier to see through from inside, which matters on a view window. On a wall of glass, several shades can be grouped to move together."],
