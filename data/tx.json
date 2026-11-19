@@ -49,7 +49,8 @@
     "https://share.google/9NTHmU57t9Yt7JkX8"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "austin-tx",
@@ -65,7 +66,8 @@
     "https://maps.app.goo.gl/NRiuAwViE5z3iBU68"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "bedford-tx",
@@ -175,7 +177,8 @@
    "gbp": [
     "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "denton-tx",
@@ -236,7 +239,8 @@
    "lng": -97.2719303,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "frisco-tx",
@@ -251,7 +255,8 @@
    "gbp": [
     "https://maps.app.goo.gl/CmzHdYAhyw1TvRrbA"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "gainesville-tx",
@@ -399,7 +404,8 @@
    "lng": -96.9489,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "justin-tx",
@@ -487,7 +493,8 @@
     "https://maps.app.goo.gl/3XYfyAsPh12hmyxVA"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "north-richland-hills-tx",
@@ -547,7 +554,8 @@
     "https://maps.app.goo.gl/74ggCgog8Zhd5CQDA"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "prosper-tx",
