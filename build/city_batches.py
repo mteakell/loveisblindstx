@@ -15,7 +15,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(__file__))
 os.chdir(ROOT)
 
-BATCHES = ["city_copy_batch1"]
+BATCHES = ["city_copy_batch1", "city_copy_batch2", "city_copy_batch3", "city_copy_batch4",
+           "city_copy_batch5", "city_copy_batch6"]
 CITIES = []
 for b in BATCHES:
     CITIES += importlib.import_module(b).CITIES
@@ -50,8 +51,10 @@ def ctx_for(t):
                  else f"Measured and installed by the same local {terr['brand']} team")
     near = [o for o in P.nearby(c, 8) if not o.get("hub")][:5]
     addr = (f"{c['street']}, {c['locality']}, TX {c.get('postal', '')}".strip() if c.get("street") else None)
+    if terr["key"] == "tyler":
+        addr = None       # the Tyler location closed (territory.py); the city is still served
     return dict(
-        phone=c["phone"] or P.BIZ["tel"], eyebrow=terr["brand"], crumbs=[],
+        phone=c["phone"] or __import__("re").sub(r"\D", "", P.BIZ["tel"])[-10:], eyebrow=terr["brand"], crumbs=[],
         team_rule=team_rule, team_call=f"Call {terr['brand']}",
         near=[(o["label"], o["url"], round(V.miles(c, o))) for o in near],
         near_all=("All Texas service areas", "/areas-we-serve", ""),

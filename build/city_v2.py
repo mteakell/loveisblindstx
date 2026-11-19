@@ -249,7 +249,7 @@ def render(t, ctx):
   <div class="wrap"><div class="cx-hero-row">
     <div>
       <div class="cx-eyebrow" style="color:#fff;opacity:.85">{e(ctx['eyebrow'])}</div>
-      <h1>Blinds, Shades and Shutters in {e(label)}, Texas</h1>
+      <h1>Blinds, Shades and Shutters in {e(label)}, Texas{(' (' + e(c['variant']) + ')') if c.get('variant') else ''}</h1>
       <p class="cx-lead">{e(t['lead'])}</p>
       <div class="cx-actions">
         <a class="cx-btn cx-btn-light" href="tel:{tel}">Call {e(ph)}</a>

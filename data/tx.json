@@ -33,7 +33,8 @@
     "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA",
     "https://maps.app.goo.gl/pPEGbj3ssWUQswC19"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "arlington-tx",
@@ -83,7 +84,8 @@
     "https://maps.app.goo.gl/GUv6jsXX9zWRWeeL8",
     "https://maps.app.goo.gl/vE3hH9yV2bfQqmTg7"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "boyd-tx",
@@ -98,7 +100,8 @@
    "gbp": [
     "https://maps.app.goo.gl/qKuvDr9vZwoTaziD6"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "celina-tx",
@@ -115,7 +118,8 @@
     "https://maps.app.goo.gl/znAPLi5nqnmFfdH17"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "colleyville-tx",
@@ -131,7 +135,8 @@
     "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "coppell-tx",
@@ -146,7 +151,8 @@
    "gbp": [
     "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "corsicana-tx",
@@ -162,7 +168,8 @@
     "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
    ],
    "twin": "w-7th-avenue-corsicana-tx",
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "dallas-tx",
@@ -195,7 +202,8 @@
     "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "euless-tx",
@@ -210,7 +218,8 @@
    "gbp": [
     "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "flower-mound-tx",
@@ -225,7 +234,8 @@
    "gbp": [
     "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "fort-worth-tx",
@@ -272,7 +282,8 @@
     "https://maps.app.goo.gl/RBX7qXKRxaNnFAtz7"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "georgetown-tx",
@@ -286,7 +297,8 @@
    "lng": -97.670933,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "granbury-tx",
@@ -302,7 +314,8 @@
     "https://maps.app.goo.gl/GuzJhqCg2Muxt5cZ9"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "grand-prairie-tx",
@@ -316,7 +329,8 @@
    "lng": -96.9978,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "grapevine-tx",
@@ -332,7 +346,8 @@
     "https://share.google/eBFZbQb1i9jLHq5Da"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "gun-barrel-city-tx",
@@ -346,7 +361,8 @@
    "lng": -96.1455318,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "haltom-city-tx",
@@ -360,7 +376,8 @@
    "lng": -97.2692,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "highland-park-tx",
@@ -376,7 +393,8 @@
     "https://www.google.com/maps/place/?q=place_id:ChIJq_pEM1Dcs4YRSfANfXjdWVg"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "hurst-tx",
@@ -392,7 +410,8 @@
     "https://maps.app.goo.gl/CGF2QrjndWHDU2yS6"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "irving-tx",
@@ -423,7 +442,8 @@
    "lng": -97.2961,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "keller-tx",
@@ -439,7 +459,8 @@
     "https://share.google/BArTi9ylN3WuOqArl"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "kerens-tx",
@@ -453,7 +474,8 @@
    "lng": -96.36887,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "las-colinas-tx",
@@ -469,7 +491,8 @@
     "https://www.google.com/maps/place/?q=place_id:ChIJp9JeRw-DToYRrsk8s3hV2GE"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "lewisville-tx",
@@ -483,7 +506,8 @@
    "lng": -96.9942,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "mckinney-tx",
@@ -514,7 +538,8 @@
    "lng": -97.195643,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "northlake-tx",
@@ -530,7 +555,8 @@
     "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "paradise-tx",
@@ -544,7 +570,8 @@
    "lng": -97.6839,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "plano-tx",
@@ -575,7 +602,8 @@
    "lng": -96.8011,
    "gbp": [],
    "twin": null,
-   "geo_source": "town-center"
+   "geo_source": "town-center",
+   "custom": true
   },
   {
    "slug": "richland-hills-tx",
@@ -589,7 +617,8 @@
    "lng": -97.2281,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "roanoke-tx",
@@ -603,7 +632,8 @@
    "lng": -97.2256,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "round-rock-tx",
@@ -617,7 +647,8 @@
    "lng": -97.6890244,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "sherman-tx",
@@ -633,7 +664,8 @@
     "https://maps.app.goo.gl/t4fA7xZQAhnr7E396"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "southlake-tx",
@@ -649,7 +681,8 @@
     "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "taylor-tx",
@@ -663,7 +696,8 @@
    "lng": -97.4092,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "trophy-club-tx",
@@ -677,21 +711,23 @@
    "lng": -97.1836,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "tyler-tx",
    "label": "Tyler",
    "url": "/tyler-tx",
    "phone": "9035013899",
-   "street": "4295 Kinsey Dr",
+   "street": "",
    "locality": "Tyler",
-   "postal": "75703",
+   "postal": "",
    "lat": 32.3513,
    "lng": -95.3011,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "w-7th-avenue-corsicana-tx",
@@ -707,7 +743,8 @@
    "twin": "corsicana-tx",
    "variant": "W 7th Ave",
    "geo_source": "legacy-site",
-   "unlisted": true
+   "unlisted": true,
+   "custom": true
   },
   {
    "slug": "waco-tx",
@@ -721,7 +758,8 @@
    "lng": -97.2112885,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "waxahachie-tx",
@@ -735,7 +773,8 @@
    "lng": -96.8711631,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "weatherford-tx",
@@ -751,7 +790,8 @@
     "https://maps.app.goo.gl/VohNBHJa1xjutCTW7"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "westlake-tx",
@@ -765,7 +805,8 @@
    "lng": -97.1953,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "north-houston-tx",
