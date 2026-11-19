@@ -1,4 +1,5 @@
 """City page generator for Love Is Blinds Texas."""
+from urllib.parse import quote_plus
 import hashlib, json, math, os, re, sys, html
 sys.path.insert(0, os.path.dirname(__file__))
 import schema as S, territory as T
@@ -336,12 +337,14 @@ def map_embed(c):
     if c.get("map_view"):
         v = c["map_view"]
         return f"https://www.google.com/maps?ll={v['lat']},{v['lng']}&z={v['z']}&output=embed"
-    if pid:
-        src = f"https://www.google.com/maps?q=place_id:{pid}&output=embed"
+    # A place_id query needs the Maps Embed API key; without one Google falls
+    # back to a world map (Maddie caught it, Nov 19 2026). Use the profile's
+    # street address when there is one, otherwise the city itself.
+    if c.get("street"):
+        q = f"{c['street']}, {c['locality']}, TX {c.get('postal', '')}".strip()
     else:
-        q = (c["label"] + ", TX").replace(" ", "+")
-        src = f"https://www.google.com/maps?q={q}&output=embed"
-    return src
+        q = c["label"] + ", TX"
+    return "https://www.google.com/maps?q=" + quote_plus(q, safe=",") + "&output=embed"
 
 
 # ---- block rotation ------------------------------------------------------
