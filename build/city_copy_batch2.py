@@ -175,8 +175,8 @@ dict(
    "Faux wood blinds in kitchens and baths, roller shades in bedrooms and living rooms, and shutters where the owner wants a lasting finish. Each comes cordless."),
   ("Can every unit get the same look?",
    "Yes. We can repeat the same product, color and mount across units so the property looks consistent from the street."),
-  ("Do your warranties transfer if I sell the property?",
-   "Yes. The coverage transfers to the new owner if you sell."),
+  ("Which rooms in a rental need blackout shades?",
+   "Bedrooms first. Blackout roller shades darken them, and side channels close the edge gaps where a room needs to be fully dark."),
   ("Where is your Waco office?",
    "7215 Bosque Blvd, Suite 237, Waco, TX 76710. Consultations happen at the property."),
  ],
@@ -193,7 +193,7 @@ dict(
    "<li><strong>Living room facing the street:</strong> light filtering roller shades.</li>"
    "<li><strong>Guest cottage or casita:</strong> woven wood with a liner.</li></ul>"],
   ("Do you work with homeowners as well as rental owners?",
-   "Yes. The consultation, the products and the guarantees are the same for both.")),
+   "Yes. The consultation, the products and the installation team are the same for both.")),
 ),
 
 # ---------------------------------------------------------------------------

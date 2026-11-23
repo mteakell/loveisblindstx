@@ -11,9 +11,8 @@ Rules for every entry:
     cover, open land, design review). No road or landmark padding.
   * Company claims are the ones the whole site already makes: free in-home
     consultation, on-site measure, written quote with installation, the same
-    team measures and installs, remake at no cost against approved
-    measurements, manufacturer's limited lifetime warranty, four-year service
-    guarantee. Product claims trace to the product pages.
+    team measures and installs. No guarantee or warranty claims (removed from
+    the site Nov 2026). Product claims trace to the product pages.
   * Photos are real Love Is Blinds installs from other Texas teams. Alt text
     describes the photo and names the town as where we serve; captions never
     say the photo was taken there.

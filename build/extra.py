@@ -154,7 +154,8 @@ def team():
                 f'<div class="prose"><p>{intro}</p>{bio}</div>'
                 f'<div class="btnrow">'
                 f'<a class="btn btn-primary btn-lg" href="/schedule-now">Book a consultation</a>'
-                f'<a class="btn btn-secondary btn-lg" href="tel:{BIZ["tel"]}">Call {e(BIZ["phone"])}</a>'
+                f'<a class="btn btn-secondary btn-lg" href="tel:{S.tel(m["phone"]) if m.get("phone") else BIZ["tel"]}">'
+                f'Call {e(S.pretty(m["phone"])) if m.get("phone") else e(BIZ["phone"])}</a>'
                 f'</div></div>{shot}</div></section>{area}')
         # the pages ran 130 to 215 words: a portrait, a bio and a city list.
         # Territory reviews and the guarantees give a visitor a reason to stay.
@@ -175,12 +176,8 @@ def team():
                      f'<div class="container center"><h2 class="title">What {e(m["name"].split()[0])}\'s '
                      f'customers say</h2></div><div class="rv-wrap"><div class="rv-track" tabindex="0" '
                      f'role="region" aria-label="Customer reviews">{_cards}</div></div></section>')
-        _g = "".join(
-            f'<div class="type-card">{IC.guarantee_icon(g["id"])}<div class="pbody">'
-            f'<h3>{e(g["name"])}</h3><p>{e(g["text"])}</p></div></div>' for g in GUARANTEES)
-        body += (f'<section class="section"><div class="container center">'
-                 f'<h2 class="title">Every job is backed five ways</h2></div>'
-                 f'<div class="container"><div class="prod-grid gtee-grid">{_g}</div></div></section>')
+        import how_strip
+        body += how_strip.section(f"How a project with {m['name'].split()[0]} works")
         os.makedirs("meet-the-team", exist_ok=True)
         open(f"meet-the-team/{m['slug']}.html", "w").write(shell(url, title, desc, nodes, body))
         made.append(m["slug"])
@@ -386,7 +383,7 @@ def team_cards():
                   f'</div></a>')
     block = (f'<section class="section bg-cream-tint"><div class="container center">'
              f'<h2 class="title">Meet Your Local Owner Operators</h2>'
-             f'<p class="lead">Three franchises cover Texas. The person who quotes your window '
+             f'<p class="lead">Four locally owned franchises cover Texas. The person who quotes your window '
              f'treatments is the person who installs them.</p></div><div class="container">'
              f'<div class="team-grid">{cards}</div></div></section>\n')
     s = open("meet-the-team.html").read()
@@ -414,8 +411,9 @@ def team_cards():
     # old Georgia-site hero lead: this is three owner-operators, not a couple
     s = s.replace("A husband-and-wife team that handles your project personally, "
                   "from first hello to final install.",
-                  "Four owner-operators across three franchises, handling your project personally "
+                  "Five owner-operators across four franchises, handling your project personally "
                   "from first hello to final install.")
+    s = s.replace("Four owner-operators across three franchises", "Five owner-operators across four franchises")
     # owner photos are the FIRST thing under the hero
     hero_end = s.find("</section>", s.find('<section class="phero')) + len("</section>")
     open("meet-the-team.html", "w").write(s[:hero_end] + "\n" + block + s[hero_end:])

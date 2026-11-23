@@ -94,9 +94,9 @@
 .cx-plist a.start small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pop-deep);font-weight:800;margin-bottom:2px}
 
 .cx-trust{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
-.cx-trust .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
-.cx-trust div{padding:28px 22px 28px 0;border-right:1px solid var(--hairline);margin-right:22px}
-.cx-trust div:last-child{border-right:0;margin-right:0}
+.cx-trust .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.cx-trust .wrap>a{display:block;text-decoration:none;padding:28px 22px 28px 0;border-right:1px solid var(--hairline);margin-right:22px}.cx-trust .wrap>a:hover b{text-decoration:underline;text-underline-offset:3px}
+.cx-trust .wrap>a:last-child{border-right:0;margin-right:0}
 .cx-trust b{display:block;color:var(--ink-display);font-size:15px;margin-bottom:6px}
 .cx-trust span{font-size:14px;line-height:1.5;color:var(--ink-muted)}
 
@@ -145,7 +145,7 @@
   .cx-ch.flip .cx-ch-media{margin-top:32px;margin-bottom:0}
   .cx-plist{grid-template-columns:1fr}
   .cx-trust .wrap{grid-template-columns:1fr 1fr}
-  .cx-trust div{border-right:0;margin-right:0;border-bottom:1px solid var(--hairline)}
+  .cx-trust .wrap>a{border-right:0;margin-right:0;border-bottom:1px solid var(--hairline)}
   .cx-hero{min-height:88vh}
   .cx-hero-tag{display:none}
   .cx-plist a{grid-template-columns:72px 1fr auto}

@@ -276,7 +276,7 @@ dict(
   ("Can an office that is also a guest room get dark at night?",
    "Yes. A dual shade or a roman shade with a blackout liner covers both uses."),
   ("Will the same people who measure my Argyle office install it?",
-   "Yes. The team that measures is the team that installs, and anything that does not match the approved measurements is remade at no cost."),
+   "Yes. The team that measures your Argyle office is the team that comes back to install it."),
  ],
  links=[("Plantation shutters", "/products/plantation-shutters"),
         ("Roman shades", "/products/roman-shades"),

@@ -2,7 +2,7 @@
 
 Copy and photos live in build/houston_towns_copy.py, one entry per town.
 This file only lays them out in the site's existing city-page design, so
-every page shares the header, footer, form and guarantees but none of the
+every page shares the header, footer, form and process strip but none of the
 body copy, headings, FAQs or photos.
 
 Also:
@@ -48,8 +48,8 @@ def ctx_for(t):
     return dict(
         phone=PHONE, eyebrow="Love Is Blinds \u00b7 North Houston",
         crumbs=[("North Houston", "/north-houston-tx")],
-        team_rule="Measured and installed by the same local North Houston team",
-        team_call="Call your North Houston team",
+        team_rule="Measured and installed by the Love Is Blinds North Houston team, run by Zeke Lee",
+        team_call="Call Love Is Blinds North Houston",
         near=[(o["label"], "/" + o["slug"], round(V.miles(t, o))) for o in near],
         near_all=("All of North Houston", "/north-houston-tx", f"{len(TOWNS)} towns"),
         map_src=f"https://www.google.com/maps?q={t['label'].replace(' ', '+')},+TX&output=embed",

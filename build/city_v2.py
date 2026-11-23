@@ -24,11 +24,6 @@ CITY_V = hashlib.md5(open(os.path.join(ROOT, "css/city.css"), "rb").read()).hexd
 
 ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">'
          '<path d="M7 17 17 7M8 7h9v9"/></svg>')
-GLOSS = {"Limited Lifetime Warranty": "Manufacturer coverage for factory defects.",
-         "Apples-to-Apples": "A price-match guarantee.",
-         "Our GuaranTEN": "One free replacement for every ten treatments.",
-         "Here-4-You": "Four years of service visits at no cost.",
-         "Transferable Warranty": "Coverage transfers if you sell."}
 
 PRODUCT_LINKS = [("Roller and solar shades", "/products/roller-shades"), ("Roman shades", "/products/roman-shades"),
                  ("Woven wood shades", "/products/woven-wood-shades"), ("Faux wood blinds", "/products/faux-wood-blinds"),
@@ -225,7 +220,7 @@ def render(t, ctx):
         "Free in-home consultation with samples you can hold against your own light",
         "Every opening measured on site before anything is ordered",
         ctx["team_rule"],
-        "Remade at no cost if a treatment does not match the approved measurements"]))
+        "One written quote, with installation included in the price"]))
     start_urls = {u for _, u in t["links"]}
     starts = "".join(
         f'<a class="start" href="{local_url(u, t["slug"])}"><img src="/images/lib/r/400/{st}.webp" alt="" loading="lazy" width="96" height="72">'
@@ -244,8 +239,12 @@ def render(t, ctx):
     if ctx.get("near_all"):
         nl, nu, nn = ctx["near_all"]
         near_li += f'<li><a href="{nu}">{e(nl)} <em>{e(nn)}</em></a></li>'
-    trust = "".join(f'<div><b>{e(g["name"])}</b><span>{e(GLOSS.get(g["name"], ""))}</span></div>'
-                    for g in P.GUARANTEES)
+    # contact strip (replaced the guarantee strip, Nov 2026)
+    gbp_u = ctx.get("gbp") or "/reviews"
+    trust = (f'<a href="tel:{tel}"><b>{e(ctx["team_call"])}</b><span>{e(ph)}</span></a>'
+             f'<a href="#consult"><b>Book a free consultation</b><span>Samples come to your windows in {e(label)}.</span></a>'
+             f'<a href="{e(gbp_u)}" rel="noopener"><b>Read our Google reviews</b><span>What homeowners say about the {e(ctx["team_call"].replace("Call ", "", 1))} team.</span></a>'
+             f'<a href="/gallery"><b>See finished installs</b><span>Photos of shades, blinds and shutters in Texas homes.</span></a>')
     faqhtml = "".join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in faqs)
     rd_t, rd_u = t["read"]
     plan = body_html(xbody)

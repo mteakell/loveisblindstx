@@ -177,7 +177,7 @@ def render(prod, slug):
         "Free in-home consultation with samples you can hold against your own light",
         "Every opening measured on site before anything is ordered",
         team_rule,
-        "Remade at no cost if it does not match the approved measurements"]))
+        "One written quote, with installation included in the price"]))
     options = "".join(f'<li><strong>{e(n)}</strong>{e(b)}</li>' for n, b in tlist)
     prices = "".join(f'<li>{e(x)}</li>' for x in plist)
     rev_html = ""

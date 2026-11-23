@@ -225,12 +225,10 @@ SPLIT_COPY = {
              "wide spans easy to live with.")],
  "mixed": [("Measured by the people who install",
             "Every opening is measured on site, the quote is written from those numbers, and the "
-            "team that measured returns to install. A mis-measure is ours to remake, not yours to "
-            "live with."),
-           ("Backed five ways",
-            "Manufacturer limited lifetime warranty on factory defects, a four-year service "
-            "guarantee, a price match, a free replacement for every ten treatments, and cover "
-            "that transfers if you sell.")],
+            "team that measured returns to install."),
+           ("One local team, start to finish",
+            "The free consultation, the on-site measure and the written quote with installation all come "
+            "before anything is ordered, and the team that measured is the team that installs.")],
 }
 
 

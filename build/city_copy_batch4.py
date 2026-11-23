@@ -40,7 +40,7 @@ dict(
         "Living room with a gray paneled wall and white blinds on three windows above a tufted sofa"),
  intro=[
   "Every house has a few windows that everyone sees and many more that only the family sees. The front room, the dining room and anything facing the street set the look. Bedrooms, baths and the back of the house mostly need privacy and light control that lasts.",
-  "We walk the house with you, measure every opening on site and write one quote with installation included. The quote can be split into phases, and our price match applies to it."],
+  "We walk the house with you, measure every opening on site and write one quote with installation included. The quote can be split into phases."],
  sections=[
   ("Faux wood blinds for most of the house",
    ["Faux wood blinds give the look of wood for less than real wood, and that difference adds up across a whole house. The composite and PVC slats stand up to humidity, kids and pets, and they can be washed with a damp cloth and mild cleaner. Tilt the slats and daylight comes in while the view from outside stays blocked."],
@@ -63,8 +63,8 @@ dict(
    "Faux wood blinds. They cost less than real wood, handle humidity, and come in stained or painted finishes."),
   ("Can I start with a few rooms and add the rest later?",
    "Yes. The written quote can be split into phases, and many people start with the front of the house and the bedrooms."),
-  ("Do you price match?",
-   "Yes. Price matching is one of our guarantees, along with one free replacement for every ten treatments you order."),
+  ("Can shutters and blinds be mixed in one house?",
+   "Yes. Many people put shutters in the rooms that show and blinds or shades elsewhere, since shutters stay with the house and read as part of the property."),
   ("Do you remove the blinds you are replacing?",
    "Yes. The old blinds come down on installation day and leave with us if you want them gone."),
  ],
