@@ -7,7 +7,7 @@ direction, approved by Maddie):
   Cedar Creek Lake          - Danny Rohweder
   Waco                      - Danny Rohweder
   Austin                    - Danny Rohweder
-  Dallas                    - Danny Rohweder
+  Dallas                    - Jake Wade and Jonathan Arosemena (moved Nov 19 2026)
 Danny closed the Tyler location and asked to retire the "East & Central
 Texas" umbrella: "having to lump them together with East Texas" did not fit
 how customers see the three areas. Update, same day: Maddie kept Tyler AND its pages, detached from Danny:
@@ -22,7 +22,10 @@ Danny's per-city naming preference (Option 2) carries over: name only on
 waco-tx; other cities in his three territories use franchise attribution.
 One file so a correction never means resweeping generated pages.
 """
-NORTH = {'mckinney-tx', 'frisco-tx', 'celina-tx', 'sherman-tx', 'plano-tx', 'prosper-tx'}
+NORTH = {'mckinney-tx', 'frisco-tx', 'celina-tx', 'sherman-tx', 'plano-tx', 'prosper-tx',
+         # Nov 19 2026 (Maddie): Dallas, Highland Park, Irving and Las Colinas moved to
+         # Jake Wade and Jonathan Arosemena's North Texas franchise.
+         'dallas-tx', 'highland-park-tx', 'irving-tx', 'las-colinas-tx'}
 
 CEDARCREEK = {'gun-barrel-city-tx', 'kerens-tx', 'corsicana-tx',
               'w-7th-avenue-corsicana-tx'}
@@ -33,17 +36,21 @@ WACO = {'waco-tx', 'waxahachie-tx'}
 
 AUSTIN = {'austin-tx', 'round-rock-tx', 'georgetown-tx', 'taylor-tx'}
 
-DALLAS = {'dallas-tx', 'highland-park-tx', 'irving-tx', 'las-colinas-tx'}
+DALLAS = set()   # moved to NORTH, Nov 19 2026
 
 # North Houston hub (2026-11-13, Maddie): new coverage area ahead of the
 # Houston/Magnolia launch (see lib-expansion-research). No franchisee signed
 # yet, so it renders like Tyler: neutral brand, no owner named, no home card.
-HOUSTON = {'north-houston-tx'}
+HOUSTON = {'north-houston-tx',
+           # Nov 2026 town pages (build/houston_towns.py), inside the FA Exhibit A map
+           'magnolia-tx', 'tomball-tx', 'the-woodlands-tx', 'spring-tx', 'conroe-tx',
+           'montgomery-tx', 'willis-tx', 'pinehurst-tx', 'stagecoach-tx', 'hockley-tx',
+           'waller-tx', 'prairie-view-tx', 'shenandoah-tx', 'oak-ridge-north-tx'}
 
 TERRITORIES = {
  "north": {"key":"north","name":"North Texas","brand":"Love Is Blinds North Texas",
    "leads":["Jake Wade","Jonathan Arosemena"],
-   "blurb":"Sherman, Celina, Prosper, Plano, McKinney, Frisco and the surrounding suburbs"},
+   "blurb":"Dallas, Highland Park, Irving, Las Colinas, Plano, Frisco, McKinney, Prosper, Celina, Sherman and the surrounding suburbs"},
  "cedarcreek": {"key":"cedarcreek","name":"Cedar Creek Lake",
    "brand":"Love Is Blinds at Cedar Creek Lake","leads":["Danny Rohweder"],
    "name_cities": False,
@@ -63,7 +70,7 @@ TERRITORIES = {
  "houston": {"key":"houston","name":"North Houston","brand":"Love Is Blinds Texas",
    "leads":[],
    "name_cities": False,
-   "blurb":"Tomball, Magnolia, Montgomery and the North Houston communities"},
+   "blurb":"Magnolia, Tomball, The Woodlands, Spring, Conroe, Montgomery, Willis, Waller and the communities between them"},
  "tyler": {"key":"tyler","name":"East Texas","brand":"Love Is Blinds Texas",
    "leads":[],
    "name_cities": False,
@@ -77,8 +84,8 @@ TEAM = [
  {"slug":"jonathan-arosemena","photo":"/images/team/jonathan-arosemena.jpg","name":"Jonathan Arosemena","territory":"north"},
  {"slug":"durrell","photo":"/images/team/durrell.jpg","name":"Durrell Glick","territory":"dfw"},
  {"slug":"danny","photo":"/images/team/danny.jpg","name":"Danny Rohweder","territory":"waco",
-  "sub":"Love Is Blinds Waco, Austin, Dallas and Cedar Creek Lake",
-  "covers":"the Waco corridor, the Austin metro, Dallas and the Cedar Creek Lake communities"},
+  "sub":"Love Is Blinds Waco, Austin and Cedar Creek Lake",
+  "covers":"the Waco corridor, the Austin metro and the Cedar Creek Lake communities"},
 ]
 
 def of(slug):

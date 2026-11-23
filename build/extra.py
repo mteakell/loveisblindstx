@@ -92,7 +92,7 @@ def areas():
             f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span>'
             f'<span aria-current="page">Service Areas</span></nav>'
             f'<h1 class="title">Where Love Is Blinds Works in Texas</h1>'
-            f'<p class="lead">Three local teams cover the state. Find your city below for the '
+            f'<p class="lead">Local, owner-operated teams cover the state. Find your city below for the '
             f'number that reaches the crew who will measure and install your windows.</p>'
             f'</div></div></section>{tx_map()}{secs}')
     body += '''<section class="section closing-cta"><div class="container center">
@@ -127,7 +127,7 @@ def team():
             area = (f'<section class="section bg-cream-tint"><div class="container">'
                     f'<h2 class="title">Cities {e(m["name"].split()[0])} covers</h2>'
                     f'<ul class="nap-list city-index">{links}</ul></div></section>')
-            intro = (f'{e(m["name"])} runs {e(brand)}, one of the three Love Is Blinds '
+            intro = (f'{e(m["name"])} runs {e(brand)}, one of the locally owned Love Is Blinds '
                      f'franchises working across the state. That territory covers '
                      f'{e(terr["blurb"])}.')
         else:
@@ -678,9 +678,11 @@ def _mpt(lng, lat):
 
 TKEY_CLASS = {"dfw": "t-dfw", "north": "t-north", "dallas": "t-dallas",
               "cedarcreek": "t-lake", "waco": "t-waco", "austin": "t-austin",
-              "tyler": "t-etx"}
+              "tyler": "t-etx", "houston": "t-hou"}
 
-ANCHOR_PINS = {"dallas-tx", "fort-worth-tx", "austin-tx", "waco-tx", "tyler-tx", "sherman-tx"}
+ANCHOR_PINS = {"dallas-tx", "fort-worth-tx", "austin-tx", "waco-tx", "north-houston-tx", "sherman-tx"}
+# Nov 18 2026, Maddie: "take tyler off the map and add houston"
+MAP_HIDE = {"tyler-tx"}
 # nudge colliding anchor labels apart in the metroplex
 LBL_OFFSET = {"fort-worth-tx": (-16, "end"), "dallas-tx": (16, "start")}
 
@@ -701,7 +703,7 @@ def tx_map():
     pts = " ".join(f"{x},{y}" for x, y in (_mpt(*p) for p in TX_OUTLINE))
     pins, xs, ys = [], [], []
     for c in sorted(CITIES, key=lambda x: -x["lat"]):   # north pins first, so
-        if c.get("unlisted"): continue
+        if c.get("unlisted") or c["slug"] in MAP_HIDE: continue
         x, y = _mpt(c["lng"], c["lat"])                 # southern labels stack on top
         tk = [k for k in TKEY_CLASS if T.of(c["slug"])["name"] == T.TERRITORIES[k]["name"]][0]
         if tk in ("dfw", "north", "dallas"): xs.append(x); ys.append(y)
@@ -749,11 +751,10 @@ def tx_map():
         '<div class="txmap-legend">'
         '<span><i class="dot t-dfw"></i>DFW</span>'
         '<span><i class="dot t-north"></i>North Texas</span>'
-        '<span><i class="dot t-dallas"></i>Dallas</span>'
         '<span><i class="dot t-lake"></i>Cedar Creek Lake</span>'
         '<span><i class="dot t-waco"></i>Waco</span>'
         '<span><i class="dot t-austin"></i>Austin</span>'
-        '<span><i class="dot t-etx"></i>Tyler &middot; East Texas</span></div>'
+        '<span><i class="dot t-hou"></i>North Houston</span></div>'
         f'<div class="txmap-toggle" role="group" aria-label="Map zoom">'
         f'<button type="button" class="on" data-vb="{full_vb}">All of Texas</button>'
         f'<button type="button" data-vb="{dfw_vb}" data-zoom>DFW &amp; North Texas</button>'

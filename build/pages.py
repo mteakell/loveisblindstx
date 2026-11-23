@@ -1,4 +1,5 @@
 """City page generator for Love Is Blinds Texas."""
+from urllib.parse import quote_plus
 import hashlib, json, math, os, re, sys, html
 sys.path.insert(0, os.path.dirname(__file__))
 import schema as S, territory as T
@@ -336,16 +337,18 @@ def map_embed(c):
     if c.get("map_view"):
         v = c["map_view"]
         return f"https://www.google.com/maps?ll={v['lat']},{v['lng']}&z={v['z']}&output=embed"
-    if pid:
-        src = f"https://www.google.com/maps?q=place_id:{pid}&output=embed"
+    # A place_id query needs the Maps Embed API key; without one Google falls
+    # back to a world map (Maddie caught it, Nov 19 2026). Use the profile's
+    # street address when there is one, otherwise the city itself.
+    if c.get("street"):
+        q = f"{c['street']}, {c['locality']}, TX {c.get('postal', '')}".strip()
     else:
-        q = (c["label"] + ", TX").replace(" ", "+")
-        src = f"https://www.google.com/maps?q={q}&output=embed"
-    return src
+        q = c["label"] + ", TX"
+    return "https://www.google.com/maps?q=" + quote_plus(q, safe=",") + "&output=embed"
 
 
 # ---- block rotation ------------------------------------------------------
-_CIX = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=lambda x: x["slug"]))}
+_CIX = {c["slug"]: i for i, c in enumerate(sorted(CITIES, key=lambda x: (x.get("added", ""), x["slug"])))}
 _STRIDE = {0: 1, 1: 5, 2: 7, 3: 11, 4: 13, 5: 17, 6: 19, 7: 23, 12: 29, 13: 31}
 
 
@@ -834,6 +837,8 @@ def render_city(c):
 if __name__ == "__main__":
     n = 0
     for c in CITIES:
+        if c.get("custom"):      # hand-written pages (build/houston_towns.py)
+            continue
         open(os.path.join(ROOT, c["slug"] + ".html"), "w").write(render_city(c))
         n += 1
     print(f"wrote {n} city pages")

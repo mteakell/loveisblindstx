@@ -84,6 +84,8 @@ def region_cards(html_src):
     for key in ("dfw", "north", "dallas", "cedarcreek", "waco", "austin"):
         terr = T.TERRITORIES[key]
         cs = by_terr.get(key, [])
+        if not cs:          # Dallas folded into North Texas, Nov 19 2026
+            continue
         if terr.get("name_cities", True):
             leads = terr["leads"]
             who = "Run by " + (leads[0] if len(leads) == 1 else " and ".join(leads)) + "."

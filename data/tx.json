@@ -33,7 +33,8 @@
     "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA",
     "https://maps.app.goo.gl/pPEGbj3ssWUQswC19"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "arlington-tx",
@@ -49,7 +50,8 @@
     "https://share.google/9NTHmU57t9Yt7JkX8"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "austin-tx",
@@ -65,7 +67,8 @@
     "https://maps.app.goo.gl/NRiuAwViE5z3iBU68"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "bedford-tx",
@@ -81,7 +84,8 @@
     "https://maps.app.goo.gl/GUv6jsXX9zWRWeeL8",
     "https://maps.app.goo.gl/vE3hH9yV2bfQqmTg7"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "boyd-tx",
@@ -96,7 +100,8 @@
    "gbp": [
     "https://maps.app.goo.gl/qKuvDr9vZwoTaziD6"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "celina-tx",
@@ -113,7 +118,8 @@
     "https://maps.app.goo.gl/znAPLi5nqnmFfdH17"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "colleyville-tx",
@@ -129,7 +135,8 @@
     "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "coppell-tx",
@@ -144,7 +151,8 @@
    "gbp": [
     "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "corsicana-tx",
@@ -160,7 +168,8 @@
     "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
    ],
    "twin": "w-7th-avenue-corsicana-tx",
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "dallas-tx",
@@ -173,9 +182,10 @@
    "lat": 32.777,
    "lng": -96.797,
    "gbp": [
-    "https://maps.app.goo.gl/aJtdJA8UzKdFXp3MA"
+    "https://www.google.com/maps/place/?q=place_id:ChIJq_pEM1Dcs4YRSfANfXjdWVg"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "denton-tx",
@@ -192,7 +202,8 @@
     "https://maps.app.goo.gl/foNFCboKRCvzJ4xPA"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "euless-tx",
@@ -207,7 +218,8 @@
    "gbp": [
     "https://maps.app.goo.gl/gKNUZnX4W47mFkBL8"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "flower-mound-tx",
@@ -222,7 +234,8 @@
    "gbp": [
     "https://maps.app.goo.gl/UVEouK8SrNRV7bFv6"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "fort-worth-tx",
@@ -236,7 +249,8 @@
    "lng": -97.2719303,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "frisco-tx",
@@ -251,7 +265,8 @@
    "gbp": [
     "https://maps.app.goo.gl/CmzHdYAhyw1TvRrbA"
    ],
-   "twin": null
+   "twin": null,
+   "custom": true
   },
   {
    "slug": "gainesville-tx",
@@ -267,37 +282,40 @@
     "https://maps.app.goo.gl/RBX7qXKRxaNnFAtz7"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "georgetown-tx",
    "label": "Georgetown",
    "url": "/georgetown-tx",
    "phone": "7372576722",
-   "street": "601 Quail Valley Dr, STE 331",
+   "street": "",
    "locality": "Georgetown",
-   "postal": "78626",
+   "postal": "",
    "lat": 30.6218711,
    "lng": -97.670933,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "granbury-tx",
    "label": "Granbury",
    "url": "/granbury-tx",
    "phone": "8177753212",
-   "street": "301 W Hwy 377, Suite 112, #1006",
+   "street": "",
    "locality": "Granbury",
-   "postal": "76048",
+   "postal": "",
    "lat": 32.4340464,
    "lng": -97.7886021,
    "gbp": [
     "https://maps.app.goo.gl/GuzJhqCg2Muxt5cZ9"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "grand-prairie-tx",
@@ -311,7 +329,8 @@
    "lng": -96.9978,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "grapevine-tx",
@@ -327,7 +346,8 @@
     "https://share.google/eBFZbQb1i9jLHq5Da"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "gun-barrel-city-tx",
@@ -341,7 +361,8 @@
    "lng": -96.1455318,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "haltom-city-tx",
@@ -355,7 +376,8 @@
    "lng": -97.2692,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "highland-park-tx",
@@ -367,9 +389,12 @@
    "postal": "",
    "lat": 32.8334,
    "lng": -96.792,
-   "gbp": [],
+   "gbp": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJq_pEM1Dcs4YRSfANfXjdWVg"
+   ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "hurst-tx",
@@ -385,7 +410,8 @@
     "https://maps.app.goo.gl/CGF2QrjndWHDU2yS6"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "irving-tx",
@@ -397,9 +423,12 @@
    "postal": "75062",
    "lat": 32.814,
    "lng": -96.9489,
-   "gbp": [],
+   "gbp": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJp9JeRw-DToYRrsk8s3hV2GE"
+   ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "justin-tx",
@@ -413,7 +442,8 @@
    "lng": -97.2961,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "keller-tx",
@@ -429,7 +459,8 @@
     "https://share.google/BArTi9ylN3WuOqArl"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "kerens-tx",
@@ -443,7 +474,8 @@
    "lng": -96.36887,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "las-colinas-tx",
@@ -455,9 +487,12 @@
    "postal": "",
    "lat": 32.8603747,
    "lng": -96.9346525,
-   "gbp": [],
+   "gbp": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJp9JeRw-DToYRrsk8s3hV2GE"
+   ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "lewisville-tx",
@@ -471,7 +506,8 @@
    "lng": -96.9942,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "mckinney-tx",
@@ -487,7 +523,8 @@
     "https://maps.app.goo.gl/3XYfyAsPh12hmyxVA"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "north-richland-hills-tx",
@@ -501,7 +538,8 @@
    "lng": -97.195643,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "northlake-tx",
@@ -517,7 +555,8 @@
     "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "paradise-tx",
@@ -531,7 +570,8 @@
    "lng": -97.6839,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "plano-tx",
@@ -547,7 +587,8 @@
     "https://maps.app.goo.gl/74ggCgog8Zhd5CQDA"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "prosper-tx",
@@ -561,7 +602,8 @@
    "lng": -96.8011,
    "gbp": [],
    "twin": null,
-   "geo_source": "town-center"
+   "geo_source": "town-center",
+   "custom": true
   },
   {
    "slug": "richland-hills-tx",
@@ -575,7 +617,8 @@
    "lng": -97.2281,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "roanoke-tx",
@@ -589,21 +632,23 @@
    "lng": -97.2256,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "round-rock-tx",
    "label": "Round Rock",
    "url": "/round-rock-tx",
    "phone": "5126413922",
-   "street": "1 Chisholm Trail Rd, Suite 450, #4587",
+   "street": "",
    "locality": "Round Rock",
-   "postal": "78681",
+   "postal": "",
    "lat": 30.5141105,
    "lng": -97.6890244,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "sherman-tx",
@@ -619,7 +664,8 @@
     "https://maps.app.goo.gl/t4fA7xZQAhnr7E396"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "southlake-tx",
@@ -635,21 +681,23 @@
     "https://maps.app.goo.gl/z4voWbBB1zLHzAyo9"
    ],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "taylor-tx",
    "label": "Taylor",
    "url": "/taylor-tx",
    "phone": "7372606887",
-   "street": "305 N Main St Ste #1029",
+   "street": "",
    "locality": "Taylor",
-   "postal": "76574",
+   "postal": "",
    "lat": 30.5705,
    "lng": -97.4092,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "trophy-club-tx",
@@ -663,21 +711,23 @@
    "lng": -97.1836,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "tyler-tx",
    "label": "Tyler",
    "url": "/tyler-tx",
    "phone": "9035013899",
-   "street": "4295 Kinsey Dr",
+   "street": "",
    "locality": "Tyler",
-   "postal": "75703",
+   "postal": "",
    "lat": 32.3513,
    "lng": -95.3011,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "w-7th-avenue-corsicana-tx",
@@ -693,7 +743,8 @@
    "twin": "corsicana-tx",
    "variant": "W 7th Ave",
    "geo_source": "legacy-site",
-   "unlisted": true
+   "unlisted": true,
+   "custom": true
   },
   {
    "slug": "waco-tx",
@@ -707,7 +758,8 @@
    "lng": -97.2112885,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "waxahachie-tx",
@@ -721,23 +773,25 @@
    "lng": -96.8711631,
    "gbp": [],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "weatherford-tx",
    "label": "Weatherford",
    "url": "/weatherford-tx",
    "phone": "8177749493",
-   "street": "220 Adams Dr, STE 280 - 1052",
+   "street": "",
    "locality": "Weatherford",
-   "postal": "76086",
+   "postal": "",
    "lat": 32.7314932,
    "lng": -97.78841,
    "gbp": [
     "https://maps.app.goo.gl/VohNBHJa1xjutCTW7"
    ],
    "twin": null,
-   "geo_source": "gbp"
+   "geo_source": "gbp",
+   "custom": true
   },
   {
    "slug": "westlake-tx",
@@ -751,7 +805,8 @@
    "lng": -97.1953,
    "gbp": [],
    "twin": null,
-   "geo_source": "legacy-site"
+   "geo_source": "legacy-site",
+   "custom": true
   },
   {
    "slug": "north-houston-tx",
@@ -772,6 +827,230 @@
     "z": 9
    },
    "map_caption": "Serving Tomball, Magnolia, Montgomery and nearby communities"
+  },
+  {
+   "slug": "magnolia-tx",
+   "label": "Magnolia",
+   "url": "/magnolia-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Magnolia",
+   "postal": "",
+   "lat": 30.213,
+   "lng": -95.7426,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "tomball-tx",
+   "label": "Tomball",
+   "url": "/tomball-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Tomball",
+   "postal": "",
+   "lat": 30.0951,
+   "lng": -95.6197,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "the-woodlands-tx",
+   "label": "The Woodlands",
+   "url": "/the-woodlands-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "The Woodlands",
+   "postal": "",
+   "lat": 30.1726,
+   "lng": -95.5098,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "spring-tx",
+   "label": "Spring",
+   "url": "/spring-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Spring",
+   "postal": "",
+   "lat": 30.0622,
+   "lng": -95.384,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "conroe-tx",
+   "label": "Conroe",
+   "url": "/conroe-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Conroe",
+   "postal": "",
+   "lat": 30.3287,
+   "lng": -95.4846,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "montgomery-tx",
+   "label": "Montgomery",
+   "url": "/montgomery-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Montgomery",
+   "postal": "",
+   "lat": 30.3931,
+   "lng": -95.6941,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "willis-tx",
+   "label": "Willis",
+   "url": "/willis-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Willis",
+   "postal": "",
+   "lat": 30.4342,
+   "lng": -95.4842,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "pinehurst-tx",
+   "label": "Pinehurst",
+   "url": "/pinehurst-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Pinehurst",
+   "postal": "",
+   "lat": 30.1886,
+   "lng": -95.7035,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "stagecoach-tx",
+   "label": "Stagecoach",
+   "url": "/stagecoach-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Stagecoach",
+   "postal": "",
+   "lat": 30.1418,
+   "lng": -95.7001,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "hockley-tx",
+   "label": "Hockley",
+   "url": "/hockley-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Hockley",
+   "postal": "",
+   "lat": 30.028,
+   "lng": -95.844,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "waller-tx",
+   "label": "Waller",
+   "url": "/waller-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Waller",
+   "postal": "",
+   "lat": 30.0724,
+   "lng": -95.9316,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "prairie-view-tx",
+   "label": "Prairie View",
+   "url": "/prairie-view-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Prairie View",
+   "postal": "",
+   "lat": 30.0829,
+   "lng": -95.9771,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "shenandoah-tx",
+   "label": "Shenandoah",
+   "url": "/shenandoah-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Shenandoah",
+   "postal": "",
+   "lat": 30.184,
+   "lng": -95.4557,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
+  },
+  {
+   "slug": "oak-ridge-north-tx",
+   "label": "Oak Ridge North",
+   "url": "/oak-ridge-north-tx",
+   "phone": "2818643309",
+   "street": "",
+   "locality": "Oak Ridge North",
+   "postal": "",
+   "lat": 30.157,
+   "lng": -95.4421,
+   "gbp": [],
+   "twin": null,
+   "geo_source": "town-center",
+   "added": "2026-11",
+   "custom": true
   }
  ]
 }
