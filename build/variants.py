@@ -128,7 +128,7 @@ WHY = {
  ("Motors outlast the fabric they move",
   "The mechanism is rarely what fails. What matters is who services it, which is the practical "
   "difference between buying motorization locally and buying it online."),
- ("Reach is the honest test",
+ ("Reach decides which windows get a motor",
   "If you can comfortably reach a window every day, a motor is convenience. If you cannot, a manual "
   "treatment ends up permanently up or permanently down, and you have paid for something that does "
   "one thing."),

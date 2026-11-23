@@ -1584,3 +1584,9 @@ a.map-gbp:hover{color:var(--pop-deep)}
 .t-hou{background:#8C5A7A}
 .t-hou circle{fill:#8C5A7A}
 #txmap .mpin.t-hou circle{fill:#8C5A7A}
+/* product page: links to every city version */
+.pc-cities .pc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:28px;margin-top:28px}
+.pc-cities h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--pop-deep);margin:0 0 10px}
+.pc-cities ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--hairline)}
+.pc-cities li a{display:block;padding:8px 0;border-bottom:1px solid var(--hairline);text-decoration:none;color:var(--ink-display);font-weight:600;font-size:15px}
+.pc-cities li a:hover{color:var(--pop-deep)}

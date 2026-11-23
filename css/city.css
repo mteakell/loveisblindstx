@@ -161,3 +161,10 @@
 .cx-revgrid p::before{content:"\201C";display:block;font-size:48px;line-height:.6;color:var(--pop);font-weight:800;margin-bottom:8px}
 .cx-revgrid cite{display:block;margin-top:16px;font-style:normal;font-weight:700;font-size:14px;color:var(--ink-muted)}
 @media (max-width:900px){.cx-revgrid{grid-template-columns:1fr}.cx-revgrid blockquote{border-right:0;margin-right:0;border-bottom:1px solid var(--hairline);padding-bottom:24px}}
+
+/* ---- product-city: text-only ruled product list ---- */
+.cx-plist-text a{grid-template-columns:1fr auto}
+.cx .cx-plan li strong{display:block}
+.cx .cx-alllinks{margin-top:26px;font-size:14.5px;line-height:1.9;color:var(--ink-muted)}
+.cx-alllinks a{color:var(--ink-display);font-weight:700;text-decoration:none;border-bottom:1px solid var(--hairline)}
+.cx-alllinks a:hover{color:var(--pop-deep)}

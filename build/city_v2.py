@@ -57,6 +57,24 @@ OVERRIDE = {("pinehurst-tx", 1): ("Light filtering shades", "/products/shades"),
             ("willis-tx", 2): ("Energy-efficient shades", "/products/energy-efficient-custom-window-shades")}
 
 
+PC_PREFIX = {"/products/plantation-shutters": "plantation-shutters", "/products/shades": "shades",
+             "/products/blinds": "blinds", "/products/exterior-patio-shades": "patio-shades",
+             "/products/motorized-window-treatment-automations": "motorized-shades",
+             "/products/honeycomb-shades": "honeycomb-shades", "/products/roller-shades": "roller-shades",
+             "/products/roman-shades": "roman-shades", "/products/woven-wood-shades": "woven-wood-shades",
+             "/products/dual-shades": "dual-shades", "/products/panel-track-shades": "panel-track-shades",
+             "/products/faux-wood-blinds": "faux-wood-blinds", "/products/real-wood-blinds": "wood-blinds",
+             "/services/drapery-installation": "drapery", "/products/shutters": "shutters"}
+
+
+def local_url(u, slug):
+    """The city's own product page when it exists, else the statewide page."""
+    p = PC_PREFIX.get(u)
+    if p and os.path.exists(os.path.join(ROOT, f"{p}-{slug}.html")):
+        return f"/{p}-{slug}"
+    return u
+
+
 def miles(a, b):
     la1, lo1, la2, lo2 = map(math.radians, (a["lat"], a["lng"], b["lat"], b["lng"]))
     h = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
@@ -194,7 +212,7 @@ def render(t, ctx):
             f'<section class="cx-ch {kind}"><div class="wrap">'
             f'<div class="cx-ch-text cx-rv"><div class="cx-num">0{i+1}</div>'
             f'<div class="cx-eyebrow">{e(pname)}</div><h2>{e(h)}</h2>{body_html(paras)}'
-            f'<a class="cx-link" href="{purl}">See {e(pname.lower())} {ARROW}</a></div>'
+            f'<a class="cx-link" href="{local_url(purl, t["slug"])}">See {e(pname.lower())} {ARROW}</a></div>'
             f'<figure class="cx-ch-media cx-rv" style="margin-left:0;margin-right:0">'
             f'<div class="cx-par cx-frame" data-par="0.10"><img src="/images/lib/r/1600/{stem}.webp" '
             f'data-alt-final alt="{e(alt)}" loading="lazy" width="1600" height="1200" '
@@ -210,12 +228,18 @@ def render(t, ctx):
         "Remade at no cost if a treatment does not match the approved measurements"]))
     start_urls = {u for _, u in t["links"]}
     starts = "".join(
-        f'<a class="start" href="{u}"><img src="/images/lib/r/400/{st}.webp" alt="" loading="lazy" width="96" height="72">'
+        f'<a class="start" href="{local_url(u, t["slug"])}"><img src="/images/lib/r/400/{st}.webp" alt="" loading="lazy" width="96" height="72">'
         f'<span><small>Start here in {e(label)}</small>{e(n)}</span>{ARROW}</a>'
         for (n, u), st in zip(t["links"], [x[2][0] for x in t["sections"]]))
     plist = starts + "".join(
-        f'<a href="{u}"><img src="/images/lib/r/400/{s}.webp" alt="" loading="lazy" width="96" height="72">'
+        f'<a href="{local_url(u, t["slug"])}"><img src="/images/lib/r/400/{s}.webp" alt="" loading="lazy" width="96" height="72">'
         f'<span>{e(n)}</span>{ARROW}</a>' for n, u, s in PRODUCTS if u not in start_urls)
+    import products_spec as _PS
+    allp = [(v["label"], f"/{v['slug']}-{t['slug']}") for v in _PS.SPEC.values()
+            if os.path.exists(os.path.join(ROOT, f"{v['slug']}-{t['slug']}.html"))]
+    all_html = ("" if not allp else
+                f'<p class="cx-alllinks"><strong>Every product page for {e(label)}:</strong> '
+                + " &middot; ".join(f'<a href="{u}">{e(n)}</a>' for n, u in allp) + "</p>")
     near_li = "".join(f'<li><a href="{u}">{e(lb)}, TX <em>{mi} mi</em></a></li>' for lb, u, mi in ctx["near"])
     if ctx.get("near_all"):
         nl, nu, nn = ctx["near_all"]
@@ -287,6 +311,7 @@ def render(t, ctx):
   <div class="cx-prod-head cx-rv"><div><div class="cx-eyebrow">What we install</div><h2 style="margin-top:12px">Everything we fit in {e(label)}</h2></div>
     <p>Each is measured on site and built to the opening, then installed by the team that measured it.</p></div>
   <div class="cx-plist cx-rv">{plist}</div>
+  {all_html}
 </div></section>
 
 <section class="cx-trust"><div class="wrap">{trust}</div></section>

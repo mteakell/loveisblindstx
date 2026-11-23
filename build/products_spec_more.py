@@ -365,8 +365,9 @@ _POOL = {
  "woven-wood-shades": _files("woven-wood-shades-woven-wood-shades-"),
  "dual-shades": _files("banded-shades-banded-shades-"),
  "panel-track-shades": _files("panel-track-shades-panel-track-shades-"),
- "faux-wood-blinds": _files("blinds-blinds-"),
- "wood-blinds": _files("blinds-blinds-"),
+ # real wood stays out of kitchens and baths on the site, so its photos do too
+ "faux-wood-blinds": [f for f in _files("blinds-blinds-") if any(k in f for k in ("007", "009", "014", "015", "017"))],
+ "wood-blinds": [f for f in _files("blinds-blinds-") if any(k in f for k in ("008", "011", "013", "016"))],
  "drapery": _files("smart-drapes-smart-drapes-"),
 }
 # heroes are wide landscape photos only; drop the few portrait or before/after frames
